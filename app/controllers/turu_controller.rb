@@ -1,0 +1,2 @@
+class TuruController < ApplicationController
+end

@@ -1,0 +1,2 @@
+module TuruHelper
+end
