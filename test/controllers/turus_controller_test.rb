@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TechCampMentorAbeControllerTest < ActionDispatch::IntegrationTest
+class TurusControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

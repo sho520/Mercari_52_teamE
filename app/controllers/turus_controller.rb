@@ -1,0 +1,2 @@
+class TurusController < ApplicationController
+end
