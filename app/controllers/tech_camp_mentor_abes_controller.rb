@@ -1,0 +1,2 @@
+class TechCampMentorAbesController < ApplicationController
+end
