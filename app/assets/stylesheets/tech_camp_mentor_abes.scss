@@ -7,10 +7,11 @@ $red: #ea352d;
   .main{
     background-color:$white;
     .js-head-slider {
-      background: gray;
+      // background: #EEEEEE;
       width: 100vw;
       height: 290px;
       .head-slider-img {
+        text-align: center;
         width: 100%;
         height: 290px;
       }

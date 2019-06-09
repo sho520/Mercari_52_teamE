@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script src="/bxslider.min.scss"></script>
   <head>
     <title>Mercari52Teame</title>
     <%= csrf_meta_tags %>
@@ -8,8 +9,24 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <script>
+// $(function(){
+$(document).ready(function(){
+  $('.bxslider').bxSlider({
+       auto: true,
+       slideWidth: 760,
+       pause:	3000,
+       speed: 300,
+       mode: 'fade',
+       pager:true,
+       controls:true,
+       minSlides: 1,
+       maxSlides: 1,
+       touchEnabled: true,
+     });
+});
+</script>
     <%= yield %>
   </body>
 </html>
