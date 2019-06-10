@@ -115,7 +115,7 @@ rails 5.2.3
 ### Association
 
 - has_many :items
-- 
+
 ## shipping_daysテーブル
 
 |Column  |Type  |Options  |
@@ -136,7 +136,7 @@ rails 5.2.3
 
 - has_many :items
 
-## large_classテーブル
+## large_classesテーブル
 
 |Column  |Type  |Options  |
 |---|---|---|
@@ -148,7 +148,7 @@ rails 5.2.3
 -  has_many :middle_classes
 
 
-## middle_classテーブル
+## middle_classesテーブル
 
 |Column  |Type  |Options  |
 |---|---|---|
@@ -161,7 +161,7 @@ rails 5.2.3
 - belongs_to :large_class
 - has_many :small_classes
 
-## small_classテーブル
+## small_classesテーブル
 
 |Column  |Type  |Options  |
 |---|---|---|
