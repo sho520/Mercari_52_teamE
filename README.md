@@ -45,6 +45,11 @@ rails 5.2.3
 |prefecture_id |integer |null: false  |
 |password  |string  |null: false, unique: true  |
 
+### Association
+
+- has_many :items
+- belongs_to :prefecture
+
 ## itemsテーブル
 
 |Column  |Type  |Options  |
@@ -65,11 +70,19 @@ rails 5.2.3
 |middle_class_id  |integer  |null: false, foreign_key: true  |
 |small_class_id  |integer  |null: false, foreign_key: true  |
 
-## prefecturesテーブル
+### Association
 
-|Column  |Type  |Options  |
-|---|---|---|
-|prefecture_name  |string  |null: false, unique: true  |
+- belongs_to :prefecture
+- belongs_to :state
+- belongs_to :condition
+- belongs_to :shipping_fee_payer
+- belongs_to :shipping_day
+- belongs_to :large_class
+- belongs_to :middle_class
+- belongs_to :small_class
+- has_many :images
+- belongs_to :owner, class_name: "User"
+- belongs_to :buyer, class_name: "User"
 
 
 ## imagesテーブル
@@ -79,12 +92,19 @@ rails 5.2.3
 |item_id  |integer  |foreign_key: true  |
 |image_url  |string  |null: false  |
 
+### Association
+
+- belongs_to :item
+
 ## conditionsテーブル
 
 |Column  |Type  |Options  |
 |---|---|---|
 |condition_rank |string  |null: false  |
 
+### Association
+
+- has_many :items
 
 ## shipping_fee_payersテーブル
 
@@ -92,12 +112,19 @@ rails 5.2.3
 |---|---|---|
 |payer |string  |null: false  |
 
+### Association
+
+- has_many :items
+- 
 ## shipping_daysテーブル
 
 |Column  |Type  |Options  |
 |---|---|---|
 |days |string  |null: false  |
 
+### Association
+
+- has_many :items
 
 ## statesテーブル
 
@@ -105,11 +132,21 @@ rails 5.2.3
 |---|---|---|
 |state  |string  |null: false  |
 
+### Association
+
+- has_many :items
+
 ## large_classテーブル
 
 |Column  |Type  |Options  |
 |---|---|---|
 |name  |string  |null: false, unique: true  |
+
+### Association
+
+- has_many :items
+-  has_many :middle_classes
+
 
 ## middle_classテーブル
 
@@ -118,6 +155,12 @@ rails 5.2.3
 |name |string  |null: false, unique: true  |
 |large_class_id |integer  |null: false  |
 
+### Association
+
+- has_many :items
+- belongs_to :large_class
+- has_many :small_classes
+
 ## small_classテーブル
 
 |Column  |Type  |Options  |
@@ -125,5 +168,18 @@ rails 5.2.3
 |name |string  |null: false, unique: true  |
 |middle_class_id |integer  |null: false  |
 
+### Association
 
+- has_many :items
+- belongs_to :middle_class
 
+## prefecturesテーブル
+
+|Column  |Type  |Options  |
+|---|---|---|
+|prefecture_name  |string  |null: false, unique: true  |
+
+### Association
+
+- has_many :users
+- has_many :items
