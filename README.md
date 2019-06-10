@@ -42,7 +42,7 @@ rails 5.2.3
 |mail |string  |null: false, unique: true  |
 |phone  |integer  |null: false, unique: true  |
 |profile  |text | |
-|prefecture_id |integer |null: false  |
+|prefecture_id |integer |null: false, foreign_key: true  |
 |password  |string  |null: false, unique: true  |
 
 ### Association
@@ -61,8 +61,8 @@ rails 5.2.3
 |condition_id  |integer  |null: false, foreign_key: true  |
 |shipping_fee_payer_id  |integer  |null: false, foreign_key: true |
 |prefecture_id  |integer  |null: false, foreign_key: true  |
-|shipping_days_id |integer  |null: false  |
-|price |integer  |null: false, foreign_key: true  |
+|shipping_days_id |integer  |null: false, foreign_key: true  |
+|price |integer  |null: false|
 |owner_id  |integer  |null: false, foreign_key: true  |
 |buyer_id |integer  |  foreign_key: true |
 |state_id  |integer  |null: false, foreign_key: true  |
