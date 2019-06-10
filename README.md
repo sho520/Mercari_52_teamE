@@ -27,7 +27,29 @@ rails 5.2.3
 
 * Deployment instructions
 
-* ...
+# DB設計
 
-hey
-hey
+## usersテーブル
+
+## itemsテーブル
+
+## prefecturesテーブル
+
+## imagesテーブル
+
+## conditionsテーブル
+
+## shipping_fee_payersテーブル
+
+## shipping_daysテーブル
+
+## statesテーブル
+
+## large_classテーブル
+
+## middle_classテーブル
+
+## small_classテーブル
+
+
+
