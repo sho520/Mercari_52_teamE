@@ -1,117 +1,125 @@
 <body>
-<nav id="dd">
-<ul>
-<li><a href="">カテゴリー</a>
-	<ul class="level1">
-	<li><%= link_to 'レディース', tech_camp_mentor_abes_path %>
-		<ul class="level2">
-		<li><a href="">1</a>
-      <ul class="level3">
-        <li><a href="">3-1</a></li>
-        <li><a href="">3-2</a></li>
-      </ul>
-    </li>
-		<li><a href="">2</a></li>
-		<li><a href="">3</a></li>
-		<li><a href="">4</a></li>
-		<li><a href="">5</a></li>
-		<li><a href="">6</a></li>
-		<li><a href="">7</a></li>
-		<li><a href="">8</a></li>
-		</ul>
-	</li>
-	<li><%= link_to 'メンズ', tech_camp_mentor_abes_path %></li>
-	<li><%= link_to '', tech_camp_mentor_abes_path %></li>
-	<li><%= link_to '', tech_camp_mentor_abes_path %></li>
-	<li><%= link_to '', tech_camp_mentor_abes_path %></li>
-	<li><%= link_to '', tech_camp_mentor_abes_path %></li>
-  <li><%= link_to '', tech_camp_mentor_abes_path %></li>
-  <li><%= link_to '', tech_camp_mentor_abes_path %></li>
-  <li><%= link_to '', tech_camp_mentor_abes_path %></li>
-	</ul>
-</li>
-<li><a href="">ダミーテキスト</a>
-	<ul class="level1">
-	<li><a href="">ダミーテキスト</a></li>
-	<li><a href="" class="item-arrow">ダミーテキスト</a>
-		<ul class="level2">
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="" class="item-arrow">ダミーテキスト</a>
-			<ul class="level2">
-			<li><a href="">ダミーテキスト</a></li>
-			<li><a href="">ダミーテキスト</a></li>
-			<li><a href="">ダミーテキスト</a></li>
-			<li><a href="">ダミーテキストダミーテキスト</a></li>
-			<li><a href="">ダミーテキストダミーテキスト</a></li>
-			</ul>
-		</li>
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキスト</a></li>
-		</ul>
-	</li>
-	<li><a href="" class="item-arrow">ダミーテキスト</a>
-		<ul class="level2">
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキスト</a></li>
-		</ul>
-	</li>
-	<li><a href="" class="item-arrow">ダミーテキストダミーテキスト</a>
-		<ul class="level2">
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキスト</a></li>
-		</ul>
-	</li>
-	</ul>
-</li>
-<li><a href="">ダミーテキスト</a>
-	<ul class="level1">
-	<li><a href="" class="item-arrow">ダミーテキスト</a>
-		<ul class="level2">
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキスト</a></li>
-		<li><a href="">ダミーテキストダミーテキスト</a></li>
-		<li><a href="">ダミーテキストダミーテキスト</a></li>
-		</ul>
-	</li>
-	<li><a href="">ダミーテキスト</a></li>
-	<li><a href="">ダミーテキスト</a></li>
-	<li><a href="">ダミーテキスト</a></li>
-	</ul>
-</li>
-<li><a href="">ダミーテキスト</a>
-	<ul class="level1">
-	<li><a href="">ダミーテキスト</a></li>
-	<li><a href="">ダミーテキスト</a></li>
-	<li><a href="">ダミーテキスト</a></li>
-	<li><a href="">ダミーテキスト</a></li>
-	</ul>
-</li>
-<li><a href="">ダミーテキスト</a></li>
+
+
+
+  <div class="Exhibition_page">
+
+  <header class="Exhbition_header">
+  <h1>
+  <a href="https://www.mercari.com/jp/">
+  <%= image_tag('Exhibition_page_logo.svg',class: 'logo')%>
+  </a>
+  </h1>
+  </header class="Exhbition_header">
+
+<main class= "Exhbition_main">
+<div class=main_box>
+
+<ul class="h2">
+<h2>
+商品の情報を入力
+</h2>
 </ul>
-<!-- /#dd-01 --></nav>
 
+<ul class="boxes">
+<li class="box1">出品画像</li>
+<li class="box2">
+<form action="cgi-bin/abc.cgi" method="post">
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script src="js/javascript.js"></script>
-</body>
+<p>商品名</p>
+<input type="text" name="namae" size="40" maxlength="20"></label></p>
 
+<p>商品の説明</p>
+<input type="text" name="namae" size="40" maxlength="20"></label></p>
+
+</form>
+
+</li>
+<li class="box3">商品の詳細</li>
+<li class="box4">配送について?
+<P>配送料の負担</P>
+<select class="mainselect" name="line_list">
+  <option selected="selected" class="msg">---</option>
+  <option class="souryoukomi">送料込み(出品者負担)</option>
+  <option class="souryoukomi">着払い(購入者負担)</option>
+</select>
+ <P>配送の方法</P>
+<select class="mainselect" name="line_list">
+  <option selected="selected" class="msg">---</option>
+  <option class=""></option>
+  <option class=""></option>
+</select>
+ <P>発送元の地域</P>
+<select class="mainselect" name="line_list">
+  <option selected="selected" class="msg">---</option>
+  <option class=""></option>
+  <option class=""></option>
+</select>
+<P>発送までの日数</P>
+<select class="mainselect" name="line_list">
+  <option selected="selected" class="msg">---</option>
+  <option class=""></option>
+  <option class=""></option>
+</select>
+
+</li>
+
+<li class="box5">販売価格(300〜9,999,999)
 <script>
-  $(function() {
-	$("#dd li ul").hide();
-	$("#dd li").hover(function() {
-		$(">ul", this).stop(true, true).slideDown("fast");
-		$(">a", this).addClass("active");
-	},
-	function() {
-		$(">ul", this).stop(true, true).slideUp("fast");
-		$(">a", this).removeClass("active");
-	});
-});
+$(function(){
+    $("#price").keyup(function(){
+console.log("1234")
+    })
+})
 </script>
+<input type="text" id="price">
+</li>
+
+
+<li class="box6">
+禁止されている出品、行為を必ずご確認ください。<br>
+またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。<br>
+また、出品をもちまして加盟店規約に同意したことになります。<br>
+<br>
+<p>
+<button class="btn_Exhibition" type="submit">出品する</button>
+</p>
+<br>
+<p>
+<button class="btn_Exhibition_back" type="submit",onclick="history.back()">もどる</button>
+</p>
+
+
+
+</li>
+</ul>
+
+</div class=main_box>
+</main class= "Exhbition_main">
+
+
+
+<footer class="Exhbition_footer">
+
+
+<ul class="footer-lists">
+<li class=list1>
+<a href="https://www.mercari.com/jp/privacy/">プライバシーポリシー</a>
+</li>
+<li class=list2>
+<a href="https://www.mercari.com/jp/tos/">メルカリ利用規約</a>
+</li>
+<li class=list3>
+<a href="https://www.mercari.com/jp/tokutei/">特定商取引に関する表記</a>
+</li>
+</ul>
+
+<a>
+<%= image_tag('Exhibition_page_logo-gray.svg',class: 'logo-gray')%></a>
+<p>
+<small>© 2019 Mercari</small>
+</p>
+
+</footer class="Exhbition_footer">
+
+</body>
