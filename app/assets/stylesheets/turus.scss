@@ -2,75 +2,75 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top{
+.k__top{
   height: 100px;
   width:100%;
   background-color: gray
 }
-.bread{
+.k__bread{
   height: 49px;
   width: 100%;
   background-color: black;
 }
-.item-left{
+.k__item-left{
   width: 17%;
   height: 100vh;
   background-color:#f5f5f5;
   float: left;
 }
-.item{
+.k__item{
   width: 66%;
   height: auto;
   background-color:#f5f5f5;
   float: left;
 
-  .item-box{
+  .k__item-box{
     margin-top: 40px;
     background-color: white;
     width:100%;
     padding: 24px 40px 40px 40px;
     box-sizing: border-box;
-    h1{
+    .k__h1{
       font-size:24px;
       text-align: center;
     }
-    .item-box__main{
+    .k__item-box__main{
       width:100%;
       padding-top: 16px;
       display: block;
-      .item-box__main__left{
+      .k__item-box__main__left{
         float: left;
         width: 300px;
         min-height: 360px;
-        .item-box__main__left__bigpic{
+        .k__item-box__main__left__bigpic{
           height:300px;
           width: 300px;
           background-color: blue;
           margin: 0 auto;
         }
-        .item-box__main__left__smallpics{
+        .k__item-box__main__left__smallpics{
           height: 60px;
           width: 300px;
           margin: 0 auto;
         }
       }
-      .item-box__main__right{
+      .k__item-box__main__right{
         float: right;
         max-width: 300px;
         height: 420px;
         margin: 0 auto;
-        .item-box__main__right__table{
-          tbody{
-            tr{
+        .k__item-box__main__right__table{
+          .k__tbody {
+            .k__tr{
               font-size: 0.9rem;
               border: solid 1px #f5f5f5;
-              th{
+              .k__th{
                 padding:9px;
                 min-width:120px;
                 border: solid 1px #f5f5f5;
                 background-color:#e7e5e5;
               }
-              td{
+              .k__td{
                 padding:9px;
                 min-width: 120px;
                 border: solid 1px #f5f5f5;
@@ -81,17 +81,17 @@
         }
       }
     }
-    .item-box__price{
+    .k__item-box__price{
       padding-top: 24px;
       clear:both;
       text-align: center;
-      .item-box__price__amount{
+      .k__item-box__price__amount{
         font-size:2.5rem;
       }
-      .item-box__price__withtax{
+      .k__item-box__price__withtax{
         font-size: 0.5rem;
       }
-      .item-box__price__shipcost{
+      .k__item-box__price__shipcost{
         margin: 10px;
         padding: 10px;
         font-size: 0.8rem;
@@ -100,7 +100,7 @@
 
       }
     }
-    .item-box__buybox{
+    .k__item-box__buybox{
       width: 100%;
       background-color: red;
       height:60px;
@@ -111,7 +111,7 @@
       line-height: 60px;
       margin-top: 16px;
     }
-    .item-box__buybox_ng{
+    .k__item-box__buybox_ng{
       width: 100%;
       background-color: gray;
       height:60px;
@@ -123,16 +123,16 @@
       margin-top: 16px;
 
     }
-    .item-box__desc{
+    .k__item-box__desc{
       padding-top: 32px;
     }
-    .item-box__button{
+    .k__item-box__button{
       padding-top: 16px;
       margin-bottom: 32px;
-      .item-box__button__left{
+      .k__item-box__button__left{
         float:left;
         
-        .item-box__button__like{
+        .k__item-box__button__like{
           background-color:#f5f5f5;
           float:left;
           margin-left: 16px;
@@ -140,7 +140,7 @@
           border-radius: 20px;
           .item-box__button__like_word{}
         }
-        .item-box__button__report{
+        .k__item-box__button__report{
           background-color:#f5f5f5;
           float:left;
           margin-left: 16px;
@@ -149,32 +149,32 @@
           .item-box__button__report__word{}
         }
       }
-      .item-box__button__right{
+      .k__item-box__button__right{
         float:right;
         padding: 8px 16px;
-        .item-box__button__safe{
+        .k__item-box__button__safe{
           color: blue;
         }
       }
     }
   }
-  .item-comment{
+  .k__item-comment{
     background-color:#ffffff;
     padding: 24px 40px 24px 40px;
     box-sizing: border-box;
     margin-top: 8px;
-    .item-comment__form{
-      p{
+    .k__item-comment__form{
+      .k__p{
         background-color: yellow;
         font-size: 0.8rem;
         padding: 5px;
       }
-      textarea{
+      .k__textarea{
         margin-top: 8px;
         width: 100%;
         min-height: 150px;
       }
-      button{
+      .k__button{
         height: 60px;
         width: 100%;
         background-color:gray;
@@ -182,35 +182,35 @@
       }
     }
   }
-  .item-link{
+  .k__item-link{
     width:100%;
     height: 50px;
-    .item-link__pre{
+    .k__item-link__pre{
       float: left;
       padding-top:10px;
     }
-    .item-link__next{
+    .k__item-link__next{
       float: right;
       padding-top:10px;
     }
   }
-  .item__sns{
+  .k__item__sns{
     background-color:#ffffff;
     height:150px;
     width:100%;
     padding-top: 50px;
-    .item__sns__main{
+    .k__item__sns__main{
       height:100px;
       width:100%;
       display: inline-block;
-      .item__sns__main__fb{
+      .k__item__sns__main__fb{
         height: 40px;
         width: 40px;
         background-color: blue;
         float: left;
         display: inline-block;
       }
-      .item__sns__main__tw{
+      .k__item__sns__main__tw{
         height: 40px;
         width: 40px;
         background-color: green;
@@ -220,7 +220,7 @@
     }
   }
 }
-.item-right{
+.k__item-right{
   width: 17%;
   height:800px;
   background-color:#f5f5f5;
@@ -228,17 +228,16 @@
 
 }
 
-.banner{
+.k__banner{
   clear: both;
   width: 100%;
   height:260px;
   background-color: gray;
 }
-.footer{
+.k__footer{
   width: 100%;
   height:381px;
   padding: 0 20px 10px 20px;
   background-color: black;
   color: white;
-
 }
