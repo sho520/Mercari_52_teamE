@@ -1,5 +1,6 @@
 <div class="wrapper">
   <main class="main">
+    <!-- スライドショー -->
     <section class="js-head-slider">
       <ul class="bxslider">
           <li><%= image_tag 'mercari01.jpg',class: "head-slider-img" %></li>
@@ -8,6 +9,7 @@
           <li><%= image_tag 'mercari04.png',class: "head-slider-img" %></li>
       </ul>
     </section>
+
     <section class="pickup-contaner">
       <h2 class="pickup-header">ピックアップカテゴリー</h2>
       <!-- レディース新着アイテム -->
@@ -225,4 +227,92 @@
     <div class="sale-btn-text">出品</div>
     <i class="fa fa-camera-retro"></i>
   <% end %>
+
+  <div class="app-intro">
+    <div class="app-intro-inner">
+      <h2>スマホで簡単フリマアプリ</h2>
+      <p>今すぐ無料ダウンロード！</p>
+    </div>
+    <div class="app-intro-icon">
+      <%= image_tag 'app-logo.jpg',class: "app-logo", height: '68', width: '68'  %>
+      <ul class="app-intro-links">
+        <li class="app-store"></li>
+        <li class="app-google"></li>
+      </ul>
+    </div>
+    <%= image_tag 'appa.png',class: "app-img", height: '260' %>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-contents">
+      <div class="footer-contents-left">
+        <div class="footer-content">
+          <h2 class="footer-content-group">メルカリについて</h2>
+        <ul>
+          <li><%= link_to '会社概要（運営会社）', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to '採用情報', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to 'プレスリリース', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to '公式ブログ', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to 'メルカリロゴ利用ガイドライン', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><i class="fa fa-twitter fa-2x"></i></li>
+          <li><i class="fa fa-facebook-square fa-2x"></i></li>
+        </ul>
+        </div>
+
+        <div class="footer-content">
+          <h2 class="footer-content-group">プライバシーと利用規約</h2>
+        <ul>
+          <li><%= link_to 'メルカリ利用規約', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to 'あんしんスマホサポート制度に関する利用特約', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to 'プレスリリース', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to 'コンプライアンスポリシー', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="footer-contents-right">
+        <div class="footer-content">
+          <h2 class="footer-content-group">ヘルプ＆ガイド</h2>
+        <ul>
+          <li><%= link_to 'メルカリガイド', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to 'らくらくメルカリ便', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to 'ゆうゆうメルカリ便', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to '大型メルカリ便', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to '車体取引ガイド', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to 'メルカリあんしん・あんぜん宣言！', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to '偽ブランド品撲滅への取り組み', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to 'メルカリボックス', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+        </ul>
+        </div>
+
+        <div class="footer-content">
+        <ul>
+          <li><%= link_to '個人データの安全管理に係る基本方針', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to '特定商取引に関する表記', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to '資金決済法に基づく表示', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to '法令遵守と犯罪抑止のために', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+          <li><%= link_to '返品・返金ポリシー', tech_camp_mentor_abes_path, class: "footer-link" %></li>
+        </ul>
+        </div>
+      </div>
+
+  </footer>
+  </div>
 </div>
+<script>
+// $(function(){
+$(document).ready(function(){
+  $('.bxslider').bxSlider({
+       auto: true,
+       slideWidth: 760,
+       pause:	3000,
+       speed: 300,
+       mode: 'fade',
+       pager:true,
+       controls:true,
+       minSlides: 1,
+       maxSlides: 1,
+       touchEnabled: true,
+     });
+});
+</script>

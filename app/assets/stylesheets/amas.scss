@@ -1,6 +1,83 @@
-// Place all the styles related to the amas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-s {
-  background-color: #ea352d;
+a {
+	color: black;
+	text-decoration: none;
+}
+
+#dd {
+	text-align: center;
+	background: lighten(black, 95%);
+
+	> ul {
+		width: 1000px;
+		display: flex;
+		margin: 0 auto;
+		> li {
+			height: 70px;
+			flex: 1;
+			&:not(:last-child) {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	ul {
+		li {position: relative;}
+	}
+
+	li {
+		li {border-bottom: 1px solid white;}
+	}
+
+	a {
+		display: block;
+		transition: 0.3s;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	> ul > li > a {
+		padding: 19px 0 15px;
+		border-bottom: 5px solid #999;
+		&.active {
+			border-bottom-color: #37a0da;
+		}
+	}
+
+	.level1, .level2 .level3 {
+		width: 100%;
+		position: absolute;
+		z-index: 9;
+		a {
+			padding: 10px 15px;
+			background: lighten(black, 95%);
+		}
+		.active {
+			color: white;
+			background: #37a0da;
+		}
+	}
+
+	.level1 {
+		top: 100%;
+		left: 0;
+	}
+
+	.level2 .level3 {
+		top: 0;
+		left: 100%;
+		border-left: 1px solid white;
+	}
+
+	.item-arrow {
+		&:after {
+
+			width: 7px;
+			height: 7px;
+			top: 50%;
+			right: 10px;
+			margin-top: -4px;
+			border-color: #37a0da;
+		}
+	}
 }
