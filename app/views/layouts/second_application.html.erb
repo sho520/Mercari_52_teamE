@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mercari52Teame</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+    <body class='resist__body'>
+      <div class='header__others'>
+        <header class='header__others__nav'>
+          <h1 class= 'header__others__h1'>
+            <a href='./items' class='header__others__href'>
+            <%= image_tag('Exhibition_page_logo.svg',class: 'header__others__logo')%>
+          </a>
+        </h1>
+      </header>
+    </div>
+
+<%= yield %>
+
+    <footer class='footer__others'>
+      <nav class='footer__others__nav'>
+        <li class='footer__others__nav__one'>
+          <a class='footer__others__font' href="#">プライバシーポリシー</a>
+            </li>
+            <li class='footer__others__nav__two'>
+            <a class='footer__others__font' href="#">メルカリ利用規約</a>
+            </li>
+            <li class='footer__others__nav__two'>
+            <a class='footer__others__font' href="#">特定商取引に関する表記</a>
+          </li>
+      </nav>
+      <a href="#" class="footer__others__logo">
+        <%= image_tag('Exhibition_page_logo-gray.svg',class: 'd__logo-gray')%></a>
+      </a>
+      <p  class='footer__others__rmark'>
+        <small>© 2019 Mercari</small>
+      </p>
+    </footer>
+  </body>
+</html>
