@@ -11,9 +11,12 @@
 .r__side {
   height: 1252px;
   width: 280px;
-  .r__mypage__nav_list__item {
+  .r__nav__list__item {
     height: 48px;
-    padding: 16px;
+    &__name {
+      padding: 16px;
+      font-size: 14px;
+    }
   }
 }
 
