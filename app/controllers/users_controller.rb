@@ -8,4 +8,10 @@ class UsersController < ApplicationController
     render :layout => 'application'
   end
 
+  def resistration
+    render :layout => 'application'
+  end
+
+  
+
 end
