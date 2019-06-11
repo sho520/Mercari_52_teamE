@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :items
   resources :users
   get "items/confirm" => "items#confirm"  #idが入る必要あり
-
+  get "items/brand" => "items#brand"
+  get "items/category" => "items#category"
 end
