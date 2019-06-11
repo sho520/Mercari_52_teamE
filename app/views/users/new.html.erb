@@ -1,13 +1,6 @@
 <body class='resist__body'>
-<div class='head__container'>
-  <header class='d__others__header'>
-    <h1 class= 'd__h1'>
-      <a href='./items' class='d__href'>
-        <%= image_tag('Exhibition_page_logo.svg',class: 'd__logo')%>
-      </a>
-    </h1>
-  </header>
-</div>
+
+<%= render 'subheader'%>
 
 <main class='d__others__main'>
   <section class='d__others__main__container'>
@@ -35,23 +28,5 @@
   </section>
 </main>
 
-<footer class='d__single-footer'>
-  <nav class='d__nav__footer'>
-      <li class='d__li__one'>
-        <a class='d__font' href="#">プライバシーポリシー</a>
-      </li>
-      <li class='d__li__two'>
-        <a class='d__font' href="#">メルカリ利用規約</a>
-      </li>
-      <li class='d__li__two'>
-        <a class='d__font' href="#">特定商取引に関する表記</a>
-      </li>
-  </nav>
-  <a href="#" class="d__single-footer-logo">
-    <%= image_tag('Exhibition_page_logo-gray.svg',class: 'd__logo-gray')%></a>
-  </a>
-  <p  class='d__rmark'>
-    <small>© 2019 Mercari</small>
-  </p>
-</footer>
+<%= render 'subfooter'%>
 </body>
