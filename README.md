@@ -37,10 +37,10 @@ rails 5.2.3
 |kana|string  |null: false  |
 |nickname |string |null: false, unique: true  |
 |birthday |date  |null: false  |
-|zipcode |integer  |null: false  |
+|zipcode |string  |null: false  |
 |address |text |null: false  |
 |mail |string  |null: false, unique: true  |
-|phone  |integer  |null: false, unique: true  |
+|phone  |string  |null: false, unique: true  |
 |profile  |text | |
 |prefecture_id |integer |null: false, foreign_key: true  |
 |password  |string  |null: false, unique: true  |
@@ -54,7 +54,7 @@ rails 5.2.3
 
 |Column  |Type  |Options  |
 |---|---|---|
-|item_name |string  |null: false  |
+|name |string  |null: false  |
 |description |text  |null: false  |
 |brand  |string  |  |
 |size  |string  |null: false  |
