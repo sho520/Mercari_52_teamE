@@ -1,3 +1,7 @@
+body {
+  background-color: lightgrey;
+}
+
 .r__header {
   background-color: black;
   height: 100px;
@@ -8,14 +12,42 @@
   height: 49px;
 }
 
-.r__side {
-  height: 1252px;
-  width: 280px;
-  .r__nav__list__item {
-    height: 48px;
-    &__name {
-      padding: 16px;
-      font-size: 14px;
+.r__container {
+  display: flex;
+  flex-direction: row;
+  margin: 40px;
+  .r__main {
+    order: 2;
+    background-color: aqua;
+    width: 700px;
+    .r__mypage__user__icon {
+      height: 200px;
+    }
+    .r__mypage__tabs {
+      height: 74px;
+    }
+    .r__tab__content {
+      .r__mypage__info {
+        height: 80px;
+      }
+    .r__mypage__go__list {
+      height: 80px;
+    }
+    }
+
+  }
+  .r__side {
+    order: 1;
+    height: 1252px;
+    width: 280px;
+    .r__nav__list__item {
+      background-color: white;
+      height: 48px;
+      border: solid 1px lightgray;
+      &__name {
+        padding: 16px;
+        font-size: 14px;
+      }
     }
   }
 }
