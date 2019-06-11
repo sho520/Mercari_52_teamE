@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mercari52Teame</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
+<header class="js-header">
+      <div class="js-header-inner">
+        <div class="header-top">
+          <h1 class="header-logo"><%= link_to items_path do %>
+            <%= image_tag 'logo.png', :size => "134x36" %>
+            <% end %>
+          </h1>
+          <div class="search-product">
+
+          </div>
+          </div>
+          <!-- ここからヘッダー下 -->
+          <!-- <div class="header-nav-box">
+            <div class="header-nav-left">
+              <ul class="left-lists">
+                <li class="left-list">カテゴリーから探す</li>
+                <li class="left-list">ブランドから探す</li>
+              </ul>
+            </div>
+            <div class="header-nav-right">
+              <ul>
+                <li>お知らせ</li>
+                <li>やることリスト</li>
+                <li>マイページ</li>
+              </ul>
+            </div>
+          </div>
+      </div> -->
+    </header>
