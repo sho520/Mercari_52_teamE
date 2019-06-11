@@ -16,38 +16,47 @@ body {
   display: flex;
   flex-direction: row;
   margin: 40px;
-  .r__main {
-    order: 2;
-    background-color: aqua;
-    width: 700px;
-    .r__mypage__user__icon {
-      height: 200px;
-    }
-    .r__mypage__tabs {
-      height: 74px;
-    }
-    .r__tab__content {
-      .r__mypage__info {
-        height: 80px;
-      }
-    .r__mypage__go__list {
+}
+
+.r__main {
+  order: 2;
+  width: 700px;
+  height: 100%;
+  margin: 0 auto;
+  .r__mypage__user__icon {
+    background-image: url(light.jpg);
+    height: 200px;
+  }
+  .r__mypage__tabs {
+    height: 74px;
+  }
+  .r__tab__content {
+    background-color: white;
+    .r__mypage__info {
       height: 80px;
     }
+    .r__mypage__go__list {
+    height: 80px;
     }
-
   }
-  .r__side {
-    order: 1;
-    height: 1252px;
-    width: 280px;
-    .r__nav__list__item {
-      background-color: white;
-      height: 48px;
-      border: solid 1px lightgray;
-      &__name {
-        padding: 16px;
-        font-size: 14px;
-      }
+  .r__mypage__tabs__head {
+    height: 72px;
+    margin-top: 40px;
+  }
+}
+
+.r__side {
+  order: 1;
+  height: 1252px;
+  width: 282px;
+  margin-right: 40px;
+  .r__nav__list__item {
+    background-color: white;
+    height: 48px;
+    border: solid 1px lightgray;
+    &__name {
+      padding: 16px;
+      font-size: 14px;
     }
   }
 }
