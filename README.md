@@ -173,13 +173,10 @@ rails 5.2.3
 - has_many :items
 - belongs_to :middle_class
 
-## prefecturesテーブル
+## 備考
 
-|Column  |Type  |Options  |
-|---|---|---|
-|prefecture_name  |string  |null: false, unique: true  |
-
-### Association
+都道府県データはgemのactive_hashを利用してPrefectureModelを作成して管理する。
+モデル間のアソシエーションは以下の通り。
 
 - has_many :users
 - has_many :items
