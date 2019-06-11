@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     render :layout => 'application'
   end
 
-  def resistration
-    render :layout => 'application'
+  def new
+    render :layout => 'second_application'
   end
 
   
