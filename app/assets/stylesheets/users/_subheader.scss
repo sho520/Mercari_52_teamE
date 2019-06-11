@@ -1,0 +1,27 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.header__others {
+  min-width: 768px;
+  &__nav {
+    height: 128px;
+    text-align: center;
+    display: block;
+  }
+  &__h1 {
+    margin: 0 auto;
+    width: 185px;
+    height: 49px;
+  }
+  &__href {
+      margin: 40px 0 0;
+      width: 185px;
+      height: 49px;
+      line-height: 49px;
+      display: inline-block;
+  }
+  &__logo {
+        }
+}
