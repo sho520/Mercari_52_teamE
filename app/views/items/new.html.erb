@@ -1,6 +1,6 @@
 <body>
 
-  <div class="Exhibition_page">
+  <div class="Exhibition__page">
 
   <header class="Exhbition_header">
   <h1>
@@ -10,84 +10,105 @@
   </h1>
   </header class="Exhbition_header">
 
-<main class= "Exhbition_main">
-<div class=main_box>
+<main class= "Exhbition__main">
+<div class=main__box>
 
-<ul class="h2">
-<h2>
-商品の情報を入力
-</h2>
-</ul>
+<div class="title"> #タイトル
+  <h2>
+  商品の情報を入力
+  </h2>
+</div>
 
-<ul class="boxes">
-<li class="box1">出品画像</li>
-<li class="box2">
+<div class="boxes">#メインコンテンツ
+
+<div class="box1">出品画像</div> #出品画像
+
+<div class="box2"> ＃商品名 ・説明
 <form action="cgi-bin/abc.cgi" method="post">
-
 <p>商品名</p>
 <input type="text" name="namae" size="40" maxlength="20"></label></p>
-
 <p>商品の説明</p>
 <input type="text" name="namae" size="40" maxlength="20"></label></p>
-
 </form>
+</div>
 
-</li>
-<li class="box3">商品の詳細</li>
-<li class="box4">配送について?
+<div class="box3">
+<div class="aaa">
+<p>商品の詳細</p>
+</div>
+
+
+<div　class="s__left__details__box">
+
+  <div class="s__category">
+  <span　style="text-align: right">カテゴリー</span>
+  <div class="s__category__small">
+    <select class="s__category__box1 s__box3__size"></select>
+    <select class="s__category__box2 s__box3__size"></select>
+    <select class="s__category__box3 s__box3__size"></select>
+  </div>
+
+  </div>
+
+
+  <div class="s__size">
+  <span>サイズ</span>
+    <select class="s__size__box  s__box3__size"></select>
+  </div>
+
+
+  <div class="s__brand">
+  </span>ブランド</span>
+    <select class="s__brand__box  s__box3__size"></select>
+  </div>
+
+
+  <div class="s__details">
+  <span>商品の状態</span>
+    <select class="s__details__box  s__box3__size"></select>
+  </div>
+
+</div>
+
+</div>
+
+
+
+<div class="box4__delivery">配送について?
 <P>配送料の負担</P>
-<select class="mainselect" name="line_list">
+<select class="delivery s__box4__size"  name="line_list">
   <option selected="selected" class="msg">---</option>
   <option class="souryoukomi">送料込み(出品者負担)</option>
   <option class="souryoukomi">着払い(購入者負担)</option>
 </select>
  <P>配送の方法</P>
-<select class="mainselect" name="line_list">
+<select class="mainselect s__box4__size " name="line_list">
   <option selected="selected" class="msg">---</option>
   <option class=""></option>
   <option class=""></option>
 </select>
  <P>発送元の地域</P>
-<select class="mainselect" name="line_list">
+<select class="mainselect s__box4__size " name="line_list">
   <option selected="selected" class="msg">---</option>
   <option class=""></option>
   <option class=""></option>
 </select>
 <P>発送までの日数</P>
-<select class="mainselect" name="line_list">
+<select class="mainselect s__box4__size " name="line_list">
   <option selected="selected" class="msg">---</option>
   <option class=""></option>
   <option class=""></option>
 </select>
+</div>
 
-</li>
-
-<li class="box5">販売価格(300〜9,999,999)
-<script>
-
-$(function(){
-    $("#price").keyup(function(){
-var number = $("#price").val();
-var aaa = (number * 0.1).val();
-var bbb = (number * 0.9).val();
-$("#price").append(<div>aaa</div>)
-$("#price").append(<div>bbb</div>)
-    })
-})
-</script>
+<div class="box5">販売価格(300〜9,999,999)
 <input type="number" id="price">
-</script>
-
-<form oninput="vop.value = Number(a.value) * 0.9;">
-<input type="number" name="a" value="0" size="10">
-    <output name="vop">0</output>
-
-</form>
-
-</li>
+<output type="number" id="fee">0</output>
+<output type="number" id="profit">0</output>
+</div>
 
 
-<li class="box6">
+<div class="box6">
 禁止されている出品、行為を必ずご確認ください。<br> 
 またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。<br> 
 また、出品をもちまして加盟店規約に同意したことになります。<br> 
@@ -99,11 +120,10 @@ $("#price").append(<div>bbb</div>)
 <p>
 <button class="btn_Exhibition_back" type="submit",onclick="history.back()">もどる</button>
 </p>
+</div>
 
 
-
-</li>
-</ul>
+</div>
 
 </div class=main_box>
 </main class= "Exhbition_main">
@@ -125,8 +145,7 @@ $("#price").append(<div>bbb</div>)
 </li>
 </ul>
 
-<a>
-<%= image_tag('Exhibition_page_logo-gray.svg',class: 'logo-gray')%></a>
+<a><%= image_tag('Exhibition_page_logo-gray.svg',class: 'logo-gray')%></a>
 <p>
 <small>© 2019 Mercari</small>
 </p>
