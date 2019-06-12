@@ -43,6 +43,15 @@ label[for='user__title'] {
   font-size: 12px;
   vertical-align: top;
   background: #ea352d;
+  &__b {
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+    background: #888;
+  }
 }
 
 .user__form__group {
@@ -94,8 +103,10 @@ label[for='user__title'] {
   height: 48px;
   border-radius: 4px;
   border: 1px solid #ccc;
+  background: #fff;
   font-size: 16px;
   line-height: 1.5;
+  margin: 8px 0 0;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -145,6 +156,7 @@ label[for='user__title'] {
 
 .d__fa__select {
   font-family: "FontAwesome", "home";
+  font-size: 14px;
 }
 
 
@@ -161,4 +173,28 @@ label[for='user__title'] {
   line-height: 1.5;
 }
 
-// ここからphone.html.erb
+// ここからcomplete.html.erb
+.user__complete__space {
+  padding: 40px 24px;
+}
+
+.user__complete__text {
+  line-height: 1.5;
+  text-align: center;
+}
+
+// ここからpurchase.html.erb
+.user__form__expiration {
+  display: block;
+  &__select {
+    display: inline-block;
+    width: 100px;
+    margin: 8px 0 0;
+    position: relative;
+    background: #fff;
+  }
+  &__name {
+      display: inline-block;
+      position: absolute;
+  }
+}
