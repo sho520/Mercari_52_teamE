@@ -57,25 +57,61 @@ body {
       }
     }
   }
-  .r__mypage__tabs {
-    height: 74px;
-  }
   .r__tab__content {
     background-color: white;
     .r__mypage__info {
       height: 80px;
+      &__body {
+        display: flex;
+        flex-direction: row;
+        border: solid 0.4px lightgray;
+        height: 48px;
+        padding: 16px;
+        &__content {
+          margin-left: 12px;
+          font-size: 14px;
+          .r__mypage__info__body__time {
+            color: #888888;
+          }
+        }
+      }
     }
     .r__mypage__go__list {
-    height: 80px;
+      height: 88px;
+      &__body {
+        background-color: #EEEEEE;
+        background-clip: content-box;
+        border: solid 0.4px lightgray;
+        height: 56px;
+        padding: 16px;
+        text-align: center;
+        line-height: 56px;
+      }
     }
   }
   .r__mypage__tabs__head {
+    background-color: #FAFAFA;
     height: 72px;
     margin-top: 40px;
+    padding: 0 16px 0;
+    line-height: 72px;
   }
 }
 
-.r__side {
+.r__mypage__tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 74px;
+  font-weight: bold;
+  .r__mypage__tab {
+    width: 50%;
+    text-align: center;
+    line-height: 74px;
+  }
+}
+
+.r__nav {
   order: 1;
   height: 1252px;
   width: 282px;
@@ -83,8 +119,8 @@ body {
   .r__nav__list__item {
     background-color: white;
     height: 48px;
-    border: solid 0.4px lightgray;
     &__name {
+      border: solid 0.4px lightgray;
       padding: 16px;
       font-size: 14px;
     }
