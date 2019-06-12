@@ -11,35 +11,39 @@
   </head>
 
   <body>
-  <header class="js-header">
-      <div class="js-header-inner">
-        <div class="header-top">
-          <h1 class="header-logo"><%= link_to items_path do %>
-            <%= image_tag 'logo.png', :size => "134x36" %>
-            <% end %>
-          </h1>
-          <div class="search-product">
+   <div class="profuct-header">
+     <div class="profuct-header__container">
+       <!-- ここから上部 -->
+       <div class="profuct-header__container__upper">
+         <%= link_to items_path, class: 'profuct-header__container__upper__logo' do %>
+           <%= image_tag 'logo.png', alt: 'logo', class: 'profuct-header__container__upper__logo__image', height: '36', width: '134' %>
+         <% end %>
+         <div class="profuct-header__container__upper__search">
+           formforの仮置き方法が？のため
+         </div>
+       </div>
+       <!-- ここから下部 -->
+       <div class="profuct-header__container__under">
+         <nav class="profuct-header__container__under__nav">
+           <div class="profuct-header__container__under__nav__category drop-down">
+             <%= link_to 'カテゴリーから探す', items_path, class: 'profuct-header__container__under__nav__category__link' %>
+           </div>
+           <div class="profuct-header__container__under__nav__brand drop-down">
+             <%= link_to 'ブランドから探す', items_path, class: 'profuct-header__container__under__nav__brand__nav__link' %>
+           </div>
+         </nav>
+         <div class="profuct-header__container__under__user">
+           <%= link_to '新規会員登録', items_path, class: 'profuct-header__container__under__user__signup' %>
+           <%= link_to 'ログイン', items_path, class: 'profuct-header__container__under__user__login' %>
+         </div>
+       </div>
 
-          </div>
-          </div>
-          <!-- ここからヘッダー下 -->
-          <!-- <div class="header-nav-box">
-            <div class="header-nav-left">
-              <ul class="left-lists">
-                <li class="left-list">カテゴリーから探す</li>
-                <li class="left-list">ブランドから探す</li>
-              </ul>
-            </div>
-            <div class="header-nav-right">
-              <ul>
-                <li>お知らせ</li>
-                <li>やることリスト</li>
-                <li>マイページ</li>
-              </ul>
-            </div>
-          </div>
-      </div> -->
-    </header>
+     </div>
+
+   </div>
+
+
+
     <%= yield %>
 
     <footer class="footer">

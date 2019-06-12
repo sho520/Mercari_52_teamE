@@ -1,0 +1,107 @@
+.individual__header {
+  background-color: #fff;
+  width: 100vw;
+  height: 128px;
+  text-align: center;
+  line-height: 128px;
+  color: red;
+}
+.main__individual {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+
+  .individual__page {
+    // max-width: 700px;
+    width: 700px;
+    height: calc(100% - 56px);
+    margin: 0 auto;
+    background-color: #DDDDDD	;
+    .check__buy--header {
+      padding: 16px;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
+    .buy__item {
+      background-color: #fff;
+      text-align: center;
+      margin: 0 auto;
+      padding-top: 24px;
+      width: 75%;
+      height: 400px;
+      .buy__item--inner {
+        .buy__item--image {
+          .buy__item--imageurl {
+            width: 146px;
+            height: 148px;
+          }
+        }
+        .buy__item--name {
+          margin-top: 8px;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        .buy__item--price {
+          font-size: 22px;
+          font-weight: bold;
+          margin-top: 10px;
+          .buy__item--tax {
+            font-size: 14px;
+            font-weight: 400;
+            margin-left: 8px;
+          }
+        }
+        .buy__item--point {
+          background: #ccc;
+          margin: 0 auto;
+          margin-top: 16px;
+          height: 48px;
+          width: 320px;
+          line-height: 48px;
+        }
+        .buy__item--payment {
+          font-size: 18px;
+          font-weight: 600;
+          margin: 0 auto;
+          height: 48px;
+          width: 320px;
+          ul {
+            display: table;
+            text-align: left;
+            li {
+              display: inline;
+              .payment__group--price {
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .user__info--add {
+      background-color: #fff;
+      width: 75%;
+      height: 120px;
+      margin: 40px auto 0 auto;
+      padding-top:24px;
+
+    }
+    .user__info--payment {
+      background-color: #fff;
+      width: 75%;
+      height: 95px;
+      margin: 40px auto 0 auto;
+      padding:24px 0 40px 0;
+    }
+  }
+}
+.individual__footer {
+  height: 220px;
+  width: 100vw;
+  background-color: #fff;
+  text-align: center;
+  color: red;
+}
