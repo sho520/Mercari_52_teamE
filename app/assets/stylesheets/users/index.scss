@@ -1,57 +1,4 @@
-.header__line {
-  min-width: 768px;
-  &__nav {
-    height: 128px;
-    text-align: center;
-    display: block;
-    &__left {
-      margin: 40px 0 0;
-      display: inline-block;
-    }
-    &__href {
-      line-height: 49px;
-      display: inline-block;
-      margin: 0 8px 0 0;
-      &__logo {
-        width: 185px;
-        height: 49px;
-        vertical-align: middle;
-      }
-    }
-    &__right {
-      display: inline-block;
-      padding: 40px 0 0 44px;
-      vertical-align: top;
-      text-align: center;
-      .progress__active {
-        display: inline-block;
-        margin: 0 40px 0 0;
-        font-size: 12px;
-        position: relative;
-        font-weight: 600;
-        color: #ea352d;
-      }
-      .progress__none {
-        display: inline-block;
-        margin: 0 40px 0 0;
-        font-size: 12px;
-        position: relative;
-        color: #888;
-      }
-      .progress__status {
-        width: 12px;
-        height: 12px;
-        margin: 8px auto 0;
-        background: #ccc;
-        border-radius: 50%;
-        &__line {
-          height: 2px;
-          background: #ccc;
-        }
-      }
-    }
-  }
-}
+
 
 .registration__main {
   display: block;
@@ -148,9 +95,13 @@ label[for='user__title'] {
   font-size: 16px;
   line-height: 1.5;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   &__arrow {
   }
 }
+
 
 .user__form__infomation {
   margin: 8px 0 0;
@@ -158,6 +109,7 @@ label[for='user__title'] {
   color: #888;
   text-align: center;
 }
+
 
 .user__form__botton {
   display: block;
@@ -177,6 +129,7 @@ label[for='user__title'] {
 
 .user__form__other {
   text-align: right;
+  line-height: 1.5;
   &__info {
     color: #0099e8 !important;
     text-decoration: none;
@@ -188,3 +141,6 @@ label[for='user__title'] {
   text-decoration: none;
 }
 
+.d__fa__select {
+  font-family: "FontAwesome", "home";
+}
