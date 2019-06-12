@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get "items/brand" => "items#brand"
   get "items/category" => "items#category"
   get "users/phone" => "users#phone"
+  get "users/address" => "users#address"
+  get "users/purchase" => "users#purchase"
+  get "users/complete" => "users#complete"
   resources :amas
   resources :turus
   resources :tech_camp_mentor_abes

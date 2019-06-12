@@ -57,7 +57,7 @@ label[for='user__title'] {
   width: 100%;
   margin: 8px 0 0;
   height: 28px;
-  padding: 10px 16px 8px;
+  padding: 10px 0px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
@@ -70,6 +70,8 @@ label[for='user__title'] {
   font-weight: 600;
   font-size: 16px;
   &__inline {
+    line-height: 1.5;
+    margin-top: 8px;
   }
 }
 
@@ -144,3 +146,19 @@ label[for='user__title'] {
 .d__fa__select {
   font-family: "FontAwesome", "home";
 }
+
+
+
+
+
+// ここからphone.html.erb
+
+.registration__main__head__sub {
+  font-size: 24px;
+  padding: 8px 24px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+// ここからphone.html.erb
