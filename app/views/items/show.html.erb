@@ -1,5 +1,24 @@
 <div class = "k__top"></div>
-<div class = "k__bread"></div>
+<div class = "k__bread">
+  <ul>
+    <li>
+      <a href=""><span>メルカリ</span></a>
+      <i class="fas fa-angle-right" id = "k__fa-angle-right"></i>
+    </li>
+    <li>
+      <a href=""><span>カテゴリー一覧</span></a>
+      <i class="fas fa-angle-right" id = "k__fa-angle-right"></i>
+    </li>
+    <li>
+      <a href=""><span>ベビー・キッズ</span></a>
+      <i class="fas fa-angle-right" id = "k__fa-angle-right"></i>
+    </li>
+    <li>
+      <a><span>キッズ服(女の子用)100cm~</span></a>
+      <i class="fas fa-angle-right" id = "k__fa-angle-right"></i>
+    </li>
+  </ul>
+</div>
 
 <div class = "k__item-left"></div>
 
@@ -9,9 +28,120 @@
     <div class = "k__item-box__main">
       <div class = "k__item-box__main__left">
         <div class = "k__item-box__main__left__bigpic">
+          <ul>
+            <li class = "k__item-box__main__left__below__pics">
+              <%= image_tag 'm52161295392_1.jpg', width: '300px', class: "bigimage"%>
+            </li>
+            <li class = "k__item-box__main__left__below__pics">
+              <%= image_tag 'm52161295392_2.jpg', width: '300px', class: "bigimage"%>
+            </li>
+            <li class = "k__item-box__main__left__below__pics">
+              <%= image_tag 'm52161295392_3.jpg', width: '300px', class: "bigimage"%>
+            </li>
+            <li class = "k__item-box__main__left__below__pics">
+              <%= image_tag 'm52161295392_4.jpg', width: '300px', class: "bigimage"%>
+            </li>
+          </ul>
         </div>
-        <div class = "k__item-box__main__left__smallpics">
+        <div class = "k__item-box__main__left__below">
+          <ul>
+            <li class = "k__item-box__main__left__below__pics">
+              <%= image_tag 'm52161295392_1.jpg', width: '60px', class: "image"%>
+            </li>
+            <li class = "k__item-box__main__left__below__pics">
+              <%= image_tag 'm52161295392_2.jpg', width: '60px', class: "image"%>
+            </li>
+            <li class = "k__item-box__main__left__below__pics">
+              <%= image_tag 'm52161295392_3.jpg', width: '60px', class: "image"%>
+            </li>
+            <li class = "k__item-box__main__left__below__pics">
+              <%= image_tag 'm52161295392_4.jpg', width: '60px', class: "image"%>
+            </li>
+          </ul>
         </div>
+        <script>
+          $(function(){
+          var $setMainId = $('.k__item-box__main__left__bigpic');
+          var $setThumbId  = $('.k__item-box__main__left__below');
+          var scrollSpeed  = 300;
+      
+          var $setMainUl = $setMainId.children('ul'),
+          $setThumbUl = $setThumbId.children('ul'),
+          $setThumbLi = $setThumbUl.children('li'),
+          $setThumbLiFirst = $setThumbUl.children('li:first'),
+          listWidth = parseInt($setMainUl.children('li').css('width')),
+          listCount = $setMainUl.children('li').length,
+          leftMax = -((listWidth)*((listCount)-1));
+      
+          $setMainUl.each(function(){
+              $(this).css({width:(listWidth)*(listCount)});
+          });
+      
+          var isTouch = ('ontouchstart' in window);
+          $setMainUl.bind(
+              {'touchstart mousedown': function(e){
+                  var $setMainUlNot = $setMainId.children('ul:not(:animated)');
+                  $setMainUlNot.each(function(){
+                      e.preventDefault();
+                      this.pageX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
+                      this.leftBegin = parseInt($(this).css('left'));
+                      this.left = parseInt($(this).css('left'));
+                      this.touched = true;
+                  });
+              },'touchmove mousemove': function(e){
+                  if(!this.touched){
+                      return;
+                  }
+                  e.preventDefault();
+                  this.left = this.left - (this.pageX - (isTouch ? event.changedTouches[0].pageX : e.pageX) );
+                  this.pageX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
+      
+                  if(this.left < 0 && this.left > leftMax){
+                      $(this).css({left:this.left});
+                  } else if(this.left >= 0) {
+                      $(this).css({left:'0'});
+                  } else if(this.left <= leftMax) {
+                      $(this).css({left:(leftMax)});
+                  }
+              },'touchend mouseup mouseout': function(e){
+                  if (!this.touched) {
+                      return;
+                  }
+                  this.touched = false;
+      
+                  var $setThumbLiActive = $setThumbUl.children('li.active');
+      
+                  if(this.leftBegin > this.left && (!((this.leftBegin) === (leftMax)))){
+                      $(this).stop().animate({left:((this.leftBegin)-(listWidth))},scrollSpeed);
+                      $setThumbLiActive.each(function(){
+                          $(this).removeClass('active');
+                          $(this).next().addClass('active');
+                      });
+                  } else if(this.leftBegin < this.left && (!((this.leftBegin) === 0))) {
+                      $(this).stop().animate({left:((this.leftBegin)+(listWidth))},scrollSpeed);
+                      $setThumbLiActive.each(function(){
+                          $(this).removeClass('active');
+                          $(this).prev().addClass('active');
+                      });
+                  } else if(this.leftBegin === 0) {
+                      $(this).css({left:'0'});
+                  } else if(this.leftBegin <= leftMax) {
+                      $(this).css({left:(leftMax)});
+                  }
+              }
+          });
+      
+          $setThumbLi.click(function(){
+              var connectCont = $setThumbLi.index(this);
+              $setMainUl.stop().animate({left:(-(listWidth)*(connectCont))},scrollSpeed);
+              $setThumbLi.removeClass('active');
+              $(this).addClass('active');
+          });
+      
+          $setThumbLiFirst.addClass('active');
+          $setThumbLi.css({opacity:'0.5'});
+      });
+        </script>
       </div>
       <div class = "k__item-box__main__right">
         <table class = "k__item-box__main__right__table">
@@ -111,12 +241,10 @@
         </div>
       </div>
       <div class = "k__item-box__button__right">
+        <i class="fas fa-lock" id = "k__fa-lock"></i>
         <div class = "k__item-box__button__safe">
         あんしん・あんぜんへの取り組み
         </div>
-        <script type="text/javascript">
-        　 $("")
-        </script>
       </div>
     </div>
   </div>
@@ -134,11 +262,13 @@
   </ul>
   <div class = "k__item__sns">
     <div class = "k__item__sns__main">
-      <div class = "k__item__sns__main__fb">
-      FB
-      </div>
-      <div class = "k__item__sns__main__tw">
-      TW
+      <div class = "k__item__sns__main__box">
+        <div class = "k__item__sns__main__box__fb">
+          <a href = "http://www.facebook.com" target="_blank"><i class="fab fa-facebook-square fa-2x" id = "k__fa-facebook-square"></i></a>
+        </div>
+        <div class = "k__item__sns__main__box__tw">
+          <a href = "http://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x" id = "k__fa-twitter"></i></a>
+        </div>
       </div>
     </div>
   </div>
