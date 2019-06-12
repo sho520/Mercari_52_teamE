@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    render :layout => 'application'
+    render :layout => 'second_application'
   end
 
   def confirm
