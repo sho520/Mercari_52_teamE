@@ -50,6 +50,10 @@ body {
         font-size: 14px;
         height: 16px;
         margin-top: 8px;
+        .bold {
+          font-weight: bold;
+          margin: 0 8px 0;
+        }
       }
     }
   }
