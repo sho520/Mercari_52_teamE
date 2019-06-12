@@ -1,5 +1,5 @@
 body {
-  background-color: lightgrey;
+  background-color: #F4F4F4;
 }
 
 .r__header {
@@ -24,7 +24,7 @@ body {
   height: 100%;
   margin: 0 auto;
   .r__mypage__user {
-    background-image: url(light.jpg);
+    background-image: url(mypage_background.jpg);
     .r__mypage__user__info {
       height: 110px;
       padding: 44.5px 0 44.5px;
@@ -64,7 +64,7 @@ body {
       &__body {
         display: flex;
         flex-direction: row;
-        border: solid 0.4px lightgray;
+        border: solid 0.4px #F4F4F4;
         height: 48px;
         padding: 16px;
         &__content {
@@ -81,7 +81,7 @@ body {
       &__body {
         background-color: #EEEEEE;
         background-clip: content-box;
-        border: solid 0.4px lightgray;
+        border: solid 0.4px #F4F4F4;
         height: 56px;
         padding: 16px;
         text-align: center;
@@ -111,6 +111,27 @@ body {
   }
 }
 
+.r__mypage__item__not__found {
+  background-color: white;
+  height: 236px;
+  &__body {
+    height: 176px;
+    padding-bottom: 60px;
+    &__image {
+      height: 160px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__text {
+      color: #CCCCCC;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+}
+
+
 .r__nav {
   order: 1;
   height: 1252px;
@@ -120,7 +141,7 @@ body {
     background-color: white;
     height: 48px;
     &__name {
-      border: solid 0.4px lightgray;
+      border: solid 0.4px #F4F4F4;
       padding: 16px;
       font-size: 14px;
     }
