@@ -12,6 +12,9 @@ class UsersController < ApplicationController
     render :layout => 'second_application'
   end
 
+  def index
+  end
+
   
 
 end
