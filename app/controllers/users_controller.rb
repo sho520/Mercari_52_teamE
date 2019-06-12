@@ -18,5 +18,13 @@ class UsersController < ApplicationController
   def phone
   end
   
+  def address
+  end
+    
+  def purchase
+  end
+    
+  def complete
+  end
 
 end
