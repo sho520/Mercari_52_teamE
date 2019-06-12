@@ -2,31 +2,56 @@
   <%= render 'userheader'%>
     <main class='registration__main'>
       <section class='registration__main__container'>
-      <h2 class='registration__main__head__sub'>電話番号の確認</h2>
 
-    <form action="#" method="POST" class="registration__main__form">
-        <input type="hidden" value="" name="">
-      <div class="user__form__content">
+    <h2 class='registration__main__head'>支払い方法</h2>
+    <div class="user__form__content">
+
+    <form action="" method="POST" class="registration__main__form">
+      <input type="hidden" name="" value="">
+
+        <div class="user__form__content">
+
+          <div class="user__form__group">
+            <label for="user__title">カード番号</label>
+              <span class="user__form__require">必須</span>
+            <input type="text" value="" name="" placeholder="半角英数のみ" class="user__form__input">
+          </div>
 
         <div class="user__form__group">
-          <label for="user__title">携帯電話の番号</label>
-          <input type="tel" value="" name="" placeholder="携帯電話の番号を入力" class="user__form__input">
+          <label for="user__title">有効期限</label>
+            <span class="user__form__require">必須</span>
+              <br>
+        <div class="user__form__expiration">
+          <div class="user__form__expiration__select">
+            <select name="year" class="user__select__default d__fa__select"><option value="01">01</option><option value="02">02</option></select>
+            <i class="user__select__default__arrow"></i>
+          </div>
+          <span>月</span>
+          <br>
+          <div class="user__form__expiration__select">
+            <select name="year" class="user__select__default d__fa__select"><option value="2019">2019</option><option value="2020">2020</option></select>
+            <i class="user__select__default__arrow"></i>
+          </div>
+          <span>年</span>
         </div>
-        <p class="user__title__text__inline">本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。</p>
+        </div>
 
-          <button type="submit" class="user__form__botton">SMSを送信する</button>
-        <p class="user__title__text__inline">※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。</p>
+        <div class="user__form__group">
+          <label for="user__title">セキュリティコード</label>
+            <span class="user__form__require">必須</span>
+          <input type="text" value="" name="" placeholder="カード背面4桁もしくは3桁の番号" class="user__form__input">
+        </div>
 
-      <div class="user__form__group">
-        <p class=user__form__other>
-          <a href="" target="_blank" class='user__form__other__info'>電話番号の確認が必要な理由<%= fa_icon("angle-right lg") %></a>
+        <div class="user__form__group">
+          <p class=user__form__other>
+          <a href="" target="_blank" class='user__form__other__info'>カード裏面の番号とは？<%= fa_icon("angle-right lg") %></a>
         </p>
-      </div>
-    </div>
-      <input type="hidden" name="" value="">
-      <input type="hidden" name="" value="">
-  </form>
+        </div>
 
+          <button type="submit" class="user__form__botton">次へ進む</button>
+
+      </div>
+      </form>
       </section>
     </main>
   <%= render 'subfooter'%>
