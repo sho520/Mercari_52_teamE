@@ -67,4 +67,3 @@ gem 'mini_magick'
 gem 'pry-rails'
 gem 'kaminari'
 gem 'jquery-rails'
-
