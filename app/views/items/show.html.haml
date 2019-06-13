@@ -1,15 +1,15 @@
 .product__bread
   %ul
     %li
-      %a{:href => "http://localhost:3000/items"}
+      %a{href: "http://localhost:3000/items"}
         %span メルカリ
       %i#product__fa-angle-right.fas.fa-angle-right
     %li
-      %a{:href => "http://localhost:3000/items/category"}
+      %a{href: "http://localhost:3000/items/category"}
         %span カテゴリー一覧
       %i#product__fa-angle-right.fas.fa-angle-right
     %li
-      %a{:href => ""}
+      %a{href: ""}
         %span ベビー・キッズ
       %i#product__fa-angle-right.fas.fa-angle-right
     %li
@@ -42,107 +42,26 @@
                 = image_tag 'm52161295392_3.jpg', width: '60px', class: "image"
               %li.product__item-box__main__left__below__pics
                 = image_tag 'm52161295392_4.jpg', width: '60px', class: "image"
-          :javascript
-            $(function(){
-                        var $setMainId = $('.product__item-box__main__left__bigpic');
-                        var $setThumbId  = $('.product__item-box__main__left__below');
-                        var scrollSpeed  = 300;
-                    
-                        var $setMainUl = $setMainId.children('ul'),
-                        $setThumbUl = $setThumbId.children('ul'),
-                        $setThumbLi = $setThumbUl.children('li'),
-                        $setThumbLiFirst = $setThumbUl.children('li:first'),
-                        listWidth = parseInt($setMainUl.children('li').css('width')),
-                        listCount = $setMainUl.children('li').length,
-                        leftMax = -((listWidth)*((listCount)-1));
-                    
-                        $setMainUl.each(function(){
-                            $(this).css({width:(listWidth)*(listCount)});
-                        });
-                    
-                        var isTouch = ('ontouchstart' in window);
-                        $setMainUl.bind(
-                            {'touchstart mousedown': function(e){
-                                var $setMainUlNot = $setMainId.children('ul:not(:animated)');
-                                $setMainUlNot.each(function(){
-                                    e.preventDefault();
-                                    this.pageX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
-                                    this.leftBegin = parseInt($(this).css('left'));
-                                    this.left = parseInt($(this).css('left'));
-                                    this.touched = true;
-                                });
-                            },'touchmove mousemove': function(e){
-                                if(!this.touched){
-                                    return;
-                                }
-                                e.preventDefault();
-                                this.left = this.left - (this.pageX - (isTouch ? event.changedTouches[0].pageX : e.pageX) );
-                                this.pageX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
-                    
-                                if(this.left < 0 && this.left > leftMax){
-                                    $(this).css({left:this.left});
-                                } else if(this.left >= 0) {
-                                    $(this).css({left:'0'});
-                                } else if(this.left <= leftMax) {
-                                    $(this).css({left:(leftMax)});
-                                }
-                            },'touchend mouseup mouseout': function(e){
-                                if (!this.touched) {
-                                    return;
-                                }
-                                this.touched = false;
-                    
-                                var $setThumbLiActive = $setThumbUl.children('li.active');
-                    
-                                if(this.leftBegin > this.left && (!((this.leftBegin) === (leftMax)))){
-                                    $(this).stop().animate({left:((this.leftBegin)-(listWidth))},scrollSpeed);
-                                    $setThumbLiActive.each(function(){
-                                        $(this).removeClass('active');
-                                        $(this).next().addClass('active');
-                                    });
-                                } else if(this.leftBegin < this.left && (!((this.leftBegin) === 0))) {
-                                    $(this).stop().animate({left:((this.leftBegin)+(listWidth))},scrollSpeed);
-                                    $setThumbLiActive.each(function(){
-                                        $(this).removeClass('active');
-                                        $(this).prev().addClass('active');
-                                    });
-                                } else if(this.leftBegin === 0) {
-                                    $(this).css({left:'0'});
-                                } else if(this.leftBegin <= leftMax) {
-                                    $(this).css({left:(leftMax)});
-                                }
-                            }
-                        });
-                    
-                        $setThumbLi.click(function(){
-                            var connectCont = $setThumbLi.index(this);
-                            $setMainUl.stop().animate({left:(-(listWidth)*(connectCont))},scrollSpeed);
-                            $setThumbLi.removeClass('active');
-                            $(this).addClass('active');
-                        });
-                    
-                        $setThumbLiFirst.addClass('active');
-                        $setThumbLi.css({opacity:'0.5'});
-                    });
+          
         .product__item-box__main__right
           %table.product__item-box__main__right__table
             %tbody.product__tbody
               %tr.product__tr
                 %th.product__th 出品者
                 %td.product__td
-                  %a{:href => ""} 出品者名
+                  %a{href: ""} 出品者名
               %tr.product__tr
                 %th.product__th カテゴリー
                 %td.product__td
-                  %a{:href => ""} レディス
+                  %a{href: ""} レディス
                   \&gt;
-                  %a{:href => ""} スカート
+                  %a{href: ""} スカート
                   \&gt;
-                  %a{:href => ""} 膝丈スカート
+                  %a{href: ""} 膝丈スカート
               %tr.product__tr
                 %th.product__th ブランド
                 %td.product__td
-                  %a{:href => ""} エヘカソポ
+                  %a{href: ""} エヘカソポ
               %tr.product__tr
                 %th.product__th サイズ
                 %td.product__td M
@@ -159,7 +78,7 @@
               %tr.product__tr
                 %th.product__th 配送元地域
                 %td.product__td
-                  %a{:href => ""} 神奈川県
+                  %a{href: ""} 神奈川県
               %tr.product__tr
                 %th.product__th 配送日の目安
                 %td.product__td
@@ -220,8 +139,8 @@
     .product__item-comment
       %form.product__item-comment__form
         %p.product__p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        %textarea.product__textarea{:name => "body", :type => "text"}
-        %button.product__button{:type => "submit"} コメントする
+        %textarea.product__textarea{name: "body", type: "text"}
+        %button.product__button{type: "submit"} コメントする
     %ul.product__item-link
       %li.product__item-link__pre ＜ 前のページへ
       %li.product__item-link__next 次のページへ ＞
@@ -229,10 +148,10 @@
       .product__item__sns__main
         .product__item__sns__main__box
           .product__item__sns__main__box__fb
-            %a{:href => "http://www.facebook.com", :target => "_blank"}
+            %a{href: "http://www.facebook.com", target: "_blank"}
               %i#product__fa-facebook-square.fab.fa-facebook-square.fa-2x
           .product__item__sns__main__box__tw
-            %a{:href => "http://twitter.com", :target => "_blank"}
+            %a{href: "http://twitter.com", target: "_blank"}
               %i#product__fa-twitter.fab.fa-twitter.fa-2x
   .product__add
     .product__add__items
@@ -240,7 +159,7 @@
         あまがささんのその他出品
       .product__add__items__contents
         %section.product__add__items__contents__content__right
-          %a.product__add__items__contents__content__right__a{:href => ""}
+          %a.product__add__items__contents__content__right__a{href: ""}
             .product__add__items__contents__content__right__a__top
               = image_tag 'm52161295392_1.jpg', width: '220px', class: ""
             .product__add__items__contents__content__right__a__bottom
@@ -256,7 +175,7 @@
               .product__add__items__contents__content__right__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{:href => ""}
+          %a.product__add__items__contents__content__a{href: ""}
             .product__add__items__contents__content__a__top
               = image_tag 'cosme1.jpeg', width: '220px', class: ""
             .product__add__items__contents__content__a__bottom
@@ -272,7 +191,7 @@
               .product__add__items__contents__content__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{:href => ""}
+          %a.product__add__items__contents__content__a{href: ""}
             .product__add__items__contents__content__a__top
               = image_tag 'cosme2.jpeg', width: '220px', class: ""
             .product__add__items__contents__content__a__bottom
@@ -288,7 +207,7 @@
               .product__add__items__contents__content__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content__right
-          %a.product__add__items__contents__content__right__a{:href => ""}
+          %a.product__add__items__contents__content__right__a{href: ""}
             .product__add__items__contents__content__right__a__top
               = image_tag 'cosme3.jpeg', width: '220px', class: ""
             .product__add__items__contents__content__right__a__bottom
@@ -304,7 +223,7 @@
               .product__add__items__contents__content__right__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{:href => ""}
+          %a.product__add__items__contents__content__a{href: ""}
             .product__add__items__contents__content__a__top
               = image_tag 'kids1.jpg', width: '220px', class: ""
             .product__add__items__contents__content__a__bottom
@@ -320,7 +239,7 @@
               .product__add__items__contents__content__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{:href => ""}
+          %a.product__add__items__contents__content__a{href: ""}
             .product__add__items__contents__content__a__top
               = image_tag 'kids2.jpg', width: '220px', class: ""
             .product__add__items__contents__content__a__bottom
@@ -341,7 +260,7 @@
         スカート その他出品
       .product__add__items__contents
         %section.product__add__items__contents__content__right
-          %a.product__add__items__contents__content__right__a{:href => ""}
+          %a.product__add__items__contents__content__right__a{href: ""}
             .product__add__items__contents__content__right__a__top
               = image_tag 'kids3.jpg', width: '220px', class: ""
             .product__add__items__contents__content__right__a__bottom
@@ -357,7 +276,7 @@
               .product__add__items__contents__content__right__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{:href => ""}
+          %a.product__add__items__contents__content__a{href: ""}
             .product__add__items__contents__content__a__top
               = image_tag 'kids2.jpg', width: '220px', class: ""
             .product__add__items__contents__content__a__bottom
@@ -373,7 +292,7 @@
               .product__add__items__contents__content__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{:href => ""}
+          %a.product__add__items__contents__content__a{href: ""}
             .product__add__items__contents__content__a__top
               = image_tag 'product5.jpg', width: '220px', class: ""
             .product__add__items__contents__content__a__bottom
@@ -389,7 +308,7 @@
               .product__add__items__contents__content__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content__right
-          %a.product__add__items__contents__content__right__a{:href => ""}
+          %a.product__add__items__contents__content__right__a{href: ""}
             .product__add__items__contents__content__right__a__top
               = image_tag 'kids2.jpg', width: '220px', class: ""
             .product__add__items__contents__content__right__a__bottom
@@ -405,7 +324,7 @@
               .product__add__items__contents__content__right__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{:href => ""}
+          %a.product__add__items__contents__content__a{href: ""}
             .product__add__items__contents__content__a__top
               = image_tag 'm52161295392_1.jpg', width: '220px', class: ""
             .product__add__items__contents__content__a__bottom
@@ -421,7 +340,7 @@
               .product__add__items__contents__content__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{:href => ""}
+          %a.product__add__items__contents__content__a{href: ""}
             .product__add__items__contents__content__a__top
               = image_tag 'm52161295392_1.jpg', width: '220px', class: ""
             .product__add__items__contents__content__a__bottom

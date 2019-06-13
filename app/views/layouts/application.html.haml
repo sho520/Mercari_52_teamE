@@ -6,27 +6,27 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %script{:src => "/bxslider.min.scss"}
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %link{:href => "https://use.fontawesome.com/releases/v5.0.10/css/all.css", :rel => "stylesheet"}/
   %body
-    .profuct-header
-      .profuct-header__container
+    .product-header
+      .product-header__container
         / ここから上部
-        .profuct-header__container__upper
-          = link_to items_path, class: 'profuct-header__container__upper__logo' do
-            = image_tag 'logo.png', alt: 'logo', class: 'profuct-header__container__upper__logo__image', height: '36', width: '134'
-          .profuct-header__container__upper__search
+        .product-header__container__upper
+          = link_to items_path, class: 'product-header__container__upper__logo' do
+            = image_tag 'logo.png', alt: 'logo', class: 'product-header__container__upper__logo__image', height: '36', width: '134'
+          .product-header__container__upper__search
             formforの仮置き方法が？のため
         / ここから下部
-        .profuct-header__container__under
+        .product-header__container__under
           %nav.profuct-header__container__under__nav
-            .profuct-header__container__under__nav__category.drop-down
-              = link_to 'カテゴリーから探す', items_path, class: 'profuct-header__container__under__nav__category__link'
-            .profuct-header__container__under__nav__brand.drop-down
-              = link_to 'ブランドから探す', items_path, class: 'profuct-header__container__under__nav__brand__nav__link'
-          .profuct-header__container__under__user
-            = link_to '新規会員登録', items_path, class: 'profuct-header__container__under__user__signup'
-            = link_to 'ログイン', items_path, class: 'profuct-header__container__under__user__login'
+            .product-header__container__under__nav__category.drop-down
+              = link_to 'カテゴリーから探す', items_path, class: 'product-header__container__under__nav__category__link'
+            .product-header__container__under__nav__brand.drop-down
+              = link_to 'ブランドから探す', items_path, class: 'product-header__container__under__nav__brand__nav__link'
+          .product-header__container__under__user
+            = link_to '新規会員登録', items_path, class: 'product-header__container__under__user__signup'
+            = link_to 'ログイン', items_path, class: 'product-header__container__under__user__login'
     = yield
     .app-intro
       .app-intro-inner
