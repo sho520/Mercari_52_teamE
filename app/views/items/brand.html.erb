@@ -1,19 +1,19 @@
 <div class="index__wrapper">
-  <div class = "k__bread">
+  <div class = "brand__bread">
     <ul>
       <li>
         <a href="http://localhost:3000/items"><span>メルカリ</span></a>
-        <i class="fas fa-angle-right" id = "k__fa-angle-right"></i>
+        <i class="fas fa-angle-right" id = "brand__fa-angle-right"></i>
       </li>
       <li>
         <a href="http://localhost:3000/items/category"><span>ブランド一覧</span></a>
-        <i class="fas fa-angle-right" id = "k__fa-angle-right"></i>
+        <i class="fas fa-angle-right" id = "brand__fa-angle-right"></i>
       </li>
     </ul>
   </div>
 
-  <main class = "k__main">
-    <div class = "k__item">
+  <main class = "brand__main">
+    <div class = "brand__item">
       <div class = "brand__item-box">
         <h2 class = "brand__h2">ブランド一覧</h2>
         <div class = "brand__item-box__titles" >  
@@ -36,7 +36,17 @@
         </div>
       </div>
       <div class="category__initial"> 
-        <a href = "" class = "brand__initial__word" ><div>ア</div></a>
+        <a href = "" class = "brand__initial__word" id = "initial_a"><div>ア</div></a>
+          <script>
+            $("#initial_a").click(function(){
+              var position = $("#brand_a").offset().top;
+                $("html,body").animate({
+                    scrollTop : position
+                }, {
+                    queue : false
+                });
+            });
+          </script>
         <a href = "" class = "brand__initial__word" ><div>イ</div></a>
         <a href = "" class = "brand__initial__word" ><div>ウ</div></a>
         <a href = "" class = "brand__initial__word" ><div>エ</div></a>
@@ -85,7 +95,7 @@
           <div class = "brand__list__brand__name"> 
             レディース
           </div>
-          <div class = "brand__list__brand__name__detail__initial"> 
+          <div class = "brand__list__brand__name__detail__initial" id = "brand_a"> 
             ア
           </div>
           <div class = "brand__list__brand__name__detail"> 
