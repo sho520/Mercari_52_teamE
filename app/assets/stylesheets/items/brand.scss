@@ -42,10 +42,10 @@
         font-weight: bold;
         background-color:whitesmoke;
       }
-      .brand__item-box__titles{
+      &__titles{
         background-color:whitesmoke;
         padding-bottom: 30px;
-        .brand__item-box__titles__title{
+        &__title{
           height:40px;
           padding: 0 30px;
           margin:5px;
@@ -56,7 +56,7 @@
           box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
           text-decoration: none;
         }
-        .brand__item-box__titles__title:hover{
+        &__title:hover{
           background-color:#ea352d;
           color:#ffffff;
         }
@@ -64,10 +64,10 @@
     }
   }
 }
-.category__initial{
+.brand__initial{
   background-color:whitesmoke;
   padding-bottom: 30px;
-  .brand__initial__word{
+  &__word{
     display: inline-block;
     margin: 5px 0;
     height:14px;
@@ -78,7 +78,7 @@
     border-right: solid 1px black;
     font-size: 0.9rem;
   }
-  .brand__initial__word:hover{
+  &__word:hover{
     color: #b3d4fc;
     text-decoration: underline;
     cursor: pointer;
@@ -86,9 +86,9 @@
 }
 .brand__list{
   display: block;
-  .brand__list__brand{
+  &__brand{
     display: block;
-    .brand__list__brand__name{
+    &__name{
       background-color: red;
       color: #ffffff;
       font-weight: bold;
@@ -98,7 +98,7 @@
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
     }
-    .brand__list__brand__name__detail__initial{
+    &__name__initial{
       padding: 10px 0px 10px 30px;
       background-color: whitesmoke;;
       text-decoration: none;
@@ -106,18 +106,18 @@
       font-size: 0.8rem;
       font-weight: bold;
     }
-    .brand__list__brand__name__detail{
+    &__name__detail{
       display: block;
       padding: 10px 50px;
       background-color:#ffffff;
-      .brand__list__brand__name__detail__details{
-        .brand__list__brand__name__detail__details__item{
+      &__details{
+        &__item{
           padding: 0 20px 7px 0;
           width: 46%;
           color: #0099e8;
           display: inline-block;
         }
-        .brand__list__brand__name__detail__details__item:hover{
+        &__item:hover{
           color: #b3d4fc;
           text-decoration: underline;
           cursor: pointer;
@@ -125,18 +125,4 @@
       }
     }
   }
-}
-
-.k__banner{
-  clear: both;
-  width: 100%;
-  height:260px;
-  background-color: gray;
-}
-.k__footer{
-  width: 100%;
-  height:381px;
-  padding: 0 20px 10px 20px;
-  background-color: black;
-  color: white;
 }
