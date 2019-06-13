@@ -2,31 +2,31 @@ body {
   background-color: #F4F4F4;
 }
 
-.r__header {
+.header {
   background-color: black;
   height: 100px;
 }
 
-.r__pankuzu {
+.pankuzu {
   background-color: grey;
   height: 49px;
 }
 
-.r__container {
+.container {
   display: flex;
   flex-direction: row;
   margin: 40px;
 }
 
-.r__main {
+.main {
   order: 2;
   width: 700px;
   height: 100%;
   flex-shrink: 0;
   margin: 0 auto;
-  .r__mypage__user {
+  .mypage__user {
     background-image: url(mypage_background.jpg);
-    .r__mypage__user__info {
+    .mypage__user__info {
       height: 110px;
       padding: 44.5px 0 44.5px;
       &__icon {
@@ -58,9 +58,9 @@ body {
       }
     }
   }
-  .r__tab__content {
+  .tab__content {
     background-color: white;
-    .r__mypage__info {
+    .mypage__info {
       height: 80px;
       &__body {
         display: flex;
@@ -77,7 +77,7 @@ body {
         }
       }
     }
-    .r__mypage__go__list {
+    .mypage__go__list {
       height: 88px;
       &__body {
         background-color: #EEEEEE;
@@ -90,7 +90,7 @@ body {
       }
     }
   }
-  .r__mypage__tabs__head {
+  .mypage__tabs__head {
     background-color: #FAFAFA;
     height: 72px;
     margin-top: 40px;
@@ -99,7 +99,7 @@ body {
   }
 }
 
-.r__mypage__tabs {
+.mypage__tabs {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -116,7 +116,7 @@ body {
   }
 }
 
-.r__mypage__item__not__found {
+.mypage__item__not__found {
   background-color: white;
   height: 236px;
   &__body {
@@ -136,12 +136,12 @@ body {
   }
 }
 
-.r__nav {
+.nav {
   order: 1;
   height: 1252px;
   width: 280px;
   margin-right: 40px;
-  .r__nav__list__item {
+  .nav__list__item {
     background-color: white;
     outline: solid 0.4px #F4F4F4;
     height: 48px;
@@ -160,23 +160,23 @@ body {
   .active {
     background-color: #EEEEEE;
     font-weight: bold;
-    .r__nav__list__item__arrow{
+    .nav__list__item__arrow{
       color: black;
     }
   }
-  .r__nav__head {
+  .nav__head {
     font-size: 16px;
     font-weight: bold;
     margin-top: 40px;
   }
 }
 
-.r__banner {
+.banner {
   background-color: grey;
   height: 260px;
 }
 
-.r__footer {
+.footer {
   background-color: black;
   height: 391px;
 }

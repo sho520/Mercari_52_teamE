@@ -1,236 +1,236 @@
 %body
-  %header.r__header
-  %nav.r__pankuzu
-  .r__container
-    .r__main
-      .r__mypage__user
-        .r__mypage__user__info
-          %figure.r__mypage__user__info__icon
+  %header.header
+  %nav.pankuzu
+  .container
+    .main
+      .mypage__user
+        .mypage__user__info
+          %figure.mypage__user__info__icon
             = image_tag('member_noimage.png', size:'60x60')
-          %h2.r__mypage__user__info__name
+          %h2.mypage__user__info__name
             メルカリ太郎
-          .r__mypage__user__info__number
+          .mypage__user__info__number
             %div
               評価
               %span.bold 10
             %div
               出品数
               %span.bold 5
-      %ul.r__mypage__tabs
-        %li.r__mypage__tabs__tab.active
+      %ul.mypage__tabs
+        %li.mypage__tabs__tab.active
           お知らせ
-        %li.r__mypage__tabs__tab
+        %li.mypage__tabs__tab
           やることリスト
-      %ul.r__tab__content
-        %li.r__mypage__info
-          .r__mypage__info__body
+      %ul.tab__content
+        %li.mypage__info
+          .mypage__info__body
             %div
               = image_tag('mercari_icon.png', size:'48x48')
-            .r__mypage__info__body__content
+            .mypage__info__body__content
               %div
                 《いま出品するとおトク》抽選で「取引手数料」を"全額"ポイントバックのチャンス
-              .r__mypage__info__body__content__time
+              .mypage__info__body__content__time
                 = fa_icon("history lg")
                 %span 1日前
-        %li.r__mypage__info
-          .r__mypage__info__body
+        %li.mypage__info
+          .mypage__info__body
             %div
               = image_tag('mercari_icon.png', size:'48x48')
-            .r__mypage__info__body__content
+            .mypage__info__body__content
               %div
                 事務局から個別メッセージ「ログイン通知」
-              .r__mypage__info__body__content__time
+              .mypage__info__body__content__time
                 = fa_icon("history lg")
                 %span 2日前
-        %li.r__mypage__info
-          .r__mypage__info__body
+        %li.mypage__info
+          .mypage__info__body
             %div
               = image_tag('mercari_icon.png', size:'48x48')
-            .r__mypage__info__body__content
+            .mypage__info__body__content
               %div
                 《メルカリ6周年大感謝祭》今だけ限定のお得チケットをプレゼントしました
-              .r__mypage__info__body__content__time
+              .mypage__info__body__content__time
                 = fa_icon("history lg")
                 %span 2日前
-        %li.r__mypage__info
-          .r__mypage__info__body
+        %li.mypage__info
+          .mypage__info__body
             %div
               = image_tag('mercari_icon.png', size:'48x48')
-            .r__mypage__info__body__content
+            .mypage__info__body__content
               %div
                 《買うほどお得、売るほどお得》メルカリ6周年大感謝祭、本日スタート！
-              .r__mypage__info__body__content__time
+              .mypage__info__body__content__time
                 = fa_icon("history lg")
                 %span 3日前
-        %li.r__mypage__info
-          .r__mypage__info__body
+        %li.mypage__info
+          .mypage__info__body
             %div
               = image_tag('mercari_icon.png', size:'48x48')
-            .r__mypage__info__body__content
+            .mypage__info__body__content
               %div
                 《この通知を受け取ったあなた限定》「1,000ポイントバック」のお得チケットをプレゼントしました！
-              .r__mypage__info__body__content__time
+              .mypage__info__body__content__time
                 = fa_icon("history lg")
                 %span 3日前
-        %li.r__mypage__go__list
-          .r__mypage__go__list__body
+        %li.mypage__go__list
+          .mypage__go__list__body
             一覧を見る
-      .r__mypage__tabs__head
+      .mypage__tabs__head
         購入した商品
-      %ul.r__mypage__tabs
-        %li.r__mypage__tabs__tab.active
+      %ul.mypage__tabs
+        %li.mypage__tabs__tab.active
           取引中
-        %li.r__mypage__tabs__tab
+        %li.mypage__tabs__tab
           過去の取引
-      .r__mypage__item__not__found
-        .r__mypage__item__not__found__body
-          .r__mypage__item__not__found__body__image
+      .mypage__item__not__found
+        .mypage__item__not__found__body
+          .mypage__item__not__found__body__image
             = image_tag('logo_grey.png', size:'110x110')
-          .r__mypage__item__not__found__body__text
+          .mypage__item__not__found__body__text
             取引中の商品がありません
-    .r__nav
-      %ul.r__nav__list
-        %li.r__nav__list__item.active
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+    .nav
+      %ul.nav__list
+        %li.nav__list__item.active
+          .nav__list__item__content
+            .nav__list__item__name
               マイページ
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               お知らせ
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               やることリスト
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               いいね！一覧
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               出品する
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               出品した商品-出品中
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               出品した商品-取引中
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               出品した商品-売却済み
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               購入した商品-取引中
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               購入した商品-過去の取引
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               ニュース一覧
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               評価一覧
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               ガイド
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               お問い合わせ
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-      %h3.r__nav__head メルペイ
-      %ul.r__nav__list
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+      %h3.nav__head メルペイ
+      %ul.nav__list
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               売上・振込申請
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               ポイント
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-      %h3.r__nav__head 設定
-      %ul.r__nav__list
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+      %h3.nav__head 設定
+      %ul.nav__list
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               プロフィール
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               発送元・お届け先住所変更
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               支払い方法
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               メール/パスワード
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               本人情報
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               電話番号の確認
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-        %li.r__nav__list__item
-          .r__nav__list__item__content
-            .r__nav__list__item__name
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
               ログアウト
-            .r__nav__list__item__content__arrow
+            .nav__list__item__content__arrow
               = fa_icon("chevron-right")
-  %aside.r__banner
-  %footer.r__footer
+  %aside.banner
+  %footer.footer
