@@ -1,0 +1,234 @@
+%body
+  %nav.pankuzu
+  .mypage__container
+    .mypage__main
+      .mypage__user
+        .mypage__user__info
+          %figure.mypage__user__info__icon
+            = image_tag('member_noimage.png', size:'60x60')
+          %h2.mypage__user__info__name
+            メルカリ太郎
+          .mypage__user__info__number
+            %div
+              評価
+              %span.bold 10
+            %div
+              出品数
+              %span.bold 5
+      %ul.mypage__tabs
+        %li.mypage__tabs__tab.active
+          お知らせ
+        %li.mypage__tabs__tab
+          やることリスト
+      %ul.tab__content
+        %li.mypage__info
+          .mypage__info__body
+            %div
+              = image_tag('mercari_icon.png', size:'48x48')
+            .mypage__info__body__content
+              %div
+                《いま出品するとおトク》抽選で「取引手数料」を"全額"ポイントバックのチャンス
+              .mypage__info__body__content__time
+                = fa_icon("history lg")
+                %span 1日前
+        %li.mypage__info
+          .mypage__info__body
+            %div
+              = image_tag('mercari_icon.png', size:'48x48')
+            .mypage__info__body__content
+              %div
+                事務局から個別メッセージ「ログイン通知」
+              .mypage__info__body__content__time
+                = fa_icon("history lg")
+                %span 2日前
+        %li.mypage__info
+          .mypage__info__body
+            %div
+              = image_tag('mercari_icon.png', size:'48x48')
+            .mypage__info__body__content
+              %div
+                《メルカリ6周年大感謝祭》今だけ限定のお得チケットをプレゼントしました
+              .mypage__info__body__content__time
+                = fa_icon("history lg")
+                %span 2日前
+        %li.mypage__info
+          .mypage__info__body
+            %div
+              = image_tag('mercari_icon.png', size:'48x48')
+            .mypage__info__body__content
+              %div
+                《買うほどお得、売るほどお得》メルカリ6周年大感謝祭、本日スタート！
+              .mypage__info__body__content__time
+                = fa_icon("history lg")
+                %span 3日前
+        %li.mypage__info
+          .mypage__info__body
+            %div
+              = image_tag('mercari_icon.png', size:'48x48')
+            .mypage__info__body__content
+              %div
+                《この通知を受け取ったあなた限定》「1,000ポイントバック」のお得チケットをプレゼントしました！
+              .mypage__info__body__content__time
+                = fa_icon("history lg")
+                %span 3日前
+        %li.mypage__go__list
+          .mypage__go__list__body
+            一覧を見る
+      .mypage__tabs__head
+        購入した商品
+      %ul.mypage__tabs
+        %li.mypage__tabs__tab.active
+          取引中
+        %li.mypage__tabs__tab
+          過去の取引
+      .mypage__item__not__found
+        .mypage__item__not__found__body
+          .mypage__item__not__found__body__image
+            = image_tag('logo_grey.png', size:'110x110')
+          .mypage__item__not__found__body__text
+            取引中の商品がありません
+    .nav
+      %ul.nav__list
+        %li.nav__list__item.active
+          .nav__list__item__content
+            .nav__list__item__name
+              マイページ
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              お知らせ
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              やることリスト
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              いいね！一覧
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              出品する
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              出品した商品-出品中
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              出品した商品-取引中
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              出品した商品-売却済み
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              購入した商品-取引中
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              購入した商品-過去の取引
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              ニュース一覧
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              評価一覧
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              ガイド
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              お問い合わせ
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+      %h3.nav__head メルペイ
+      %ul.nav__list
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              売上・振込申請
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              ポイント
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+      %h3.nav__head 設定
+      %ul.nav__list
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              プロフィール
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              発送元・お届け先住所変更
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              支払い方法
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              メール/パスワード
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              本人情報
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              電話番号の確認
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+        %li.nav__list__item
+          .nav__list__item__content
+            .nav__list__item__name
+              ログアウト
+            .nav__list__item__content__arrow
+              = fa_icon("chevron-right")
+
