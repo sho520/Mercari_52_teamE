@@ -1,0 +1,15 @@
+%main.other__block
+  %section.other__block__container
+    %h2.other__block__head 新規会員登録
+    .other__block__inner
+      .other__block__content
+        %a.d__btn-mail{:href => "/users"}
+          %i.d__i__mail= fa_icon('envelope lg', type: :reguler, class: 'd__icon__mail')
+          メールアドレスで登録
+        %button#d__facebook-login.d__btn-sns-facebook
+          %i.d__i__fb= fa_icon('facebook-square lg', type: :reguler, class: 'd__icon__facebook')
+          %i.icon-facebook
+          Facebookで登録
+        %button#d__google-login.d__btn-sns-google
+          %i.d__icon-google
+          Googleで登録

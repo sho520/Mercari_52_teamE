@@ -1,0 +1,24 @@
+%body.resist__body
+  = render 'userheader'
+  %main.registration__main
+    %section.registration__main__container
+      %h2.registration__main__head 会員登録完了
+      .user__form__content
+        .registration__main__form
+        %p.user__complete__text
+          ありがとうございます。
+          %br/
+          会員登録が完了しました。
+        %button.user__form__botton{:type => "submit"} メルカリをはじめる
+        .user__complete__space
+        %div
+          .app-intro
+            .app-intro-inner
+              %h2 スマホで簡単フリマアプリ
+              %p 今すぐ無料ダウンロード！
+            .app-intro-icon
+              = image_tag 'app-logo.jpg',class: "app-logo", height: '68', width: '68'
+              %ul.app-intro-links
+                %li.app-store
+                %li.app-google
+            = image_tag 'appa.png',class: "app-img", height: '260'

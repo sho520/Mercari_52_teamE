@@ -1,0 +1,163 @@
+.index__wrapper
+  %main.main-toppage
+    / スライドショー
+    %section.js-head-slider
+      %ul.bxslider
+        %li= image_tag 'mercari01.jpg',class: "head-slider-img"
+        %li= image_tag 'me.png',class: "head-slider-img"
+        %li= image_tag 'mercari03.png',class: "head-slider-img"
+        %li= image_tag 'mercari04.png',class: "head-slider-img"
+    %section.pickup__contaner
+      %h2.pickup-header ピックアップカテゴリー
+      / レディース新着アイテム
+      %section.products-box-group
+        %h3.products-box-header= link_to 'レディース新着アイテム', items_path, class: "header-link"
+        %section.products-box
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'product4.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name スプリングコート
+              .product-box-price
+                .price ¥1980
+                .like
+                  %i.fa.fa-heart 5
+                %p.product-tax (税込)
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'product4.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name ブラウス
+              .product-box-price
+                %p ¥price
+                .like
+                %p.product-tax (税込)
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'product4.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name シャツ
+              .product-box-price
+                %p ¥price
+                .like
+                %p.product-tax (税込)
+          .product-all
+            = link_to 'すべての商品を見る', items_path, class: "all-link"
+      / メンズ新着アイテム
+      %section.products-box-group
+        %h3.products-box-header= link_to 'メンズ新着アイテム', items_path, class: "header-link"
+        %section.products-box
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'product4.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name スプリングコート
+              .product-box-price
+                .price ¥1980
+                .like
+                  %i.fa.fa-heart 5
+                %p.product-tax (税込)
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'product4.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name ブラウス
+              .product-box-price
+                %p ¥price
+                .like
+                %p.product-tax (税込)
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'product4.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name シャツ
+              .product-box-price
+                %p ¥price
+                .like
+                %p.product-tax (税込)
+          .product-all
+            = link_to 'すべての商品を見る', items_path, class: "all-link"
+      / ベビー・キッズ 新着アイテム
+      %section.products-box-group
+        %h3.products-box-header= link_to 'ベビー・キッズ 新着アイテム', items_path, class: "header-link"
+        %section.products-box
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'kids1.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name スプリングコート
+              .product-box-price
+                .price ¥1980
+                .like
+                  %i.fa.fa-heart 5
+                %p.product-tax (税込)
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'kids2.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name ブラウス
+              .product-box-price
+                %p ¥price
+                .like
+                %p.product-tax (税込)
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'kids3.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name シャツ
+              .product-box-price
+                %p ¥price
+                .like
+                %p.product-tax (税込)
+          .product-all
+            = link_to 'すべての商品を見る', items_path, class: "all-link"
+      / コスメ・香水・美容 新着アイテム
+      %section.products-box-group
+        %h3.products-box-header= link_to 'コスメ・香水・美容 新着アイテム', items_path, class: "header-link"
+        %section.products-box
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'cosme1.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name スプリングコート
+              .product-box-price
+                .price ¥1980
+                .like
+                  %i.fa.fa-heart 5
+                %p.product-tax (税込)
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'cosme2.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name ブラウス
+              .product-box-price
+                %p ¥price
+                .like
+                %p.product-tax (税込)
+          %section.product-content
+            %a.product-box-img{:href => "#"}= image_tag 'cosme3.jpg', :size => "213x230"
+            .product-box-info
+              %h3.product-name シャツ
+              .product-box-price
+                %p ¥price
+                .like
+                %p.product-tax (税込)
+          .product-all
+            = link_to 'すべての商品を見る', items_path, class: "all-link"
+  = link_to items_path, class: "sale-btn" do
+    .sale-btn-text 出品
+    %i.fa.fa-camera-retro
+  .app-intro
+    .app-intro-inner
+      %h2 スマホで簡単フリマアプリ
+      %p 今すぐ無料ダウンロード！
+    .app-intro-icon
+      = image_tag 'app-logo.jpg',class: "app-logo", height: '68', width: '68'
+      %ul.app-intro-links
+        %li.app-store
+        %li.app-google
+    = image_tag 'appa.png',class: "app-img", height: '260'
+:javascript
+  $(document).ready(function(){
+    $('.bxslider').bxSlider({
+         auto: true,
+         slideWidth: 760,
+         pause:	3000,
+         speed: 300,
+         mode: 'fade',
+         pager:true,
+         controls:true,
+         minSlides: 1,
+         maxSlides: 1,
+         touchEnabled: true,
+       });
+  });

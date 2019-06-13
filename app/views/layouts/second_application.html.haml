@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Mercari52Teame
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body.resist__body
+    .header__others
+      %header.header__others__nav
+        %h1.header__others__h1
+          %a.header__others__href{:href => "./items"}
+            = image_tag('Exhibition_page_logo.svg',class: 'header__others__logo')
+    = yield
+    %footer.footer__others
+      %nav.footer__others__nav
+        %li.footer__others__nav__one
+          %a.footer__others__font{:href => "#"} プライバシーポリシー
+        %li.footer__others__nav__two
+          %a.footer__others__font{:href => "#"} メルカリ利用規約
+        %li.footer__others__nav__two
+          %a.footer__others__font{:href => "#"} 特定商取引に関する表記
+      %a.footer__others__logo{:href => "#"}
+        = image_tag('Exhibition_page_logo-gray.svg',class: 'd__logo-gray')
+      %p.footer__others__rmark
+        %small © 2019 Mercari
