@@ -1,0 +1,36 @@
+
+.footer__others {
+  width: 456px;
+  height:  180px;
+  margin: 0 auto;
+  padding: 40px 0;
+  &__nav {
+    display: block;
+    text-align: center;
+    &__one{
+      display: inline-block;
+      font-size: 12px;
+    }
+    &__two{
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 0 0 16px;
+    }
+  }
+    &__font {
+      color: #333;
+      text-decoration: none;
+   }
+  &__logo {
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+    display: block;
+    color: #333;
+}
+
+  &__rmark {
+    margin: 8px 0 0;
+    text-align: center;
+  }
+}

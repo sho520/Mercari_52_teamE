@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: Mercari_52_teamE_production
-  username: Mercari_52_teamE
-  password: <%= ENV['MERCARI_52_TEAME_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
