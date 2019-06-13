@@ -7,9 +7,109 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet">
   </head>
-
   <body>
+   <div class="profuct-header">
+     <div class="profuct-header__container">
+       <!-- ここから上部 -->
+       <div class="profuct-header__container__upper">
+         <%= link_to items_path, class: 'profuct-header__container__upper__logo' do %>
+           <%= image_tag 'logo.png', alt: 'logo', class: 'profuct-header__container__upper__logo__image', height: '36', width: '134' %>
+         <% end %>
+         <div class="profuct-header__container__upper__search">
+           formforの仮置き方法が？のため
+         </div>
+       </div>
+       <!-- ここから下部 -->
+       <div class="profuct-header__container__under">
+         <nav class="profuct-header__container__under__nav">
+           <div class="profuct-header__container__under__nav__category drop-down">
+             <%= link_to 'カテゴリーから探す', items_path, class: 'profuct-header__container__under__nav__category__link' %>
+           </div>
+           <div class="profuct-header__container__under__nav__brand drop-down">
+             <%= link_to 'ブランドから探す', items_path, class: 'profuct-header__container__under__nav__brand__nav__link' %>
+           </div>
+         </nav>
+         <div class="profuct-header__container__under__user">
+           <%= link_to '新規会員登録', items_path, class: 'profuct-header__container__under__user__signup' %>
+           <%= link_to 'ログイン', items_path, class: 'profuct-header__container__under__user__login' %>
+         </div>
+       </div>
+
+     </div>
+
+   </div>
+
     <%= yield %>
+
+    <div class="app-intro">
+    <div class="app-intro-inner">
+      <h2>スマホで簡単フリマアプリ</h2>
+      <p>今すぐ無料ダウンロード！</p>
+    </div>
+    <div class="app-intro-icon">
+      <%= image_tag 'app-logo.jpg',class: "app-logo", height: '68', width: '68'  %>
+      <ul class="app-intro-links">
+        <li class="app-store"></li>
+        <li class="app-google"></li>
+      </ul>
+    </div>
+    <%= image_tag 'appa.png',class: "app-img", height: '260' %>
+    </div>
+    <footer class="footer">
+    <div class="footer-contents">
+      <div class="footer-contents-left">
+        <div class="footer-content">
+          <h2 class="footer-content-group">メルカリについて</h2>
+        <ul>
+          <li><%= link_to '会社概要（運営会社）', items_path, class: "footer-link" %></li>
+          <li><%= link_to '採用情報', items_path, class: "footer-link" %></li>
+          <li><%= link_to 'プレスリリース', items_path, class: "footer-link" %></li>
+          <li><%= link_to '公式ブログ', items_path, class: "footer-link" %></li>
+          <li><%= link_to 'メルカリロゴ利用ガイドライン', items_path, class: "footer-link" %></li>
+          <li><i class="fa fa-twitter fa-2x"></i></li>
+          <li><i class="fa fa-facebook-square fa-2x"></i></li>
+        </ul>
+        </div>
+
+        <div class="footer-content">
+          <h2 class="footer-content-group">プライバシーと利用規約</h2>
+        <ul>
+          <li><%= link_to 'メルカリ利用規約', items_path, class: "footer-link" %></li>
+          <li><%= link_to 'あんしんスマホサポート制度に関する利用特約', items_path, class: "footer-link" %></li>
+          <li><%= link_to 'プレスリリース', items_path, class: "footer-link" %></li>
+          <li><%= link_to 'コンプライアンスポリシー', items_path, class: "footer-link" %></li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="footer-contents-right">
+        <div class="footer-content">
+          <h2 class="footer-content-group">ヘルプ＆ガイド</h2>
+        <ul>
+          <li><%= link_to 'メルカリガイド', items_path, class: "footer-link" %></li>
+          <li><%= link_to 'らくらくメルカリ便', items_path, class: "footer-link" %></li>
+          <li><%= link_to 'ゆうゆうメルカリ便', items_path, class: "footer-link" %></li>
+          <li><%= link_to '大型メルカリ便', items_path, class: "footer-link" %></li>
+          <li><%= link_to '車体取引ガイド', items_path, class: "footer-link" %></li>
+          <li><%= link_to 'メルカリあんしん・あんぜん宣言！', items_path, class: "footer-link" %></li>
+          <li><%= link_to '偽ブランド品撲滅への取り組み', items_path, class: "footer-link" %></li>
+          <li><%= link_to 'メルカリボックス', items_path, class: "footer-link" %></li>
+        </ul>
+        </div>
+
+        <div class="footer-content">
+        <ul>
+          <li><%= link_to '個人データの安全管理に係る基本方針', items_path, class: "footer-link" %></li>
+          <li><%= link_to '特定商取引に関する表記', items_path, class: "footer-link" %></li>
+          <li><%= link_to '資金決済法に基づく表示', items_path, class: "footer-link" %></li>
+          <li><%= link_to '法令遵守と犯罪抑止のために', items_path, class: "footer-link" %></li>
+          <li><%= link_to '返品・返金ポリシー', items_path, class: "footer-link" %></li>
+        </ul>
+        </div>
+      </div>
+
+  </footer>
   </body>
 </html>
