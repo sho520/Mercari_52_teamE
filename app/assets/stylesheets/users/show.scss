@@ -9,13 +9,13 @@ body {
   height: 49px;
 }
 
-.container {
+.mypage__container {
   display: flex;
   flex-direction: row;
   margin: 40px;
 }
 
-.main {
+.mypage__main {
   order: 2;
   width: 700px;
   height: 100%;
