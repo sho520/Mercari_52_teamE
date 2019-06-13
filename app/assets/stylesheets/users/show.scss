@@ -2,10 +2,7 @@ body {
   background-color: #F4F4F4;
 }
 
-.header {
-  background-color: black;
-  height: 100px;
-}
+
 
 .pankuzu {
   background-color: grey;
@@ -160,7 +157,7 @@ body {
   .active {
     background-color: #EEEEEE;
     font-weight: bold;
-    .nav__list__item__arrow{
+    .nav__list__item__content__arrow{
       color: black;
     }
   }
