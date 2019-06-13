@@ -110,6 +110,10 @@ body {
     text-align: center;
     line-height: 74px;
   }
+  .active {
+    background-color: white;
+    border-top:2px solid red;
+  }
 }
 
 .r__mypage__item__not__found {
