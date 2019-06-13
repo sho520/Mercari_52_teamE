@@ -1,0 +1,196 @@
+.index__wrapper
+  .brand__bread
+    %ul
+      %li
+        %a{:href => "http://localhost:3000/items"}
+          %span メルカリ
+        %i#brand__fa-angle-right.fas.fa-angle-right
+      %li
+        %a{:href => "http://localhost:3000/items/category"}
+          %span ブランド一覧
+        %i#brand__fa-angle-right.fas.fa-angle-right
+  %main.brand__main
+    .brand__item
+      .brand__item-box
+        %h2.brand__h2 ブランド一覧
+        .brand__item-box__titles
+          %a.brand__item-box__titles__title{:href => ""}
+            %div レディース
+          %a.brand__item-box__titles__title{:href => ""}
+            %div メンズ
+          %a.brand__item-box__titles__title{:href => ""}
+            %div ベビー・キッズ
+          %a.brand__item-box__titles__title{:href => ""}
+            %div インテリア・住まい・小物
+          %a.brand__item-box__titles__title{:href => ""}
+            %div キッチン・食器
+          %a.brand__item-box__titles__title{:href => ""}
+            %div 時計
+          %a.brand__item-box__titles__title{:href => ""}
+            %div コスメ・香水・美容
+          %a.brand__item-box__titles__title{:href => ""}
+            %div テレビゲーム
+          %a.brand__item-box__titles__title{:href => ""}
+            %div スポーツ・レジャー
+          %a.brand__item-box__titles__title{:href => ""}
+            %div スマートフォン・携帯電話
+          %a.brand__item-box__titles__title{:href => ""}
+            %div バイク
+          %a.brand__item-box__titles__title{:href => ""}
+            %div 楽器
+          %a.brand__item-box__titles__title{:href => ""}
+            %div 自動車パーツ
+          %a.brand__item-box__titles__title{:href => ""}
+            %div 食品
+          %a.brand__item-box__titles__title{:href => ""}
+            %div 国内自動車本体
+          %a.brand__item-box__titles__title{:href => ""}
+            %div 海外自動車本体
+      .category__initial
+        %a#initial_a.brand__initial__word{:href => ""}
+          %div ア
+        :javascript
+          $("#initial_a").click(function(){
+            var position = $("#brand_a").offset().top;
+              $("html,body").animate({
+                  scrollTop : position
+              }, {
+                  queue : false
+              });
+          });
+        %a.brand__initial__word{:href => ""}
+          %div イ
+        %a.brand__initial__word{:href => ""}
+          %div ウ
+        %a.brand__initial__word{:href => ""}
+          %div エ
+        %a.brand__initial__word{:href => ""}
+          %div オ
+        %a.brand__initial__word{:href => ""}
+          %div カ
+        %a.brand__initial__word{:href => ""}
+          %div キ
+        %a.brand__initial__word{:href => ""}
+          %div ク
+        %a.brand__initial__word{:href => ""}
+          %div ケ
+        %a.brand__initial__word{:href => ""}
+          %div コ
+        %a.brand__initial__word{:href => ""}
+          %div サ
+        %a.brand__initial__word{:href => ""}
+          %div シ
+        %a.brand__initial__word{:href => ""}
+          %div ス
+        %a.brand__initial__word{:href => ""}
+          %div セ
+        %a.brand__initial__word{:href => ""}
+          %div ソ
+        %a.brand__initial__word{:href => ""}
+          %div タ
+        %a.brand__initial__word{:href => ""}
+          %div チ
+        %a.brand__initial__word{:href => ""}
+          %div ツ
+        %a.brand__initial__word{:href => ""}
+          %div テ
+        %a.brand__initial__word{:href => ""}
+          %div ト
+        %a.brand__initial__word{:href => ""}
+          %div ナ
+        %a.brand__initial__word{:href => ""}
+          %div ニ
+        %a.brand__initial__word{:href => ""}
+          %div ヌ
+        %a.brand__initial__word{:href => ""}
+          %div ネ
+        %a.brand__initial__word{:href => ""}
+          %div ノ
+        %a.brand__initial__word{:href => ""}
+          %div ハ
+        %a.brand__initial__word{:href => ""}
+          %div ヒ
+        %a.brand__initial__word{:href => ""}
+          %div フ
+        %a.brand__initial__word{:href => ""}
+          %div ワ
+        %a.brand__initial__word{:href => ""}
+          %div ヲ
+        %a.brand__initial__word{:href => ""}
+          %div ン
+        %a.brand__initial__word{:href => ""}
+          %div 1
+        %a.brand__initial__word{:href => ""}
+          %div 2
+        %a.brand__initial__word{:href => ""}
+          %div 3
+        %a.brand__initial__word{:href => ""}
+          %div 4
+        %a.brand__initial__word{:href => ""}
+          %div 5
+        %a.brand__initial__word{:href => ""}
+          %div 6
+        %a.brand__initial__word{:href => ""}
+          %div 7
+        %a.brand__initial__word{:href => ""}
+          %div 8
+        %a.brand__initial__word{:href => ""}
+          %div 9
+        %a.brand__initial__word{:href => ""}
+          %div 0
+      .brand__list
+        .brand__list__brand
+          .brand__list__brand__name
+            レディース
+          #brand_a.brand__list__brand__name__detail__initial
+            ア
+          .brand__list__brand__name__detail
+            .brand__list__brand__name__detail__details
+              .brand__list__brand__name__detail__details__item すべて
+              .brand__list__brand__name__detail__details__item スカート
+              .brand__list__brand__name__detail__details__item Tシャツ
+              .brand__list__brand__name__detail__details__item ポロシャツ
+              .brand__list__brand__name__detail__details__item キャミソール
+              .brand__list__brand__name__detail__details__item ニット・セーター
+              .brand__list__brand__name__detail__details__item ジャージ
+              .brand__list__brand__name__detail__details__item パーカー
+              .brand__list__brand__name__detail__details__item その他
+          .brand__list__brand__name__detail__initial
+            イ
+          .brand__list__brand__name__detail
+            .brand__list__brand__name__detail__details
+              .brand__list__brand__name__detail__details__item ミニスカート
+              .brand__list__brand__name__detail__details__item 膝丈スカート
+              .brand__list__brand__name__detail__details__item ロングスカート
+              .brand__list__brand__name__detail__details__item ワンピース
+              .brand__list__brand__name__detail__details__item その他
+          .brand__list__brand__name__detail__initial
+            ウ
+          .brand__list__brand__name__detail
+            .brand__list__brand__name__detail__details
+              .brand__list__brand__name__detail__details__item ミニスカート
+              .brand__list__brand__name__detail__details__item 膝丈スカート
+              .brand__list__brand__name__detail__details__item ロングスカート
+              .brand__list__brand__name__detail__details__item ワンピース
+              .brand__list__brand__name__detail__details__item その他
+          .brand__list__brand__name__detail__initial
+            エ
+          .brand__list__brand__name__detail
+            .brand__list__brand__name__detail__details
+              .brand__list__brand__name__detail__details__item ミニスカート
+              .brand__list__brand__name__detail__details__item 膝丈スカート
+              .brand__list__brand__name__detail__details__item ロングスカート
+              .brand__list__brand__name__detail__details__item ワンピース
+              .brand__list__brand__name__detail__details__item その他
+          .brand__list__brand__name__detail__initial
+            オ
+          .brand__list__brand__name__detail
+            .brand__list__brand__name__detail__details
+              .brand__list__brand__name__detail__details__item ミニスカート
+              .brand__list__brand__name__detail__details__item 膝丈スカート
+              .brand__list__brand__name__detail__details__item ロングスカート
+              .brand__list__brand__name__detail__details__item ワンピース
+              .brand__list__brand__name__detail__details__item その他
+  = link_to new_item_path, class: "sale-btn" do
+    .sale-btn-text 出品
+    %i.fa.fa-camera-retro

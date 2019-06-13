@@ -1,0 +1,71 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Mercari52Teame
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %script{:src => "/bxslider.min.scss"}
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .profuct-header
+      .profuct-header__container
+        / ここから上部
+        .profuct-header__container__upper
+          = link_to items_path, class: 'profuct-header__container__upper__logo' do
+            = image_tag 'logo.png', alt: 'logo', class: 'profuct-header__container__upper__logo__image', height: '36', width: '134'
+          .profuct-header__container__upper__search
+            formforの仮置き方法が？のため
+        / ここから下部
+        .profuct-header__container__under
+          %nav.profuct-header__container__under__nav
+            .profuct-header__container__under__nav__category.drop-down
+              = link_to 'カテゴリーから探す', items_path, class: 'profuct-header__container__under__nav__category__link'
+            .profuct-header__container__under__nav__brand.drop-down
+              = link_to 'ブランドから探す', items_path, class: 'profuct-header__container__under__nav__brand__nav__link'
+          .profuct-header__container__under__user
+            = link_to '新規会員登録', items_path, class: 'profuct-header__container__under__user__signup'
+            = link_to 'ログイン', items_path, class: 'profuct-header__container__under__user__login'
+    = yield
+    %footer.footer
+      .footer-contents
+        .footer-contents-left
+          .footer-content
+            %h2.footer-content-group メルカリについて
+            %ul
+              %li= link_to '会社概要（運営会社）', items_path, class: "footer-link"
+              %li= link_to '採用情報', items_path, class: "footer-link"
+              %li= link_to 'プレスリリース', items_path, class: "footer-link"
+              %li= link_to '公式ブログ', items_path, class: "footer-link"
+              %li= link_to 'メルカリロゴ利用ガイドライン', items_path, class: "footer-link"
+              %li
+                %i.fa.fa-twitter.fa-2x
+              %li
+                %i.fa.fa-facebook-square.fa-2x
+          .footer-content
+            %h2.footer-content-group プライバシーと利用規約
+            %ul
+              %li= link_to 'メルカリ利用規約', items_path, class: "footer-link"
+              %li= link_to 'あんしんスマホサポート制度に関する利用特約', items_path, class: "footer-link"
+              %li= link_to 'プレスリリース', items_path, class: "footer-link"
+              %li= link_to 'コンプライアンスポリシー', items_path, class: "footer-link"
+        .footer-contents-right
+          .footer-content
+            %h2.footer-content-group ヘルプ＆ガイド
+            %ul
+              %li= link_to 'メルカリガイド', items_path, class: "footer-link"
+              %li= link_to 'らくらくメルカリ便', items_path, class: "footer-link"
+              %li= link_to 'ゆうゆうメルカリ便', items_path, class: "footer-link"
+              %li= link_to '大型メルカリ便', items_path, class: "footer-link"
+              %li= link_to '車体取引ガイド', items_path, class: "footer-link"
+              %li= link_to 'メルカリあんしん・あんぜん宣言！', items_path, class: "footer-link"
+              %li= link_to '偽ブランド品撲滅への取り組み', items_path, class: "footer-link"
+              %li= link_to 'メルカリボックス', items_path, class: "footer-link"
+          .footer-content
+            %ul
+              %li= link_to '個人データの安全管理に係る基本方針', items_path, class: "footer-link"
+              %li= link_to '特定商取引に関する表記', items_path, class: "footer-link"
+              %li= link_to '資金決済法に基づく表示', items_path, class: "footer-link"
+              %li= link_to '法令遵守と犯罪抑止のために', items_path, class: "footer-link"
+              %li= link_to '返品・返金ポリシー', items_path, class: "footer-link"

@@ -1,0 +1,93 @@
+%body
+  .Exhibition__page
+    %header.Exhbition_header
+      %h1
+        %a{:href => "https://www.mercari.com/jp/"}
+          = image_tag('Exhibition_page_logo.svg',class: 'logo')
+    %main.Exhbition__main
+      .main__box
+        .title
+          \#タイトル
+          %h2
+            商品の情報を入力
+        .boxes
+          \#メインコンテンツ
+          .box1 出品画像
+          \#出品画像
+          .box2
+            ＃商品名 ・説明
+            %form{:action => "cgi-bin/abc.cgi", :method => "post"}
+              %p 商品名
+              %input{:maxlength => "20", :name => "namae", :size => "40", :type => "text"}/
+              %p 商品の説明
+              %input{:maxlength => "20", :name => "namae", :size => "40", :type => "text"}/
+          .box3
+            .aaa
+              %p 商品の詳細
+            %div
+              .s__category
+                %span{:right => ""} カテゴリー
+                .s__category__small
+                  %select.s__category__box1.s__box3__size
+                  %select.s__category__box2.s__box3__size
+                  %select.s__category__box3.s__box3__size
+              .s__size
+                %span サイズ
+                %select.s__size__box.s__box3__size
+              .s__brand
+                ブランド
+                %select.s__brand__box.s__box3__size
+              .s__details
+                %span 商品の状態
+                %select.s__details__box.s__box3__size
+          .box4__delivery
+            配送について?
+            %p 配送料の負担
+            %select.delivery.s__box4__size{:name => "line_list"}
+              %option.msg{:selected => "selected"} ---
+              %option.souryoukomi 送料込み(出品者負担)
+              %option.souryoukomi 着払い(購入者負担)
+            %p 配送の方法
+            %select.mainselect.s__box4__size{:name => "line_list"}
+              %option.msg{:selected => "selected"} ---
+              %option
+              %option
+            %p 発送元の地域
+            %select.mainselect.s__box4__size{:name => "line_list"}
+              %option.msg{:selected => "selected"} ---
+              %option
+              %option
+            %p 発送までの日数
+            %select.mainselect.s__box4__size{:name => "line_list"}
+              %option.msg{:selected => "selected"} ---
+              %option
+              %option
+          .box5
+            販売価格(300〜9,999,999)
+            %input#price{:type => "number"}/
+            %output#fee{:type => "number"} 0
+            %output#profit{:type => "number"} 0
+          .box6
+            禁止されている出品、行為を必ずご確認ください。
+            %br/
+            またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+            %br/
+            また、出品をもちまして加盟店規約に同意したことになります。
+            %br/
+            %br/
+            %p
+              %button.btn_Exhibition{:type => "submit"} 出品する
+            %br/
+            %p
+              %button.btn_Exhibition_back{:type => "submit"} もどる
+    %footer.Exhbition_footer
+      %ul.footer-lists
+        %li.list1
+          %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+        %li.list2
+          %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+        %li.list3
+          %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+      %a= image_tag('Exhibition_page_logo-gray.svg',class: 'logo-gray')
+      %p
+        %small © 2019 Mercari

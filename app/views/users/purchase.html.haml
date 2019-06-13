@@ -1,0 +1,41 @@
+%body.resist__body
+  = render 'userheader'
+  %main.registration__main
+    %section.registration__main__container
+      %h2.registration__main__head 支払い方法
+      .user__form__content
+        %form.registration__main__form{:action => "", :method => "POST"}
+          %input{:name => "", :type => "hidden", :value => ""}/
+          .user__form__content
+            .user__form__group
+              %label{:for => "user__title"} カード番号
+              %span.user__form__require 必須
+              %input.user__form__input{:name => "", :placeholder => "半角英数のみ", :type => "text", :value => ""}/
+            .user__form__group
+              %label{:for => "user__title"} 有効期限
+              %span.user__form__require 必須
+              %br/
+              .user__form__expiration
+                .user__form__expiration__select
+                  %select.user__select__default.d__fa__select{:name => "year"}
+                    %option{:value => "01"} 01
+                    %option{:value => "02"} 02
+                  %i.user__select__default__arrow
+                %span 月
+                %br/
+                .user__form__expiration__select
+                  %select.user__select__default.d__fa__select{:name => "year"}
+                    %option{:value => "2019"} 2019
+                    %option{:value => "2020"} 2020
+                  %i.user__select__default__arrow
+                %span 年
+            .user__form__group
+              %label{:for => "user__title"} セキュリティコード
+              %span.user__form__require 必須
+              %input.user__form__input{:name => "", :placeholder => "カード背面4桁もしくは3桁の番号", :type => "text", :value => ""}/
+            .user__form__group
+              %p.user__form__other
+                %a.user__form__other__info{:href => "", :target => "_blank"}
+                  カード裏面の番号とは？#{fa_icon("angle-right lg")}
+            %button.user__form__botton{:type => "submit"} 次へ進む
+        = render 'subfooter'
