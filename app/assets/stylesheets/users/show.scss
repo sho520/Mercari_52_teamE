@@ -131,7 +131,6 @@ body {
   }
 }
 
-
 .r__nav {
   order: 1;
   height: 1252px;
@@ -154,6 +153,13 @@ body {
       .r__nav__list__item__arrow{
         color: #F4F4F4;
       }
+    }
+  }
+  .active {
+    background-color: #EEEEEE;
+    font-weight: bold;
+    .r__nav__list__item__arrow{
+      color: black;
     }
   }
   .r__nav__head {
