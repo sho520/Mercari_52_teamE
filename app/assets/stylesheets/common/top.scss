@@ -45,6 +45,13 @@
           font-size: 14px;
 
           &__link {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            &:hover {
+              color: blue;
+              text-decoration: underline;
+             }
           }
         }
         &__brand {
