@@ -23,6 +23,7 @@
       padding: 40px 0 0 44px;
       vertical-align: top;
       text-align: center;
+    }
       .progress__active {
         display: inline-block;
         margin: 0 40px 0 0;
@@ -47,7 +48,6 @@
         &__line {
           height: 2px;
           background: #ccc;
-        }
       }
     }
   }
