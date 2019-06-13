@@ -67,3 +67,9 @@ gem 'mini_magick'
 gem 'pry-rails'
 gem 'kaminari'
 gem 'jquery-rails'
+gem 'haml-rails'
+gem 'erb2haml'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
