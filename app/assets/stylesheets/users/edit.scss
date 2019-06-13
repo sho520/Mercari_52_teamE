@@ -1,0 +1,54 @@
+.mypage__profile {
+  width: 700px;
+  flex-shrink: 0;
+  &__header {
+    background-color: white;
+    height: 50px;
+    &__title {
+      padding:8px 24px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+  &__name {
+    height: 156px;
+    &__content {
+      background-image: url(mypage_background.jpg);
+      display: flex;
+      justify-content: center;
+      height: 60px;
+      padding: 72px 16px 24px;
+      &__icon {
+        img {
+          border-radius: 50%;
+        }
+      }
+      &__input {
+        width: 220px;
+        margin: 10px 16px 8px;
+        border-radius: 4px;
+      }
+    }
+  }
+  &__intro {
+    background-color: white;
+    height: 362px;
+    &__content {
+      padding:40px 16px;
+      &__textarea {
+        height: 216px;
+      }
+      &__button {
+        background-color: red;
+        margin-top: 16px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 14px;
+        color: white;
+
+      }
+    }
+  }
+}
