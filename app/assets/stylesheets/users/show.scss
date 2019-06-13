@@ -71,7 +71,7 @@ body {
         &__content {
           margin-left: 12px;
           font-size: 14px;
-          .r__mypage__info__body__time {
+          &__time {
             color: #888888;
           }
         }
@@ -105,7 +105,7 @@ body {
   justify-content: space-around;
   height: 74px;
   font-weight: bold;
-  .r__mypage__tab {
+  &__tab {
     width: 50%;
     text-align: center;
     line-height: 74px;
@@ -152,10 +152,7 @@ body {
       height:16px;
       padding: 16px;
       font-size: 14px; 
-      .r__nav__list__item__name {
-        font-size: 14px; 
-      }
-      .r__nav__list__item__arrow{
+      &__arrow{
         color: #F4F4F4;
       }
     }
