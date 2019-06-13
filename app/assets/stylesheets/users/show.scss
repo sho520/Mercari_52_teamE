@@ -139,9 +139,11 @@ body {
   margin-right: 40px;
   .r__nav__list__item {
     background-color: white;
+    outline: solid 0.4px #F4F4F4;
+    display: flex;
     height: 48px;
     &__name {
-      outline: solid 0.4px #F4F4F4;
+      
       height:16px;
       padding: 16px;
       font-size: 14px;
