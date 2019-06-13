@@ -1,66 +1,113 @@
-.category__item-box{
-  background-color: white;
-  width:100%;
+.category__bread{
+  height: 49px;
+  width: 100%;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background-color: #ffffff;
   box-sizing: border-box;
-  .category__h2{
-    font-size:22px;
-    font-weight: bold;
-    background-color:whitesmoke;
-  }
-  .category__item-box__titles{
-    background-color:whitesmoke;
-    padding-bottom: 30px;
-    .category__item-box__titles__title{
-      height:40px;
-      padding: 0 30px;
-      margin:5px;
-      background-color:#ffffff;
+  border-bottom: 1px solid #eee;
+  ul{
+    height:100%;
+    width:1020px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+    li{
       display: inline-block;
-      line-height:40px;
-      border-radius: 4px;
-      box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
-    }
-    .category__item-box__titles__title:hover{
-      background-color:#ea352d;
-      color:#ffffff;
+      padding-left:3px;
+      font-size: 0.85rem;
+      .category__fa-angle-right{
+        color:#888;
+        padding-left:3px;
+        display: inline-block;
+      }
     }
   }
 }
-.category__list{
-  display: block;
-  .category__list__category{
-    display: block;
-    .category__list__category__name{
-      background-color: red;
-      color: #ffffff;
-      font-weight: bold;
-      padding: 7px 30px 0 30px;
-      font-size: 22px;
-      height: 33px;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-    }
-    .category__list__category__name__detail{
-      display: block;
-      padding: 24px 30px 10px 30px;
-      background-color:#ffffff;
-      .category__list__category__name__detail__all{
-        margin: 8px 0;
-        color: #0099e8;
-        
+.category__main{
+  margin-top:5px;
+  background-color:whitesmoke;
+  padding-top:40px;
+  padding-bottom:40px;
+  .category__item{
+    width: 700px;
+    margin: 0 auto;
+    background-color:#f5f5f5;
+    .category__item-box{
+      background-color: white;
+      width:100%;
+      box-sizing: border-box;
+      .category__h2{
+        font-size:22px;
+        font-weight: bold;
+        background-color:whitesmoke;
       }
-      .category__list__category__name__detail__janre{
-        padding-top:10px;
-        padding-bottom:4px;
-        font-size:0.9rem;
-      }
-      .category__list__category__name__detail__details{
-        padding: 0 20px 10px 20px;
-        .category__list__category__name__detail__details__item{
-          padding: 0 20px 7px 0;
-          width: 46%;
-          color: #0099e8;
+      .category__item-box__titles{
+        background-color:whitesmoke;
+        padding-bottom: 30px;
+        .category__item-box__titles__title{
+          height:40px;
+          padding: 0 30px;
+          margin:5px;
+          background-color:#ffffff;
           display: inline-block;
+          line-height:40px;
+          border-radius: 4px;
+          box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
+          text-decoration: none;
+        }
+        .category__item-box__titles__title:hover{
+          background-color:#ea352d;
+          color:#ffffff;
+        }
+      }
+    }
+    .category__list{
+      display: block;
+      .category__list__category{
+        display: block;
+        .category__list__category__name{
+          background-color: red;
+          color: #ffffff;
+          font-weight: bold;
+          padding: 7px 30px 0 30px;
+          font-size: 22px;
+          height: 33px;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
+        .category__list__category__name__detail{
+          display: block;
+          padding: 24px 30px 10px 30px;
+          background-color:#ffffff;
+          .category__list__category__name__detail__all{
+            margin: 8px 0;
+            color: #0099e8;
+          }
+          .category__list__category__name__detail__all:hover{
+            color: #b3d4fc;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+          .category__list__category__name__detail__janre{
+            padding-top:10px;
+            padding-bottom:4px;
+            font-size:0.9rem;
+          }
+          .category__list__category__name__detail__details{
+            padding: 0 20px 10px 20px;
+            .category__list__category__name__detail__details__item{
+              padding: 0 20px 7px 0;
+              width: 46%;
+              color: #0099e8;
+              display: inline-block;
+            }
+            .category__list__category__name__detail__details__item:hover{
+              color: #b3d4fc;
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
         }
       }
     }

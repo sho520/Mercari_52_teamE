@@ -1,24 +1,44 @@
 <div class="index__wrapper">
-  <div class = "k__bread">
+  <div class = "category__bread">
     <ul>
       <li>
         <a href="http://localhost:3000/items"><span>メルカリ</span></a>
-        <i class="fas fa-angle-right" id = "k__fa-angle-right"></i>
+        <i class="fas fa-angle-right" id = "category__fa-angle-right"></i>
       </li>
       <li>
         <a href="http://localhost:3000/items/category"><span>カテゴリー一覧</span></a>
-        <i class="fas fa-angle-right" id = "k__fa-angle-right"></i>
+        <i class="fas fa-angle-right" id = "category__fa-angle-right"></i>
       </li>
     </ul>
   </div>
 
-  <main class = "k__main">
-    <div class = "k__item">
+  <main class = "category__main">
+    <div class = "category__item">
       <div class = "category__item-box">
         <h2 class = "category__h2">カテゴリー一覧</h2>
         <div class = "category__item-box__titles" >  
-          <a href = "" class = "category__item-box__titles__title" ><div>レディース</div></a>
-          <a href = "" class = "category__item-box__titles__title"><div>メンズ</div></a>
+          <a href = "" class = "category__item-box__titles__title" id = "title_ladies"><div>レディース</div></a>
+            <script>
+            $("#title_ladies").click(function(){
+              var position = $("#category_ladies").offset().top;
+                $("html,body").animate({
+                    scrollTop : position
+                }, {
+                    queue : false
+                });
+            });
+            </script>
+          <a href = "" class = "category__item-box__titles__title" id = "title_mens"><div>メンズ</div></a>
+           <script>
+            $("#title_mens").click(function(){
+              var position = $("#category_mens").offset().top;
+                $("html,body").animate({
+                    scrollTop : position
+                }, {
+                    queue : false
+                });
+            });
+            </script>
           <a href = "" class = "category__item-box__titles__title"><div>ベビー・キッズ</div></a>
           <a href = "" class = "category__item-box__titles__title"><div>インテリア・住まい・小物</div></a>
           <a href = "" class = "category__item-box__titles__title"><div>本・音楽・ゲーム</div></a>
@@ -34,7 +54,7 @@
       </div>
       <div class = "category__list">
         <div class = "category__list__category">
-          <div class = "category__list__category__name"> 
+          <div class = "category__list__category__name" id = "category_ladies"> 
             レディース
           </div>
           <div class = "category__list__category__name__detail"> 
@@ -68,7 +88,7 @@
           </div>
         </div>
         <div class = "category__list__category">
-          <div class = "category__list__category__name"> 
+          <div class = "category__list__category__name" id = "category_mens"> 
             メンズ
           </div>
           <div class = "category__list__category__name__detail"> 
