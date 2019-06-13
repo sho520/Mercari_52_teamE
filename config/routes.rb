@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "items/confirm" => "items#confirm"  #idが入る必要あり
+  get "items/confirm/done" => "items#done"  #idが入る必要あり
   get "items/brand" => "items#brand"
   get "items/category" => "items#category"
   get "users/phone" => "users#phone"
