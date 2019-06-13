@@ -34,7 +34,6 @@
     width: 700px;
     margin: 0 auto;
     background-color:#f5f5f5;
-
     .product__item-box{
       background-color: white;
       width:100%;
@@ -45,15 +44,15 @@
         text-align: center;
         font-weight: bold;
       }
-      .product__item-box__main{
+      &__main{
         width:100%;
         padding-top: 16px;
         display: block;
-        .product__item-box__main__left{
+        &__left{
           float: left;
           width: 300px;
           min-height: 360px;
-          .product__item-box__main__left__bigpic{
+          &__bigpic{
             height:300px;
             width: 300px;
             background-color: blue;
@@ -76,7 +75,7 @@
               }
             }
           }
-          .product__item-box__main__left__below{
+          &__below{
             height: 60px;
             width: 300px;
             margin: 0 auto;
@@ -92,31 +91,31 @@
                 display: inline;
               }
             }
-            .product__item-box__main__left__below__pics{
+            &__pics{
               height: 60px;
               width: 60px;
               float:left;
               background-color:black;
             }
-            .product__item-box__main__left__below__pics2{
+            &__pics2{
               height: 60px;
               width: 60px;
               float:left;
               background-color:black;
             }
-            .product__item-box__main__left__below__pics3{
+            &__pics3{
               height: 60px;
               width: 60px;
               float:left;
               background-color:black;
             }
-            .product__item-box__main__left__below__pics4{
+            &__pics4{
               height: 60px;
               width: 60px;
               float:left;
               background-color:black;
             }
-            .product__item-box__main__left__below__pics5{
+            &__pics5{
               height: 60px;
               width: 60px;
               float:left;
@@ -124,12 +123,12 @@
             }
           }
         }
-        .product__item-box__main__right{
+        &__right{
           float: right;
           max-width: 300px;
           height: 420px;
           margin: 0 auto;
-          .product__item-box__main__right__table{
+          &__table{
             .product__tbody {
               .product__tr{
                 font-size: 0.9rem;
@@ -154,25 +153,23 @@
           }
         }
       }
-      .product__item-box__price{
+      &__price{
         padding-top: 24px;
         clear:both;
         text-align: center;
-        .product__item-box__price__amount{
+        &__amount{
           font-size:2.5rem;
           font-weight: bold;
         }
-        .product__item-box__price__withtax{
+        &__withtax{
           font-size: 0.5rem;
         }
-        .product__item-box__price__shipcost{
+        &__shipcost{
           padding: 10px;
           font-size: 1.0rem;
-
-
         }
       }
-      .product__item-box__buybox{
+      &__buybox{
         width: 100%;
         background-color: red;
         height:60px;
@@ -183,7 +180,7 @@
         line-height: 60px;
         margin-top: 16px;
       }
-      .product__item-box__buybox_ng{
+      &__buybox--ng{
         width: 100%;
         background-color: gray;
         height:60px;
@@ -195,16 +192,15 @@
         margin-top: 16px;
 
       }
-      .product__item-box__desc{
+      &__desc{
         padding-top: 32px;
       }
-      .product__item-box__button{
+      &__button{
         padding-top: 16px;
         margin-bottom: 32px;
-        .product__item-box__button__left{
+        &__left{
           float:left;
-          
-          .product__item-box__button__like{
+          &__like{
             background-color:#f5f5f5;
             float:left;
             padding: 8px 16px;
@@ -214,15 +210,15 @@
             #product__fa-heart{
               display:inline-block;
             }
-            .product__item-box__button__like__word{
+            &__word{
               display:inline-block;
 
             }
           }
-          .product__item-box__button__like:hover{
+          &__like:hover{
             cursor: pointer;
           }
-          .product__item-box__button__report{
+          &__report{
             background-color:#f5f5f5;
             float:left;
             margin-left: 16px;
@@ -233,11 +229,11 @@
             #product__fa-flag{
               display:inline-block;
             }
-            .product__item-box__button__report__word{
+            &__word{
               display:inline-block;
             }
           }
-          .product__item-box__button__report:hover {
+          &__report:hover {
             background-color:#f7f5f5;
             color: gray;
             float:left;
@@ -247,7 +243,7 @@
             cursor: pointer;
           }
         }
-        .product__item-box__button__right{
+        &__right{
           float:right;
           padding: 8px 16px;
           color: #0099e8;
@@ -257,12 +253,12 @@
             padding-right:5px;
             padding-top: 3px;
           }
-          .product__item-box__button__safe{
+          &__safe{
             font-size: 0.9rem;
             float:right;
           }
         }
-        .product__item-box__button__right:hover{
+        &__right:hover{
           color: #b3d4fc;
           cursor: pointer;
         }
@@ -273,7 +269,7 @@
       padding: 24px;
       box-sizing: border-box;
       margin-top: 8px;
-      .product__item-comment__form{
+      &__form{
         .product__p{
           background-color: #fff6de;
           font-size: 0.8rem;
@@ -298,21 +294,21 @@
     .product__item-link{
       width:100%;
       height: 50px;
-      .product__item-link__pre{
+      &__pre{
         float: left;
         padding-top:10px;
         color: #0099e8;
       }
-      .product__item-link__pre:hover{
+      &__pre:hover{
         color: #b3d4fc;
         text-decoration: underline;
       }
-      .product__item-link__next{
+      &__next{
         float: right;
         padding-top:10px;
         color: #0099e8;
       }
-      .product__item-link__next:hover{
+      &__next:hover{
         color: #b3d4fc;
         text-decoration: underline;
       }
@@ -323,15 +319,15 @@
       width:100%;
       padding-top:55px;
       margin-bottom: 24px;
-      .product__item__sns__main{
+      &__main{
         height:40px;
         width:100%;
         padding: 0 auto;
-        .product__item__sns__main__box{
+        &__box{
           margin: 0 auto;
           height:40px;
           width:90px;
-          .product__item__sns__main__box__fb{
+          &__fb{
             height: 40px;
             width: 40px;
             background-color: #385185;
@@ -344,10 +340,10 @@
               padding-left:6px;
             }
           }
-          .product__item__sns__main__box__fb:hover{
+          &__fb:hover{
             background-color: #6176a5;
           }
-          .product__item__sns__main__box__tw{
+          &__tw{
             height: 40px;
             width: 40px;
             background-color: #5d9dc9;
@@ -361,7 +357,7 @@
               padding-left:5px;
             }
           }
-          .product__item__sns__main__box__tw:hover{
+          &__tw:hover{
             background-color: #8bc1e6;
           }
         }
@@ -372,49 +368,47 @@
     width: 700px;
     margin: 0 auto;
     background-color:#f5f5f5;
-    .product__add__items{
+    &__items{
       width:100%;
-      // box-sizing: border-box;
-      .product__add__items__title{
+      &__title{
         color:#0099e8;
         font-size:24px;
         margin: 24px 0 8px;
         font-weight: bold;
       }
-      .product__add__items__contents{
+      &__contents{
         display: block;
-        .product__add__items__contents__content{
+        &__content{
           width:220px;
           display: inline-block;
           background-color:#ffffff;
           margin: 0 0 20px 14px;
-
-          .product__add__items__contents__content__a{
-            .product__add__items__contents__content__a__top{}
-            .product__add__items__contents__content__a__bottom{
+          &__a{
+            &__top{}
+            &__bottom{
               height:110px;
               padding:16px;
               font-size: 0.9rem;
-              .product__add__items__contents__content__a__bottom__name{
+              &__name{
                 overflow: hidden;
                 font-size:0.9rem;
                 height:48px;
               }
-              .product__add__items__contents__content__a__bottom__info{
+              &__info{
                 margin-top:20px;
-                .product__add__items__contents__content__a__bottom__info__price{
+                &__price{
                   font-weight: bold;
                   float:left;
                 }
-                .product__add__items__contents__content__a__bottom__info__like{
+                &__like{
                   float:right;
                   #product__fa-heart__add{}
-                  .product__add__items__contents__content__a__bottom__info__likenum{
+                  &__num{
                     font-size:0.9rem;
                   }
                 }
               }
-              .product__add__items__contents__content__a__bottom__tax{
+              &__tax{
                 font-size:0.5rem;
                 clear:both;
                 text-decoration: none;
@@ -422,38 +416,37 @@
             }
           }
         }
-        .product__add__items__contents__content__right{
+        &__content__right{
           width:220px;
           display: inline-block;
           background-color:#ffffff;
           margin-bottom: 20px;
-
-          .product__add__items__contents__content__right__a{
-            .product__add__items__contents__content__right__a__top{}
-            .product__add__items__contents__content__right__a__bottom{
+          &__a{
+            &__top{}
+            &__bottom{
               height:110px;
               padding:16px;
               font-size: 0.9rem;
-              .product__add__items__contents__content__right__a__bottom__name{
+              &__name{
                 overflow: hidden;
                 font-size:0.9rem;
                 height:48px;
               }
-              .product__add__items__contents__content__right__a__bottom__info{
+              &__info{
                 margin-top:20px;
-                .product__add__items__contents__content__right__a__bottom__info__price{
+                &__price{
                   font-weight: bold;
                   float:left;
                 }
-                .product__add__items__contents__content__right__a__bottom__info__like{
+                &__like{
                   float:right;
                   #product__fa-heart__add{}
-                  .product__add__items__contents__content__right__a__bottom__info__likenum{
+                  &__num{
                     font-size:0.9rem;
                   }
                 }
               }
-              .product__add__items__contents__content__right__a__bottom__tax{
+              &__tax{
                 font-size:0.5rem;
                 clear:both;
                 text-decoration: none;
