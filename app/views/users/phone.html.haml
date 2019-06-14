@@ -3,19 +3,19 @@
   %main.registration__main
     %section.registration__main__container
       %h2.registration__main__head__sub 電話番号の確認
-      %form.registration__main__form{:action => "#", :method => "POST"}
-        %input{:name => "", :type => "hidden", :value => ""}/
+      %form.registration__main__form{action: "#", method: "POST"}
+        %input{name: "", type: "hidden", value: ""}/
         .user__form__content
           .user__form__group
-            %label{:for => "user__title"} 携帯電話の番号
-            %input.user__form__input{:name => "", :placeholder => "携帯電話の番号を入力", :type => "tel", :value => ""}/
+            %label{for: "user__title"} 携帯電話の番号
+            %input.user__form__input{name: "", placeholder: "携帯電話の番号を入力", type: "tel", value: ""}/
           %p.user__title__text__inline 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-          %button.user__form__botton{:type => "submit"} SMSを送信する
+          %button.user__form__botton{type: "submit"} SMSを送信する
           %p.user__title__text__inline ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
           .user__form__group
             %p.user__form__other
-              %a.user__form__other__info{:href => "", :target => "_blank"}
+              %a.user__form__other__info{href: "", target: "_blank"}
                 電話番号の確認が必要な理由#{fa_icon("angle-right lg")}
-        %input{:name => "", :type => "hidden", :value => ""}/
-        %input{:name => "", :type => "hidden", :value => ""}/
+        %input{name: "", type: "hidden", value: ""}/
+        %input{name: "", type: "hidden", value: ""}/
   = render 'subfooter'
