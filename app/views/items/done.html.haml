@@ -1,6 +1,13 @@
 .confirm
   .confirm__container
-    %h2.confirm__container__header 購入内容の確認
+    / ここから商品購入完了後のヘッダー
+    .confirm__container__done-attention
+      %h3.confirm__container__done-attention__top
+        %i.fa.fa-hourglass-start
+        %span 発送をお待ちください
+      %p.confirm__container__done-attention__bottom 出品者からの発送通知をお待ちください
+    / ヘッダータイトル
+    %h2.confirm__container__header 購入が完了しました
     / ここから商品情報
     .confirm__container__inner
       %section.confirm__container__inner__item
@@ -37,3 +44,20 @@
         %p.confirm__container__inner__user-payment__inner__payment-type *******8080
         = image_tag 'visa_logo.png', class: 'confirm__container__inner__user-payment__inner__img', size: "31x30"
         = link_to '変更する >', items_confirm_path, class: 'confirm__container__inner__user-delivery__inner__link'
+    / ここから発送通知後の流れ
+    %section.confirm__container__inner__done-guide
+      .confirm__container__inner__done-guide__inner
+        %h3.confirm__container__inner__done-guide__inner__title 発送通知後の流れ
+        .confirm__container__inner__done-guide__inner__icons
+          %i.fa.fa-umbrella.confirm__container__inner__done-guide__inner__icons__icon
+          %i.fa.fa-umbrella.confirm__container__inner__done-guide__inner__icons__icon
+          %i.fa.fa-umbrella.confirm__container__inner__done-guide__inner__icons__icon
+        %p.confirm__container__inner__done-guide__inner__text
+          商品を受け取ったら
+          %br/
+          出品者の評価をしましょう
+          %br/
+          購入代金が出品者に振り込まれます。
+          %br/
+          評価後に取引は完了です。
+        = link_to 'マイページへ戻る', items_confirm_path, class: 'confirm__container__inner__done-guide__inner__link'
