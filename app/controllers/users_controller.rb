@@ -36,4 +36,8 @@ class UsersController < ApplicationController
     render layout: 'second_application'
   end
 
+  def logout
+    render layout: 'application'
+  end
+
 end
