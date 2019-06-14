@@ -198,3 +198,16 @@ label[for='user__title'] {
       position: absolute;
   }
 }
+
+.user__form__other__b {
+  line-height: 1.5;
+  &__info {
+    color: #0099e8 !important;
+    text-decoration: none;
+  }
+}
+
+.user__recap {
+  display: none;
+  
+}
