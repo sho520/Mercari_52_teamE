@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "items/brand" => "items#brand"
   get "items/category" => "items#category"
   get "users/login" => "users#login"
+  get "users/logout" => "users#logout"
   get "users/phone" => "users#phone"
   get "users/address" => "users#address"
   get "users/purchase" => "users#purchase"

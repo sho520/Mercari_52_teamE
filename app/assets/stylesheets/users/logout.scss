@@ -1,0 +1,22 @@
+.mypage__logout {
+  background-color: white;
+  width: 700px;
+  height: 182px;
+  margin: 0 auto;
+  flex-shrink: 0;
+  .logout__content {
+    padding:64px;
+    text-align: center;
+    &__button {
+      background-color: red;
+      height: 50px;
+      width: 320px;
+      margin: 0 auto;
+      line-height: 50px;
+      text-align: center;
+      font-size: 14px;
+      color: white;
+      outline: none;
+    }
+  }
+}
