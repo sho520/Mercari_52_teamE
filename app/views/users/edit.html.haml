@@ -4,17 +4,16 @@
     .nav
       = render "mypage_nav"
     .mypage__profile
-      .mypage__profile__header
-        .mypage__profile__header__title
+      .profile__header
+        .profile__header__title
           プロフィール
-      .mypage__profile__name
-        .mypage__profile__name__content
-          .mypage__profile__name__content__icon
+      .profile__name
+        .profile__name__content
+          .profile__name__content__icon
             = image_tag('member_noimage.png', size:'60x60')
-          %input.mypage__profile__name__content__input
-      .mypage__profile__intro
-        .mypage__profile__intro__content
-          .mypage__profile__intro__content__textarea
-            テキストエリア
-          .mypage__profile__intro__content__button
+          %input.profile__name__content__input{name: "name", placeholder:"例) メルカリ太郎", type:"text", value: "メルカリ太郎"}
+      .profile__intro
+        .profile__intro__content
+          %textarea.profile__intro__content__textarea{name: "introduction", placeholder:"例) こんにちは！よろしくお願いします！", value: ""}
+          %button.profile__intro__content__button{type:"submit"}
             変更する
