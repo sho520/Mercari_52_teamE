@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "items/confirm/done" => "items#done"  #idが入る必要あり
   get "items/brand" => "items#brand"
   get "items/category" => "items#category"
+  get "users/login" => "users#login"
   get "users/phone" => "users#phone"
   get "users/address" => "users#address"
   get "users/purchase" => "users#purchase"
