@@ -2,7 +2,7 @@
   %section.other__block__login
     .other__block__login__head
       %p.other__block__login__text アカウントをお持ちでない方はこちら
-      %a.other__block__login__content{:href => "https://www.mercari.com/jp/signup/?after_save_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F"} 新規会員登録
+      %a.other__block__login__content{href: "#"} 新規会員登録
     .other__block__login__inner
       %button#d__facebook-login.d__btn-sns-facebook
         %i.d__i__fb
@@ -13,18 +13,18 @@
         Googleで登録
     .other__block__login__form
       .user__form__group
-        %input.user__form__input{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+        %input.user__form__input{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/
       .form-group
-        %input.user__form__input{:name => "password", :placeholder => "パスワード", :type => "password"}/
+        %input.user__form__input{name: "password", placeholder: "パスワード", type: "password"}/
       .form-group
         .g-recaptcha{"data-sitekey" => ""}
           %div{:style => "width: 304px; height: 78px;"}
             %div
-              %iframe{:frameborder => "", :height => "78", :name => "", :role => "presentation", :sandbox => "", :scrolling => "", :src => "", :width => "304"}
-            %textarea{:id => "", :name => "", :style => "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
+              %iframe{frameborder: "", height: "78", name: "", role: "presentation", sandbox: "", scrolling: "", src: "", width: "304"}
+            %textarea{id: "", name: "", style: "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
       %button.user__form__botton{:type => "submit"} ログイン
-      %input{:name => "", :type => "hidden", :value => ""}/
-      %input{:name => "", :type => "hidden", :value => ""}/
+      %input{name: "", type: "hidden", value: ""}/
+      %input{name: "", type: "hidden", value: ""}/
       .user__form__group
         %p.user__form__other__b
-          %a.user__form__other__info{:href => "#"} パスワードをお忘れの方
+          %a.user__form__other__info{href: "#"} パスワードをお忘れの方
