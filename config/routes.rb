@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   get "items/brand" => "items#brand"
   get "items/category" => "items#category"
   get "users/login" => "users#login"
-  get "users/logout" => "users#logout"
+  get "users/logout" => "users#logout"  #idが入る必要あり
   get "users/phone" => "users#phone"
   get "users/address" => "users#address"
   get "users/purchase" => "users#purchase"
   get "users/complete" => "users#complete"
+  get "users/identification" => "users#identification"  #idが入る必要あり
+  get "users/card" => "users#card"  #idが入る必要あり
   resources :amas
   resources :turus
   resources :items

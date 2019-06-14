@@ -40,4 +40,12 @@ class UsersController < ApplicationController
     render layout: 'application'
   end
 
+  def identification
+    render layout: 'application'
+  end
+
+  def card
+    render layout: 'application'
+  end
+
 end
