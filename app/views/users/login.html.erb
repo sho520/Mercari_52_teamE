@@ -1,12 +1,10 @@
 <main class='other__block'>
   <section class='other__block__login'>
-    <h2 class='other__block__login__head'>新規会員登録</h2>
-    <div class='other__block__inner'>
-      <div class='other__block__content'>
-        <a class='d__btn-mail' href='/users'>
-          <i class='d__i__mail'></i>
-          メールアドレスで登録
-        </a>
+    <div class='other__block__login__head'>
+    <p class='other__block__login__text'>アカウントをお持ちでない方はこちら</p>
+      <a class='other__block__login__content' href="https://www.mercari.com/jp/signup/?after_save_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F">新規会員登録</a>
+    </div>
+    <div class='other__block__login__inner'>
         <button class='d__btn-sns-facebook' id='d__facebook-login'>
           <i class='d__i__fb'></i>
           <i class='icon-facebook'></i>
@@ -18,11 +16,31 @@
         </button>
       </div>
     </div>
+      <div class="other__block__login__form">
+        <div class="user__form__group">
+          <input type="email" name="email" value="" placeholder="メールアドレス" class="user__form__input">
+        </div>
+
+        <div class="form-group">
+          <input type="password" name="password" placeholder="パスワード" class="user__form__input">
+        </div>
+
+        <div class="form-group">
+          <div class="g-recaptcha" data-sitekey=""><div style="width: 304px; height: 78px;"><div><iframe src="" width="304" height="78" role="presentation" name="" frameborder="" scrolling="" sandbox=""></iframe></div><textarea id="" name="" class="" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+        </div>
+
+        <button type="submit" class="user__form__botton">ログイン</button>
+
+        <input type="hidden" name="" value="">
+        <input type="hidden" name="" value="">
+
+      <div class='user__form__group'>
+      <p class='user__form__other__b'>
+      <a class='user__form__other__info' href="#">パスワードをお忘れの方</a>
+      </p>
+      </div>
+    </div>
   </section>
 </main>
 
 
-<div class="login-no-account">
-<p>アカウントをお持ちでない方はこちら</p>
-<a href="https://www.mercari.com/jp/signup/?after_save_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F">新規会員登録</a>
-</div>
