@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get "users/complete" => "users#complete"
   resources :amas
   resources :turus
-  resources :tech_camp_mentor_abes
   resources :items
   resources :users
 end
