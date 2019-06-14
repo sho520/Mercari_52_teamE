@@ -1,0 +1,69 @@
+.mypage__profile {
+  width: 700px;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.profile__header {
+  background-color: white;
+  height: 50px;
+  &__title {
+    padding:8px 24px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.profile__name {
+  height: 156px;
+  &__content {
+    background-image: url(mypage_background.jpg);
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    padding: 72px 16px 24px;
+    &__icon {
+      img {
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+    }
+    &__input {
+      width: 220px;
+      height: 48px;
+      margin: 6px 0 6px;
+      padding: 10px 16px 8px;
+      box-sizing:border-box;
+      outline: none;
+      border-radius: 4px;
+    }
+  }
+}
+
+.profile__intro {
+  background-color: white;
+  height: 362px;
+  &__content {
+    padding:40px 16px;
+    &__textarea {
+      height: 216px;
+      width: 100%;
+      box-sizing:border-box;
+      padding: 10px;
+      outline: none;
+    }
+    &__button {
+      background-color: red;
+      margin-top: 16px;
+      height: 50px;
+      width: 100%;
+      padding: 0;
+      line-height: 50px;
+      text-align: center;
+      font-size: 14px;
+      color: white;
+      outline: none;
+    }
+  }
+}
