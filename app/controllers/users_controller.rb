@@ -32,4 +32,8 @@ class UsersController < ApplicationController
     render :layout => 'third_application'
   end
 
+  def login
+    render :layout => 'second_application'
+  end
+
 end
