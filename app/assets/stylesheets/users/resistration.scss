@@ -104,3 +104,27 @@
   background-image: image-url("google-icon.png");
   background-size: cover;
 }
+
+
+.other__block__login {
+  width: 456px;
+  margin: 0 auto;
+  background-color: white;
+  &__head {
+  }
+  &__head {
+    padding: 32px 16px;
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: bold;
+  }
+  &__inner {
+    border-top: 1px solid #f5f5f5;
+    padding: 64px;
+  }
+  &__content {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
