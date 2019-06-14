@@ -16,6 +16,10 @@ class ItemsController < ApplicationController
     render :layout => 'second_application'
   end
 
+  def done
+    render :layout => 'second_application'
+  end
+
   def brand
     render :layout => 'application'
   end

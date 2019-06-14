@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'items#index'
 
   get "items/confirm" => "items#confirm"  #idが入る必要あり
+  get "items/confirm/done" => "items#done"  #idが入る必要あり
   get "items/brand" => "items#brand"
   get "items/category" => "items#category"
   get "users/phone" => "users#phone"
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
   get "users/complete" => "users#complete"
   resources :amas
   resources :turus
-  resources :tech_camp_mentor_abes
   resources :items
   resources :users
 end
