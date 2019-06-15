@@ -96,8 +96,8 @@ ActiveRecord::Schema.define(version: 2019_06_15_063237) do
     t.integer "prefecture_id", null: false
     t.string "password", null: false
     t.text "credit"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
