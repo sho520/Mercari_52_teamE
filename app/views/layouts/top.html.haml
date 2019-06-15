@@ -1,13 +1,14 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title Mercari52Teame
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    %script{:src => "/bxslider.min.scss"}
+    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
   %body
     .product-header
       .product-header__container
@@ -28,6 +29,21 @@
             = link_to '新規会員登録', items_path, class: 'product-header__container__under__user__signup'
             = link_to 'ログイン', items_path, class: 'product-header__container__under__user__login'
     = yield
+
+    .banner
+      .banner__inner
+        .banner__inner__block
+          %section.banner__inner__block__icon
+            %h2 スマホでかんたんフリマアプリ
+            %p 今すぐ無料ダウンロード
+            %section.banner__inner__block__icon__logo
+              = image_tag 'app-logo.jpg', alt: 'logo', class: 'banner__inner__block__icon__logo__main', height: '68', width: '68'
+              %ul.banner__inner__block__icon__logo__link
+                %li= image_tag 'appstore.jpeg', alt: 'logo', class: 'banner__inner__block__icon__logo__link__a', height: '38', width: '133'
+                %li= image_tag 'googleplay.png', alt: 'logo', class: 'banner__inner__block__icon__logo__link__b', height: '38', width: '133'
+          .banner__inner__image
+            = image_tag 'appa.png', alt: 'appimage', class: 'banner__inner__image__app'
+
     %footer.footer
       .footer-contents
         .footer-contents-left
