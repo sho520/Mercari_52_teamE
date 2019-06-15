@@ -14,7 +14,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password, null: false, unique: true
       t.text :credit
       t.timestamps null: true
+      t.timestamps
     end
   end
 end
-
