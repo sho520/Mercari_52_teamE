@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_15_081551) do
+ActiveRecord::Schema.define(version: 2019_06_15_093219) do
 
   create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "condition_rank", null: false
@@ -26,21 +26,21 @@ ActiveRecord::Schema.define(version: 2019_06_15_081551) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "description", null: false
+    t.string "name"
+    t.text "description"
     t.string "brand"
-    t.string "size", null: false
-    t.integer "condition_id", null: false
-    t.integer "shipping_fee_payer_id", null: false
-    t.integer "prefecture_id", null: false
-    t.integer "shipping_days_id", null: false
-    t.integer "price", null: false
-    t.integer "owner_id", null: false
+    t.string "size"
+    t.integer "condition_id"
+    t.integer "shipping_fee_payer_id"
+    t.integer "prefecture_id"
+    t.integer "shipping_days_id"
+    t.integer "price"
+    t.integer "owner_id"
     t.integer "buyer_id"
-    t.integer "state_id", null: false
-    t.integer "large_class_id", null: false
-    t.integer "middle_class_id", null: false
-    t.integer "small_class_id", null: false
+    t.integer "state_id"
+    t.integer "large_class_id"
+    t.integer "middle_class_id"
+    t.integer "small_class_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -84,22 +84,22 @@ ActiveRecord::Schema.define(version: 2019_06_15_081551) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
-    t.date "birthday", null: false
-    t.string "zipcode", null: false
-    t.text "address", null: false
-    t.string "mail", null: false
-    t.string "phone", null: false
+    t.string "nickname"
+    t.date "birthday"
+    t.string "zipcode"
+    t.text "address"
+    t.string "mail"
+    t.string "phone"
     t.text "profile"
-    t.integer "prefecture_id", null: false
-    t.string "password", null: false
+    t.integer "prefecture_id"
+    t.string "password"
     t.text "credit"
-    t.string "family_name", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name", null: false
-    t.string "first_name_kana", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "family_name"
+    t.string "family_name_kana"
+    t.string "first_name"
+    t.string "first_name_kana"
   end
 
 end
