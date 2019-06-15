@@ -1,4 +1,42 @@
 .iden__container {
   width: 100%;
-  background-color: aqua;
+  padding: 0 0 40px;
+  &__inner {
+    background: #fff;
+    display: block;
+  }
+  &__head {
+    font-size: 24px;
+    padding: 8px 24px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+  &__single {
+    padding: 64px;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+  }
+}
+
+.user__form__group__c {
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+.user__form__birthday__b {
+  display: block;
+  &__select {
+    display: inline-block;
+    width: 76px;
+    position: relative;
+    background: #fff;
+  }
+}
+
+.user__form__infomation__b {
+  margin: 8px 0 0;
+  line-height: 1.5;
+  color: #888;
+  text-align: left;
 }
