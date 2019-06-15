@@ -28,16 +28,20 @@
             = link_to '新規会員登録', items_path, class: 'product-header__container__under__user__signup'
             = link_to 'ログイン', items_path, class: 'product-header__container__under__user__login'
     = yield
-    .app-intro
-      .app-intro-inner
-        %h2 スマホで簡単フリマアプリ
-        %p 今すぐ無料ダウンロード！
-      .app-intro-icon
-        = image_tag 'app-logo.jpg',class: "app-logo", height: '68', width: '68'
-        %ul.app-intro-links
-          %li.app-store
-          %li.app-google
-      = image_tag 'appa.png',class: "app-img", height: '260'
+    .banner
+      .banner__inner
+        .banner__inner__block
+          %section.banner__inner__block__icon
+            %h2 スマホでかんたんフリマアプリ
+            %p 今すぐ無料ダウンロード
+            %section.banner__inner__block__icon__logo
+              = image_tag 'app-logo.jpg', alt: 'logo', class: 'banner__inner__block__icon__logo__main', height: '68', width: '68'
+              %ul.banner__inner__block__icon__logo__link
+                %li= image_tag 'appstore.jpeg', alt: 'logo', class: 'banner__inner__block__icon__logo__link__a', height: '38', width: '133'
+                %li= image_tag 'googleplay.png', alt: 'logo', class: 'banner__inner__block__icon__logo__link__b', height: '38', width: '133'
+          .banner__inner__image
+            = image_tag 'appa.png', alt: 'appimage', class: 'banner__inner__image__app'
+            
     %footer.footer
       .footer-contents
         .footer-contents-left

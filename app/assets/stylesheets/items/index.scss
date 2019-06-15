@@ -1,136 +1,193 @@
-$white: #fff;
-$red: #ea352d;
-.index__wrapper {
+.items-index {
+  background-color: #fff;
   margin: 0;
   padding: 0;
   position: relative;
-  .main-toppage{
-    background-color:$white;
-    .js-head-slider {
-      // background: #EEEEEE;
-      width: 100vw;
-      height: 290px;
-      .head-slider-img {
-        text-align: center;
-        width: 100%;
-        height: 290px;
-      }
+  height: 100%;
+  &__js-slider {
+    width: 100%;
+    @media screen and (min-width:480px) {
+    /*　画面サイズが480pxからはここを読み込む　*/
+    height: 200px;
     }
-    .pickup__contaner {
-      background: #EEEEEE;
-      padding: 40px 0;
-      .pickup-header {
-        text-align: center;
-        font-size: 26px;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-
-      }
-      .products-box-group {
-        background: #EEEEEE;
-        width: 700px;
-        height: 442px;
+    @media screen and (min-width:768px) and ( max-width:1024px) {
+    /*　画面サイズが768pxから1024pxまではここを読み込む　*/
+    height: 290px;
+    }
+    @media screen and (min-width:1024px) {
+    // /*　画面サイズが1024pxからはここを読み込む　*/
+    height: 390px;
+    }
+    &__list {
+      &__image {
         margin: 0 auto;
-        .products-box-header {
-          text-align: center;
-          font-size: 20px;
-          margin: 26px 11px;
-          font-weight: bold;
-          letter-spacing: 0.1em;
-          .header-link {
-            text-decoration: none;
-            color: #3399FF;
-            &:hover {
-              opacity: 0.7;
-              text-decoration: underline;
-            }
-          }
+        width: 100%;
+        @media screen and (min-width:480px) {
+        height: 200px;
         }
-        .products-box {
-          .product-content {
-            background: $white;
-            width: 213px;
-            height: 330px;
-            margin: 0 0 0 20px;
-            float: left;
-            .product-box-img {
-              background: gray;
-              height: 140px;
-              width: 140px;
-              z-index: 1;
-            }
-            .product-box-info {
-              padding: 16px;
-              height: 110px;
-              width: 86%;
-              .product-name {
-                overflow: hidden;
-                font-weight: 400;
-                height: 2.5em;
-                line-height: 1.5;
-                word-break: break-word;
-                white-space: normal;
-              }
-              .product-box-price {
-                p {
-                  font-size: 14px;
-                  font-weight: 600;
-                  color: #333;
-                }
-                .price {
-                  float: left;
-                }
-                .like {
-                  float: right;
-                }
-                .product-tax {
-                  font-size: 10px;
-                  clear: both;
-                }
-              }
-            }
-          }
-          .product-all {
-            padding: 20px 0 30px;
-            text-align: right;
-            font-size: 14px;
-            .all-link {
-              letter-spacing: 0.05em;
-              text-decoration: none;
-              color: #3399FF;
-              cursor: pointer;
-              &:hover {
-                opacity: 0.7;
-                text-decoration: underline;
-              }
-            }
-          }
+        @media screen and (min-width:768px) and ( max-width:1024px) {
+        height: 290px;
         }
+        @media screen and (min-width:1024px) {
+        height: 390px;
+        }
+      }
+    }
 
+  }
+      &__container {
+        padding: 40px 0;
+        background: #f5f5f5;
+        height: 100%;
+
+        &__header {
+          text-align: center;
+          font-size: 22px;
+          font-weight: 550;
+          line-height: 1.4;
+          letter-spacing: 5px;
+          @media screen and (min-width:768px) {
+            font-size: 28px;
+          }
+        }
+          &__list {
+            margin: 0 auto;
+            margin-top: 52px;
+
+            display: block;
+            overflow: hidden;
+            @media screen and (min-width:480px) and (min-width:768px) {
+            height: 2100px;
+            width: 98%;
+            }
+            @media screen and (min-width:768px) and ( max-width:1024px) {
+            width: 700px;
+            height: 1400px;
+            }
+            @media screen and (min-width:1024px) {
+            width: 940px;
+            height: 1400px;
+            }
+
+            &__box {
+
+              @media screen and (min-width:480px) {
+              background-color: #fff;
+              margin: 0 0 20px 20px;
+              height: 330px;
+              width: 213px;
+              position: relative;
+              float: left;
+              }
+              @media screen and (min-width:768px) {
+              background-color: #fff;
+              width: 213px;
+              height: 330px;
+              margin: 0 0 20px 20px;
+              position: relative;
+              float: left;
+              }
+              &__group {
+                width: 100%;
+                height: 100%;
+                display:block;
+                text-decoration: none;
+                color: #000	;
+
+                &__img {
+                  height: 220px;
+                  width: 213px;
+                }
+                &__info {
+                  padding: 16px;
+
+                  &__title {
+                    overflow: hidden;
+                    position: relative;
+                    font-weight: 400;
+                    font-size: 14px;
+                    height: 3em;
+                    line-height: 1.5;
+                    word-break: break-word;
+                    white-space: normal;
+                  }
+
+                  &__block {
+                    margin-top: 8px;
+                    display: flex;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    -webkit-box-pack: justify;
+                    justify-content: space-between;
+
+                    &__price {
+                      font-size: 14px;
+                      font-weight: 550;
+                    }
+                    &__likes {
+                      font-size: 14px;
+                      font-weight: 400;
+                      color: #333;
+                    }
+                  }
+
+                  &__tax {
+                    font-size: 10px;
+                  }
+                }
+              }
+            }
+          }
+          &__alllink {
+            padding: 20px 0 30px;
+            width: 100%;
+            text-align: center;
+          }
+
+          &__sale-btn {
+            background-color: #ea352d;
+            color: #fff;
+
+            font-size: 22px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            border-radius: 50%;
+            position: fixed;
+            bottom:  32px;
+            right:  32px;
+            z-index: 10;
+            @media screen and (min-width:480px) {
+            width: 80px;
+            height: 80px;
+            }
+            @media screen and (min-width:768px) {
+            /*　画面サイズが768pxからはここを読み込む　*/
+            width: 160px;
+            height: 160px;
+            }
+
+          &__text {
+            @media screen and (min-width:480px) {
+              padding-top: 16px;
+              font-size: 16px;
+            }
+            @media screen and (min-width:768px) {
+            padding-top: 32px;
+            font-size: 22px;
+            }
+          }
+          &__icon {
+            @media screen and (min-width:480px) {
+              font-size: 27px;
+              margin-top: 2px;
+            }
+            @media screen and (min-width:768px) {
+            font-size: 54px;
+            margin-top: 2px;
+            }
+
+          }
       }
     }
   }
-  .sale-btn {
-    background-color: $red;
-    color: $white;
-    width: 160px;
-    height: 160px;
-    font-size: 22px;
-    text-align: center;
-    display: block;
-    text-decoration: none;
-    border-radius: 50%;
-    // box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
-    position: fixed;
-    bottom:  32px;
-    right:  32px;
-    z-index: 10;
-    .sale-btn-text {
-      padding-top: 32px;
-    }
-    .fa-camera-retro {
-      font-size: 54px;
-      margin-top: 2px;
-    }
-  }
-}
