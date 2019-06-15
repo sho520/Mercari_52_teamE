@@ -10,7 +10,9 @@ body {
 .mypage__container {
   display: flex;
   flex-direction: row;
-  margin: 40px;
+  margin: 40px auto 0;
+  width: 1020px;
+
 }
 
 .mypage__main {
