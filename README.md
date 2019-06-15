@@ -44,6 +44,7 @@ rails 5.2.3
 |profile  |text | |
 |prefecture_id |integer |null: false, foreign_key: true  |
 |password  |string  |null: false, unique: true  |
+|credit  |text  |null: false, unique: true  |
 
 ### Association
 
