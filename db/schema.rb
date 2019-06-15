@@ -94,8 +94,8 @@ ActiveRecord::Schema.define(version: 2019_06_15_093219) do
     t.integer "prefecture_id"
     t.string "password"
     t.text "credit"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "family_name"
     t.string "family_name_kana"
     t.string "first_name"
