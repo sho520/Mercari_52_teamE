@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  protect_from_forgery
 
   def index
     render layout: 'top'
@@ -29,7 +30,14 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.create(params[:name])
+    Item.create(item_params)
+    
   end
+
+  private
+  def item_params
+    params.permit(:name)
+  end
+
 
 end
