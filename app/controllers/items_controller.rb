@@ -28,4 +28,8 @@ class ItemsController < ApplicationController
     render layout: 'application'
   end
 
+  def create
+    Item.create(params[:name])
+  end
+
 end
