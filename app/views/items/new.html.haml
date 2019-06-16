@@ -1,80 +1,80 @@
 .s__ExhibitionPage__MainBox
   .s__MainBox__Title
     %h2.Title 商品の情報を入力
-  %form.s__MainBoxform__Content
+  %form.s__MainBoxform__Content{action:"/items" , method:"post", authenticity_token: true} 
     .s__ContentImage
       .s__ContentImage__Title
         出品画像
         %span.hissu 必須
       %p.saidai10 最大10枚までアップロードできます
       .s__ContentImage__Image
-        %input{:type => "image"}/
+        %input{type:"image"}/
         ドラッグアンドドロップ
         %bl
           またはクリックしてファイルををアップロード
     .s__Content__Name__Description
       / 商品名
       .s__Content__Name
-        %label.box2font{:for => ""} 商品名
+        %label.box2font{for: ""} 商品名
         %span.hissu 必須
         %div
-          %input.s__Content__Nametittle{:name => "", :placeholder => " 商品名（必須 40文字まで)", :type => "text", :value => ""}/
+          %input.s__Content__Nametittle{name:"name", placeholder:  " 商品名（必須 40文字まで)", type:  "text", value:  ""}/
       / 商品の説明
       .s__Content__Description
-        %label.box2font{:for => ""} 商品の説明
+        %label.box2font{for: ""} 商品の説明
         %span.hissu 必須
-        %textarea.s__contemt__text{:cols => "80", :name => "name", :placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => "8"}
+        %textarea.s__contemt__text{cols:  "80", name:"description", placeholder:  "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows:  "8"}
     .s__Exhibition__Details
       %h2.box3__itemfont1 商品の詳細
       .s__Details__Configuration
         .s__Details__Category1
-          %label.box3__itemfont2{:for => ""} カテゴリー
+          %label.box3__itemfont2{for:  ""} カテゴリー
           %span.hissu 必須
           %div
-            %select.s__box3{:name => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
+            %select.s__box3{name:""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
         .s__Details__Category2
-          %label{:for => ""}
+          %label{for: ""}
           %div
-            %select.s__box3{:name => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
+            %select.s__box3{name:""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
         .s__Details__Category3
-          %label{:for => ""}
+          %label{for: ""}
           %div
-            %select.s__box3{:name => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
+            %select.s__box3{name:""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
         .s__Details__Size
-          %label.box3__itemfont2{:for => ""} サイズ
+          %label.box3__itemfont2{for: ""} サイズ
           %span.hissu 必須
           %div
-            %select.s__box3{:name => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
+            %select.s__box3{name:""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
         .s__Details__State
-          %label.box3__itemfont2{:for => ""} 商品の状態
+          %label.box3__itemfont2{for: ""} 商品の状態
           %span.hissu 必須
           %div
-            %select.s__box3{:name => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
-              %option{:value => ""}
+            %select.s__box3{name:""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
+              %option{value: ""}
     .s__Content__delivery
       .s__delivery__LeftContent
         %h2.box4__itemfont
@@ -82,48 +82,48 @@
           \#{link_to '?', new_item_path, class: "btn-large"}
       .s__delivery__RightContent
         .s__delivery__Description
-          %label{:for => ""} 配送料の負担
+          %label{for: ""} 配送料の負担
           %span.hissu 必須
           %div
-            %select.s__box4{:name => ""}
-              %option{:value => ""}
-              %option{:value => ""}
+            %select.s__box4{name:""}
+              %option{value: ""}
+              %option{value: ""}
         .s__delivery__Configuration
-          %label{:for => ""} 配送の方法
+          %label{for: ""} 配送の方法
           %span.hissu 必須
           %div
-            %select.s__box4{:name => ""}
-              %option{:value => ""}
-              %option{:value => ""}
+            %select.s__box4{name:""}
+              %option{value: ""}
+              %option{value: ""}
         .s__delivery__Configuration
-          %label{:for => ""} 発送元の地域
+          %label{for: ""} 発送元の地域
           %span.hissu 必須
           %div
-            %select.s__box4{:name => ""}
-              %option{:value => ""}
-              %option{:value => ""}
+            %select.s__box4{name:""}
+              %option{value: ""}
+              %option{value: ""}
         .s__delivery__Configuration
-          %label{:for => ""} 発送までの日数
+          %label{for: ""} 発送までの日数
           %span.hissu 必須
           %div
-            %select.s__box4{:name => ""}
-              %option{:value => ""}
-              %option{:value => ""}
+            %select.s__box4{name:""}
+              %option{value: ""}
+              %option{value: ""}
     .s__Content__Price
       %h2.box5__itemfont1 販売価格(300〜9,999,999)
       .s__Price__light
         .s__Price__box
           .s__Price__title
-            %label.box5__itemfont2{:for => ""} 価格
+            %label.box5__itemfont2{for:  ""} 価格
             %span.hissu 必須
           .s__Price__Configuration
-            %input#price.inputPrice{:type => "number"}/
+            %input#price.inputPrice{name:"price",type:"number"}/
         .s__Price__Fee
-          %label{:for => ""} 販売手数料 (10%)
-          %output#fee{:type => "number"} 0
+          %label{for: ""} 販売手数料 (10%)
+          %output#fee{type:  "number"} 0
         .s__Price__Profit
-          %label.box5__itemfont2{:for => ""} 販売利益
-          %output#profit{:type => "number"} 0
+          %label.box5__itemfont2{for:  ""} 販売利益
+          %output#profit{type: "number"} 0
       / <haml_silent></haml_silent>
     .s__Content__Terms
       %p
@@ -135,6 +135,6 @@
         %br/
         %br/
       %div
-        %input.s__submit{:type => "submit", :value => "出品する"}/
+        %input.s__submit{type:  "submit", value:  "出品する"}/
       .btn__back1
         = link_to 'もどる', new_item_path, class: "modoru"
