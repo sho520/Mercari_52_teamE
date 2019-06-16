@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_15_093219) do
+ActiveRecord::Schema.define(version: 2019_06_16_081151) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ancestry"
+  end
 
   create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "condition_rank", null: false
@@ -94,8 +101,8 @@ ActiveRecord::Schema.define(version: 2019_06_15_093219) do
     t.integer "prefecture_id"
     t.string "password"
     t.text "credit"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string "family_name"
     t.string "family_name_kana"
     t.string "first_name"

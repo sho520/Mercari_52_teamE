@@ -438,6 +438,31 @@ SmallClass.create(:name => "知育玩具", :middle_class_id => 5)
 SmallClass.create(:name => "パジャマ", :middle_class_id => 6)
 SmallClass.create(:name => "下着", :middle_class_id => 6)
 
+
+men = Category.create(:name => "men")
+women = Category.create(:name => "women")
+child = Category.create(:name => "child")
+
+men_tops = men.children.create(:name => "トップス")
+men_bottoms = men.children.create(:name => "ボトム")
+women_skirts = women.children.create(:name => "スカート")
+women_shoes = women.children.create(:name => "靴")
+child_toies = child.children.create(:name => "おもちゃ")
+child_clothes = child.children.create(:name => "洋服")
+
+men_tops.children.create(:name => "Tシャツ")
+men_tops.children.create(:name => "ポロシャツ")
+men_bottoms.children.create(:name => "スラックス")
+men_bottoms.children.create(:name => "チノパン")
+women_skirts.children.create(:name => "ミニスカート")
+women_skirts.children.create(:name => "ロングスカート")
+women_shoes.children.create(:name => "パンプス")
+women_shoes.children.create(:name => "ブーツ")
+child_toies.children.create(:name => "オルゴール")
+child_toies.children.create(:name => "知育玩具")
+child_clothes.children.create(:name => "パジャマ")
+child_clothes.children.create(:name => "下着")
+
 User.create(family_name: "森内",
   first_name: "貴寛",
   family_name_kana: "moriuchi",
@@ -513,3 +538,4 @@ User.create(family_name: "小柳",
   password: "55555555",
   credit: "55555555"
 )
+
