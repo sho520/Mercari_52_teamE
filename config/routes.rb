@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get "users/complete" => "users#complete"
   get "users/identification" => "users#identification"  #idが入る必要あり
   get "users/card" => "users#card"  #idが入る必要あり
-  resources :amas
-  resources :turus
   resources :items
   resources :users
 end
