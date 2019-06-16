@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_16_081151) do
+ActiveRecord::Schema.define(version: 2019_06_16_095402) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2019_06_16_081151) do
     t.integer "condition_id"
     t.integer "shipping_fee_payer_id"
     t.integer "prefecture_id"
-    t.integer "shipping_days_id"
     t.integer "price"
     t.integer "owner_id"
     t.integer "buyer_id"
@@ -50,6 +49,8 @@ ActiveRecord::Schema.define(version: 2019_06_16_081151) do
     t.integer "small_class_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
+    t.integer "shipping_day_id"
   end
 
   create_table "large_classes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -101,8 +102,8 @@ ActiveRecord::Schema.define(version: 2019_06_16_081151) do
     t.integer "prefecture_id"
     t.string "password"
     t.text "credit"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "family_name"
     t.string "family_name_kana"
     t.string "first_name"
