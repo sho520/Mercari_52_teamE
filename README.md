@@ -33,8 +33,10 @@ rails 5.2.3
 
 |Column  |Type  |Options  |
 |---|---|---|
-|name |string  |null: false  |
-|kana|string  |null: false  |
+|family_name |string  |null: false  |
+|family_name_kana|string  |null: false  |
+|first_name |string  |null: false  |
+|first_name_kana|string  |null: false  |
 |nickname |string |null: false, unique: true  |
 |birthday |date  |null: false  |
 |zipcode |string  |null: false  |
