@@ -10,15 +10,22 @@
       %i#product__fa-angle-right.fa.fa-angle-right
     %li
       %a{href: ""}
-        %span ベビー・キッズ
+        %span 
+          = @item.category.parent.parent.name
       %i#product__fa-angle-right.fa.fa-angle-right
     %li
-      %a
-        %span キッズ服(女の子用)100cm~
+      %a{href: ""}
+        %span
+          = @item.category.parent.name
+      %i#product__fa-angle-right.fa.fa-angle-right
+    %li
+      %span 
+        = @item.category.name
 %main.product__main
   .product__item
     .product__item-box
-      %h1.product__h1 エヘカソポ スカート
+      %h1.product__h1
+        = @item.name 
       .product__item-box__main
         .product__item-box__main__left
           .product__item-box__main__left__bigpic
@@ -48,28 +55,36 @@
               %tr.product__tr
                 %th.product__th 出品者
                 %td.product__td
-                  %a{href: ""} 出品者名
+                  %a{href: ""} 
+                    = @item.owner.nickname
               %tr.product__tr
                 %th.product__th カテゴリー
                 %td.product__td
-                  %a{href: ""} レディス
-                  \&gt;
-                  %a{href: ""} スカート
-                  \&gt;
-                  %a{href: ""} 膝丈スカート
+                  %a{href: ""}
+                    = @item.category.parent.parent.name
+                    %i#product__fa-angle-right.fa.fa-angle-right
+                  %a{href: ""} 
+                    = @item.category.parent.name
+                    %i#product__fa-angle-right.fa.fa-angle-right
+                  %a{href: ""}
+                    = @item.category.name
               %tr.product__tr
                 %th.product__th ブランド
                 %td.product__td
-                  %a{href: ""} エヘカソポ
+                  %a{href: ""} 
+                    = @item.brand
               %tr.product__tr
                 %th.product__th サイズ
-                %td.product__td M
+                %td.product__td 
+                  = @item.size
               %tr.product__tr
                 %th.product__th 商品の状態
-                %td.product__td 未使用に近い
+                %td.product__td 
+                  = @item.condition.condition_rank
               %tr.product__tr
                 %th.product__th 配送料の負担
-                %td.product__td 送料込み(出品者負担)
+                %td.product__td 
+                  = @item.shipping_fee_payer.payer
               %tr.product__tr
                 %th.product__th 配送の方法
                 %td.product__td
@@ -77,48 +92,27 @@
               %tr.product__tr
                 %th.product__th 配送元地域
                 %td.product__td
-                  %a{href: ""} 神奈川県
+                  %a{href: ""} ここに入る
               %tr.product__tr
                 %th.product__th 配送日の目安
                 %td.product__td
-                  %a 1日~2日で発送
+                  %a
+                    = @item.shipping_day.days
       .product__item-box__price
-        %span.product__item-box__price__amount ¥10,000
+        %span.product__item-box__price__amount
+          = "¥" + @item.price.to_s(:delimited).to_s
         %span.product__item-box__price__withtax (税込)
         %span.product__item-box__price__shipcost 送料込み
-      .product__item-box__buybox
-        %a>
-        購入画面に進む
-      .product__item-box__buybox--ng
-        %a>
-        売り切れました
+      - if @item.state_id == 1 || @item.state_id == 2
+        .product__item-box__buybox
+          %a
+            購入画面に進む
+      - else
+        .product__item-box__buybox--ng
+          %a
+            売り切れました
       .product__item-box__desc
-        カラーステッチタイトスカート
-        %br/
-        色 カーキ
-        %br/
-        サイズ M
-        %br/
-        素材 綿100％
-        %br/
-        【参考】※多少の誤差あり
-        ウエスト 66cm
-        ヒップ 98cm
-        総丈 80cm
-        %br/
-        着用回数１回
-        %br/
-        気になることなどございましたらコメントどうぞ！
-        %br/
-        ★発送までに7日かかる場合があります
-        %br/
-        ★プロフィール必読
-        %br/
-        他にも可愛いお洋服出品しております！ぜひ見てみてください( ¨̮ )
-        %br/
-        ehkasopo
-        %br/
-        サマンサモスモス  アースミュージックアンドエコロジー  ローリーズファーム  ジーユー
+        = @item.description
       .product__item-box__button
         .product__item-box__button__left
           .product__item-box__button__left__like
@@ -160,23 +154,23 @@
   .product__add
     .product__add__items
       .product__add__items__title
-        あまがささんのその他出品
+        = @item.owner.nickname + "さんのその他出品"
       .product__add__items__contents
-        %section.product__add__items__contents__content__right
-          %a.product__add__items__contents__content__right__a{href: ""}
-            .product__add__items__contents__content__right__a__top
+        %section.product__add__items__contents__content
+          %a.product__add__items__contents__content__a{href: ""}
+            .product__add__items__contents__content__a__top
               = image_tag 'm52161295392_1.jpg', width: '220px', class: ""
-            .product__add__items__contents__content__right__a__bottom
-              .product__add__items__contents__content__right__a__bottom__name
+            .product__add__items__contents__content__a__bottom
+              .product__add__items__contents__content__a__bottom__name
                 雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__right__a__bottom__info
-                .product__add__items__contents__content__right__a__bottom__info__price
+              .product__add__items__contents__content__a__bottom__info
+                .product__add__items__contents__content__a__bottom__info__price
                   ¥ 20,000
-                .product__add__items__contents__content__right__a__bottom__info__like
+                .product__add__items__contents__content__a__bottom__info__like
                   %i.fa.fa-heart
-                  %span.product__add__items__contents__content__right__a__bottom__info__like__num
+                  %span.product__add__items__contents__content__a__bottom__info__like__num
                     1
-              .product__add__items__contents__content__right__a__bottom__tax
+              .product__add__items__contents__content__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content
           %a.product__add__items__contents__content__a{href: ""}
@@ -210,21 +204,21 @@
                     1
               .product__add__items__contents__content__a__bottom__tax
                 (税込)
-        %section.product__add__items__contents__content__right
-          %a.product__add__items__contents__content__right__a{href: ""}
-            .product__add__items__contents__content__right__a__top
+        %section.product__add__items__contents__content
+          %a.product__add__items__contents__content__a{href: ""}
+            .product__add__items__contents__content__a__top
               = image_tag 'cosme3.jpeg', width: '220px', class: ""
-            .product__add__items__contents__content__right__a__bottom
-              .product__add__items__contents__content__right__a__bottom__name
+            .product__add__items__contents__content__a__bottom
+              .product__add__items__contents__content__a__bottom__name
                 雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__right__a__bottom__info
-                .product__add__items__contents__content__right__a__bottom__info__price
+              .product__add__items__contents__content__a__bottom__info
+                .product__add__items__contents__content__a__bottom__info__price
                   ¥ 20,000
-                .product__add__items__contents__content__right__a__bottom__info__like
+                .product__add__items__contents__content__a__bottom__info__like
                   %i.fa.fa-heart
-                  %span.product__add__items__contents__content__right__a__bottom__info__like__num
+                  %span.product__add__items__contents__content__a__bottom__info__like__num
                     1
-              .product__add__items__contents__content__right__a__bottom__tax
+              .product__add__items__contents__content__a__bottom__tax
                 (税込)
         %section.product__add__items__contents__content
           %a.product__add__items__contents__content__a{href: ""}
@@ -261,7 +255,7 @@
   .product__add
     .product__add__items
       .product__add__items__title
-        スカート その他出品
+        = @item.category.name + "  その他出品"
       .product__add__items__contents
         %section.product__add__items__contents__content__right
           %a.product__add__items__contents__content__right__a{href: ""}
