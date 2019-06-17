@@ -17,7 +17,9 @@
           = link_to items_path, class: 'product-header__container__upper__logo' do
             = image_tag 'logo.png', alt: 'logo', class: 'product-header__container__upper__logo__image', height: '36', width: '134'
           .product-header__container__upper__search
-            formforの仮置き方法が？のため
+            = form_tag("/search") do
+              = text_field_tag :keyword
+              =submit_tag "検索"
         / ここから下部
         .product-header__container__under
           %nav.profuct-header__container__under__nav

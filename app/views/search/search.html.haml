@@ -1,8 +1,4 @@
 .content
-  .form
-    = form_tag("/search") do
-      = text_field_tag :keyword
-      =submit_tag "検索"
   %section.items-index__container
     %h2.items-index__container__header ”#{@keyword}”の検索結果
     %section.items-index__container__list
