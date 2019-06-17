@@ -18,7 +18,7 @@
           .product-header__container__upper__search
             = form_tag("/search", method: :get) do
               = text_field_tag :keyword
-              =submit_tag "検索"
+              =submit_tag "検索", name:nil
         / ここから下部
         .product-header__container__under
           %nav.profuct-header__container__under__nav
