@@ -3,6 +3,8 @@
     = form_tag("/search") do
       = text_field_tag :keyword
       =submit_tag "検索"
-  .search__result
-    テストテストテストテスト
-    
+  .search__results
+    - @items.each do |item|
+      %ul
+        %li.seached__item
+          = item.name
