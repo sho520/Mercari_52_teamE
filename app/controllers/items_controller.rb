@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = Item.limit(15).order("id DESC").page(params[:page]).per(16)
     render layout: 'top'
   end
 
@@ -35,7 +36,7 @@ class ItemsController < ApplicationController
 
   def create
     Item.create(item_params)
-    
+
   end
 
   private
