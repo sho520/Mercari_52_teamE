@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
     render layout: 'second_application'
   end
 
