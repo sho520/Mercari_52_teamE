@@ -31,7 +31,8 @@
           .product__item-box__main__left__bigpic
             %ul
               %li.product__item-box__main__left__below__pics
-                = image_tag 'm52161295392_1.jpg', width: '300px', class: "bigimage"
+                = image_tag width: '300px', class: "bigimage"
+                  = @item.
               %li.product__item-box__main__left__below__pics
                 = image_tag 'm52161295392_2.jpg', width: '300px', class: "bigimage"
               %li.product__item-box__main__left__below__pics
