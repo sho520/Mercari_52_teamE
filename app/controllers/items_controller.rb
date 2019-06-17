@@ -1,12 +1,13 @@
 class ItemsController < ApplicationController
-  # protect_from_forgery
 
   def index
     render layout: 'top'
   end
 
   def show
+    @item = Item.find(params[:id])
     render layout: 'application'
+    # binding.pry
   end
 
   def new

@@ -3,5 +3,16 @@
   .mypage__container
     .nav
       = render "mypage_nav"
-    // ここにページの右側の情報を記載
-    card情報
+    .card__content
+      .card__header
+        支払い方法
+      .card__register
+        .card__register__header
+          .card__register__header__title
+            クレジットカード一覧
+        .card__register__add__card
+          %button.card__register__add__card__button
+            クレジットカードを追加する
+        .card__register__guide__link
+          支払い方法について
+          = fa_icon("chevron-right")

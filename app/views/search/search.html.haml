@@ -1,0 +1,22 @@
+.content
+  .form
+    = form_tag("/search") do
+      = text_field_tag :keyword
+      =submit_tag "検索"
+  %section.items-index__container
+    %h2.items-index__container__header ”#{@keyword}”の検索結果
+    %section.items-index__container__list
+      - @items.each do |item|
+        %section.items-index__container__list__box
+          = link_to items_path , class: "items-index__container__list__box__group" do
+            = image_tag 'cosme2.jpg', class: 'items-index__container__list__box__group__img'
+            .items-index__container__list__box__group__info
+              %h3.items-index__container__list__box__group__info__title 
+                = item.name
+              .items-index__container__list__box__group__info__block
+                .items-index__container__list__box__group__info__block__price
+                  = item.price
+                .items-index__container__list__box__group__info__block__likes
+                  %i.fa.fa-heart
+                    %span 10
+              %p.items-index__container__list__box__group__info__tax (税込)

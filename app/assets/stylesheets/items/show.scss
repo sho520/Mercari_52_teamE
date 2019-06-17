@@ -382,45 +382,7 @@
           width:220px;
           display: inline-block;
           background-color:#ffffff;
-          margin: 0 0 20px 14px;
-          &__a{
-            &__top{}
-            &__bottom{
-              height:110px;
-              padding:16px;
-              font-size: 0.9rem;
-              &__name{
-                overflow: hidden;
-                font-size:0.9rem;
-                height:48px;
-              }
-              &__info{
-                margin-top:20px;
-                &__price{
-                  font-weight: bold;
-                  float:left;
-                }
-                &__like{
-                  float:right;
-                  #product__fa-heart__add{}
-                  &__num{
-                    font-size:0.9rem;
-                  }
-                }
-              }
-              &__tax{
-                font-size:0.5rem;
-                clear:both;
-                text-decoration: none;
-              }
-            }
-          }
-        }
-        &__content__right{
-          width:220px;
-          display: inline-block;
-          background-color:#ffffff;
-          margin-bottom: 20px;
+          margin: 0 4.9px 20px 4.9px;
           &__a{
             &__top{}
             &__bottom{

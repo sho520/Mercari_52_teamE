@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get "items/confirm/done" => "items#done"  #idが入る必要あり
   get "items/brand" => "items#brand"
   get "items/category" => "items#category"
+  get "search" => "search#search"  #仮置き
+  post "search" => "search#search"  #仮置き
   get "users/login" => "users#login"
   get "users/logout" => "users#logout"  #idが入る必要あり
   get "users/phone" => "users#phone"
