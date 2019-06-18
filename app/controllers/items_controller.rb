@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @images = @item.images
     render layout: 'common'
-    
+
   end
 
   def new
@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     @middle_classes = MiddleClass.all
     @small_classes = SmallClass.all
     @conditions = Condition.all
-   
+
     @shipping_fee_payers = ShippingFeePayer.all
     @shipping_days = ShippingDay.all
     render layout: 'second_application'
