@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = Item.page(params[:page]).per(16).includes(:images)
     render layout: 'top'
   end
 
