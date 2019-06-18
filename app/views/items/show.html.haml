@@ -32,12 +32,14 @@
             %ul
               - @images.each do |image|
                 %li.product__item-box__main__left__below__pics
-                  = image_tag image.image_url.url(:thumb), width: '300px', class: "bigimage"
+                  = image_tag image.image_url.url(:thumb), width: '300px', id: "bigimage"
+
           .product__item-box__main__left__below
             %ul
               - @images.each do |image|
                 %li.product__item-box__main__left__below__pics
-                  = image_tag image.image_url.url(:thumb), size: '60x60', class: "image"
+                  = image_tag image.image_url.url(:thumb), size: '60x60', id: "smallimage"
+
   
         .product__item-box__main__right
           %table.product__item-box__main__right__table
@@ -128,8 +130,15 @@
         %textarea.product__textarea{name: "body", type: "text"}
         %button.product__button{type: "submit"} コメントする
     %ul.product__item-link
-      %li.product__item-link__pre ＜ 前のページへ
-      %li.product__item-link__next 次のページへ ＞
+      %a{href: "/items/#{@prev_item.id}"}
+        %li.product__item-link__pre
+          - if @prev_item 
+            %i#product__fa-angle-right.fa.fa-angle-left
+            = @prev_item.name
+      %a{href: "/items/#{@next_item.id}"}
+        %li.product__item-link__next
+          = @next_item.name
+          %i#product__fa-angle-right.fa.fa-angle-right
     .product__item__sns
       .product__item__sns__main
         .product__item__sns__main__box
@@ -146,204 +155,51 @@
       .product__add__items__title
         = @item.owner.nickname + "さんのその他出品"
       .product__add__items__contents
-      
 
+        - @owner_images.each_with_index do |owner_image, i|
+          %section.product__add__items__contents__content
+            %a.product__add__items__contents__content__a{href: "/items/#{owner_image.item.id}"}
+              .product__add__items__contents__content__a__top
+                = image_tag owner_image.image_url.url(:thumb), size: '220x220'
+              .product__add__items__contents__content__a__bottom
+                .product__add__items__contents__content__a__bottom__name
+                  = owner_image.item.name
+                .product__add__items__contents__content__a__bottom__info
+                  .product__add__items__contents__content__a__bottom__info__price
+                    = owner_image.item.price
+                  .product__add__items__contents__content__a__bottom__info__like
+                    %i.fa.fa-heart
+                    %span.product__add__items__contents__content__a__bottom__info__like__num
+                      8
+                .product__add__items__contents__content__a__bottom__tax
+                  (税込)
+          - break if i== 5
 
-
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'm52161295392_1.jpg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'cosme1.jpeg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'cosme2.jpeg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'cosme3.jpeg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'kids1.jpg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'kids2.jpg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
   .product__add
     .product__add__items
       .product__add__items__title
         = @item.category.name + "  その他出品"
       .product__add__items__contents
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'kids3.jpg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'kids2.jpg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'product5.jpg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'kids2.jpg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'm52161295392_1.jpg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
-        %section.product__add__items__contents__content
-          %a.product__add__items__contents__content__a{href: ""}
-            .product__add__items__contents__content__a__top
-              = image_tag 'm52161295392_1.jpg', width: '220px', class: ""
-            .product__add__items__contents__content__a__bottom
-              .product__add__items__contents__content__a__bottom__name
-                雨傘（開封済）（使用済） by あまがさ
-              .product__add__items__contents__content__a__bottom__info
-                .product__add__items__contents__content__a__bottom__info__price
-                  ¥ 20,000
-                .product__add__items__contents__content__a__bottom__info__like
-                  %i.fa.fa-heart
-                  %span.product__add__items__contents__content__a__bottom__info__like__num
-                    1
-              .product__add__items__contents__content__a__bottom__tax
-                (税込)
+        - @category_images.each_with_index do |category_image, i|
+          %section.product__add__items__contents__content
+            %a.product__add__items__contents__content__a{href: "/items/#{category_image.item.id}"}
+              .product__add__items__contents__content__a__top
+                = image_tag category_image.image_url.url(:thumb), size: '220x220'
+              .product__add__items__contents__content__a__bottom
+                .product__add__items__contents__content__a__bottom__name
+                  = category_image.item.name
+                .product__add__items__contents__content__a__bottom__info
+                  .product__add__items__contents__content__a__bottom__info__price
+                    = category_image.item.price
+                  .product__add__items__contents__content__a__bottom__info__like
+                    %i.fa.fa-heart
+                    %span.product__add__items__contents__content__a__bottom__info__like__num
+                      7
+                .product__add__items__contents__content__a__bottom__tax
+                  (税込)
+          - break if i== 5
+
+
+
+
+       
