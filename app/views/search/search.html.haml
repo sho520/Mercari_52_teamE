@@ -1,14 +1,20 @@
 .content
-  .form
-    = form_tag("/search") do
-      = text_field_tag :keyword
-      =submit_tag "検索"
   %section.items-index__container
-    %h2.items-index__container__header ”#{@keyword}”の検索結果
+    %h2.items-index__container__header 
+      - if @keyword.empty?
+        新着商品
+      - elsif @not_find.present?
+        ”#{@keyword}”の検索結果
+        .items-index__container__header__description 
+          該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+        %h2.items-index__container__header
+          新着商品
+      - else
+        ”#{@keyword}”の検索結果
     %section.items-index__container__list
       - @items.each do |item|
         %section.items-index__container__list__box
-          = link_to items_path , class: "items-index__container__list__box__group" do
+          = link_to "/items/#{item.id}" , class: "items-index__container__list__box__group" do
             = image_tag 'cosme2.jpg', class: 'items-index__container__list__box__group__img'
             .items-index__container__list__box__group__info
               %h3.items-index__container__list__box__group__info__title 
@@ -20,3 +26,4 @@
                   %i.fa.fa-heart
                     %span 10
               %p.items-index__container__list__box__group__info__tax (税込)
+
