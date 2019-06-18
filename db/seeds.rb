@@ -26,6 +26,7 @@ Item.create!(name:"1name",
   middle_class_id:1,
   small_class_id:1,
   category_id:10,
+  delivery_way_id:1,
 )
 Item.create!(name:"2name",
   description:"2description",
@@ -43,6 +44,7 @@ Item.create!(name:"2name",
   middle_class_id:1,
   small_class_id:1,
   category_id:10,
+  delivery_way_id:1,
 )
 Item.create!(name:"3name",
   description:"3description",
@@ -60,6 +62,7 @@ Item.create!(name:"3name",
   middle_class_id:1,
   small_class_id:2,
   category_id:10,
+  delivery_way_id:1,
 )
 Item.create!(name:"4name",
   description:"4description",
@@ -77,6 +80,7 @@ Item.create!(name:"4name",
   middle_class_id:1,
   small_class_id:2,
   category_id:10,
+  delivery_way_id:1,
 )
 Item.create!(name:"5name",
   description:"5description",
@@ -94,6 +98,7 @@ Item.create!(name:"5name",
   middle_class_id:2,
   small_class_id:3,
   category_id:10,
+  delivery_way_id:1,
 )
 Item.create!(name:"6name",
   description:"6description",
@@ -111,6 +116,7 @@ Item.create!(name:"6name",
   middle_class_id:2,
   small_class_id:3,
   category_id:10,
+  delivery_way_id:1,
 )
 Item.create!(name:"7name",
   description:"7description",
@@ -128,6 +134,7 @@ Item.create!(name:"7name",
   middle_class_id:2,
   small_class_id:4,
   category_id:10,
+  delivery_way_id:1,
 )
 Item.create!(name:"8name",
   description:"8description",
@@ -145,6 +152,7 @@ Item.create!(name:"8name",
   middle_class_id:2,
   small_class_id:4,
   category_id:10,
+  delivery_way_id:1,
 )
 Item.create!(name:"9name",
   description:"9description",
@@ -162,6 +170,7 @@ Item.create!(name:"9name",
   middle_class_id:3,
   small_class_id:5,
   category_id:10,
+  delivery_way_id:1,
 )
 Item.create!(name:"10name",
   description:"10description",
@@ -179,6 +188,7 @@ Item.create!(name:"10name",
   middle_class_id:3,
   small_class_id:5,
   category_id:10,
+  delivery_way_id:1,
 )
 Item.create!(name:"11name",
   description:"11description",
@@ -196,6 +206,7 @@ Item.create!(name:"11name",
   middle_class_id:3,
   small_class_id:6,
   category_id:11,
+  delivery_way_id:1,
 )
 Item.create!(name:"12name",
   description:"12description",
@@ -213,6 +224,7 @@ Item.create!(name:"12name",
   middle_class_id:3,
   small_class_id:6,
   category_id:11,
+  delivery_way_id:1,
 )
 Item.create!(name:"13name",
   description:"13description",
@@ -230,6 +242,7 @@ Item.create!(name:"13name",
   middle_class_id:4,
   small_class_id:7,
   category_id:11,
+  delivery_way_id:1,
 )
 Item.create!(name:"14name",
   description:"14description",
@@ -247,6 +260,7 @@ Item.create!(name:"14name",
   middle_class_id:4,
   small_class_id:7,
   category_id:11,
+  delivery_way_id:1,
 )
 Item.create!(name:"15name",
   description:"15description",
@@ -264,6 +278,7 @@ Item.create!(name:"15name",
   middle_class_id:4,
   small_class_id:8,
   category_id:11,
+  delivery_way_id:1,
 )
 Item.create!(name:"16name",
   description:"16description",
@@ -281,6 +296,7 @@ Item.create!(name:"16name",
   middle_class_id:4,
   small_class_id:8,
   category_id:12,
+  delivery_way_id:1,
 )
 Item.create!(name:"17name",
   description:"17description",
@@ -298,6 +314,7 @@ Item.create!(name:"17name",
   middle_class_id:5,
   small_class_id:9,
   category_id:13,
+  delivery_way_id:1,
 )
 Item.create!(name:"18name",
   description:"18description",
@@ -315,6 +332,7 @@ Item.create!(name:"18name",
   middle_class_id:5,
   small_class_id:9,
   category_id:14,
+  delivery_way_id:1,
 )
 Item.create!(name:"19name",
   description:"19description",
@@ -332,6 +350,7 @@ Item.create!(name:"19name",
   middle_class_id:5,
   small_class_id:10,
   category_id:15,
+  delivery_way_id:1,
 )
 Item.create!(name:"20name",
   description:"20description",
@@ -349,6 +368,7 @@ Item.create!(name:"20name",
   middle_class_id:5,
   small_class_id:10,
   category_id:16,
+  delivery_way_id:1,
 )
 Item.create!(name:"21name",
   description:"21description",
@@ -366,6 +386,7 @@ Item.create!(name:"21name",
   middle_class_id:6,
   small_class_id:11,
   category_id:17,
+  delivery_way_id:1,
 )
 Item.create!(name:"22name",
   description:"22description",
@@ -383,6 +404,7 @@ Item.create!(name:"22name",
   middle_class_id:6,
   small_class_id:11,
   category_id:18,
+  delivery_way_id:1,
 )
 Item.create!(name:"23name",
   description:"23description",
@@ -400,6 +422,7 @@ Item.create!(name:"23name",
   middle_class_id:6,
   small_class_id:12,
   category_id:19,
+  delivery_way_id:1,
 )
 Item.create!(name:"キャミソール ロンパース 肌着 60",
   description:"24description",
@@ -417,79 +440,80 @@ Item.create!(name:"キャミソール ロンパース 肌着 60",
   middle_class_id:6,
   small_class_id:12,
   category_id:20,
+  delivery_way_id:1,
 )
 
 11.upto(2) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/child_cloth_underware#{n}.jpg"),item_id:24)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_underware#{n}.jpg"),item_id:24)
 end
 1.upto(4) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/child_cloth_underware#{n}.jpg"),item_id:23)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_underware#{n}.jpg"),item_id:23)
 end
 11.upto(17) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:22)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:22)
 end
 1.upto(8) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:21)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:21)
 end
 11.upto(14) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:20)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:20)
 end
 1.upto(6) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:19)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:19)
 end
 11.upto(17) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:18)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:18)
 end
 1.upto(3) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:17)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:17)
 end
 11.upto(16) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:16)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:16)
 end
 1.upto(3) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:15)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:15)
 end
 11.upto(14) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:14)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:14)
 end
 1.upto(4) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:13)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:13)
 end
 11.upto(14) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:12)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:12)
 end
 1.upto(6) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:11)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:11)
 end
 11.upto(14) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:10)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:10)
 end
 1.upto(4) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:9)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:9)
 end
 11.upto(13) do |n|  
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:8)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:8)
 end
 1.upto(7) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:7)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:7)
 end
 11.upto(12) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:6)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:6)
 end
 1.upto(3) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:5)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:5)
 end
 11.upto(16) do |n|
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:4)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:4)
 end
 1.upto(6) do |n| 
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:3)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:3)
 end
 11.upto(17) do |n|  
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:2)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:2)
 end
 1.upto(5) do |n|   
-  Image.create!(mage_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:1)
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:1)
 end
 
 Condition.create(:condition_rank => "新品、未使用")
@@ -636,3 +660,12 @@ User.create(family_name: "小柳",
   credit: "55555555"
 )
 
+DeliveryWay.create(:delivery_way => "未定")
+DeliveryWay.create(:delivery_way => "らくらくメルカリ便")
+DeliveryWay.create(:delivery_way => "ゆうメール")
+DeliveryWay.create(:delivery_way => "レターパック")
+DeliveryWay.create(:delivery_way => "普通郵便(定型、定形外)")
+DeliveryWay.create(:delivery_way => "クロネコヤマト")
+DeliveryWay.create(:delivery_way => "ゆうパック")
+DeliveryWay.create(:delivery_way => "クリックポスト")
+DeliveryWay.create(:delivery_way => "ゆうパケット")
