@@ -8,9 +8,26 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @images = @item.images
-    # @owner_items = Item.where(owner_id == @item.owner_id)
-    render layout: 'application'
 
+    @next_item = Item.find(params[:id].to_i + 1)
+    if params[:id].to_i != 1
+      @prev_item = Item.find(params[:id].to_i - 1)
+    end
+
+    @owner_items = Item.where(owner_id: @item.owner_id)
+    @owner_images = []
+      @owner_items.each do |owner_item|
+        @owner_images << owner_item.images.first
+      end
+    
+    @category_items = Item.where(category_id: @item.category_id)
+    @category_images = []
+    @category_items.each do |category_item|
+      @category_images << category_item.images.first
+    end
+
+    
+    render layout: 'application'
     # binding.pry
   end
 
