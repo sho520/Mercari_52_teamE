@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
     # @owner_items = Item.where(owner_id == @item.owner_id)
     render layout: 'application'
 
-    binding.pry
+    # binding.pry
   end
 
   def new
