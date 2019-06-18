@@ -1,16 +1,20 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = Item.limit(15).order("id DESC").page(params[:page]).per(16)
     render layout: 'top'
   end
 
   def show
     @item = Item.find(params[:id])
+    @images = @item.images
     render layout: 'application'
+
     # binding.pry
   end
 
   def new
+    @item = Item.new
     render layout: 'second_application'
   end
 
@@ -32,7 +36,7 @@ class ItemsController < ApplicationController
 
   def create
     Item.create(item_params)
-    
+
   end
 
   private

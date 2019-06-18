@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_16_095402) do
+ActiveRecord::Schema.define(version: 2019_06_17_095228) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -94,12 +94,9 @@ ActiveRecord::Schema.define(version: 2019_06_16_095402) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname"
     t.date "birthday"
-    t.string "zipcode"
-    t.text "address"
     t.string "mail"
     t.string "phone"
     t.text "profile"
-    t.integer "prefecture_id"
     t.string "password"
     t.text "credit"
     t.datetime "created_at", null: false
@@ -108,6 +105,11 @@ ActiveRecord::Schema.define(version: 2019_06_16_095402) do
     t.string "family_name_kana"
     t.string "first_name"
     t.string "first_name_kana"
+    t.integer "postcode"
+    t.integer "prefecture_code"
+    t.string "address_city"
+    t.string "address_street"
+    t.string "address_building"
   end
 
 end

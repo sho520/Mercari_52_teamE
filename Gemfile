@@ -76,6 +76,8 @@ gem 'bxslider-rails'
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'ancestry'
+gem 'jp_prefecture'
+gem 'simple_form' 
 
 group :production do
   gem 'unicorn', '5.4.1'
