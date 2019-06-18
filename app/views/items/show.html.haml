@@ -32,12 +32,12 @@
             %ul
               - @images.each do |image|
                 %li.product__item-box__main__left__below__pics
-                  = image_tag image.mage_url.url(:thumb), width: '300px', class: "bigimage"
+                  = image_tag image.image_url.url(:thumb), width: '300px', class: "bigimage"
           .product__item-box__main__left__below
             %ul
               - @images.each do |image|
                 %li.product__item-box__main__left__below__pics
-                  = image_tag image.mage_url.url(:thumb), size: '60x60', class: "image"
+                  = image_tag image.image_url.url(:thumb), size: '60x60', class: "image"
   
         .product__item-box__main__right
           %table.product__item-box__main__right__table

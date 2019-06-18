@@ -1,17 +1,15 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.limit(15).order("id DESC").page(params[:page]).per(16)
+    @items = Item.page(params[:page]).per(16).includes(:images)
     render layout: 'top'
   end
 
   def show
     @item = Item.find(params[:id])
     @images = @item.images
-    # @owner_items = Item.where(owner_id == @item.owner_id)
-    render layout: 'application'
-
-    # binding.pry
+    render layout: 'common'
+    
   end
 
   def new
@@ -35,11 +33,11 @@ class ItemsController < ApplicationController
   end
 
   def brand
-    render layout: 'application'
+    render layout: 'common'
   end
 
   def category
-    render layout: 'application'
+    render layout: 'common'
   end
 
   def create
