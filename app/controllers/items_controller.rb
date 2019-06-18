@@ -6,7 +6,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    render layout: 'application'
+    @images = @item.images
+    render layout: 'common'
     
   end
 
@@ -31,11 +32,11 @@ class ItemsController < ApplicationController
   end
 
   def brand
-    render layout: 'application'
+    render layout: 'common'
   end
 
   def category
-    render layout: 'application'
+    render layout: 'common'
   end
 
   def create

@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
   def show
-    render layout: 'application'
+    render layout: 'common'
   end
 
   def edit
-    render layout: 'application'
+    render layout: 'common'
   end
 
   def new
@@ -38,15 +38,15 @@ class UsersController < ApplicationController
   end
 
   def logout
-    render layout: 'application'
+    render layout: 'common'
   end
 
   def identification
-    render layout: 'application'
+    render layout: 'common'
   end
 
   def card
-    render layout: 'application'
+    render layout: 'common'
   end
 
   private
