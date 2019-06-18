@@ -19,8 +19,6 @@ class ItemsController < ApplicationController
    
     @shipping_fee_payers = ShippingFeePayer.all
     @shipping_days = ShippingDay.all
-
-
     render layout: 'second_application'
   end
 
@@ -42,12 +40,12 @@ class ItemsController < ApplicationController
 
   def create
     Item.create(item_params)
-    redirect_to new
+    redirect_to :action => "new"
   end
 
   private
   def item_params
-    params.permit(:name, :description, :large_class_id, :middle_class_id, :small_class_id, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price)
+    params.require(:item).permit(:name, :description, :large_class_id, :middle_class_id, :small_class_id, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price)
   end
 
 
