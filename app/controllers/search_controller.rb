@@ -5,7 +5,6 @@ class SearchController < ApplicationController
 
     if @keyword.empty?
       @items = Item.all.order('id DESC').page(params[:page]).per(16)
-
       render layout: 'common' and return
     end
 
