@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user = User.new
     render layout: 'third_application'
   end
 
@@ -47,6 +48,9 @@ class UsersController < ApplicationController
 
   def card
     render layout: 'common'
+  end
+
+  def sample
   end
 
   private

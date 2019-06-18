@@ -1,11 +1,32 @@
+-# %h2 Sign up
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#   = render "devise/shared/error_messages", resource: resource
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     - if @minimum_password_length
+-#       %em
+-#         (#{@minimum_password_length} characters minimum)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#   .field
+-#     = f.label :password_confirmation
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .actions
+-#     = f.submit "Sign up"
+
 = javascript_include_tag 'userfunction.js'
 %body.resist__body
-  = render 'userheader'
+  = render 'users/userheader'
   %main.registration__main
     %section.registration__main__container
       %h2.registration__main__head 会員情報入力
       .registration__main__form
-      = form_for @user do |f|
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         .user__form__content
           .user__form__group
             %label{for: "user__title"} ニックネーム
@@ -86,5 +107,7 @@
               %br
               %br
 
-  = render 'subfooter'
+  = render 'users/subfooter'
 
+
+-# = render "devise/shared/links"
