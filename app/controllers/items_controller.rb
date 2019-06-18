@@ -16,6 +16,13 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @large_classes = LargeClass.all
+    @middle_classes = MiddleClass.all
+    @small_classes = SmallClass.all
+    @conditions = Condition.all
+   
+    @shipping_fee_payers = ShippingFeePayer.all
+    @shipping_days = ShippingDay.all
     render layout: 'second_application'
   end
 
@@ -37,13 +44,14 @@ class ItemsController < ApplicationController
 
   def create
     Item.create(item_params)
-
+    redirect_to :action => "new"
   end
 
   private
   def item_params
-    params.permit(:name)
+    params.require(:item).permit(:name, :description, :large_class_id, :middle_class_id, :small_class_id, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price)
   end
+
 
 
 end
