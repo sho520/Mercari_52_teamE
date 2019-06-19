@@ -141,7 +141,7 @@ body {
     width: 50vw;
     margin-left: 30px;
     padding-left: 8px;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
   }
   &__button {
     background-color: #666666;
@@ -149,6 +149,7 @@ body {
     text-align:center;
     line-height: 40px;
     color: white;
+    border-radius: 0 5px 5px 0;
     .hidden__button {
       display: none;
     }
