@@ -1,3 +1,4 @@
+= javascript_include_tag 'item.show.js'
 .product__bread
   %ul
     %li
@@ -30,16 +31,17 @@
         .product__item-box__main__left
           .product__item-box__main__left__bigpic
             %ul
-              - @images.each do |image|
+              - @images.each_with_index do |image, i|
                 %li.product__item-box__main__left__below__pics
                   = image_tag image.image_url.url(:thumb), width: '300px', id: "bigimage"
+                - break if i== 0
 
           .product__item-box__main__left__below
             %ul
               - @images.each do |image|
                 %li.product__item-box__main__left__below__pics
                   = image_tag image.image_url.url(:thumb), size: '60x60', id: "smallimage"
-
+                
   
         .product__item-box__main__right
           %table.product__item-box__main__right__table
