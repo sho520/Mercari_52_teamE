@@ -95,5 +95,7 @@ Rails.application.configure do
   config.assets.precompile += ['jquery.jpostal.js']
   config.assets.precompile += ['slick.js']
   config.assets.precompile += ['userfunction.js']
+  config.assets.precompile += ['item.show.js']
   config.assets.precompile += ['item.new.js']
+
 end

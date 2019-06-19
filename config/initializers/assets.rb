@@ -16,4 +16,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( userfunction.js )
 Rails.application.config.assets.precompile += %w( slick.js )
 Rails.application.config.assets.precompile += %w( jquery.jpostal.js )
+Rails.application.config.assets.precompile += %w( item.show.js )
 Rails.application.config.assets.precompile += %w( item.new.js )
+
