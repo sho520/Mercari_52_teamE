@@ -81,7 +81,7 @@ label[for='user__title'] {
 .user__field {
   width: 100%;
   margin: 8px 0 0;
-  height: 48px;
+  height: 28px;
   padding: 10px 0px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -225,4 +225,11 @@ label[for='user__title'] {
 
 .user__recap {
   display: none;
+}
+
+
+////////ログアウト
+.logout {
+  color: white !important;
+  text-decoration: none;
 }
