@@ -140,7 +140,8 @@ body {
     height:36px;
     width: 50vw;
     margin-left: 30px;
-    outline: none;
+    padding-left: 8px;
+    border-radius: 5px;
   }
   &__button {
     background-color: #666666;
