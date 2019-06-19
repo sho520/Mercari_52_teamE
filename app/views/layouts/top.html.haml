@@ -12,6 +12,7 @@
   %body
     .product-header
       .product-header__container
+        = breadcrumbs pretext: "You are here: ", separator: " &rsaquo; "
         / ここから上部
         .product-header__container__upper
           = link_to items_path, class: 'product-header__container__upper__logo' do
