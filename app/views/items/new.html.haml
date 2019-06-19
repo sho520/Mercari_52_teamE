@@ -1,3 +1,4 @@
+= javascript_include_tag "item.new.js"
 .s__ExhibitionPage__MainBox
   .s__MainBox__Title
     %h2.Title 商品の情報を入力
@@ -98,10 +99,10 @@
               = f.number_field :price, class:"inputPrice" , id:"price"
           .s__Price__Fee
             %label{for: ""} 販売手数料 (10%)
-            %output#fee{type:  "number"} 0
+            %output#fee{type:  "number"} 
           .s__Price__Profit
             %label.box5__itemfont2{for:  ""} 販売利益
-            %output#profit{type: "number"} 0
+            %output#profit{type: "number"} 
         / <haml_silent></haml_silent>
       .s__Content__Terms
         %p
