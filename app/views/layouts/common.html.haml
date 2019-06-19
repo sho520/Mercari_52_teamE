@@ -16,9 +16,9 @@
           = link_to items_path, class: 'product-header__container__upper__logo' do
             = image_tag 'logo.png', alt: 'logo', class: 'product-header__container__upper__logo__image', height: '36', width: '134'
           .product-header__container__upper__search
-            = form_tag("/search", method: :get) do
-              = text_field_tag :keyword
-              =submit_tag "検索", name:nil
+            = form_tag("/search", method: :get, class:"search") do
+              = text_field_tag :keyword, '', class: 'search__text', placeholder: '何かお探しですか？'
+              =submit_tag "検索", name:nil, class: 'search__button'
         / ここから下部
         .product-header__container__under
           %nav.profuct-header__container__under__nav
