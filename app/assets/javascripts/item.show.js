@@ -8,14 +8,3 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
-  // $(document).on('turbolinks:load', function() {
-  //   $(function(){
-  //     $(".product__item-box__main__left__below__pics").on("mouseover", ChangeImage){
-  //       function ChangeImage( imgid , newimg )
-  //       var imgid = "#bigimage"
-  //       var newimg = "/uploads/image/image_url/90/thumb_men_tops_polo11.jpg"
-  //       document.getElementById(imgid).src = newimg;
-  //     }
-  //   })
-  // })
-  
