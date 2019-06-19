@@ -1,0 +1,103 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Mercari52Teame
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'userfunction.js'
+  %body.resist__body
+    = render 'users/userheader'
+    %main.registration__main
+      %section.registration__main__container
+        %h2.registration__main__head 会員情報入力
+        .registration__main__form
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          .user__form__content
+            .user__form__group
+              %label{for: "user__title"} ニックネーム
+              %span.user__form__require 必須
+              = f.text_field :nickname, class: 'user__field', placeholder: "例) ツルタさん", type: "nickname", value: ""
+            .user__form__group
+              %label{for: "user__title"} メールアドレス
+              %span.user__form__require 必須
+              = f.text_field :email, class: 'user__field', placeholder: "PC・携帯どちらでも可", type: "email", value: ""
+            .user__form__group
+              %label{for: "user__title"} パスワード
+              %span.user__form__require 必須
+              = f.password_field :password, autocomplete: "new-password", class: 'user__field', placeholder: "6文字以上", type: "password", value: ""
+            .user__form__group
+              %label{for: "user__title"} パスワード (確認)
+              %span.user__form__require 必須
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: 'user__field', placeholder: "6文字以上", type: "password", value: ""
+            .user__form__group
+              %h3.user__title__text 本人確認
+              %p.user__title__text__inline
+                安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+            .user__form__group
+              %label{for: "user__title"} 姓 (全角)
+              %span.user__form__require 必須
+              = f.text_field :family_name, class: 'user__field', placeholder: "例) 雨笠", type: "family_name", value: ""
+            .user__form__group
+              %label{for: "user__title"} 名 (全角)
+              %span.user__form__require 必須
+              = f.text_field :first_name, class: 'user__field', placeholder: "例) 将", type: "first_name", value: ""
+            .user__form__group
+              %label{for: "user__title"} 姓カナ (全角)
+              %span.user__form__require 必須
+              = f.text_field :family_name_kana, class: 'user__field', placeholder: "例) アマガサ", type: "family_name_kana", value: ""
+            .user__form__group
+              %label{for: "user__title"} 名カナ (全角)
+              %span.user__form__require 必須
+              = f.text_field :first_name_kana, class: 'user__field', placeholder: "例) ショウ", type: "first_name_kana", value: ""
+            .user__form__group
+              %label{for: "user__title"} 生年月日
+              %span.user__form__require 必須
+              %br/
+              .user__form__birthday
+                .user__form__birthday__select
+                  -# = f.collection_select :birth_year, class:'user__select__default d__fa__select', name: "year", id: "id_year", type: "birth_year" 
+                  %select.user__select__default.d__fa__select{name: "year", id: "id_year"} 
+                  %i.user__select__default__arrow
+                %span 年
+                .user__form__birthday__select
+                  -# = f.collection_select :birth_month, class:'user__select__default d__fa__select', name: "month", id: "id_month", type: "birth_month" 
+                  %select.user__select__default.d__fa__select{name: 'month', id: 'id_month'}
+                  %i.user__select__default__arrow
+                %span 月
+                .user__form__birthday__select
+                  -# = f.collection_select :birth_day, class:'user__select__default d__fa__select', name: "day", id: "id_day", type: "birth_day" 
+                  %select.user__select__default.d__fa__select{name: "day", id: 'id_day'}
+                  %i.icon-arrow-bottom
+                %span 日
+              .clearfix
+            %p.user__form__infomation
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .user__form__content
+            %input{name: "after_save_callback", type: "hidden", value: ""}/
+            .user__form__group
+              .user__form__recaptcha{"data-sitekey" => ""}
+                %div{style: "width: 304px; height: 78px;"}
+                  %div
+                    %iframe{frameborder: "0", height: "78", name: "", role: "presentation", sandbox: "", scrolling: "no", src: "", width: "304"}
+                  %textarea#user__form__recaptcha__id.g-recaptcha-response{name: "user__form__recaptcha", style: "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
+            .user__form__group
+              %p.user__form__infomation
+                「次へ進む」のボタンを押すことにより、
+                %a.user__text__decoration{href: "#", target: "_blank"}> 利用規約
+                に同意したものとみなします
+            = f.button :"登録する", class: 'user__form__botton'
+            .user__form__group
+              %p.user__form__other
+                %a.user__form__other__info{href: "", target: "_blank"}
+                  本人情報の登録について#{fa_icon("angle-right lg")}
+                %br
+                %br
+
+    = render 'users/subfooter'
+
+
+  -# = render "devise/shared/links"
+  

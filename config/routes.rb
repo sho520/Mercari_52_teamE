@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "items/category" => "items#category"
   get "search" => "search#search"
   get "users/login" => "users#login"
+  get "users/sample" => "users#sample"
   get "users/logout" => "users#logout"  #idが入る必要あり
   get "users/phone" => "users#phone"
   get "users/address" => "users#address"
