@@ -5,6 +5,7 @@
   position: relative;
   height: 100%;
   &__js-slider {
+    padding-top: 10px;
     width: 100%;
     @media screen and (min-width:480px) {
     /*　画面サイズが480pxからはここを読み込む　*/
