@@ -12,6 +12,8 @@
      text-align: center;
      padding: 30px;
      border-bottom: 2px solid rgb(245, 245, 245);
+
+
 }
   .Title{
   font-size: 22px;
@@ -85,20 +87,15 @@ font-weight: bold;
   border: 1px solid #ccc;
   margin-top: 8px;
   padding: 10px;
-
 }
 
-
-
-
-
-    .s__Exhibition__Details {
-      width: 620px;
-      height: 512px;
-      padding: 40px;
-      background: rgb(255, 255, 255);
-      border-bottom: 2px solid rgb(245, 245, 245);
-      }
+ .s__Exhibition__Details {
+  width: 620px;
+  height: 512px;
+  padding: 40px;
+  background: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(245, 245, 245);
+ }
 
 .s__Details__Configuration{
   float: right;
@@ -114,10 +111,7 @@ font-weight: bold;
   .s__Details__State{
     margin: 40px 0 0 0 ;
   }
-
-
-
-.s__box3{
+#item_large_class_id{
   display:block;
    width: 400px;
     height: 48px;
@@ -125,17 +119,40 @@ font-weight: bold;
     border: 1px solid #ccc;
     margin-top: 8px;
 }
+#item_middle_class_id{
+  display:block;
+   width: 400px;
+    height: 48px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    margin-top: 8px;
+}
+#item_small_class_id{
+  display:block;
+   width: 400px;
+    height: 48px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    margin-top: 8px;
+}
+#item_condition_id{
+  display:block;
+   width: 400px;
+    height: 48px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    margin-top: 8px;
+}
+
+
+
+
+
 .box3__itemfont1{
   font-weight: bold;
   color: #888;
     font-size: 14px;
   }
-  // .box3__itemfont2{
-
-  // }
-
-
-
     .s__Content__delivery {
       width: 620px;
       height: 371px;
@@ -145,7 +162,6 @@ font-weight: bold;
       display: block;
       display: flex;
       justify-content:space-between
-
     }
 .s__delivery__LeftContent{
   display: inline-block;
@@ -182,16 +198,22 @@ font-weight: bold;
       margin: 40px 0 0 0 ;
       }
 
-        .s__box4{
+      #item_shipping_fee_payer_id{
         display:block;
          width: 400px;
           height: 48px;
           background: rgb(255, 255, 255);
           border: 1px solid #ccc;
           margin-top: 8px;
-
         }
-
+#item_shipping_day_id{
+  display:block;
+   width: 400px;
+    height: 48px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    margin-top: 8px;
+  }
 
       
 
@@ -333,3 +355,12 @@ vertical-align: top;
 background: #ea352d;
 margin-left: 5px;
     }
+
+.collection_select{
+  display:block;
+  width: 400px;
+   height: 48px;
+   background: rgb(255, 255, 255);
+   border: 1px solid #ccc;
+   margin-top: 8px;
+}
