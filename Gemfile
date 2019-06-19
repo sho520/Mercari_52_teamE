@@ -77,6 +77,7 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'ancestry'
 gem 'jp_prefecture'
+gem 'gretel'
 
 group :production do
   gem 'unicorn', '5.4.1'
