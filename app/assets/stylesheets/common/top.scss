@@ -1,12 +1,16 @@
 .product-header {
   margin-top: 8px;
-  width: 100%;
+  width: 100vw;
   height: 90px;
   background-color:#fff;
+
   &__container {
     margin: 0 auto;
     height: 100%;
     width: 1020px;
+    @media screen and (max-width: 1024px) {
+      width: 700px;
+    }
     // ここから上部
     &__upper {
       width: 100%;
@@ -23,6 +27,9 @@
         width: 870px;
         height: 100%;
         text-align: center;
+        @media screen and (max-width: 1024px) {
+          width: 550px;
+        }
       }
     }
 
@@ -31,7 +38,6 @@
       width: 100%;
       height: 38px;
       margin-top: 12px;
-
       &__nav {
         float: left;
         height: 100%;
@@ -46,8 +52,14 @@
             font-size: 14px;
             font-weight: 600;
             color: #000;
+
             text-decoration: none;
             letter-spacing: 2px;
+            @media screen and (max-width:680px) {
+            font-size: 10px;
+            letter-spacing: 0;
+            }
+
             &:hover {
               color: #0099e8;
 	           }
@@ -65,6 +77,10 @@
             font-weight: 600;
             color: #000;
             text-decoration: none;
+            @media screen and (max-width:680px) {
+            font-size: 10px;
+            letter-spacing: 0;
+            }
             &:hover {
               color: #0099e8;
 	          }
@@ -193,38 +209,79 @@
 
 
 // フッター
-.footer {
-  background-color: #212121;
-  height: 696px;
-  width: 100%;
+.items-footer {
+  padding: 0 20px 10px 20px;
+  background: #212121;
   color: #fff;
-  .footer-contents {
-    width: 700px;
+  width: 100%;
+  height: 680px;
+  @media screen and (min-width:1024px) {
+    width: 100%;
+    height: 380px;
+  }
+  &__nav {
     margin: 0 auto;
-    padding-top: 18px;
-    .footer-content-group {
-      font-size: 16px;
-      font-weight: 100;
+    @media screen and (min-width:1024px) {
+      width: 1020px;
+      height: 380px;
     }
-    li {
-      .footer-link {
+    &__block {
+      display: block;
+      float: left;
+      margin-top: 18px;
+      @media screen and (min-width:480px) and ( max-width:768px) {
+        padding-right: 60px;
+      }
+      @media screen and (min-width:1024px) {
+        padding-right: 40px;
+        width: 20%;
+      }
+      &__title {
+        font-size: 16px;
+        font-weight: 100;
         color: #fff;
-        font-size: 12px;
-        line-height: 15px;
-        opacity: 0.7;
-        &:hover {
-          text-decoration: underline;
+      }
+      &__group {
+        &__link {
+          display: block;
+          margin-top: 16px;
+          color: #fff;
+          opacity: .7;
+          font-size: 12px;
+          text-decoration: none;
+        }
+        &__icon {
+          color: #fff;
+          line-height: 1.5em;
+          text-decoration: none;
+        }
+      }
+      &__inner {
+
+        &__group {
+
+          &__link {
+            display: block;
+            margin-top: 16px;
+            color: #fff;
+            opacity: .7;
+            font-size: 12px;
+            text-decoration: none;
+          }
         }
       }
     }
-    .footer-contents-left {
-      width: 50%;
-      height: 100%;
-      float: left;
-      padding-right: 80px;
+  }
+  &__bottom {
+
+    @media screen and (min-width:1024px) {
+      width: 1020px;
+      margin: 30px auto 20px;
+      &__logo {
+
+      }
     }
   }
-
 }
 
 // 検索バー
