@@ -27,10 +27,7 @@ class ItemsController < ApplicationController
       @category_images << category_item.images.first
     end
 
-    # binding.pry
-
     render layout: 'common'
-
   end
 
   def new
@@ -42,6 +39,10 @@ class ItemsController < ApplicationController
 
     @shipping_fee_payers = ShippingFeePayer.all
     @shipping_days = ShippingDay.all
+    render layout: 'second_application'
+  end
+
+  def edit
     render layout: 'second_application'
   end
 
