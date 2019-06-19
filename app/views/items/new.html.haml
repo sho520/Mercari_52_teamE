@@ -1,3 +1,4 @@
+= javascript_include_tag "item.new.js"
 .s__ExhibitionPage__MainBox
   .s__MainBox__Title
     %h2.Title 商品の情報を入力
@@ -95,25 +96,33 @@
               %label.box5__itemfont2{for:  ""} 価格
               %span.hissu 必須
             .s__Price__Configuration
-              = f.number_field :price, class:"inputPrice"
+              = f.number_field :price, class:"inputPrice" , id:"price"
           .s__Price__Fee
             %label{for: ""} 販売手数料 (10%)
-            %output#fee{type:  "number"} 0
+            %output#fee{type:  "number"} 
           .s__Price__Profit
             %label.box5__itemfont2{for:  ""} 販売利益
-            %output#profit{type: "number"} 0
+            %output#profit{type: "number"} 
         / <haml_silent></haml_silent>
       .s__Content__Terms
         %p
-          禁止されている出品、行為を必ずご確認ください.
+          %span{style: "color:#33aaf0"}> 禁止されている出品
+          、
+          %span{style: "color:#33aaf0"}>行為
+          を必ずご確認ください。
           %br/
-          またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          %span{style: "color:#33aaf0"}>偽ブランドの販売
+          は犯罪であり処罰される可能性があります。
           %br/
-          また、出品をもちまして加盟店規約に同意したことになります。
+          また、出品をもちまして
+          %span{style: "color:#33aaf0"}>加盟店規約
+          に同意したことになります。
+          %br/
+          %br/
           %br/
           %br/
         %div
-          -# %input.s__submit{type:  "submit", value:  "出品する"}/
-          = f.submit
+          %input.s__submit{type:  "submit", value:  "出品する"}
         .btn__back1
           = link_to 'もどる', new_item_path, class: "modoru"
