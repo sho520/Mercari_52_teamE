@@ -1,0 +1,102 @@
+= javascript_include_tag "item.new.js"
+.s__ExhibitionPage__MainBox
+  .s__MainBox__Title
+    %h2.Title 商品の情報を入力
+  = form_for @item do |f|
+    .s__MainBoxform__Content
+      .s__ContentImage
+        .s__ContentImage__Title
+          出品画像
+          %span.hissu 必須
+        %p.saidai10 最大10枚までアップロードできます
+        .s__ContentImage__Image
+          ドラッグアンドドロップ
+          %bl
+            またはクリックしてファイルをアップロード
+      .s__Content__Name__Description
+        .s__Content__Name
+          %label.box2font{for: ""} 商品名
+          %span.hissu 必須
+          %div
+            = f.text_field :name, class:"s__Content__Nametittle" , placeholder:" 商品名（必須 40文字まで)"
+        .s__Content__Description
+          %label.box2font{for: ""} 商品の説明
+          %span.hissu 必須
+          = f.text_area :description, class:"s__contemt__text" , placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+      .s__Exhibition__Details
+        %h2.box3__itemfont1 商品の詳細
+        .s__Details__Configuration
+          .s__Details__Category1
+            %label.box3__itemfont2{for:  ""} カテゴリー
+            %span.hissu 必須
+            %div
+              = f.collection_select(:large_class_id, @large_classes, :id, :name, class: "s__box3")
+          .s__Details__Category2
+            %label{for: ""}
+            %div
+              = f.collection_select(:middle_class_id, @middle_classes, :id, :name, class: "s__box3")
+          .s__Details__Category3
+            %label{for: ""}
+            %div
+              = f.collection_select(:small_class_id, @small_classes, :id, :name, class: "s__box3")
+          .s__Details__State
+            %label.box3__itemfont2{for: ""} 商品の状態
+            %span.hissu 必須
+            %div
+              = f.collection_select(:condition_id, @conditions, :id, :condition_rank, class: "s__box3")
+      .s__Content__delivery
+        .s__delivery__LeftContent
+          %h2.box4__itemfont
+            配送について
+            \#{link_to '?', new_item_path, class: "btn-large"}
+        .s__delivery__RightContent
+          .s__delivery__Description
+            %label{for: ""} 配送料の負担
+            %span.hissu 必須
+            %div
+              = f.collection_select(:shipping_fee_payer_id, @shipping_fee_payers, :id, :payer, class: "s__box4")
+          .s__delivery__Configuration
+            %label{for: ""} 発送までの日数
+            %span.hissu 必須
+            %div
+              = f.collection_select(:shipping_day_id, @shipping_days, :id, :days, class: "s__box4")
+      .s__Content__Price
+        %h2.box5__itemfont1 販売価格(300〜9,999,999)
+        .s__Price__light
+          .s__Price__box
+            .s__Price__title
+              %label.box5__itemfont2{for:  ""} 価格
+              %span.hissu 必須
+            .s__Price__Configuration
+              = f.number_field :price, class:"inputPrice" , id:"price"
+          .s__Price__Fee
+            %label{for: ""} 販売手数料 (10%)
+            %output#fee{type:  "number"} 
+              = "¥ " + (@price * 0.1).to_i.floor.to_s(:delimited)
+          .s__Price__Profit
+            %label.box5__itemfont2{for:  ""} 販売利益
+            %output#profit{type: "number"} 
+              = "¥ " + (@price * 0.9).to_i.floor.to_s(:delimited)
+      .s__Content__Terms
+        %p
+          %span{style: "color:#33aaf0"}> 禁止されている出品
+          、
+          %span{style: "color:#33aaf0"}>行為
+          を必ずご確認ください。
+          %br/
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          %span{style: "color:#33aaf0"}>偽ブランドの販売
+          は犯罪であり処罰される可能性があります。
+          %br/
+          また、出品をもちまして
+          %span{style: "color:#33aaf0"}>加盟店規約
+          に同意したことになります。
+          %br/
+          %br/
+          %br/
+          %br/
+        %div
+          .s__submit
+            = f.submit "更新する", class: 's__submit'
+        .btn__back1
+          = link_to 'もどる', item_path, class: "modoru"

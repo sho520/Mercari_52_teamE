@@ -1,18 +1,20 @@
 .product-header {
-  width: 100%;
+  margin-top: 8px;
+  width: 100vw;
   height: 90px;
-  background-color:#ffffff;
+  background-color:#fff;
 
   &__container {
-    width: 1020px;
-    height: 100%;
-    padding-top: 8px;
-    background-color: #fff;
     margin: 0 auto;
+    height: 100%;
+    width: 1020px;
+    @media screen and (max-width: 1024px) {
+      width: 700px;
+    }
     // ここから上部
     &__upper {
       width: 100%;
-      height: 36px;
+      height: 40px;
 
       &__logo {
         float: left;
@@ -25,6 +27,9 @@
         width: 870px;
         height: 100%;
         text-align: center;
+        @media screen and (max-width: 1024px) {
+          width: 550px;
+        }
       }
     }
 
@@ -32,24 +37,54 @@
     &__under {
       width: 100%;
       height: 38px;
-      margin-top: 8px;
-
+      margin-top: 12px;
       &__nav {
         float: left;
         height: 100%;
 
-        &__category,
-        &__brand {
+        &__category {
           float: left;
           height: 100%;
           padding-top: 6px;
           font-size: 14px;
 
           &__link {
+            font-size: 14px;
+            font-weight: 600;
+            color: #000;
+
+            text-decoration: none;
+            letter-spacing: 2px;
+            @media screen and (max-width:680px) {
+            font-size: 10px;
+            letter-spacing: 0;
+            }
+
+            &:hover {
+              color: #0099e8;
+	           }
           }
         }
         &__brand {
           margin-left: 16px;
+          float: left;
+          height: 100%;
+          padding-top: 6px;
+          font-size: 14px;
+          letter-spacing: 2px;
+          &__link {
+            font-size: 14px;
+            font-weight: 600;
+            color: #000;
+            text-decoration: none;
+            @media screen and (max-width:680px) {
+            font-size: 10px;
+            letter-spacing: 0;
+            }
+            &:hover {
+              color: #0099e8;
+	          }
+          }
         }
       }
 
@@ -60,9 +95,9 @@
         &__signup {
             text-decoration: none;
             margin-right: 11px;
-            border: 1px solid red;
+            border: 1px solid #ea352d;
             color: #fff;
-            background-color: red;
+            background-color: #ea352d;
             padding: 8px 16px;
             border-radius: 5px;
             font-size: 14px;
@@ -70,21 +105,21 @@
             &:hover {
               transition: 0.8s ;
               background-color: #fff;
-              border: 1px solid red;
-              color: red;
+              border: 1px solid #ea352d;
+              color: #ea352d;
 	           }
           }
         &__login {
           text-decoration: none;
-          border: 1px solid blue;
-          padding: 8px 16px;
+          border: 1px solid #0099e8;
+          padding: 8px 10px;
           font-size: 14px;
           border-radius: 5px;
-          color: blue;
+          color: #0099e8;
           transition: 0.8s ;
           &:hover {
             transition: 0.8s ;
-            background-color: blue;
+            background-color: #0099e8;
             color: #fff;
            }
         }
@@ -174,45 +209,91 @@
 
 
 // フッター
-.footer {
-  background-color: #212121;
-  height: 696px;
-  width: 100%;
+.items-footer {
+  padding: 0 20px 10px 20px;
+  background: #212121;
   color: #fff;
-  .footer-contents {
-    width: 700px;
+  width: 100%;
+  height: 680px;
+  @media screen and (min-width:1024px) {
+    width: 100%;
+    height: 380px;
+  }
+  &__nav {
     margin: 0 auto;
-    padding-top: 18px;
-    .footer-content-group {
-      font-size: 16px;
-      font-weight: 100;
+    @media screen and (min-width:1024px) {
+      width: 1020px;
+      height: 380px;
     }
-    li {
-      .footer-link {
+    &__block {
+      display: block;
+      float: left;
+      margin-top: 18px;
+      @media screen and (min-width:480px) and ( max-width:768px) {
+        padding-right: 60px;
+      }
+      @media screen and (min-width:1024px) {
+        padding-right: 40px;
+        width: 20%;
+      }
+      &__title {
+        font-size: 16px;
+        font-weight: 100;
         color: #fff;
-        font-size: 12px;
-        line-height: 15px;
-        opacity: 0.7;
-        &:hover {
-          text-decoration: underline;
+      }
+      &__group {
+        &__link {
+          display: block;
+          margin-top: 16px;
+          color: #fff;
+          opacity: .7;
+          font-size: 12px;
+          text-decoration: none;
+        }
+        &__icon {
+          color: #fff;
+          line-height: 1.5em;
+          text-decoration: none;
+        }
+      }
+      &__inner {
+
+        &__group {
+
+          &__link {
+            display: block;
+            margin-top: 16px;
+            color: #fff;
+            opacity: .7;
+            font-size: 12px;
+            text-decoration: none;
+          }
         }
       }
     }
-    .footer-contents-left {
-      width: 50%;
-      height: 100%;
-      float: left;
-      padding-right: 80px;
+  }
+  &__bottom {
+
+    @media screen and (min-width:1024px) {
+      width: 1020px;
+      margin: 30px auto 20px;
+      &__logo {
+
+      }
     }
   }
-
 }
 
 // 検索バー
 .header__search {
+
   height:36px;
   text-align: left;
   display: flex;
+  @media screen and (min-width:1024px) {
+    /*　画面サイズが1024pxからはここを読み込む　*/
+    height: 40px;
+  }
   &__text {
     background-color: #F5F5F5;
     width: 50vw;
@@ -232,4 +313,3 @@
     }
   }
 }
-

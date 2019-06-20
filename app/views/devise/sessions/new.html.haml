@@ -1,0 +1,59 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Mercari52Teame
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body.resist__body
+    .header__others
+      %header.header__others__nav
+        %h1.header__others__h1
+          %a.header__others__href{href: "./items"}
+            = image_tag('Exhibition_page_logo.svg',class: 'header__others__logo')
+    
+    %main.other__block
+  %section.other__block__login
+    .other__block__login__head
+      %p.other__block__login__text アカウントをお持ちでない方はこちら
+      = link_to '新規会員登録', new_user_registration_path, class: 'other__block__login__content'
+    .other__block__login__inner
+      %button#d__facebook-login.d__btn-sns-facebook
+        %i.d__i__fb= fa_icon('facebook-square lg', type: :reguler, class: 'd__icon__facebook')
+        %i.icon-facebook
+        Facebookで登録
+      %button#d__google-login.d__btn-sns-google
+        %i.d__icon-google
+        Googleで登録
+    .other__block__login__form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "user__field", placeholder: "メールアドレス"
+        .field
+          = f.password_field :password, autocomplete: "current-password", class: "user__field", placeholder: "パスワード"
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+
+        .actions
+          = f.submit "ログイン", class: "user__form__botton"
+      .user__form__group
+        %p.user__form__other__b
+          %a.user__form__other__info{href: "#"} パスワードをお忘れの方
+
+  %footer.footer__others
+    %nav.footer__others__nav
+      %li.footer__others__nav__one
+        %a.footer__others__font{:href => "#"} プライバシーポリシー
+      %li.footer__others__nav__two
+        %a.footer__others__font{:href => "#"} メルカリ利用規約
+      %li.footer__others__nav__two
+        %a.footer__others__font{:href => "#"} 特定商取引に関する表記
+    %a.footer__others__logo{:href => "#"}
+      = image_tag('Exhibition_page_logo-gray.svg',class: 'd__logo-gray')
+    %p.footer__others__rmark
+      %small © 2019 Mercari
+      

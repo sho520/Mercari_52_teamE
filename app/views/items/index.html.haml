@@ -2,8 +2,8 @@
 .items-index
   %section.items-index__js-slider
     .slider.items-index__js-slider__list
-      %div= image_tag 'mercari01.jpg', class: 'items-index__js-slider__list__image'
-      %div= image_tag 'sli01.png', class: 'items-index__js-slider__list__image'
+      %div= image_tag 'slider1.jpg', class: 'items-index__js-slider__list__image'
+      %div= image_tag 'slider2.jpg', class: 'items-index__js-slider__list__image'
       %div= image_tag 'sl02.png', class: 'items-index__js-slider__list__image'
   / ここから商品一覧
   %section.items-index__container
@@ -14,7 +14,7 @@
       - @items.each do |item|
         %section.items-index__container__list__box
           = link_to items_path , class: "items-index__container__list__box__group" do
-            = image_tag item.images.first.image_url.url(:thumb) , class: 'items-index__container__list__box__group__img'
+            -# = image_tag item.images.first.image_url.url(:thumb) , class: 'items-index__container__list__box__group__img'
             .items-index__container__list__box__group__info
               %h3.items-index__container__list__box__group__info__title
                 = item.name

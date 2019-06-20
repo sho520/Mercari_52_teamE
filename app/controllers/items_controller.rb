@@ -43,7 +43,22 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+    @category = @item.category
+    @categories = Category.roots.all
+    @conditions = Condition.all
+    @large_classes = LargeClass.all
+    @middle_classes = MiddleClass.all
+    @small_classes = SmallClass.all
+    @shipping_fee_payers = ShippingFeePayer.all
+    @shipping_days = ShippingDay.all
+    @price = @item.price
     render layout: 'second_application'
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
   end
 
   def confirm

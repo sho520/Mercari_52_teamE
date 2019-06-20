@@ -78,6 +78,8 @@ gem 'erb2haml'
 gem 'ancestry'
 gem 'jp_prefecture'
 gem 'gretel'
+gem 'payjp'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn', '5.4.1'

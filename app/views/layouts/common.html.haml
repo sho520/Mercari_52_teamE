@@ -12,7 +12,7 @@
       .product-header__container
         / ここから上部
         .product-header__container__upper
-          = link_to items_path, class: 'product-header__container__upper__logo' do
+          = link_to root_path, class: 'product-header__container__upper__logo' do
             = image_tag 'logo.png', alt: 'logo', class: 'product-header__container__upper__logo__image', height: '36', width: '134'
           .product-header__container__upper__search
             = form_tag("/search", method: :get, class:"header__search") do
@@ -24,12 +24,19 @@
         .product-header__container__under
           %nav.profuct-header__container__under__nav
             .product-header__container__under__nav__category.drop-down
-              = link_to 'カテゴリーから探す', items_path, class: 'product-header__container__under__nav__category__link'
+              = link_to 'カテゴリーから探す', items_category_path, class: 'product-header__container__under__nav__category__link'
             .product-header__container__under__nav__brand.drop-down
-              = link_to 'ブランドから探す', items_path, class: 'product-header__container__under__nav__brand__nav__link'
+              = link_to 'ブランドから探す', items_brand_path, class: 'product-header__container__under__nav__brand__link'
           .product-header__container__under__user
-            = link_to '新規会員登録', items_path, class: 'product-header__container__under__user__signup'
-            = link_to 'ログイン', items_path, class: 'product-header__container__under__user__login'
+            - if user_signed_in?
+              -# Logged in as
+              -# = succeed "." do
+              -#   %strong= current_user.nickname
+              = link_to 'プロフィール変更', edit_user_registration_path, class: 'product-header__container__under__user__signup'
+              = link_to 'サインアウト', destroy_user_session_path, class: 'product-header__container__under__user__login', method: "delete"
+            - else
+              = link_to "新規会員登録", new_user_registration_path, class: 'product-header__container__under__user__signup'
+              = link_to "ログイン", new_user_session_path, class: 'product-header__container__under__user__login'
     .header__bread
       = breadcrumbs separator: " &rsaquo; "
     = yield
@@ -46,45 +53,51 @@
                 %li= image_tag 'googleplay.png', alt: 'logo', class: 'banner__inner__block__icon__logo__link__b', height: '38', width: '133'
           .banner__inner__image
             = image_tag 'appa.png', alt: 'appimage', class: 'banner__inner__image__app'
-            
-    %footer.footer
-      .footer-contents
-        .footer-contents-left
-          .footer-content
-            %h2.footer-content-group メルカリについて
-            %ul
-              %li= link_to '会社概要（運営会社）', items_path, class: "footer-link"
-              %li= link_to '採用情報', items_path, class: "footer-link"
-              %li= link_to 'プレスリリース', items_path, class: "footer-link"
-              %li= link_to '公式ブログ', items_path, class: "footer-link"
-              %li= link_to 'メルカリロゴ利用ガイドライン', items_path, class: "footer-link"
-              %li
-                %i.fa.fa-twitter.fa-2x
-              %li
-                %i.fa.fa-facebook-square.fa-2x
-          .footer-content
-            %h2.footer-content-group プライバシーと利用規約
-            %ul
-              %li= link_to 'メルカリ利用規約', items_path, class: "footer-link"
-              %li= link_to 'あんしんスマホサポート制度に関する利用特約', items_path, class: "footer-link"
-              %li= link_to 'プレスリリース', items_path, class: "footer-link"
-              %li= link_to 'コンプライアンスポリシー', items_path, class: "footer-link"
-        .footer-contents-right
-          .footer-content
-            %h2.footer-content-group ヘルプ＆ガイド
-            %ul
-              %li= link_to 'メルカリガイド', items_path, class: "footer-link"
-              %li= link_to 'らくらくメルカリ便', items_path, class: "footer-link"
-              %li= link_to 'ゆうゆうメルカリ便', items_path, class: "footer-link"
-              %li= link_to '大型メルカリ便', items_path, class: "footer-link"
-              %li= link_to '車体取引ガイド', items_path, class: "footer-link"
-              %li= link_to 'メルカリあんしん・あんぜん宣言！', items_path, class: "footer-link"
-              %li= link_to '偽ブランド品撲滅への取り組み', items_path, class: "footer-link"
-              %li= link_to 'メルカリボックス', items_path, class: "footer-link"
-          .footer-content
-            %ul
-              %li= link_to '個人データの安全管理に係る基本方針', items_path, class: "footer-link"
-              %li= link_to '特定商取引に関する表記', items_path, class: "footer-link"
-              %li= link_to '資金決済法に基づく表示', items_path, class: "footer-link"
-              %li= link_to '法令遵守と犯罪抑止のために', items_path, class: "footer-link"
-              %li= link_to '返品・返金ポリシー', items_path, class: "footer-link"
+
+    %footer.items-footer
+      .items-footer__nav
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title メルカリについて
+          %ul.items-footer__nav__block__group
+            %li= link_to '会社概要（運営会社）', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to '採用情報', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to 'プレスリリース', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to '公式ブログ', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to 'メルカリロゴ利用ガイドライン', items_path, class: "items-footer__nav__block__group__link"
+            %li
+              = link_to items_path do
+                %i.fa.fa-twitter.fa-2x.items-footer__nav__block__group__icon
+            %li
+              = link_to items_path do
+                %i.fa.fa-facebook.fa-2x.items-footer__nav__block__group__icon
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title ヘルプ＆ガイド
+          %ul.items-footer__nav__block__group
+            %li.footer__nav__block__group__link= link_to 'メルカリガイド', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'らくらくメルカリ便', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'ゆうゆうメルカリ便', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to '大型メルカリ便', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to '車体取引ガイド', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'メルカリあんしん・あんぜん宣言！', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to '偽ブランド品撲滅への取り組み', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'メルカリボックス', items_path, class: "items-footer__nav__block__group__link"
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title プライバシーと利用規約
+          .items-footer__nav__block__inner
+            %ul.items-footer__nav__block__inner__group
+              %li= link_to 'メルカリ利用規約', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to 'あんしんスマホサポート制度に関する利用特約', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to 'プレスリリース', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to 'コンプライアンスポリシー', items_path, class: "items-footer__nav__block__inner__group__link"
+          .items-footer__nav__block__inner
+            %ul.items-footer__nav__block__inner__group
+              %li= link_to '個人データの安全管理に係る基本方針', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '特定商取引に関する表記', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '資金決済法に基づく表示', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '法令遵守と犯罪抑止のために', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '返品・返金ポリシー', items_path, class: "items-footer__nav__block__inner__group__link"
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title 国
+          %ul.items-footer__nav__block__group
+            %li.items-footer__nav__block__group__link 日本
+            %li.items-footer__nav__block__group__link 米国

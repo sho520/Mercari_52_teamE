@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "items/category" => "items#category"
   get "search" => "search#search"
   get "users/login" => "users#login"
+  get "users/sample" => "users#sample"
   get "users/logout" => "users#logout"  #idが入る必要あり
   get "users/phone" => "users#phone"
   get "users/address" => "users#address"
@@ -17,5 +18,8 @@ Rails.application.routes.draw do
   get "users/identification" => "users#identification"  #idが入る必要あり
   get "users/card" => "users#card"  #idが入る必要あり
   resources :items
-  resources :users
+  resources :users do
+    resources :myitems, only: [:show, :edit]
+  end
+
 end

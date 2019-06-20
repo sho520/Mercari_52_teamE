@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def show
+    @user = User.find_by(id: params[:id])
     render layout: 'common'
   end
 
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user = User.new
     render layout: 'third_application'
   end
 
@@ -47,6 +49,9 @@ class UsersController < ApplicationController
 
   def card
     render layout: 'common'
+  end
+
+  def sample
   end
 
   private

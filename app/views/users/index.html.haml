@@ -4,25 +4,25 @@
   %main.registration__main
     %section.registration__main__container
       %h2.registration__main__head 会員情報入力
-      %form.registration__main__form{action: "", method: "POST"}
-        %input{name: "", type: "hidden", value: ""}/
+      .registration__main__form
+      = form_for @user do |f|
         .user__form__content
           .user__form__group
             %label{for: "user__title"} ニックネーム
             %span.user__form__require 必須
-            %input.user__form__input{name: "", placeholder: "例) ツルタさん", type: "text", value: ""}/
+            = f.text_field :nick_name, class: 'user__form__input', placeholder: "例) ツルタさん", type: "nickname", value: ""
           .user__form__group
             %label{for: "user__title"} メールアドレス
             %span.user__form__require 必須
-            %input.user__form__input{name: "", placeholder: "PC・携帯どちらでも可", type: "email", value: ""}/
+            = f.text_field :email, class: 'user__form__input', placeholder: "PC・携帯どちらでも可", type: "email", value: ""
           .user__form__group
             %label{for: "user__title"} パスワード
             %span.user__form__require 必須
-            %input.user__form__input{name: "", placeholder: "6文字以上", type: "password"}/
+            = f.text_field :password, class: 'user__form__input', placeholder: "6文字以上", type: "password", value: ""
           .user__form__group
             %label{for: "user__title"} パスワード (確認)
             %span.user__form__require 必須
-            %input.user__form__input{name: "", placeholder: "6文字以上", type: "password"}/
+            = f.text_field :password, class: 'user__form__input', placeholder: "6文字以上", type: "password", value: ""
           .user__form__group
             %h3.user__title__text 本人確認
             %p.user__title__text__inline
@@ -30,29 +30,31 @@
           .user__form__group
             %label{for: "user__title"} 姓 (全角)
             %span.user__form__require 必須
-            %input.user__form__input{name: "", placeholder: "例) 雨笠", type: "text", value: ""}/
+            = f.text_field :family_name, class: 'user__form__input', placeholder: "例) 雨笠", type: "family_name", value: ""
           .user__form__group
             %label{for: "user__title"} 名 (全角)
             %span.user__form__require 必須
-            %input.user__form__input{name: "", placeholder: "例) 将", type: "text", value: ""}/
+            = f.text_field :first_name, class: 'user__form__input', placeholder: "例) 将", type: "first_name", value: ""
           .user__form__group
             %label{for: "user__title"} 姓カナ (全角)
             %span.user__form__require 必須
-            %input.user__form__input{name: "", placeholder: "例) アマガサ", type: "text", value: ""}/
+            = f.text_field :family_name_kana, class: 'user__form__input', placeholder: "例) アマガサ", type: "family_name_kana", value: ""
           .user__form__group
             %label{for: "user__title"} 名カナ (全角)
             %span.user__form__require 必須
-            %input.user__form__input{name: "", placeholder: "例) ショウ", type: "text", value: ""}/
+            = f.text_field :first_name_kana, class: 'user__form__input', placeholder: "例) ショウ", type: "first_name_kana", value: ""
           .user__form__group
             %label{for: "user__title"} 生年月日
             %span.user__form__require 必須
             %br/
             .user__form__birthday
               .user__form__birthday__select
+                -# = f.select :birth_year, {}, name: "year", id: "id_year", class: "user__select__default d__fa__select"
                 %select.user__select__default.d__fa__select{name: "year", id: "id_year"} 
                 %i.user__select__default__arrow
               %span 年
               .user__form__birthday__select
+                = f.date_select :birth_month, class:'user__select__default d__fa__select', name: "month", id: "id_month", type: "birth_year" 
                 %select.user__select__default.d__fa__select{name: 'month', id: 'id_month'}
                 %i.user__select__default__arrow
               %span 月
@@ -60,7 +62,6 @@
                 %select.user__select__default.d__fa__select{name: "day", id: 'id_day'}
                 %i.icon-arrow-bottom
               %span 日
-            %input{name: "", type: "hidden", value: ""}/
             .clearfix
           %p.user__form__infomation
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
@@ -77,10 +78,15 @@
               「次へ進む」のボタンを押すことにより、
               %a.user__text__decoration{href: "#", target: "_blank"}> 利用規約
               に同意したものとみなします
-          %button.user__form__botton{type: "submit"} 次へ進む
+          = f.button :"次へ進む", class: 'user__form__botton'
           .user__form__group
             %p.user__form__other
               %a.user__form__other__info{href: "", target: "_blank"}
                 本人情報の登録について#{fa_icon("angle-right lg")}
+              %br
+              %br
+
   = render 'subfooter'
+
+
 

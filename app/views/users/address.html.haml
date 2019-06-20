@@ -5,8 +5,7 @@
     %section.registration__main__container
       %h2.registration__main__head 発送元・お届け先住所入力
       .registration__main__form
-      = simple_form_for @user do |f|
-        %input{name: "", type: "hidden", value: ""}/
+      = form_for @user do |f|
         .user__form__content
           .user__form__group
             %label{for: "user__title"} お名前
@@ -25,7 +24,7 @@
           .user__form__group
             %label{for: "user__title"} 都道府県
             %span.user__form__require 必須
-            = f.collection_select :prefecture_name, JpPrefecture::Prefecture.all,:name, :name, {prompt: true}, class: 'user__select__default d__fa__select', id: "user_prefecture_code"
+            = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,:name, :name, {prompt: true}, class: 'user__select__default d__fa__select', id: "user_prefecture_code"
             %i.user__select__default__arrow
           .user__form__group
             %label{for: "user__title"} 市区町村
@@ -39,7 +38,7 @@
             %label{for: "user__title"} 電話
             %span.user__form__require__b 任意
             = f.text_field :phone, class: 'user__form__input', placeholder: "0901234567", type: "text", value: ""
-          = f.button :submit, class: 'user__form__botton' 
+          = f.button :"次へ進む", class: 'user__form__botton'
           %br
           %br
               
