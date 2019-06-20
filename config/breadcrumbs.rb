@@ -1,14 +1,14 @@
 crumb :root do
-  link "Home", root_path
+  link "メルカリ", root_path
 end
 
+# items関連
 crumb :search do
   link "検索結果", search_path
-  parent :root
 end
 
-crumb :user do
+# users関連
+crumb :mypage do
   link "マイページ", user_path
-  parent :root
 end
 
