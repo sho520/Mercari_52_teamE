@@ -97,5 +97,5 @@ Rails.application.configure do
   config.assets.precompile += ['userfunction.js']
   config.assets.precompile += ['item.show.js']
   config.assets.precompile += ['item.new.js']
-
+  config.assets.precompile += ['myitems.edit.js']
 end
