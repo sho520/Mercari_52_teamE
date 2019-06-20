@@ -14,7 +14,7 @@
       - @items.each do |item|
         %section.items-index__container__list__box
           = link_to items_path , class: "items-index__container__list__box__group" do
-            -# = image_tag item.images.first.image_url.url(:thumb) , class: 'items-index__container__list__box__group__img'
+            = image_tag item.images.first.image_url.url(:thumb) , class: 'items-index__container__list__box__group__img'
             .items-index__container__list__box__group__info
               %h3.items-index__container__list__box__group__info__title
                 = item.name
