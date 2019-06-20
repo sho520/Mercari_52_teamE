@@ -46,10 +46,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @category = @item.category
     @categories = Category.roots.all
-    @grandchild = []
-      @categories.each do |root|
-        @grandchild << root.indirects.all
-      end
     @conditions = Condition.all
     @large_classes = LargeClass.all
     @middle_classes = MiddleClass.all
@@ -63,8 +59,6 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
-    binding.pry
-
   end
 
   def confirm
