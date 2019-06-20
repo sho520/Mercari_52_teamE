@@ -30,8 +30,7 @@
           .product-header__container__under__user
             = link_to '新規会員登録', items_path, class: 'product-header__container__under__user__signup'
             = link_to 'ログイン', items_path, class: 'product-header__container__under__user__login'
-    .header__bread
-      = breadcrumbs separator: " &rsaquo; "
+    = breadcrumbs separator: " &rsaquo; "
     = yield
     .banner
       .banner__inner
