@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :large_class, optional: true
   belongs_to :middle_class, optional: true
   belongs_to :small_class, optional: true
+  belongs_to :delivery_way, optional: true
   has_many :images
   belongs_to :owner, class_name: "User", optional: true
   belongs_to :buyer, class_name: "User", optional: true
