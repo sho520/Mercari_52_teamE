@@ -18,5 +18,8 @@ Rails.application.routes.draw do
   get "users/identification" => "users#identification"  #idが入る必要あり
   get "users/card" => "users#card"  #idが入る必要あり
   resources :items
-  resources :users
+  resources :users do
+    resources :myitems, only: [:show, :edit]
+  end
+
 end

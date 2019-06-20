@@ -1,0 +1,119 @@
+= javascript_include_tag 'item.show.js'
+.product__bread
+  %ul
+    %li
+      %a{href: "http://localhost:3000/items"}
+        %span メルカリ
+      %i#product__fa-angle-right.fa.fa-angle-right
+    %li
+      %a{href: "http://localhost:3000/items/category"}
+        %span カテゴリー一覧
+      %i#product__fa-angle-right.fa.fa-angle-right
+    %li
+      %a{href: ""}
+        %span 
+          = @item.category.parent.parent.name
+      %i#product__fa-angle-right.fa.fa-angle-right
+    %li
+      %a{href: ""}
+        %span
+          = @item.category.parent.name
+      %i#product__fa-angle-right.fa.fa-angle-right
+    %li
+      %span 
+        = @item.category.name
+%main.product__main
+  .product__item
+    .product__item-box
+      %h1.product__h1
+        = @item.name 
+      .product__item-box__main
+        .product__item-box__main__left
+          .product__item-box__main__left__bigpic
+            %ul
+              - @images.each_with_index do |image, i|
+                %li.product__item-box__main__left__below__pics
+                  = image_tag image.image_url.url(:thumb), width: '300px', id: "bigimage"
+                - break if i== 0
+
+          .product__item-box__main__left__below
+            %ul
+              - @images.each do |image|
+                %li.product__item-box__main__left__below__pics
+                  = image_tag image.image_url.url(:thumb), size: '60x60', id: "smallimage"
+                
+  
+        .product__item-box__main__right
+          %table.product__item-box__main__right__table
+            %tbody.product__tbody
+              %tr.product__tr
+                %th.product__th 出品者
+                %td.product__td
+                  %a{href: ""} 
+                    = @item.owner.nickname
+              %tr.product__tr
+                %th.product__th カテゴリー
+                %td.product__td
+                  %a{href: ""}
+                    = @item.category.parent.parent.name
+                    %i#product__fa-angle-right.fa.fa-angle-right
+                  %a{href: ""} 
+                    = @item.category.parent.name
+                    %i#product__fa-angle-right.fa.fa-angle-right
+                  %a{href: ""}
+                    = @item.category.name
+              %tr.product__tr
+                %th.product__th ブランド
+                %td.product__td
+                  %a{href: ""} 
+                    = @item.brand
+              %tr.product__tr
+                %th.product__th サイズ
+                %td.product__td 
+                  = @item.size
+              %tr.product__tr
+                %th.product__th 商品の状態
+                %td.product__td 
+                  = @item.condition.condition_rank
+              %tr.product__tr
+                %th.product__th 配送料の負担
+                %td.product__td 
+                  = @item.shipping_fee_payer.payer
+              %tr.product__tr
+                %th.product__th 配送の方法
+                %td.product__td
+                  %a らくらくメルカリ便
+              %tr.product__tr
+                %th.product__th 配送元地域
+                %td.product__td
+                  %a{href: ""} ここに入る
+              %tr.product__tr
+                %th.product__th 配送日の目安
+                %td.product__td
+                  %a
+                    = @item.shipping_day.days
+      .product__item-box__price
+        %span.product__item-box__price__amount
+          = "¥" + @item.price.to_s(:delimited).to_s
+        %span.product__item-box__price__withtax (税込)
+        %span.product__item-box__price__shipcost 送料込み
+      .product__item-box__desc
+        = @item.description
+    .product__item-comment
+      .product__item-box__buybox
+        %a
+          商品を編集する
+      .product__item-box__buybox
+        or
+      .product__item-box__buybox
+        %a
+          出品を一旦停止する
+      .product__item-box__buybox
+        %a
+          この商品を削除する
+
+    .product__item-comment
+      %form.product__item-comment__form
+        %p.product__p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %textarea.product__textarea{name: "body", type: "text"}
+        %button.product__button{type: "submit"} コメントする
