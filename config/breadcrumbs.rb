@@ -3,11 +3,25 @@ crumb :root do
 end
 
 # items関連
+
+crumb :item do |item|
+  link item.name, item_path
+end
+
 crumb :search do
-  link "検索結果", search_path
+  link "#{params[:keyword]}", search_path
+end
+
+crumb :category do
+  link "カテゴリー一覧", items_category_path
+end
+
+crumb :brand do
+  link "ブランド一覧", items_brand_path
 end
 
 # users関連
+
 crumb :mypage do
   link "マイページ", "/users/1"
 end
