@@ -108,16 +108,18 @@
         .nav__list__item__content__arrow
           = fa_icon("chevron-right")
   %li.nav__list__item
-    .nav__list__item__content
-      .nav__list__item__name
-        発送元・お届け先住所変更
-      .nav__list__item__content__arrow
-        = fa_icon("chevron-right")
+    = link_to users_address_path, style: "color: black;" "text-decoration: none;" do
+      .nav__list__item__content
+        .nav__list__item__name
+          発送元・お届け先住所変更
+        .nav__list__item__content__arrow
+          = fa_icon("chevron-right")
   %li.nav__list__item
-    .nav__list__item__content
-      .nav__list__item__name
-        支払い方法
-      .nav__list__item__content__arrow
+    = link_to users_card_path, style: "color: black;" "text-decoration: none;" do
+      .nav__list__item__content
+        .nav__list__item__name
+          支払い方法
+        .nav__list__item__content__arrow
         = fa_icon("chevron-right")
   %li.nav__list__item
     .nav__list__item__content
@@ -126,11 +128,12 @@
       .nav__list__item__content__arrow
         = fa_icon("chevron-right")
   %li.nav__list__item
-    .nav__list__item__content
-      .nav__list__item__name
-        本人情報
-      .nav__list__item__content__arrow
-        = fa_icon("chevron-right")
+    = link_to edit_user_registration_path, style: "color: black;" "text-decoration: none;" do
+      .nav__list__item__content
+        .nav__list__item__name
+          本人情報
+        .nav__list__item__content__arrow
+          = fa_icon("chevron-right")
   %li.nav__list__item
     .nav__list__item__content
       .nav__list__item__name
