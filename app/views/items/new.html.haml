@@ -43,16 +43,11 @@
             %label{for: ""}
             %div
               = f.collection_select(:small_class_id, @small_classes, :id, :name, class: "s__box3")
-          -# .s__Details__Size
-          -#   %label.box3__itemfont2{for: ""} サイズ
-          -#   %span.hissu 必須
-          -#   %div
-          -#     = f.collection_select(:size, @, :id, :name, class: "s__box3"):size
-          -#     %option{value: ""}
-          -#     %option{value: ""}
-          -#     %option{value: ""}
-          -#     %option{value: ""}
-          -#     %option{value: ""}
+          .s__Details__Size
+            %label.box3__itemfont2{for: ""} サイズ
+            %span.hissu 必須
+            %div
+              = f.collection_select(:small_class_id, @small_classes, :id, :name, class: "s__box3")
           .s__Details__State
             %label.box3__itemfont2{for: ""} 商品の状態
             %span.hissu 必須
@@ -69,13 +64,11 @@
             %span.hissu 必須
             %div
               = f.collection_select(:shipping_fee_payer_id, @shipping_fee_payers, :id, :payer, class: "s__box4")
-          -# .s__delivery__Configuration
-          -#   %label{for: ""} 配送の方法
-          -#   %span.hissu 必須
-          -#   %div
-          -#     -# = f.collection_select  class: "s__box4"
-          -#     %option{value: ""}
-          -#     %option{value: ""}
+          .s__delivery__Configuration#delivery__Configuration
+            %label{for: ""} 配送の方法
+            %span.hissu 必須
+            %div
+              = f.collection_select(:delivery_way_id, @delivery_ways, :id, :delivery_way,)
           -# .s__delivery__Configuration
           -#   %label{for: ""} 発送元の地域
           -#   %span.hissu 必須

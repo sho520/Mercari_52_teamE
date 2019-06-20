@@ -38,6 +38,7 @@ class ItemsController < ApplicationController
     @conditions = Condition.all
 
     @shipping_fee_payers = ShippingFeePayer.all
+    @delivery_ways = DeliveryWay.all
     @shipping_days = ShippingDay.all
     render layout: 'second_application'
   end
