@@ -1,3 +1,5 @@
+$main-red: #ea352d;
+
 .category__bread{
   height: 49px;
   width: 100%;
@@ -55,9 +57,10 @@
           border-radius: 4px;
           box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
           text-decoration: none;
+          color: #333333;
         }
         &__title:hover{
-          background-color:#ea352d;
+          background-color:$main-red;
           color:#ffffff;
         }
       }
@@ -67,7 +70,7 @@
       &__category{
         display: block;
         &__name{
-          background-color: red;
+          background-color: $main-red;
           color: #ffffff;
           font-weight: bold;
           padding: 7px 30px 0 30px;
