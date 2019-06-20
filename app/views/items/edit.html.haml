@@ -100,9 +100,11 @@
           .s__Price__Fee
             %label{for: ""} 販売手数料 (10%)
             %output#fee{type:  "number"} 
+              = "¥ " + (@price * 0.1).to_i.floor.to_s(:delimited)
           .s__Price__Profit
             %label.box5__itemfont2{for:  ""} 販売利益
             %output#profit{type: "number"} 
+              = "¥ " + (@price * 0.9).to_i.floor.to_s(:delimited)
         / <haml_silent></haml_silent>
       .s__Content__Terms
         %p

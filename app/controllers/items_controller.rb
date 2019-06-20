@@ -56,6 +56,7 @@ class ItemsController < ApplicationController
     @small_classes = SmallClass.all
     @shipping_fee_payers = ShippingFeePayer.all
     @shipping_days = ShippingDay.all
+    @price = @item.price
     render layout: 'second_application'
   end
 
