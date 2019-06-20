@@ -37,6 +37,8 @@
             - else
               = link_to "新規会員登録", new_user_registration_path, class: 'product-header__container__under__user__signup'
               = link_to "ログイン", new_user_session_path, class: 'product-header__container__under__user__login'
+    .header__bread
+      = breadcrumbs separator: " &rsaquo; "
     = yield
     .banner
       .banner__inner
