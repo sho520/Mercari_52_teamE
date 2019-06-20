@@ -1,27 +1,5 @@
 = javascript_include_tag 'item.show.js'
-.product__bread
-  %ul
-    %li
-      %a{href: "http://localhost:3000/items"}
-        %span メルカリ
-      %i#product__fa-angle-right.fa.fa-angle-right
-    %li
-      %a{href: "http://localhost:3000/items/category"}
-        %span カテゴリー一覧
-      %i#product__fa-angle-right.fa.fa-angle-right
-    %li
-      %a{href: ""}
-        %span 
-          = @item.category.parent.parent.name
-      %i#product__fa-angle-right.fa.fa-angle-right
-    %li
-      %a{href: ""}
-        %span
-          = @item.category.parent.name
-      %i#product__fa-angle-right.fa.fa-angle-right
-    %li
-      %span 
-        = @item.category.name
+- breadcrumb :item, @item
 %main.product__main
   .product__item
     .product__item-box

@@ -77,6 +77,7 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'ancestry'
 gem 'jp_prefecture'
+gem 'gretel'
 gem 'payjp'
 gem 'fog-aws'
 
