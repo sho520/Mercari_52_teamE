@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users do
-    resources :myitems, only: [:show, :edit]
+    resources :myitems, only: [:show, :edit, :destroy]
   end
 
 end

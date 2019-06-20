@@ -19,4 +19,10 @@ class MyitemsController < ApplicationController
     render layout: 'second_application'
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to user_path
+  end
+
 end
