@@ -10,6 +10,35 @@
     = javascript_include_tag 'userfunction.js'
     = javascript_include_tag 'jquery.jpostal.js'
 %body
+  .product-header
+    .product-header__container
+      / ここから上部
+      .product-header__container__upper
+        = link_to items_path, class: 'product-header__container__upper__logo' do
+          = image_tag 'logo.png', alt: 'logo', class: 'product-header__container__upper__logo__image', height: '36', width: '134'
+        .product-header__container__upper__search
+          = form_tag("/search", method: :get, class:"header__search") do
+            = text_field_tag :keyword, '', class: 'header__search__text', placeholder: '何かお探しですか？'
+            %label.header__search__button
+              = fa_icon 'search', class: 'search__icon'
+              =submit_tag "", name:nil, class: 'hidden__button'
+      / ここから下部
+      .product-header__container__under
+        %nav.profuct-header__container__under__nav
+          .product-header__container__under__nav__category.drop-down
+            = link_to 'カテゴリーから探す', items_path, class: 'product-header__container__under__nav__category__link'
+          .product-header__container__under__nav__brand.drop-down
+            = link_to 'ブランドから探す', items_path, class: 'product-header__container__under__nav__brand__nav__link'
+        .product-header__container__under__user
+          - if user_signed_in?
+            -# Logged in as
+            -# = succeed "." do
+            -#   %strong= current_user.nickname
+            = link_to 'プロフィール変更', edit_user_registration_path, class: 'product-header__container__under__user__signup'
+            = link_to 'サインアウト', destroy_user_session_path, class: 'product-header__container__under__user__login', method: "delete"
+          - else
+            = link_to "新規会員登録", new_user_registration_path, class: 'product-header__container__under__user__signup'
+            = link_to "ログイン", new_user_session_path, class: 'product-header__container__under__user__login'
   %nav.pankuzu
   .mypage__container
     .nav
@@ -34,7 +63,6 @@
               %label{for: "user__title"} お名前
               %span.user__form__require 必須
               = f.text_field :family_name, class: 'user__field', placeholder: current_user.family_name, type: "family_name", value: ""
-            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
               = f.text_field :first_name, class: 'user__field', placeholder: current_user.first_name, type: "first_name", value: ""
             
             .user__form__group
@@ -48,17 +76,17 @@
               %br/
               .user__form__birthday__b
                 .user__form__birthday__b__select
-                  %select.user__select__default.d__fa__select{name: "year", id: "id_year"} 
+                  = f.select :birth_year, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_year"}
                   %i.user__select__default__arrow
                 %span 年
               .user__form__birthday
                 .user__form__birthday__select
-                  %select.user__select__default.d__fa__select{name: "month", id: "id_month"} 
+                  = f.select :birth_month, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_month"}
                   %i.user__select__default__arrow
                 %span 月
               .user__form__birthday
                 .user__form__birthday__select
-                  %select.user__select__default.d__fa__select{name: "day", id: "id_day"} 
+                  = f.select :birth_day, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_day"}
                   %i.user__select__default__arrow
                 %span 日
               %p.user__form__infomation__b
@@ -80,47 +108,109 @@
               %label{for: "user__title"} 建物
               %span.user__form__require__b 任意
               = f.text_field :address_building, class: 'user__form__input', placeholder: "柳ビル111", type: "address_building", value: ""
-            = f.button :"更新する", class: 'user__form__botton'
+            = f.submit :"更新する", class: 'user__form__botton'
             .user__form__group
               %p.user__form__other
                 %a.user__form__other__info
                   本人情報の登録について
                   %i.fa.fa-angle-right.fa-lg
+  .banner
+    .banner__inner
+      .banner__inner__block
+        %section.banner__inner__block__icon
+          %h2 スマホでかんたんフリマアプリ
+          %p 今すぐ無料ダウンロード
+          %section.banner__inner__block__icon__logo
+            = image_tag 'app-logo.jpg', alt: 'logo', class: 'banner__inner__block__icon__logo__main', height: '68', width: '68'
+            %ul.banner__inner__block__icon__logo__link
+              %li= image_tag 'appstore.jpeg', alt: 'logo', class: 'banner__inner__block__icon__logo__link__a', height: '38', width: '133'
+              %li= image_tag 'googleplay.png', alt: 'logo', class: 'banner__inner__block__icon__logo__link__b', height: '38', width: '133'
+        .banner__inner__image
+          = image_tag 'appa.png', alt: 'appimage', class: 'banner__inner__image__app'
+
+    %footer.items-footer
+      .items-footer__nav
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title メルカリについて
+          %ul.items-footer__nav__block__group
+            %li= link_to '会社概要（運営会社）', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to '採用情報', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to 'プレスリリース', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to '公式ブログ', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to 'メルカリロゴ利用ガイドライン', items_path, class: "items-footer__nav__block__group__link"
+            %li
+              = link_to items_path do
+                %i.fa.fa-twitter.fa-2x.items-footer__nav__block__group__icon
+            %li
+              = link_to items_path do
+                %i.fa.fa-facebook.fa-2x.items-footer__nav__block__group__icon
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title ヘルプ＆ガイド
+          %ul.items-footer__nav__block__group
+            %li.footer__nav__block__group__link= link_to 'メルカリガイド', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'らくらくメルカリ便', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'ゆうゆうメルカリ便', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to '大型メルカリ便', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to '車体取引ガイド', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'メルカリあんしん・あんぜん宣言！', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to '偽ブランド品撲滅への取り組み', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'メルカリボックス', items_path, class: "items-footer__nav__block__group__link"
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title プライバシーと利用規約
+          .items-footer__nav__block__inner
+            %ul.items-footer__nav__block__inner__group
+              %li= link_to 'メルカリ利用規約', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to 'あんしんスマホサポート制度に関する利用特約', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to 'プレスリリース', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to 'コンプライアンスポリシー', items_path, class: "items-footer__nav__block__inner__group__link"
+          .items-footer__nav__block__inner
+            %ul.items-footer__nav__block__inner__group
+              %li= link_to '個人データの安全管理に係る基本方針', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '特定商取引に関する表記', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '資金決済法に基づく表示', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '法令遵守と犯罪抑止のために', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '返品・返金ポリシー', items_path, class: "items-footer__nav__block__inner__group__link"
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title 国
+          %ul.items-footer__nav__block__group
+            %li.items-footer__nav__block__group__link 日本
+            %li.items-footer__nav__block__group__link 米国
 
 
-  %h2
-    Edit #{resource_name.to_s.humanize}
-  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-    = render "devise/shared/error_messages", resource: resource
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      %div
-        Currently waiting confirmation for: #{resource.unconfirmed_email}
-    .field
-      = f.label :password
-      %i (leave blank if you don't want to change it)
-      %br/
-      = f.password_field :password, autocomplete: "new-password"
-      - if @minimum_password_length
-        %br/
-        %em
-          = @minimum_password_length
-          characters minimum
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
-    .field
-      = f.label :current_password
-      %i (we need your current password to confirm your changes)
-      %br/
-      = f.password_field :current_password, autocomplete: "current-password"
-    .actions
-      = f.submit "Update"
-  %h3 Cancel my account
-  %p
-    Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-  = link_to "Back", :back
+
+  -# %h2
+  -#   Edit #{resource_name.to_s.humanize}
+  -# = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  -#   = render "devise/shared/error_messages", resource: resource
+  -#   .field
+  -#     = f.label :email
+  -#     %br/
+  -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+  -#   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+  -#     %div
+  -#       Currently waiting confirmation for: #{resource.unconfirmed_email}
+  -#   .field
+  -#     = f.label :password
+  -#     %i (leave blank if you don't want to change it)
+  -#     %br/
+  -#     = f.password_field :password, autocomplete: "new-password"
+  -#     - if @minimum_password_length
+  -#       %br/
+  -#       %em
+  -#         = @minimum_password_length
+  -#         characters minimum
+  -#   .field
+  -#     = f.label :password_confirmation
+  -#     %br/
+  -#     = f.password_field :password_confirmation, autocomplete: "new-password"
+  -#   .field
+  -#     = f.label :current_password
+  -#     %i (we need your current password to confirm your changes)
+  -#     %br/
+  -#     = f.password_field :current_password, autocomplete: "current-password"
+  -#   .actions
+  -#     = f.submit "Update"
+  -# %h3 Cancel my account
+  -# %p
+  -#   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+  -# = link_to "Back", :back
