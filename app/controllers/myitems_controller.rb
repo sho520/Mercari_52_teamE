@@ -1,12 +1,11 @@
 class MyitemsController < ApplicationController
+  before_action :set_item
 
   def show
-    @item = Item.find(params[:id])
     @images = @item.images
     render layout: 'common'
   end
   def edit
-    @item = Item.find(params[:id])
     @category = @item.category
     @categories = Category.roots.all
     @conditions = Condition.all
@@ -20,9 +19,16 @@ class MyitemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
-    redirect_to user_path
+    if @item.owner == current_user
+      @item.destroy
+      redirect_to user_path
+    end
+  end
+
+  private
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
