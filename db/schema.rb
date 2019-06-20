@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_064647) do
+ActiveRecord::Schema.define(version: 2019_06_20_065513) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2019_06_18_064647) do
     t.string "name"
     t.text "description"
     t.string "brand"
-    t.string "size"
     t.integer "condition_id"
     t.integer "shipping_fee_payer_id"
     t.integer "prefecture_id"
@@ -58,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_06_18_064647) do
     t.integer "category_id"
     t.integer "shipping_day_id"
     t.integer "delivery_way_id"
+    t.integer "size_id"
   end
 
   create_table "large_classes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -81,6 +81,12 @@ ActiveRecord::Schema.define(version: 2019_06_18_064647) do
 
   create_table "shipping_fee_payers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "payer", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

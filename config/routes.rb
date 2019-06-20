@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   get "users/complete" => "users#complete"
   get "users/identification" => "users#identification"  #idが入る必要あり
   get "users/card" => "users#card"  #idが入る必要あり
-  resources :items
+  resources :items do
+    member do
+      get 'confirm'
+    end
+  end
   resources :users do
     resources :myitems, only: [:show, :edit]
   end
