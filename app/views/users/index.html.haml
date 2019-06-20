@@ -49,12 +49,12 @@
             %br/
             .user__form__birthday
               .user__form__birthday__select
-                -# = f.collection_select :year, id:"id_year", class:'user__select__default d__fa__select', type: "birth_year" 
+                -# = f.select :birth_year, {}, name: "year", id: "id_year", class: "user__select__default d__fa__select"
                 %select.user__select__default.d__fa__select{name: "year", id: "id_year"} 
                 %i.user__select__default__arrow
               %span 年
               .user__form__birthday__select
-                -# = f.collection_select :birth_month, class:'user__select__default d__fa__select', name: "month", id: "id_month", type: "birth_year" 
+                = f.date_select :birth_month, class:'user__select__default d__fa__select', name: "month", id: "id_month", type: "birth_year" 
                 %select.user__select__default.d__fa__select{name: 'month', id: 'id_month'}
                 %i.user__select__default__arrow
               %span 月
@@ -87,4 +87,6 @@
               %br
 
   = render 'subfooter'
+
+
 

@@ -29,12 +29,14 @@
                 %a.user__form__other__info{href: "", target: "_blank"}
                   本人確認書類のアップロードについて
                   %i.fa.fa-angle-right.fa-lg
-          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
             .user__form__group
               %label{for: "user__title"} お名前
               %span.user__form__require 必須
               = f.text_field :family_name, class: 'user__field', placeholder: current_user.family_name, type: "family_name", value: ""
+            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
               = f.text_field :first_name, class: 'user__field', placeholder: current_user.first_name, type: "first_name", value: ""
+            
             .user__form__group
               %label{for: "user__title"} お名前カナ
               %span.user__form__require 必須
@@ -61,11 +63,10 @@
                 %span 日
               %p.user__form__infomation__b
                 ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
-              %input{name: "", type: "hidden", value: ""}/
             .user__form__group
               %label{for: "user__title"} 郵便番号
               %span.user__form__require__b 任意
-              = f.text_field :postcode, class: 'user__form__input', placeholder: "例) 123-4567", type: "text", value: "", id: "user_postcode"
+              = f.text_field :postcode, class: 'user__form__input', placeholder: "例) 123-4567", type: "postcode", value: "", id: "user_postcode"
             .user__form__group
               %label{for: "user__title"} 都道府県
               %span.user__form__require__b 任意
@@ -74,12 +75,12 @@
             .user__form__group
               %label{for: "user__title"} 市区町村
               %span.user__form__require__b 任意
-              = f.text_field :address_city, class: 'user__form__input', placeholder: "渋谷区", type: "text", value: "", id: "user_address_city"
+              = f.text_field :address_city, class: 'user__form__input', placeholder: "渋谷区", type: "address_city", value: "", id: "user_address_city"
             .user__form__group
               %label{for: "user__title"} 建物
               %span.user__form__require__b 任意
-              = f.text_field :address_building, class: 'user__form__input', placeholder: "柳ビル111", type: "text", value: ""
-            = f.button :"登録する", class: 'user__form__botton'
+              = f.text_field :address_building, class: 'user__form__input', placeholder: "柳ビル111", type: "address_building", value: ""
+            = f.button :"更新する", class: 'user__form__botton'
             .user__form__group
               %p.user__form__other
                 %a.user__form__other__info
@@ -87,39 +88,39 @@
                   %i.fa.fa-angle-right.fa-lg
 
 
-  -# %h2
-  -#   Edit #{resource_name.to_s.humanize}
-  -# = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  -#   = render "devise/shared/error_messages", resource: resource
-  -#   .field
-  -#     = f.label :email
-  -#     %br/
-  -#     = f.email_field :email, autofocus: true, autocomplete: "email"
-  -#   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-  -#     %div
-  -#       Currently waiting confirmation for: #{resource.unconfirmed_email}
-  -#   .field
-  -#     = f.label :password
-  -#     %i (leave blank if you don't want to change it)
-  -#     %br/
-  -#     = f.password_field :password, autocomplete: "new-password"
-  -#     - if @minimum_password_length
-  -#       %br/
-  -#       %em
-  -#         = @minimum_password_length
-  -#         characters minimum
-  -#   .field
-  -#     = f.label :password_confirmation
-  -#     %br/
-  -#     = f.password_field :password_confirmation, autocomplete: "new-password"
-  -#   .field
-  -#     = f.label :current_password
-  -#     %i (we need your current password to confirm your changes)
-  -#     %br/
-  -#     = f.password_field :current_password, autocomplete: "current-password"
-  -#   .actions
-  -#     = f.submit "Update"
-  -# %h3 Cancel my account
-  -# %p
-  -#   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-  -# = link_to "Back", :back
+  %h2
+    Edit #{resource_name.to_s.humanize}
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    .field
+      = f.label :password
+      %i (leave blank if you don't want to change it)
+      %br/
+      = f.password_field :password, autocomplete: "new-password"
+      - if @minimum_password_length
+        %br/
+        %em
+          = @minimum_password_length
+          characters minimum
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    .field
+      = f.label :current_password
+      %i (we need your current password to confirm your changes)
+      %br/
+      = f.password_field :current_password, autocomplete: "current-password"
+    .actions
+      = f.submit "Update"
+  %h3 Cancel my account
+  %p
+    Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+  = link_to "Back", :back
