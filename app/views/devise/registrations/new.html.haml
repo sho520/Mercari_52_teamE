@@ -58,7 +58,7 @@
               %br/
               .user__form__birthday
                 .user__form__birthday__select
-                  -# = f.collection_select :birth_year, class:'user__select__default d__fa__select', name: "year", id: "id_year", type: "birth_year" 
+                  = f.select :birth_year, class:'user__select__default d__fa__select', name: "year", id: "id_year", type: "birth_year" 
                   %select.user__select__default.d__fa__select{name: "year", id: "id_year"} 
                   %i.user__select__default__arrow
                 %span 年
