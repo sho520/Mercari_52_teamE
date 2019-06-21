@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
     @middle_classes = MiddleClass.all
     @small_classes = SmallClass.all
     @conditions = Condition.all
-
+    @sizes = Size.all
     @shipping_fee_payers = ShippingFeePayer.all
     @delivery_ways = DeliveryWay.all
     @shipping_days = ShippingDay.all
