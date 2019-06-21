@@ -1,0 +1,364 @@
+.edit__s__ExhibitionPage__MainBox{
+  width:700px;
+  background: rgb(255, 255, 255);
+  height:auto;
+// overflow:hidden;
+  margin: 0 auto;
+  box-sizing:boder-box;
+
+  .edit__s__MainBox__Title {
+    width: 668px;
+    height: 33px;
+     text-align: center;
+     padding: 30px;
+     border-bottom: 2px solid rgb(245, 245, 245);
+
+
+}
+  .edit__Title{
+  font-size: 22px;
+  font-weight: bold;
+  padding: 32px 16;
+}
+
+  }
+  .edit__s__MainBoxform__Content {
+
+    .edit__s__ContentImage {
+      width: 543px;
+      height: 223px;
+      padding: 40px;
+    border-bottom: 2px solid rgb(245, 245, 245);
+  }
+  .edit__s__ContentImage__Image{
+    width: 620px;
+    height: 162px;
+    margin-top: 20px;
+    background: rgb(245, 245, 245);
+  }
+  .edit__s__ContentImage__Title{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .edit__saidai10{
+    padding: 10px 0;
+  }
+
+
+    .edit__s__Content__Name__Description {
+      width: 620px;
+      height: 274px;
+      padding: 40px;
+      background: rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(245, 245, 245);
+    }
+// .box2__Name{
+//     border: 1px solid #ccc;
+//     width: 586px;
+//     height: 28px;
+//     padding: 10px 16 8;
+//     margin-top: 8px;
+// }
+
+    .edit__box2font{
+font-weight: bold;
+
+    }
+    .edit__s__Content__Nametittle{
+    border: 1px solid #ccc;
+    width: 586px;
+    height: 30px;
+    padding: 10px 16 8;
+    margin-top: 8px;
+    }
+
+    }
+.edit__s__Content__Description{
+  width: 620px;
+  height: 164px;
+  margin-top: 40px;
+}
+
+.edit__s__contemt__text{
+  width: 598px;
+  height: 120px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  padding: 10px;
+}
+
+ .edit__s__Exhibition__Details {
+  width: 620px;
+  height: 512px;
+  padding: 40px;
+  background: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(245, 245, 245);
+ }
+
+.edit__s__Details__Configuration{
+  float: right;
+  width: 400px;
+  min-height: 512px;
+  height: auto;
+  background: rgb(255, 255, 255);
+  font-weight: bold;
+}
+  .edit__s__Details__Size{
+    margin: 40px 0 0 0 ;
+  }
+  .edit__s__Details__State{
+    margin: 40px 0 0 0 ;
+  }
+#edit__item_large_class_id{
+  display:block;
+   width: 400px;
+    height: 48px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    margin-top: 8px;
+}
+#edit__s__Details__Category2{
+  display:block;
+   width: 400px;
+    height: 48px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    margin-top: 8px;
+}
+#edit__item_small_class_id{
+  display:block;
+   width: 400px;
+    height: 48px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    margin-top: 8px;
+}
+#edit__item_condition_id{
+  display:block;
+   width: 400px;
+    height: 48px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    margin-top: 8px;
+}
+
+
+
+
+
+.edit__box3__itemfont1{
+  font-weight: bold;
+  color: #888;
+    font-size: 14px;
+  }
+    .edit__s__Content__delivery {
+      width: 620px;
+      height: 371px;
+      padding: 40px;
+      background: rgb(255, 255, 255);
+      border-bottom: 2px solid rgb(245, 245, 245);
+      display: block;
+      display: flex;
+      justify-content:space-between
+    }
+.edit__s__delivery__LeftContent{
+  display: inline-block;
+  height: 100%;
+}
+
+      .edit__box4__itemfont{
+        font-weight: bold;
+        color: #888;
+          font-size: 14px;
+      }
+
+
+      .edit__s__delivery__RightContent{
+        display: inline-block;
+        padding-left: 50px;
+        width: 400px;
+        min-height: 290px;
+        height: auto;
+        background: rgb(255, 255, 255);
+        font-weight: bold;
+        display: inline-block;
+      }
+
+      .edit__s__delivery__Description{
+      }
+      .edit__s__delivery__Configuration{
+      margin: 40px 0 0 0 ;
+      }
+      .edit__s__delivery__Configuration{
+      margin: 40px 0 0 0 ;
+      }
+      .edit__s__delivery__Configuration{
+      margin: 40px 0 0 0 ;
+      }
+
+      #edit__item_shipping_fee_payer_id{
+        display:block;
+         width: 400px;
+          height: 48px;
+          background: rgb(255, 255, 255);
+          border: 1px solid #ccc;
+          margin-top: 8px;
+        }
+#edit__item_shipping_day_id{
+  display:block;
+   width: 400px;
+    height: 48px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    margin-top: 8px;
+  }
+
+      
+
+// <%# 価格　BOX5 %>
+    .edit__s__Content__Price {
+      width: 620px;
+      height: 287px;
+      padding: 40px;
+    background: rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(245, 245, 245);}
+    .edit__box5__itemfont1{
+      font-weight: bold;
+      color: #888;
+        font-size: 14px;
+    }
+    .edit__box5__itemfont2{
+      font-weight: bold;
+     
+    }
+
+
+
+
+.edit__s__Price__light{
+align-content:flex-end;
+float: right;
+clear: both;
+width: 65%;
+height: 70%;
+
+.edit__s__Price__box{
+  width: 100%;
+  height: 80px;
+  // display: block;
+  display: flex;
+  justify-content: space-between;
+padding-top: 23px;
+padding: 0px 0 24;
+border-bottom: 1.5px solid rgb(204, 204, 204);
+// background-color: #AFEEEE;
+}
+
+
+// .clearfix::after {
+//   content: "";
+//   display: block;
+//   clear: both;
+// }
+.edit__s__Price__title{
+  width: 200px;
+  height: 48px;
+  display: inline-block;
+
+}
+.edit__s__Price__Configuration{
+  width: 126px;
+  height: 28px;
+  padding: 10px 16px 8px;
+  display: inline-block;
+}
+
+.edit__inputPrice{
+width: 126px;
+height: 28px;
+padding: 10 16 8px ;
+
+}
+
+// .s__Price__FeeProfit{
+//   width: 100%;
+//   height: 400px;
+// background-color: green;
+// justify-content:flex-end;
+// }
+
+.edit__s__Price__Fee{
+    width: 100%;
+    height: 63px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1.5px solid rgb(204, 204, 204);
+    margin-top: 25px;
+}
+.edit__s__Price__Profit{
+  width: 100%;
+  height: 83px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+}
+
+
+
+    // }
+// <%# 規約　BOX6 %>
+.edit__s__Content__Terms {
+  width: 625px;
+  height: 248px;
+  padding: 40px;
+      // background: red;
+.edit__s__submit{
+  width: 620px;
+   height: 50px;
+   background: #ea352d;
+   color: #ffffff;
+   margin: 40px, 0, 0;
+
+}
+
+}
+
+.edit__btn__back1{
+width: 279px;
+height: 50px;
+margin: 25px auto 0;
+text-align: center;
+line-height: 50px;
+background: #aaaaaa;
+color: #ffffff
+}
+
+
+// .btn__back2{
+//   width: 100%;
+//   height: 100%;
+//   background: #aaaaaa;
+//   color: #ffffff
+//   }
+
+.edit__hissu{
+margin: 0 0 0 8px;
+padding: 2px 4px;
+border-radius: 2px;
+color: #fff;
+font-size: 12px;
+vertical-align: top;
+background: #ea352d;
+margin-left: 5px;
+    }
+
+.edit__collection_select{
+  display:block;
+  width: 400px;
+   height: 48px;
+   background: rgb(255, 255, 255);
+   border: 1px solid #ccc;
+   margin-top: 8px;
+}
