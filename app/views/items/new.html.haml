@@ -43,11 +43,11 @@
             %label{for: ""}
             %div
               = f.collection_select(:small_class_id, @small_classes, :id, :name, class: "s__box3")
-          .s__Details__Size
+          .s__Details__Size#Details__Size
             %label.box3__itemfont2{for: ""} サイズ
             %span.hissu 必須
             %div
-              = f.collection_select(:small_class_id, @small_classes, :id, :name, class: "s__box3")
+              = f.collection_select(:size_id, @sizes, :id, :size, class: "s__box3")
           .s__Details__State
             %label.box3__itemfont2{for: ""} 商品の状態
             %span.hissu 必須

@@ -38,8 +38,8 @@ $("#item_large_class_id").change(function(){
 $("#item_middle_class_id").change(function(){
   $('#item_small_class_id').css('display', "block");
 })
-$("#item_small_class_ide").change(function(){
-  $('').css('display', "block");
+$("#item_small_class_id").change(function(){
+  $('#Details__Size').css('display', "block");
 })
 $("#item_shipping_fee_payer_id").change(function(){
   $('#delivery__Configuration').css('display', "block");
