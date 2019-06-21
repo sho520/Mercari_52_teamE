@@ -23,6 +23,8 @@
       %span 
         = @item.category.name
 %main.myitem__product__main
+  %div.myitem__product__flash
+    = flash[:alert]
   .myitem__product__item
     .myitem__product__item-box
       %h1.myitem__product__h1

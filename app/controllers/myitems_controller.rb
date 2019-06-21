@@ -1,5 +1,5 @@
 class MyitemsController < ApplicationController
-  before_action :set_item
+  before_action :set_item, only: [:show, :destroy, :edit]
 
   def show
     @images = @item.images
@@ -22,6 +22,9 @@ class MyitemsController < ApplicationController
     if @item.owner == current_user
       @item.destroy
       redirect_to user_path
+    else
+      flash[:alert] = "ユーザーは自分以外の商品を削除することはできません"
+      redirect_to user_myitem_path
     end
   end
 
