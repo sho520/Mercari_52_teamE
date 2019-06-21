@@ -23,6 +23,8 @@
       %span 
         = @item.category.name
 %main.myitem__product__main
+  %div.myitem__product__flash
+    = flash[:alert]
   .myitem__product__item
     .myitem__product__item-box
       %h1.myitem__product__h1
@@ -100,16 +102,15 @@
       .myitem__product__item-box__desc
         = @item.description
     .myitem__product__item-comment
-      .myitem__product__item-box__buybox
-        %a
-          商品を編集する
-      or
-      .myitem__product__item-box__buybox
+      .myitem__product__item-box__buybox__show
+        = link_to "商品を編集する",edit_user_myitem_path(@item)
+      .myitem__product__item-box__buybox--or
+        or
+      .myitem__product__item-box__buybox__show
         %a
           出品を一旦停止する
-      .myitem__product__item-box__buybox
-        %a
-          この商品を削除する
+      .myitem__product__item-box__buybox__delete
+        = link_to "この商品を削除する", user_myitem_path, method: :delete
 
     .myitem__product__item-comment
       %form.myitem__product__item-comment__form

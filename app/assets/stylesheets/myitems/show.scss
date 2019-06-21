@@ -30,6 +30,12 @@
   background-color:whitesmoke;
   padding-top:40px;
   padding-bottom:40px;
+  .myitem__product__flash{
+    text-align: center;
+    font-size: 2.0rem;
+    margin-bottom:16px;
+    color: red;
+  }
   .myitem__product__item{
     width: 700px;
     margin: 0 auto;
@@ -171,28 +177,32 @@
           font-size: 1.0rem;
         }
       }
-      &__buybox{
+      &__buybox__show{
         width: 100%;
-        background-color: red;
-        height:60px;
+        background-color: #ea352d;
+        height:40px;
         color: #ffffff;
+        text-align: center;
+        font-size: 1.0rem;
+        line-height: 40px;
+        margin-top: 16px;
+        text-decoration: none;
+      }
+      &__buybox--or{
+        width: 100%;
         font-weight: bold;
         text-align: center;
-        font-size: 1.5rem;
-        line-height: 60px;
         margin-top: 16px;
       }
-      &__buybox--ng{
+      &__buybox__delete{
         width: 100%;
-        background-color: gray;
-        height:60px;
+        background-color: #aaa;
+        height:40px;
         color: #ffffff;
-        font-weight: bold;
         text-align: center;
-        font-size: 1.5rem;
-        line-height: 60px;
+        font-size: 1.0rem;
+        line-height: 40px;
         margin-top: 16px;
-
       }
       &__desc{
         padding-top: 32px;
