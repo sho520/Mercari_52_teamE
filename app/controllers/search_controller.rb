@@ -19,4 +19,12 @@ class SearchController < ApplicationController
     render layout: 'common'
   end
 
+  def form
+    render layout: 'common'
+  end
+
+  def detail
+    render layout: 'common'
+  end
+
 end

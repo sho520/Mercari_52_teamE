@@ -8,15 +8,17 @@ Rails.application.routes.draw do
   get "items/brand" => "items#brand"
   get "items/category" => "items#category"
   get "search" => "search#search"
+  get "search/form" => "search#form"  #仮置き
+  get "search/detail" => "search#detail"  #仮置き
   get "users/login" => "users#login"
   get "users/sample" => "users#sample"
-  get "users/logout" => "users#logout"  #idが入る必要あり
+  get "users/logout" => "users#logout"
   get "users/phone" => "users#phone"
   get "users/address" => "users#address"
   get "users/purchase" => "users#purchase"
   get "users/complete" => "users#complete"
   get "users/identification" => "users#identification"  #idが入る必要あり
-  get "users/card" => "users#card"  #idが入る必要あり
+  get "users/card" => "users#card"
   resources :items do
     member do
       get 'confirm'
