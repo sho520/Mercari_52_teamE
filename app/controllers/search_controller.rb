@@ -20,11 +20,13 @@ class SearchController < ApplicationController
   end
 
   def detail
+    
+    # binding.pry
 
     # 検索オブジェクト
     @search = Item.ransack(params[:q])
     # 検索結果
-    @items = @search.result
+    @items = @search.result(distinct: true)
 
     render layout: 'common'
   end

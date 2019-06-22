@@ -5,11 +5,46 @@
         詳細検索
 
       .form__group
-        %label.form__group__name
-          = f.label :name_cont, "キーワードを追加する" 
+        .form__group__name
+          = f.label :name, "キーワードを追加する" 
+        .form__group__input
           = f.search_field :name_cont
 
-          = f.submit "検索"
+      .form__group
+        .form__group__name
+          = f.label :category, "カテゴリーを選択する" 
+        .form__group__input
+      .select__wrap{data: {search: "parent"}}
+        = f.select :large_class_id_eq, [["すべて", ""], ["men", "1"], ["women", "2"], ["child", "3"] ]
+
+      .form__group
+        .form__group__name
+          = f.label :brand, "ブランド名から探す" 
+        .form__group__input
+          = f.search_field :brand_cont
+
+      .form__group
+        .form__group__name
+          = f.label :size, "サイズを指定する" 
+        .form__group__input
+          = f.select :size_id_eq, [["すべて", ""], ["Sサイズ", "1"], ["Mサイズ", "2"], ["Lサイズ", "3"] ]
+
+      .form__group
+        .form__group__name
+          = f.label :price, "価格" 
+        .form__group__input
+          = f.search_field :price_gteq
+          = f.search_field :price_lteq
+
+      .form__group
+        .form__group__name
+          = f.label :conditon, "商品の状態" 
+        .form__group__input
+          = f.check_box :condition_id, {}, 1, 0
+
+
+      .search__nav__button
+        = f.submit "検索"
 
   .mypage__main
     詳細検索結果
