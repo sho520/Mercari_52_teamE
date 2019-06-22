@@ -82,8 +82,12 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :description, :large_class_id, :middle_class_id, :small_class_id, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price)
+    # .merge(images: )
   end
 
+  # def set imagedata
+  #   @images = Image.new
+  # end
 
 
 end
