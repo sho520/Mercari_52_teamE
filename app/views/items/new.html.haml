@@ -3,24 +3,41 @@
   .s__MainBox__Title
     %h2.Title 商品の情報を入力
   = form_for @item do |f|
+
+
+
     .s__MainBoxform__Content
-
-
-
-
-
-
-
-
-
-
       .s__ContentImage
         .s__ContentImage__Title
           出品画像
           %span.hissu 必須
         %p.saidai10 最大10枚までアップロードできます
         .s__ContentImage__Image
-          = f.fields_for :product_images do |image|
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          -# = f.fields_for :product_images do |image|
+          -# .dropzone-container.clearfix
+          -#   #preview
+          -# .dropzone-area
+          -#   = image.label :image, class: "dropzone-box", for: "upload-image" do
+          -#     .input_area
+          -#       = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+          -#     %p ここをクリックしてください
 
 
 
@@ -122,7 +139,6 @@
           .s__Price__Profit
             %label.box5__itemfont2{for:  ""} 販売利益
             %output#profit{type: "number"} 
-        / <haml_silent></haml_silent>
       .s__Content__Terms
         %p
           %span{style: "color:#33aaf0"}> 禁止されている出品
