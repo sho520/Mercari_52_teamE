@@ -411,72 +411,72 @@ Item.create!(name:"肌着 ノースリーブロンパース3枚組 90㎝",
 
 
 
-# 11.upto(17) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:22)
-# end
-# 1.upto(8) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:21)
-# end
-# 11.upto(14) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:20)
-# end
-# 1.upto(6) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:19)
-# end
-# 11.upto(17) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:18)
-# end
-# 1.upto(3) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:17)
-# end
-# 11.upto(16) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:16)
-# end
-# 1.upto(3) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:15)
-# end
-# 11.upto(14) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:14)
-# end
-# 1.upto(4) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:13)
-# end
-# 11.upto(14) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:12)
-# end
-# 1.upto(6) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:11)
-# end
-# 11.upto(14) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:10)
-# end
-# 1.upto(4) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:9)
-# end
-# 11.upto(13) do |n|  
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:8)
-# end
-# 1.upto(7) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:7)
-# end
-# 11.upto(12) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:6)
-# end
-# 1.upto(3) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:5)
-# end
-# 11.upto(16) do |n|
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:4)
-# end
-1.upto(6) do |n| 
+11.upto(17) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:22)
+end
+1.upto(8) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:21)
+end
+11.upto(14) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:20)
+end
+1.upto(6) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:19)
+end
+11.upto(17) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:18)
+end
+1.upto(3) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:17)
+end
+11.upto(16) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:16)
+end
+1.upto(3) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:15)
+end
+11.upto(14) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:14)
+end
+1.upto(4) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:13)
+end
+11.upto(14) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:12)
+end
+1.upto(6) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:11)
+end
+11.upto(14) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:10)
+end
+1.upto(4) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:9)
+end
+11.upto(13) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:8)
+end
+1.upto(7) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:7)
+end
+11.upto(12) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:6)
+end
+1.upto(3) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:5)
+end
+11.upto(16) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:4)
+end
+1.upto(6) do |n|
   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:3)
 end
-11.upto(17) do |n|  
+11.upto(17) do |n|
   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:2)
 end
-# 1.upto(5) do |n|   
-#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:1)
-# end
+1.upto(5) do |n|
+  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:1)
+end
 
 Condition.create(:condition_rank => "新品、未使用")
 Condition.create(:condition_rank => "未使用に近い")
@@ -651,4 +651,3 @@ DeliveryWay.create(:delivery_way => "クロネコヤマト")
 DeliveryWay.create(:delivery_way => "ゆうパック")
 DeliveryWay.create(:delivery_way => "クリックポスト")
 DeliveryWay.create(:delivery_way => "ゆうパケット")
-
