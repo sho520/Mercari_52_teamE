@@ -74,10 +74,6 @@ class ItemsController < ApplicationController
     render layout: 'common'
   end
 
-  def category
-    render layout: 'common'
-  end
-
   def create
     Item.create(item_params)
     redirect_to :action => "new"
