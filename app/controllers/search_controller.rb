@@ -20,10 +20,17 @@ class SearchController < ApplicationController
   end
 
   def form
+
+    # 検索オブジェクト
+    @search = Item.ransack(params[:q])
+    # 検索結果
+    @items = @search.result
+
     render layout: 'common'
   end
 
   def detail
+
     render layout: 'common'
   end
 
