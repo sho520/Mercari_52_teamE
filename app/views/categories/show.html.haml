@@ -5,14 +5,13 @@
         - if @category.has_children?
           -@category.children.each do |category_child|
             %li.category__add__items__children__name
-              %a{href: "/categories/#{category_child.id}"}
-                = category_child.name
+              = link_to "#{category_child.name}", category_path(category_child.id)
       .category__add__items__category
         = @category.name + "の商品一覧"
       .category__add__items__contents
         - @images.each do |image|
           %section.category__add__items__contents__content
-            %a.category__add__items__contents__content__a{href: "/items/#{image.item.id}"}
+            = link_to item_path(image.item.id), class: "category__add__items__contents__content__a" do
               .category__add__items__contents__content__a__top
                 = image_tag image.image_url.url(:thumb), size: '189x189'
               .category__add__items__contents__content__a__bottom
