@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :confirm, :pay, :done, :buy]
-
   def index
     @items = Item.page(params[:page]).per(16).includes(:images)
     render layout: 'top'
@@ -69,11 +68,11 @@ class ItemsController < ApplicationController
   end
 
   def pay #クレジットカード登録
-    Payjp.api_key = 'sk_test_3b898646de5f52ce2e50e7ea'
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
   end
 
   def buy #クレジットカードで購入
-    Payjp.api_key = 'sk_test_3b898646de5f52ce2e50e7ea'
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
 
     Payjp::Charge.create(amount: @item.price,
       card: params['payjp-token'],
