@@ -58,6 +58,7 @@ $main-red: #ea352d;
           box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
           text-decoration: none;
           color: #333333;
+          cursor: pointer;
         }
         &__title:hover{
           background-color:$main-red;

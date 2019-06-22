@@ -295,11 +295,13 @@
     }
     .product__item-link{
       width:100%;
-      height: 50px;
+      height: 60px;
       &__pre{
         float: left;
         padding-top:10px;
         color: #0099e8;
+        overflow: hidden;
+        width: 45%;
       }
       &__pre:hover{
         color: #b3d4fc;
@@ -309,6 +311,9 @@
         float: right;
         padding-top:10px;
         color: #0099e8;
+        overflow: hidden;
+        width: 45%;
+        text-align: right;
       }
       &__next:hover{
         color: #b3d4fc;

@@ -408,9 +408,6 @@ Item.create!(name:"肌着 ノースリーブロンパース3枚組 90㎝",
   delivery_way_id:1,
 )
 
-
-
-
 # 11.upto(17) do |n|
 #   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:22)
 # end
