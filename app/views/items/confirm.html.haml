@@ -5,35 +5,50 @@
     .confirm__container__inner
       %section.confirm__container__inner__item
         .confirm__container__inner__item__info
-          = image_tag 'm52161295392_1.jpg', class: 'confirm__container__inner__item__info__img', size: "128x128"
-          %p.confirm__container__inner__item__info__name 伝説のドラマー使用ドラムスティック
-          %form{:action => "confirm__container__inner__item__info__fee", :method => "post"}
+          = image_tag @images.first.image_url.url(:thumb) , alt: '商品画像', class: 'confirm__container__inner__item__info__img', size: "128x128"
+          %p.confirm__container__inner__item__info__name
+            = @item.name
+          = form_tag(action: :buy, method: :post) do
             %p.confirm__container__inner__item__info__fee__price
-              ¥ 150,000,000
-              %span.confirm__container__inner__item__info__fee__shipping-price 送料込み
+              %span ¥
+              = @item.price
+              - if @item.shipping_fee_payer_id == 1
+                %span.confirm__container__inner__item__info__fee__shipping-price 送料込み
+              - else @item.shipping_fee_payer_id == 2
+                %span.confirm__container__inner__item__info__fee__shipping-price 着払い
             %ul.confirm__container__inner__item__info__fee__point
               %li.confirm__container__inner__item__info__fee__point__non ポイントはありません
             %ul.confirm__container__inner__item__info__fee__pay
               %li.confirm__container__inner__item__info__fee__pay__table
                 .confirm__container__inner__item__info__fee__pay__table__title 支払い金額
                 .confirm__container__inner__item__info__fee__pay__table__price
-                  %span ¥150,000,000
-            %input.confirm__container__inner__item__info__fee__submit{:type => "submit", :value => "購入する"}/
+                  %span
+                  %span ¥
+                  = @item.price
+            %script.payjp-button{"data-key": ENV['PAYJP_PUBLIC_KEY'], src: "https://checkout.pay.jp", type: "text/javascript", "data-text" => "購入する"}
+            -# %script.payjp-button{"data-key" => "pk_test_a648358d9c8147aabccc7947", "data-text" => "購入する", src: "https://checkout.pay.jp", type: "text/javascript"}
+
     / ここから配送先情報
     %section.confirm__container__inner__user-delivery
       .confirm__container__inner__user-delivery__inner
         %h3.confirm__container__inner__user-delivery__inner__title 配送先
         %address.confirm__container__inner__user-delivery__inner__add
-          〒150-0043
+          %span 〒
+          = current_user.postcode
           %br/
-          東京都渋谷区道玄坂２丁目２３−１２ フォンティスビル7F
+          = current_user.address_city
           %br/
-          TECH::EXPERT渋谷
-        = link_to '変更する >', items_confirm_path, class: 'confirm__container__inner__user-delivery__inner__link'
+          = current_user.address_building
+          %br/
+          = current_user.family_name
+          = current_user.first_name
+        = link_to '変更する >', users_address_path(current_user), class: 'confirm__container__inner__user-delivery__inner__link'
     / ここから支払い方法
     %section.confirm__container__inner__user-payment
       .confirm__container__inner__user-payment__inner
         %h3.confirm__container__inner__user-payment__inner__title 支払い方法
-        %p.confirm__container__inner__user-payment__inner__payment-type *******8080
+        %p.confirm__container__inner__user-payment__inner__payment-type
+        = current_user.credit
+        %br/
         = image_tag 'visa_logo.png', class: 'confirm__container__inner__user-payment__inner__img', size: "31x30"
-        = link_to '変更する >', items_confirm_path, class: 'confirm__container__inner__user-delivery__inner__link'
+        = link_to '変更する >', items_path, class: 'confirm__container__inner__user-delivery__inner__link'

@@ -450,7 +450,7 @@ Item.create!(name:"肌着 ノースリーブロンパース3枚組 90㎝",
 # 1.upto(4) do |n|
 #   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:9)
 # end
-# 11.upto(13) do |n|  
+# 11.upto(13) do |n|
 #   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:8)
 # end
 # 1.upto(7) do |n|
@@ -465,13 +465,13 @@ Item.create!(name:"肌着 ノースリーブロンパース3枚組 90㎝",
 # 11.upto(16) do |n|
 #   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:4)
 # end
-1.upto(6) do |n| 
+1.upto(6) do |n|
   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:3)
 end
-11.upto(17) do |n|  
+11.upto(17) do |n|
   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:2)
 end
-# 1.upto(5) do |n|   
+# 1.upto(5) do |n|
 #   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:1)
 # end
 
@@ -648,4 +648,3 @@ DeliveryWay.create(:delivery_way => "クロネコヤマト")
 DeliveryWay.create(:delivery_way => "ゆうパック")
 DeliveryWay.create(:delivery_way => "クリックポスト")
 DeliveryWay.create(:delivery_way => "ゆうパケット")
-

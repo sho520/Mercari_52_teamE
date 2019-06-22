@@ -81,7 +81,7 @@ gem 'gretel'
 gem 'payjp'
 gem 'fog-aws'
 gem 'aws-sdk-s3'
-
+gem 'dotenv-rails'
 group :production do
   gem 'unicorn', '5.4.1'
 end
