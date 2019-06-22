@@ -13,7 +13,7 @@ crumb :search do
 end
 
 crumb :category do
-  link "カテゴリー一覧", items_category_path
+  link "カテゴリー一覧", categories_path
 end
 
 crumb :brand do
