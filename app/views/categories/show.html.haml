@@ -1,0 +1,21 @@
+%main.category__main
+  .category__add
+    .category__add__items
+      .category__add__items__contents
+        - @images.each do |image|
+          %section.category__add__items__contents__content
+            %a.category__add__items__contents__content__a{href: "/items/#{image.item.id}"}
+              .category__add__items__contents__content__a__top
+                = image_tag image.image_url.url(:thumb), size: '220x220'
+              .category__add__items__contents__content__a__bottom
+                .category__add__items__contents__content__a__bottom__name
+                  = image.item.name
+                .category__add__items__contents__content__a__bottom__info
+                  .category__add__items__contents__content__a__bottom__info__price
+                    = image.item.price
+                  .category__add__items__contents__content__a__bottom__info__like
+                    %i.fa.fa-heart
+                    %span.category__add__items__contents__content__a__bottom__info__like__num
+                      8
+                .category__add__items__contents__content__a__bottom__tax
+                  (税込)
