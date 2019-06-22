@@ -80,6 +80,7 @@ gem 'jp_prefecture'
 gem 'gretel'
 gem 'payjp'
 gem 'fog-aws'
+gem 'ransack'
 
 group :production do
   gem 'unicorn', '5.4.1'

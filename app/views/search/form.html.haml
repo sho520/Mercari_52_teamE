@@ -13,7 +13,7 @@
         %label.form__group__name
           カテゴリーを選択する
         .select__wrap{data: {search: "parent"}}
-          %select.select__default
+          = select :category, :root, [["すべて", "category__root0"], ["men", "category__root1"], ["women", "category__root2"], ["child", "category__root3"] ]
         .select__wrap{data: {search: "child"}}
           %select.select__default
         %div{data: {search: "grand-child"}}
