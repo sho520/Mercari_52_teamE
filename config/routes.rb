@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   get "users/identification" => "users#identification"  #idが入る必要あり
   get "users/card" => "users#card"  #idが入る必要あり
   resources :items do
-    get 'confirm' => "items#confirm", on: :member
-    get "confirm/done" => "items#done" , on: :member
-    post 'confirm/pay' => 'items#pay', on: :member
-    post 'confirm/buy' => 'items#buy', on: :member
+    get 'confirm', to: 'items#confirm', on: :member
+    get 'confirm/done', to: 'items#done', on: :member
+    post 'confirm/pay', to: 'items#pay', on: :member
+    post 'confirm/buy', to: 'items#buy', on: :member
   end
   resources :users do
     resources :myitems, only: [:show, :edit, :destroy]
