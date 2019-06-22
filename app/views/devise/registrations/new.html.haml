@@ -78,7 +78,7 @@
           .user__form__content
             %input{name: "after_save_callback", type: "hidden", value: ""}/
             .user__form__group
-              .user__form__recaptcha{"data-sitekey" => ""}
+              .user__form__recaptcha{"data-callback" => "clearcall", "data-sitekey" => "6LfSIaoUAAAAAKjmN08aqnDUpGOPqV2Iq6Sw-V1N"}
                 %div{style: "width: 304px; height: 78px;"}
                   %div
                     %iframe{frameborder: "0", height: "78", name: "", role: "presentation", sandbox: "", scrolling: "no", src: "", width: "304"}
@@ -95,7 +95,6 @@
                   本人情報の登録について#{fa_icon("angle-right lg")}
                 %br
                 %br
-
     = render 'users/subfooter'
 
 
