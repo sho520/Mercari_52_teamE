@@ -5,30 +5,39 @@
       .category__item-box
         %h2.category__h2 カテゴリー一覧
         .category__item-box__titles
-          %a#title_ladies.category__item-box__titles__title{href: ""}
-            %div レディース
-          :javascript
-            $("#title_ladies").click(function(){
-              var position = $("#category_ladies").offset().top;
-                $("html,body").animate({
-                    scrollTop : position
-                }, {
-                    queue : false
-                });
-            });
           %a#title_mens.category__item-box__titles__title{href: ""}
             %div メンズ
           :javascript
             $("#title_mens").click(function(){
-              var position = $("#category_mens").offset().top;
+              var position = $("#category_メンズ").offset().top;
                 $("html,body").animate({
                     scrollTop : position
                 }, {
                     queue : false
                 });
             });
-          %a.category__item-box__titles__title{href: ""}
+          %a#title_ladies.category__item-box__titles__title{href: ""}
+            %div レディース
+          :javascript
+            $("#title_ladies").click(function(){
+              var position = $("#category_レディース").offset().top;
+                $("html,body").animate({
+                    scrollTop : position
+                }, {
+                    queue : false
+                });
+            });
+          %a#title_child.category__item-box__titles__title{href: ""}
             %div ベビー・キッズ
+          :javascript
+            $("#title_child").click(function(){
+              var position = $("#category_ベビー・キッズ").offset().top;
+                $("html,body").animate({
+                    scrollTop : position
+                }, {
+                    queue : false
+                });
+            });
           %a.category__item-box__titles__title{href: ""}
             %div インテリア・住まい・小物
           %a.category__item-box__titles__title{href: ""}
@@ -50,58 +59,23 @@
           %a.category__item-box__titles__title{href: ""}
             %div その他
       .category__list
-        .category__list__category
-          #category_ladies.category__list__category__name
-            レディース
-          .category__list__category__name__detail
-            .category__list__category__name__detail__all
-              すべて
-            .category__list__category__name__detail__janre
-              トップス
-            .category__list__category__name__detail__details
-              .category__list__category__name__detail__details__item すべて
-              .category__list__category__name__detail__details__item スカート
-              .category__list__category__name__detail__details__item Tシャツ
-              .category__list__category__name__detail__details__item ポロシャツ
-              .category__list__category__name__detail__details__item キャミソール
-              .category__list__category__name__detail__details__item ニット・セーター
-              .category__list__category__name__detail__details__item ジャージ
-              .category__list__category__name__detail__details__item パーカー
-              .category__list__category__name__detail__details__item その他
-            .category__list__category__name__detail__janre
-              スカート
-            .category__list__category__name__detail__details
-              .category__list__category__name__detail__details__item ミニスカート
-              .category__list__category__name__detail__details__item 膝丈スカート
-              .category__list__category__name__detail__details__item ロングスカート
-              .category__list__category__name__detail__details__item ワンピース
-              .category__list__category__name__detail__details__item その他
-        .category__list__category
-          #category_mens.category__list__category__name
-            メンズ
-          .category__list__category__name__detail
-            .category__list__category__name__detail__all
-              すべて
-            .category__list__category__name__detail__janre
-              トップス
-            .category__list__category__name__detail__details
-              .category__list__category__name__detail__details__item すべて
-              .category__list__category__name__detail__details__item タンクトップ
-              .category__list__category__name__detail__details__item Tシャツ
-              .category__list__category__name__detail__details__item ポロシャツ
-              .category__list__category__name__detail__details__item パーカー
-              .category__list__category__name__detail__details__item ニット・セーター
-              .category__list__category__name__detail__details__item ジャージ
-              .category__list__category__name__detail__details__item パーカー
-              .category__list__category__name__detail__details__item その他
-            .category__list__category__name__detail__janre
-              パンツ
-            .category__list__category__name__detail__details
-              .category__list__category__name__detail__details__item デニム
-              .category__list__category__name__detail__details__item チノパン
-              .category__list__category__name__detail__details__item スラックス
-              .category__list__category__name__detail__details__item オーバーオール
-              .category__list__category__name__detail__details__item その他
-  = link_to new_item_path, class: "sale-btn" do
-    .sale-btn-text 出品
-    %i.fa.fa-camera-retro
+        - @root_category.each do |a_root|
+          .category__list__category
+            .category__list__category__name{id: "category_#{a_root.name}"}
+              = a_root.name
+            .category__list__category__name__detail
+              .category__list__category__name__detail__all
+                %a{href: "/categories/#{a_root.id}"}
+                  すべて
+              - a_root.children.each do |a_parent|
+                .category__list__category__name__detail__janre
+                  = a_parent.name
+                .category__list__category__name__detail__details
+                  - a_parent.children.each do |a_child|
+                    .category__list__category__name__detail__details__item
+                      %a{href: "/categories/#{a_child.id}"}
+                        = a_child.name
+                        
+  = link_to items_path, class: "items-index__container__sale-btn" do
+    .items-index__container__sale-btn__text 出品
+    %i.fa.fa-camera-retro.items-index__container__sale-btn__icon
