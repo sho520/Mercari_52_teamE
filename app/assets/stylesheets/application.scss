@@ -11,7 +11,6 @@
 @import "items/new";
 @import "items/confirm";
 @import "items/brand";
-@import "items/category";
 @import "users/show";
 @import "users/edit";
 @import "users/_mypage_nav";
@@ -27,3 +26,5 @@
 @import "slick/slick";
 @import "myitems/show";
 @import "myitems/edit";
+@import "category/index";
+@import "category/show";

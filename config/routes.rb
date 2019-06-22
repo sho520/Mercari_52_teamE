@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get "items/confirm" => "items#confirm"  #idが入る必要あり
   get "items/confirm/done" => "items#done"  #idが入る必要あり
   get "items/brand" => "items#brand"
-  get "items/category" => "items#category"
   get "search" => "search#search"
   get "users/login" => "users#login"
   get "users/sample" => "users#sample"
@@ -26,4 +25,7 @@ Rails.application.routes.draw do
     resources :myitems, only: [:show, :edit, :destroy]
   end
 
+  resources :categories, only: [:index, :show]
+
 end
+

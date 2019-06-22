@@ -4,16 +4,42 @@
     %h2.Title 商品の情報を入力
   = form_for @item do |f|
     .s__MainBoxform__Content
+
+
+
+
+
+
+
+
+
+
       .s__ContentImage
         .s__ContentImage__Title
           出品画像
           %span.hissu 必須
         %p.saidai10 最大10枚までアップロードできます
         .s__ContentImage__Image
-          -# = f.file_field
-          ドラッグアンドドロップ
-          %bl
-            またはクリックしてファイルをアップロード
+          = f.fields_for :product_images do |image|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       .s__Content__Name__Description
         / 商品名
         .s__Content__Name
