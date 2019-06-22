@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get "items/brand" => "items#brand"
   get "items/category" => "items#category"
   get "search" => "search#search"
-  get "search/form" => "search#form"  #仮置き
   get "search/detail" => "search#detail"  #仮置き
   get "users/login" => "users#login"
   get "users/sample" => "users#sample"
