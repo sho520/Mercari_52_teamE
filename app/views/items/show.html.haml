@@ -77,7 +77,7 @@
         %span.product__item-box__price__shipcost 送料込み
       - if @item.state_id == 1 || @item.state_id == 2
         .product__item-box__buybox
-          = link_to '購入画面', confirm_item_path(@item), class: 'product__item-box__buybox'
+          = link_to '購入画面', confirm_item_path(@item), class: 'product__item-box__buybox', data: {"turbolinks" => false}
       - else
         .product__item-box__buybox--ng
           %a
