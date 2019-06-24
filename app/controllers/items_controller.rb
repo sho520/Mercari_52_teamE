@@ -12,8 +12,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @images = @item.images
 
-
-    @next_item = Item.find(params[:id].to_i + 1)
+    if Item.find(params[:id]) != Item.last
+      @next_item = Item.find(params[:id].to_i + 1)
+    end
     if params[:id].to_i != 1
       @prev_item = Item.find(params[:id].to_i - 1)
     end
