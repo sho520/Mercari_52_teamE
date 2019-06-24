@@ -10,25 +10,36 @@
     &__items{
       &__children{
         font-size: 0.9rem;
-        color: #0099e8;
         &__name{
           display: inline-block;
           margin: 10px;
+          a{
+            text-decoration: none;
+            color: #0099e8;
+          }
+          a:hover{
+            color: #b3d4fc;
+            text-decoration: underline;
+          }
         }
       }
       &__category{
         margin: 24px 0 8px;
         font-size:1.4rem;
         font-weight: bold;
+        text-decoration: none;
       }
       &__contents{
         display: block;
+        text-decoration: none;
         &__content{
           width:189px;
           display: inline-block;
           background-color:#ffffff;
           margin: 0 4.9px 20px 4.9px;
           &__a{
+            text-decoration: none;
+            color: #000000;
             &__top{}
             &__bottom{
               height:110px;
@@ -56,7 +67,6 @@
               &__tax{
                 font-size:0.5rem;
                 clear:both;
-                text-decoration: none;
               }
             }
           }

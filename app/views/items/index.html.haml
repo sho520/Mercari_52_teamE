@@ -7,11 +7,12 @@
       %div= image_tag 's_main_4.png', class: 'items-index__js-slider__list__image'
   / ここから商品一覧
   %section.items-index__container
-    %h2.items-index__container__header 出品商品一覧
-
+    %h2.items-index__container__header ピックアップカテゴリー
 
     %section.items-index__container__list
-      - @items.each do |item|
+      %h2.items-index__container__list__genre
+        レディース新着アイテム
+      - @items.each_with_index do |item, i|
         %section.items-index__container__list__box
           = link_to item_path(item.id) , class: "items-index__container__list__box__group" do
             = image_tag item.images.first.image_url.url(:thumb) , class: 'items-index__container__list__box__group__img'
@@ -26,6 +27,7 @@
                   %i.fa.fa-heart
                     %span 10
               %p.items-index__container__list__box__group__info__tax (税込)
+        - break if i== 3
 
 
     .items-index__container__alllink
