@@ -2,7 +2,7 @@
 .content
   %section.items-index__container
     %h2.items-index__container__header 
-      - if @keyword.empty?
+      - if @keyword.blank?
         新着商品
       - elsif @not_find.present?
         ”#{@keyword}”の検索結果
