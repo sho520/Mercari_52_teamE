@@ -58,7 +58,7 @@
                 %a.user__form__other__info{href: "", target: "_blank"}
                   本人確認書類のアップロードについて
                   %i.fa.fa-angle-right.fa-lg
-            Edit #{resource_name.to_s.humanize}
+            -# Edit #{resource_name.to_s.humanize}
           = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :patch }) do |f|
             .user__form__group
               %label{for: "user__title"} お名前
@@ -77,17 +77,17 @@
               %br/
               .user__form__birthday__b
                 .user__form__birthday__b__select
-                  = f.select :birth_year, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_year"}
+                  = f.select :birth_year, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_year", placeholder: current_user.birth_year}
                   %i.user__select__default__arrow
                 %span 年
               .user__form__birthday
                 .user__form__birthday__select
-                  = f.select :birth_month, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_month"}
+                  = f.select :birth_month, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_month", placeholder: current_user.birth_month}
                   %i.user__select__default__arrow
                 %span 月
               .user__form__birthday
                 .user__form__birthday__select
-                  = f.select :birth_day, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_day"}
+                  = f.select :birth_day, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_day", placeholder: current_user.birth_day}
                   %i.user__select__default__arrow
                 %span 日
               %p.user__form__infomation__b
@@ -95,7 +95,7 @@
             .user__form__group
               %label{for: "user__title"} 郵便番号
               %span.user__form__require__b 任意
-              = f.text_field :postcode, class: 'user__form__input', placeholder: "例) 123-4567", type: "postcode", value: "", id: "user_postcode"
+              = f.text_field :postcode, class: 'user__form__input', placeholder: current_user.postcode, type: "postcode", value: "", id: "user_postcode"
             .user__form__group
               %label{for: "user__title"} 都道府県
               %span.user__form__require__b 任意
@@ -104,11 +104,11 @@
             .user__form__group
               %label{for: "user__title"} 市区町村
               %span.user__form__require__b 任意
-              = f.text_field :address_city, class: 'user__form__input', placeholder: "渋谷区", type: "address_city", value: "", id: "user_address_city"
+              = f.text_field :address_city, class: 'user__form__input', placeholder: current_user.address_city, type: "address_city", value: "", id: "user_address_city"
             .user__form__group
               %label{for: "user__title"} 建物
               %span.user__form__require__b 任意
-              = f.text_field :address_building, class: 'user__form__input', placeholder: "柳ビル111", type: "address_building", value: ""
+              = f.text_field :address_building, class: 'user__form__input', placeholder: current_user.address_building, type: "address_building", value: ""
             = f.submit :"更新する", class: 'user__form__botton'
             .user__form__group
               %p.user__form__other

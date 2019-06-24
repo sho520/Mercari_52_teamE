@@ -7,10 +7,9 @@
           %i.d__i__mail= fa_icon('envelope lg', type: :reguler, class: 'd__icon__mail')
           メールアドレスで登録
         %button#d__facebook-login.d__btn-sns-facebook
+          = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, class: 'sns_1'
           %i.d__i__fb= fa_icon('facebook-square lg', type: :reguler, class: 'd__icon__facebook')
           %i.icon-facebook
-          = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, class: 'sns_1'
         %button#d__google-login.d__btn-sns-google
-          %i.d__icon-google
           = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, class: 'sns'
-
+          %i.d__icon-google

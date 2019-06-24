@@ -134,8 +134,6 @@ ActiveRecord::Schema.define(version: 2019_06_24_070236) do
     t.datetime "updated_at", null: false
     t.text "profile"
     t.text "credit"
-    t.string "provider"
-    t.string "uid"
     t.string "image_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
