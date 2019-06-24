@@ -58,7 +58,8 @@
                 %a.user__form__other__info{href: "", target: "_blank"}
                   本人確認書類のアップロードについて
                   %i.fa.fa-angle-right.fa-lg
-          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            Edit #{resource_name.to_s.humanize}
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :patch }) do |f|
             .user__form__group
               %label{for: "user__title"} お名前
               %span.user__form__require 必須
