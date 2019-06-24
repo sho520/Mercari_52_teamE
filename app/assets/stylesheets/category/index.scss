@@ -86,12 +86,14 @@ $main-red: #ea352d;
           background-color:#ffffff;
           &__all{
             margin: 8px 0;
-            color: #0099e8;
-          }
-          &__all:hover{
-            color: #b3d4fc;
-            text-decoration: underline;
-            cursor: pointer;
+            a{
+              text-decoration: none;
+              color: #0099e8;
+            }
+            a:hover{
+              color: #b3d4fc;
+              text-decoration: underline;
+            }
           }
           &__janre{
             padding-top:10px;
@@ -105,11 +107,15 @@ $main-red: #ea352d;
               width: 46%;
               color: #0099e8;
               display: inline-block;
-            }
-            &__item:hover{
-              color: #b3d4fc;
-              text-decoration: underline;
-              cursor: pointer;
+              a{
+                text-decoration: none;
+                color:#0099e8;
+              }
+              a:hover{
+                color: #b3d4fc;
+                text-decoration: underline;
+                cursor: pointer;
+              }
             }
           }
         }
