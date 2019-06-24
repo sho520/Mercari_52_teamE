@@ -14,7 +14,7 @@
       .product-header__container
         / ここから上部
         .product-header__container__upper
-          = link_to root_path, class: 'product-header__container__upper__logo' do
+          = link_to root_path, class: 'product-header__container__upper__logo', data: {"turbolinks" => false} do
             = image_tag 'logo.png', alt: 'logo', class: 'product-header__container__upper__logo__image', height: '36', width: '134'
           .product-header__container__upper__search
             = form_tag("/search", method: :get, class:"header__search") do
