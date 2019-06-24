@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   private
  
     def user_params
-      params.require(:user).permit(:postcode, :prefecture_name, :address_city, :address_street, :address_building)
+      params.require(:user).permit(:account_update, keys: [:name, :family_name, :first_name, :family_name_kana, :first_name_kana, :nickname, :birth_year, :birth_month, :birth_day, :postcode, :prefecture_code, :address_city, :address_building, :phone, :prefecture_id])
     end
 
 end

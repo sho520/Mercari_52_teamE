@@ -23,11 +23,11 @@
       %button#d__facebook-login.d__btn-sns-facebook
         %i.d__i__fb= fa_icon('facebook-square lg', type: :reguler, class: 'd__icon__facebook')
         %i.icon-facebook
-        = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, class: 'sns_1'
+        = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, class: 'sns_1'
 
       %button#d__google-login.d__btn-sns-google
         %i.d__icon-google
-        = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, class: "sns"
+        = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, class: "sns"
 
     .other__block__login__form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
