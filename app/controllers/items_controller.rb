@@ -67,8 +67,12 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    @images = @item.images
-    render layout: 'second_application'
+    if user_signed_in?
+      @images = @item.images
+      render layout: 'second_application'
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def pay #クレジットカード登録
