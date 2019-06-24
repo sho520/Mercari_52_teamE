@@ -109,15 +109,18 @@
         %textarea.product__textarea{name: "body", type: "text"}
         %button.product__button{type: "submit"} コメントする
     %ul.product__item-link
-      %a{href: "/items/#{@prev_item.id}"}
-        %li.product__item-link__pre
-          - if @prev_item
-            %i#product__fa-angle-right.fa.fa-angle-left
-            = @prev_item.name
-      %a{href: "/items/#{@next_item.id}"}
-        %li.product__item-link__next
-          = @next_item.name
-          %i#product__fa-angle-right.fa.fa-angle-right
+      - if @prev_item
+        %a{href: "/items/#{@prev_item.id}"}
+          %li.product__item-link__pre
+            - if @prev_item
+              %i#product__fa-angle-right.fa.fa-angle-left
+              = @prev_item.name
+      - if @next_item
+        %a{href: "/items/#{@next_item.id}"}
+          - if @next_item
+            %li.product__item-link__next
+              = @next_item.name
+              %i#product__fa-angle-right.fa.fa-angle-right
     .product__item__sns
       .product__item__sns__main
         .product__item__sns__main__box
