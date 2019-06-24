@@ -29,11 +29,23 @@
               = link_to 'ブランドから探す', items_brand_path, class: 'product-header__container__under__nav__brand__link'
           .product-header__container__under__user
             - if user_signed_in?
-              -# Logged in as
-              -# = succeed "." do
-              -#   %strong= current_user.nickname
-              = link_to 'プロフィール変更', edit_user_registration_path, class: 'product-header__container__under__user__signup'
-              = link_to 'サインアウト', destroy_user_session_path, class: 'product-header__container__under__user__login', method: "delete"
+              %ul.product-header__container__under__user__logging-in
+                %li.product-header__container__under__user__logging-in__list
+                  = link_to root_path, class: 'product-header__container__under__user__logging-in__list__link' do
+                    %i.fa.fa-heart
+                    %span いいね！一覧
+                %li.product-header__container__under__user__logging-in__list
+                  = link_to root_path, class: 'product-header__container__under__user__logging-in__list__link' do
+                    %i.fa.fa-bell
+                    %span お知らせ
+                %li.product-header__container__under__user__logging-in__list
+                  = link_to root_path, class: 'product-header__container__under__user__logging-in__list__link' do
+                    %i.fa.fa-check
+                    %span やることリスト
+                %li.product-header__container__under__user__logging-in__list
+                  = link_to user_path(current_user), class: 'product-header__container__under__user__logging-in__list__link' do
+                    = image_tag current_user.image_url.url(:thumb), size: '32x32', class: 'product-header__container__under__user__logging-in__list__link__img'
+                    %span マイページ
             - else
               = link_to "新規会員登録", new_user_registration_path, class: 'product-header__container__under__user__signup'
               = link_to "ログイン", new_user_session_path, class: 'product-header__container__under__user__login'
