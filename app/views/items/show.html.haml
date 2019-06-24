@@ -27,23 +27,23 @@
               %tr.product__tr
                 %th.product__th 出品者
                 %td.product__td
-                  %a{href: ""}
+                  %a.product__td__link{:href => "#"}
                     = @item.owner.nickname
               %tr.product__tr
                 %th.product__th カテゴリー
                 %td.product__td
-                  %a{href: ""}
+                  %a.product__td__link{:href => "#"}
                     = @item.category.parent.parent.name
-                    %i#product__fa-angle-right.fa.fa-angle-right
-                  %a{href: ""}
+                    %i.product__fa-angle-right.fa.fa-angle-right
+                  %a.product__td__link{:href => "#"}
                     = @item.category.parent.name
-                    %i#product__fa-angle-right.fa.fa-angle-right
-                  %a{href: ""}
+                    %i.product__fa-angle-right.fa.fa-angle-right
+                  %a.product__td__link{:href => "#"}
                     = @item.category.name
               %tr.product__tr
                 %th.product__th ブランド
                 %td.product__td
-                  %a{href: ""}
+                  %a.product__td__link{:href => "#"}
                     = @item.brand
               %tr.product__tr
                 %th.product__th サイズ
@@ -64,7 +64,7 @@
               %tr.product__tr
                 %th.product__th 配送元地域
                 %td.product__td
-                  %a{href: ""} ここに入る
+                  %a.product__td__link{:href => "#"} ここに入る
               %tr.product__tr
                 %th.product__th 配送日の目安
                 %td.product__td
@@ -77,7 +77,7 @@
         %span.product__item-box__price__shipcost 送料込み
       - if @item.state_id == 1 || @item.state_id == 2
         .product__item-box__buybox
-          = link_to '購入画面', confirm_item_path(@item), class: 'product__item-box__buybox', data: {"turbolinks" => false}
+          = link_to '購入画面に進む', confirm_item_path(@item), class: 'product__item-box__buybox__link', data: {"turbolinks" => false}
       - else
         .product__item-box__buybox--ng
           %a
