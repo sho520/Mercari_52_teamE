@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.page(params[:page]).per(16).includes(:images)
+    @root_category = Category.roots.all()
     render layout: 'top'
   end
 
