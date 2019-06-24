@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_22_060323) do
+ActiveRecord::Schema.define(version: 2019_06_22_132640) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -98,6 +98,14 @@ ActiveRecord::Schema.define(version: 2019_06_22_060323) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "uid"
+    t.string "provider"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "states", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "state", null: false
     t.datetime "created_at", null: false
@@ -127,8 +135,8 @@ ActiveRecord::Schema.define(version: 2019_06_22_060323) do
     t.datetime "updated_at", null: false
     t.text "profile"
     t.text "credit"
-    t.string "provider"
     t.string "uid"
+    t.string "Provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
