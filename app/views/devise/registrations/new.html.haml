@@ -75,6 +75,7 @@
               .clearfix
             %p.user__form__infomation
               ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+              
           .user__form__content
             %input{name: "after_save_callback", type: "hidden", value: ""}/
             .user__form__group
@@ -82,6 +83,7 @@
                 「次へ進む」のボタンを押すことにより、
                 %a.user__text__decoration{href: "#", target: "_blank"}> 利用規約
                 に同意したものとみなします
+
             = f.button :"登録する", class: 'user__form__botton'
             .user__form__group
               %p.user__form__other
