@@ -20,7 +20,7 @@ class SearchController < ApplicationController
   end
 
   def detail
-    
+
     # binding.pry
 
     # 検索オブジェクト
