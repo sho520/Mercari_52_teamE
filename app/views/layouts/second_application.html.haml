@@ -11,7 +11,7 @@
     .header__others
       %header.header__others__nav
         %h1.header__others__h1
-          %a.header__others__href{:href => "./items"}
+          = link_to root_path, class: "header__others__href", data: {"turbolinks" => false} do
             = image_tag('Exhibition_page_logo.svg',class: 'header__others__logo')
     = yield
     %footer.footer__others
