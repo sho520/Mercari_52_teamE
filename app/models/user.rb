@@ -3,6 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook google_oauth2]
   has_many :sns_credentials, dependent: :destroy
 
+  mount_uploader :image_url, ImageUploader
+
   def self.find_for_oauth(auth, signed_in_resource=nil)
     sns = SnsCredential.where(uid: auth.uid, provider: auth.provider).first
     unless sns

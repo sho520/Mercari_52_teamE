@@ -12,8 +12,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @images = @item.images
 
-
-    @next_item = Item.find(params[:id].to_i + 1)
+    if Item.find(params[:id]) != Item.last
+      @next_item = Item.find(params[:id].to_i + 1)
+    end
     if params[:id].to_i != 1
       @prev_item = Item.find(params[:id].to_i - 1)
     end
@@ -66,8 +67,12 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    @images = @item.images
-    render layout: 'second_application'
+    if user_signed_in?
+      @images = @item.images
+      render layout: 'second_application'
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def pay #クレジットカード登録
