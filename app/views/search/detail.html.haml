@@ -17,8 +17,8 @@
             = fa_icon("list lg")
             = f.label :category, "カテゴリーを選択する" 
           .form__group__input
-        .select__wrap{data: {search: "parent"}}
-          = f.select :large_class_id_eq, [["すべて", ""], ["men", "1"], ["women", "2"], ["child", "3"] ]
+            .select__wrap{data: {search: "parent"}}
+              = f.select :large_class_id_eq, [["すべて", ""], ["men", "1"], ["women", "2"], ["child", "3"] ], {}, {class: 'input__form'}
 
         .form__group
           .form__group__name
@@ -32,7 +32,7 @@
             = fa_icon("expand lg")
             = f.label :size, "サイズを指定する" 
           .form__group__input
-            = f.select :size_id_eq, [["すべて", ""], ["Sサイズ", "1"], ["Mサイズ", "2"], ["Lサイズ", "3"] ]
+            = f.select :size_id_eq, [["すべて", ""], ["Sサイズ", "1"], ["Mサイズ", "2"], ["Lサイズ", "3"] ], {}, {class: 'input__form'}
 
         .form__group
           .form__group__name
@@ -91,33 +91,46 @@
               売り切れ
 
         .search__nav__button
-          = f.submit "検索"
+          = f.submit "完了", class: "detail__search__button"
 
   .mypage__main
-    詳細検索結果
-    .searched_items
-      - if @items.present?
-        - @items.each do |item|
-          .searched_item
-            = item.name
-      - else
-        ヒットしませんでした
-    %section.items-index__container__list
+    .searched__items
       - @items.each do |item|
-        %section.items-index__container__list__box
-          = link_to "/items/#{item.id}" , class: "items-index__container__list__box__group" do
-            = image_tag "#{item.images.first.image_url.url(:thumb)}", class: 'items-index__container__list__box__group__img'
-            .items-index__container__list__box__group__info
-              %h3.items-index__container__list__box__group__info__title 
+        %section.searched__items__box
+          = link_to "/items/#{item.id}" , class: "searched__items__box__group" do
+            = image_tag "#{item.images.first.image_url.url(:thumb)}", class: 'searched__items__box__group__img'
+            .searched__items__box__group__info
+              %h3.searched__items__box__group__info__title 
                 = item.name
-              .items-index__container__list__box__group__info__block
-                .items-index__container__list__box__group__info__block__price
+              .searched__items__box__group__info__block
+                .searched__items__box__group__info__block__price
+                  %span ¥
                   = item.price
-                .items-index__container__list__box__group__info__block__likes
+                .searched__items__box__group__info__block__likes
                   %i.fa.fa-heart
                     %span 10
-              %p.items-index__container__list__box__group__info__tax (税込)
+              %p.searched__items__box__group__info__tax
+                (税込)
     .searchpage__pagination{style: 'text-align: center;'}
-      = paginate(@items)
+    = paginate(@items)
+
+    -# .mypage__main
+    -#   %section.items-index__container__list
+    -#     - @items.each do |item|
+    -#       %section.items-index__container__list__box
+    -#         = link_to "/items/#{item.id}" , class: "items-index__container__list__box__group" do
+    -#           = image_tag "#{item.images.first.image_url.url(:thumb)}", class: 'items-index__container__list__box__group__img'
+    -#           .items-index__container__list__box__group__info
+    -#             %h3.items-index__container__list__box__group__info__title 
+    -#               = item.name
+    -#             .items-index__container__list__box__group__info__block
+    -#               .items-index__container__list__box__group__info__block__price
+    -#                 = item.price
+    -#               .items-index__container__list__box__group__info__block__likes
+    -#                 %i.fa.fa-heart
+    -#                   %span 10
+    -#             %p.items-index__container__list__box__group__info__tax (税込)
+    -#   .searchpage__pagination{style: 'text-align: center;'}
+    -#     = paginate(@items)
 
 
