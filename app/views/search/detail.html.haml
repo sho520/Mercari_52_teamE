@@ -112,25 +112,5 @@
               %p.searched__items__box__group__info__tax
                 (税込)
     .searchpage__pagination{style: 'text-align: center;'}
-    = paginate(@items)
-
-    -# .mypage__main
-    -#   %section.items-index__container__list
-    -#     - @items.each do |item|
-    -#       %section.items-index__container__list__box
-    -#         = link_to "/items/#{item.id}" , class: "items-index__container__list__box__group" do
-    -#           = image_tag "#{item.images.first.image_url.url(:thumb)}", class: 'items-index__container__list__box__group__img'
-    -#           .items-index__container__list__box__group__info
-    -#             %h3.items-index__container__list__box__group__info__title 
-    -#               = item.name
-    -#             .items-index__container__list__box__group__info__block
-    -#               .items-index__container__list__box__group__info__block__price
-    -#                 = item.price
-    -#               .items-index__container__list__box__group__info__block__likes
-    -#                 %i.fa.fa-heart
-    -#                   %span 10
-    -#             %p.items-index__container__list__box__group__info__tax (税込)
-    -#   .searchpage__pagination{style: 'text-align: center;'}
-    -#     = paginate(@items)
-
+      = paginate(@items)
 

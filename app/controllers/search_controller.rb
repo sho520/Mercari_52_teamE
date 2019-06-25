@@ -21,9 +21,7 @@ class SearchController < ApplicationController
 
   def detail
 
-    # 検索オブジェクト
     @search = Item.ransack(params[:q])
-    # 検索結果
     @items = @search.result(distinct: true).page(params[:page]).per(16)
 
     render layout: 'common'

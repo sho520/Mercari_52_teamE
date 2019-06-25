@@ -15,6 +15,8 @@ class Item < ApplicationRecord
 
   belongs_to :category, optional: true
 
-
+  def self.ransackable_attributes(auth_object = nil)
+    %w(name brand price large_class_id middle_class_id small_class_id ize_id shipping_fee_parer_id condition_id)
+  end
 
 end
