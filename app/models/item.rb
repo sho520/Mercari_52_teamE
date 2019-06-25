@@ -8,13 +8,14 @@ class Item < ApplicationRecord
   belongs_to :middle_class, optional: true
   belongs_to :small_class, optional: true
   belongs_to :delivery_way, optional: true
-  has_many :images
   belongs_to :size, optional: true
   belongs_to :owner, class_name: "User", optional: true
   belongs_to :buyer, class_name: "User", optional: true
-
   belongs_to :category, optional: true
 
 
+
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
 
 end

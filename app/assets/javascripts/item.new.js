@@ -33,7 +33,14 @@ $("#profit").text(countProfitNum);
 //     })
 
 $("#item_large_class_id").change(function(){
+  var select = $(this).val();
+  console.log(select);
+  if(select == 1){
   $('#item_middle_class_id').css('display', "block");
+  var aaa = $('#item_middle_class_id').filter("value: 4,5");
+  console.log(aaa);
+
+  }
 })
 $("#item_middle_class_id").change(function(){
   $('#item_small_class_id').css('display', "block");

@@ -13,50 +13,11 @@
           %span.hissu 必須
         %p.saidai10 最大10枚までアップロードできます
         .s__ContentImage__Image
-  
+          = f.fields_for :images do |i|
+            = i.file_field :image_url
+            
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          -# = f.fields_for :product_images do |image|
-          -# .dropzone-container.clearfix
-          -#   #preview
-          -# .dropzone-area
-          -#   = image.label :image, class: "dropzone-box", for: "upload-image" do
-          -#     .input_area
-          -#       = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-          -#     %p ここをクリックしてください
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
       .s__Content__Name__Description
         / 商品名
         .s__Content__Name
@@ -68,24 +29,25 @@
         .s__Content__Description
           %label.box2font{for: ""} 商品の説明
           %span.hissu 必須
-          -# %textarea.s__contemt__text{cols:  "80", name:"description", placeholder:  "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows:  "8"}
           = f.text_area :description, class:"s__contemt__text" , placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
       .s__Exhibition__Details
         %h2.box3__itemfont1 商品の詳細
-        .s__Details__Configuration
-          .s__Details__Category1
-            %label.box3__itemfont2{for:  ""} カテゴリー
-            %span.hissu 必須
-            %div
-              = f.collection_select(:large_class_id, @large_classes, :id, :name, class: "s__box3")
-          .s__Details__Category2
-            %label{for: ""}
-            %div
-              = f.collection_select(:middle_class_id, @middle_classes, :id, :name, class: "s__box3")
-          .s__Details__Category3
-            %label{for: ""}
-            %div
-              = f.collection_select(:small_class_id, @small_classes, :id, :name, class: "s__box3")
+        -# .s__Details__Configuration
+        -#   .s__Details__Category1
+        -#     %label.box3__itemfont2{for:  ""} カテゴリー
+        -#     %span.hissu 必須
+        -#     %div
+        -#     -@categorys.each do |category|
+        -#       = f.collection_select(:large_class_id, @categorys.palents, :id, :name)
+              -# = f.select(:large_class_id, (category.root))
+          -# .s__Details__Category2
+          -#   %label{for: ""}
+          -#   %div
+              -# = f.collection_select(:middle_class_id, @middle_classes, :id, :name, class: "s__box3")
+          -# .s__Details__Category3
+          -#   %label{for: ""}
+          -#   %div
+          -#     = f.collection_select(:small_class_id, @small_classes, :id, :name, class: "s__box3")
           .s__Details__Size#Details__Size
             %label.box3__itemfont2{for: ""} サイズ
             %span.hissu 必須
@@ -135,10 +97,10 @@
               = f.number_field :price, class:"inputPrice" , id:"price"
           .s__Price__Fee
             %label{for: ""} 販売手数料 (10%)
-            %output#fee{type:  "number"} 
+            %output#fee{type:  "number"}
           .s__Price__Profit
             %label.box5__itemfont2{for:  ""} 販売利益
-            %output#profit{type: "number"} 
+            %output#profit{type: "number"}
       .s__Content__Terms
         %p
           %span{style: "color:#33aaf0"}> 禁止されている出品

@@ -32,9 +32,11 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @large_classes = LargeClass.all
-    @middle_classes = MiddleClass.all
-    @small_classes = SmallClass.all
+    10.times {@item.images.build}
+    # @large_classes = LargeClass.all
+    # @middle_classes = MiddleClass.all
+    # @small_classes = SmallClass.all
+    @categorys = Category.all
     @conditions = Condition.all
     @sizes = Size.all
     @shipping_fee_payers = ShippingFeePayer.all
@@ -75,18 +77,18 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.create(item_params)
+    @item = Item.new(item_params)
+    @item.save
     redirect_to :action => "new"
   end
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :large_class_id, :middle_class_id, :small_class_id, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price)
-    # .merge(images: )
+    params.require(:item).permit(:name, :description, :large_class_id, :middle_class_id, :small_class_id, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price, images_attributes:[:id,:image_url])
   end
 
-  # def set imagedata
-  #   @images = Image.new
+  # def image_params
+  #   params.require(:image).permit(:id, :item_id, :created_id, :image_url)
   # end
 
 
