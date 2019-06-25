@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook google_oauth2]
   has_many :sns_credentials, dependent: :destroy
-  has_many :comments, optional: true
+  has_many :comments
 
   mount_uploader :image_url, ImageUploader
 
