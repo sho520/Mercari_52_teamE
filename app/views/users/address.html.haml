@@ -1,45 +1,48 @@
 = javascript_include_tag 'jquery.jpostal.js'
-%body.resist__body
-  = render 'userheader'
-  %main.registration__main
-    %section.registration__main__container
-      %h2.registration__main__head 発送元・お届け先住所入力
-      .registration__main__form
-      = form_for @user do |f|
-        .user__form__content
-          .user__form__group
-            %label{for: "user__title"} お名前
-            %span.user__form__require 必須
-            = f.text_field :family_name, class: 'user__form__input', placeholder: "氏", type: "text", value: ""
-            = f.text_field :first_name, class: 'user__form__input', placeholder: "名", type: "text", value: ""
-          .user__form__group
-            %label{for: "user__title"} お名前カナ
-            %span.user__form__require 必須
-            = f.text_field :family_name_kana, class: 'user__form__input', placeholder: "アベ", type: "text", value: ""
-            = f.text_field :first_name_kana, class: 'user__form__input', placeholder: "タナカ", type: "text", value: ""
-          .user__form__group
-            %label{for: "user__title"} 郵便番号
-            %span.user__form__require 必須
-            = f.text_field :postcode, class: 'user__form__input', placeholder: "例) 123-4567", type: "text", value: "", id: "user_postcode"
-          .user__form__group
-            %label{for: "user__title"} 都道府県
-            %span.user__form__require 必須
-            = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,:name, :name, {prompt: true}, class: 'user__select__default d__fa__select', id: "user_prefecture_code"
-            %i.user__select__default__arrow
-          .user__form__group
-            %label{for: "user__title"} 市区町村
-            %span.user__form__require 必須
-            = f.text_field :address_city, class: 'user__form__input', placeholder: "渋谷区", type: "text", value: "", id: "user_address_city"
-          .user__form__group
-            %label{for: "user__title"} 建物名
-            %span.user__form__require__b 任意
-            = f.text_field :address_building, class: 'user__form__input', placeholder: "柳ビル111", type: "text", value: ""
-          .user__form__group
-            %label{for: "user__title"} 電話
-            %span.user__form__require__b 任意
-            = f.text_field :phone, class: 'user__form__input', placeholder: "0901234567", type: "text", value: ""
-          = f.button :"次へ進む", class: 'user__form__botton'
-          %br
-          %br
-              
-  = render 'subfooter'
+- breadcrumb :identification
+%body
+  %nav.pankuzu
+  .mypage__container
+    .nav
+      = render 'mypage_nav'
+    %main.registration__main
+      %section.registration__main__container
+        %h2.registration__main__head 発送元・お届け先住所入力
+        .registration__main__form
+        = form_for @user do |f|
+          .user__form__content
+            .user__form__group
+              %label{for: "user__title"} お名前
+              %span.user__form__require 必須
+              = f.text_field :family_name, class: 'user__form__input', placeholder: "氏", type: "text", value: current_user.family_name
+              = f.text_field :first_name, class: 'user__form__input', placeholder: "名", type: "text", value: current_user.first_name
+            .user__form__group
+              %label{for: "user__title"} お名前カナ
+              %span.user__form__require 必須
+              = f.text_field :family_name_kana, class: 'user__form__input', placeholder: "アベ", type: "text", value: current_user.family_name_kana
+              = f.text_field :first_name_kana, class: 'user__form__input', placeholder: "タナカ", type: "text", value: current_user.first_name_kana
+            .user__form__group
+              %label{for: "user__title"} 郵便番号
+              %span.user__form__require 必須
+              = f.text_field :postcode, class: 'user__form__input', placeholder: "例) 123-4567", type: "text", value: current_user.postcode, id: "user_postcode"
+            .user__form__group
+              %label{for: "user__title"} 都道府県
+              %span.user__form__require 必須
+              = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,:name, :name, {prompt: true}, class: 'user__select__default d__fa__select', id: "user_prefecture_code"
+              %i.user__select__default__arrow
+            .user__form__group
+              %label{for: "user__title"} 市区町村
+              %span.user__form__require 必須
+              = f.text_field :address_city, class: 'user__form__input', placeholder: "渋谷区", type: "text", value: current_user.address_city, id: "user_address_city"
+            .user__form__group
+              %label{for: "user__title"} 建物名
+              %span.user__form__require__b 任意
+              = f.text_field :address_building, class: 'user__form__input', placeholder: "柳ビル111", type: "text", value: current_user.address_building
+            .user__form__group
+              %label{for: "user__title"} 電話
+              %span.user__form__require__b 任意
+              = f.text_field :phone, class: 'user__form__input', placeholder: "0901234567", type: "text", value: current_user.phone
+            = f.button :"次へ進む", class: 'user__form__botton'
+            %br
+            %br
+

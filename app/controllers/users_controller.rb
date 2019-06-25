@@ -19,12 +19,12 @@ class UsersController < ApplicationController
   end
 
   def phone
-    render layout: 'third_application'
+    render layout: 'common'
   end
   
   def address
     @user = User.new
-    render layout: 'third_application'
+    render layout: 'common'
   end
     
   def purchase

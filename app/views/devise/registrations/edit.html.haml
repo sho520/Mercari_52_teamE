@@ -63,14 +63,14 @@
             .user__form__group
               %label{for: "user__title"} お名前
               %span.user__form__require 必須
-              = f.text_field :family_name, class: 'user__field', placeholder: current_user.family_name, type: "family_name", value: ""
-              = f.text_field :first_name, class: 'user__field', placeholder: current_user.first_name, type: "first_name", value: ""
+              = f.text_field :family_name, class: 'user__field', type: "family_name", value: current_user.family_name
+              = f.text_field :first_name, class: 'user__field', type: "first_name", value: current_user.first_name
             
             .user__form__group
               %label{for: "user__title"} お名前カナ
               %span.user__form__require 必須
-              = f.text_field :family_name_kana, class: 'user__field', placeholder: current_user.family_name_kana, type: "family_name_kana", value: ""
-              = f.text_field :first_name_kana, class: 'user__field', placeholder: current_user.first_name_kana, type: "first_name_kana", value: ""
+              = f.text_field :family_name_kana, class: 'user__field', type: "family_name_kana", value: current_user.family_name_kana
+              = f.text_field :first_name_kana, class: 'user__field', type: "first_name_kana", value: current_user.first_name_kana
             .user__form__group
               %label{for: "user__title"} 生年月日
               %span.user__form__require 必須
@@ -95,20 +95,20 @@
             .user__form__group
               %label{for: "user__title"} 郵便番号
               %span.user__form__require__b 任意
-              = f.text_field :postcode, class: 'user__form__input', placeholder: current_user.postcode, type: "postcode", value: "", id: "user_postcode"
+              = f.text_field :postcode, class: 'user__form__input', type: "postcode", value: current_user.postcode, id: "user_postcode"
             .user__form__group
               %label{for: "user__title"} 都道府県
               %span.user__form__require__b 任意
-              = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,:name, :name, {prompt: true}, class: 'user__select__default d__fa__select', id: "user_prefecture_code"
+              = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,:name, :name, {prompt: true}, class: 'user__select__default d__fa__select', id: "user_prefecture_code", value: current_user.prefecture_code
               %i.user__select__default__arrow
             .user__form__group
               %label{for: "user__title"} 市区町村
               %span.user__form__require__b 任意
-              = f.text_field :address_city, class: 'user__form__input', placeholder: current_user.address_city, type: "address_city", value: "", id: "user_address_city"
+              = f.text_field :address_city, class: 'user__form__input', type: "address_city", value: current_user.address_city, id: "user_address_city"
             .user__form__group
               %label{for: "user__title"} 建物
               %span.user__form__require__b 任意
-              = f.text_field :address_building, class: 'user__form__input', placeholder: current_user.address_building, type: "address_building", value: ""
+              = f.text_field :address_building, class: 'user__form__input', type: "address_building", value: current_user.address_building
             = f.submit :"更新する", class: 'user__form__botton'
             .user__form__group
               %p.user__form__other
