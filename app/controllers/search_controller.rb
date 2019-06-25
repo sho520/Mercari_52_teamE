@@ -1,6 +1,9 @@
 class SearchController < ApplicationController
+
+  before_action :set_ransack
   
   def search
+    # @search = Item.ransack(params[:q])
     @keyword = params[:keyword]
 
     if @keyword.empty?
@@ -21,11 +24,13 @@ class SearchController < ApplicationController
 
   def detail
 
-    @search = Item.ransack(params[:q])
     @items = @search.result(distinct: true).page(params[:page]).per(16)
-
     render layout: 'common'
 
+  end
+
+  def set_ransack
+    @search = Item.ransack(params[:q])
   end
 
 end

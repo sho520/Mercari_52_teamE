@@ -1,32 +1,117 @@
 - breadcrumb :search
-.content
-  %section.items-index__container
-    %h2.items-index__container__header 
-      - if @keyword.blank?
-        新着商品
-      - elsif @not_find.present?
-        ”#{@keyword}”の検索結果
-        .items-index__container__header__description 
-          該当する商品が見つかりません。検索条件を変えて、再度お試しください。
-        %h2.items-index__container__header
-          新着商品
-      - else
-        ”#{@keyword}”の検索結果
-    %section.items-index__container__list
+.mypage__container
+  .search__nav
+    .search__nav__content
+      = search_form_for @search, url: {controler: "search", action: "detail" } do |f|
+        %h3.search__nav__header
+          詳細検索
+
+        .form__group
+          .form__group__name
+            = fa_icon("plus lg")
+            = f.label :name, "キーワードを追加する" 
+          .form__group__input
+            = f.search_field :name_cont, placeholder: "例）値下げ", class: "input__form"
+
+        .form__group
+          .form__group__name
+            = fa_icon("list lg")
+            = f.label :category, "カテゴリーを選択する" 
+          .form__group__input
+            .select__wrap{data: {search: "parent"}}
+              = f.select :large_class_id_eq, [["すべて", ""], ["men", "1"], ["women", "2"], ["child", "3"] ], {}, {class: 'input__form'}
+
+        .form__group
+          .form__group__name
+            = fa_icon("tag lg")
+            = f.label :brand, "ブランド名から探す", placeholder: "例）シャネル"
+          .form__group__input
+            = f.search_field :brand_cont, placeholder: "例）シャネル", class: "input__form"
+
+        .form__group
+          .form__group__name
+            = fa_icon("expand lg")
+            = f.label :size, "サイズを指定する" 
+          .form__group__input
+            = f.select :size_id_eq, [["すべて", ""], ["Sサイズ", "1"], ["Mサイズ", "2"], ["Lサイズ", "3"] ], {}, {class: 'input__form'}
+
+        .form__group
+          .form__group__name
+            = fa_icon("money lg")
+            = f.label :price, "価格" 
+          .form__group__input
+            = f.search_field :price_gteq, placeholder: "¥ Min", class: "input__form"
+            = f.search_field :price_lteq, placeholder: "¥ Max", class: "input__form second__form"
+
+        .form__group
+          .form__group__name
+            = fa_icon("star lg")
+            = f.label :conditon, "商品の状態" 
+          .form__group__input
+            .form__group__input__checkbox
+              = f.check_box :condition_id_in, {multiple: true}, 1
+              新品、未使用
+            .form__group__input__checkbox
+              = f.check_box :condition_id_in, {multiple: true}, 2
+              未使用に近い
+            .form__group__input__checkbox
+              = f.check_box :condition_id_in, {multiple: true}, 3
+              目立った傷や汚れなし
+            .form__group__input__checkbox
+              = f.check_box :condition_id_in, {multiple: true}, 4
+              やや傷や汚れあり
+            .form__group__input__checkbox
+              = f.check_box :condition_id_in, {multiple: true}, 5
+              傷や汚れあり
+            .form__group__input__checkbox
+              = f.check_box :condition_id_in, {multiple: true}, 6
+              全体的に状態が悪い
+
+        .form__group
+          .form__group__name
+            = fa_icon("truck lg")
+            = f.label :shipping_fee_payer, "配送料の負担" 
+          .form__group__input
+            .form__group__input__checkbox
+              = f.check_box :shipping_fee_payer_id_in, {multiple: true}, 1
+              着払い(購入者負担)
+            .form__group__input__checkbox
+              = f.check_box :shipping_fee_payer_id_in, {multiple: true}, 2
+              送料込み(出品者負担)
+
+        .form__group
+          .form__group__name
+            = fa_icon("shopping-cart lg")
+            = f.label :state, "販売状況" 
+          .form__group__input
+            .form__group__input__checkbox
+              = f.check_box :state_id_in, {multiple: true}, 1
+              販売中
+            .form__group__input__checkbox
+              = f.check_box :state_id_in, {multiple: true}, 2
+              売り切れ
+
+        .search__nav__button
+          = f.submit "完了", class: "detail__search__button"
+
+  .mypage__main
+    .searched__items
       - @items.each do |item|
-        %section.items-index__container__list__box
-          = link_to "/items/#{item.id}" , class: "items-index__container__list__box__group" do
-            = image_tag "#{item.images.first.image_url.url(:thumb)}", class: 'items-index__container__list__box__group__img'
-            .items-index__container__list__box__group__info
-              %h3.items-index__container__list__box__group__info__title 
+        %section.searched__items__box
+          = link_to "/items/#{item.id}" , class: "searched__items__box__group" do
+            = image_tag "#{item.images.first.image_url.url(:thumb)}", class: 'searched__items__box__group__img'
+            .searched__items__box__group__info
+              %h3.searched__items__box__group__info__title 
                 = item.name
-              .items-index__container__list__box__group__info__block
-                .items-index__container__list__box__group__info__block__price
+              .searched__items__box__group__info__block
+                .searched__items__box__group__info__block__price
+                  %span ¥
                   = item.price
-                .items-index__container__list__box__group__info__block__likes
+                .searched__items__box__group__info__block__likes
                   %i.fa.fa-heart
                     %span 10
-              %p.items-index__container__list__box__group__info__tax (税込)
+              %p.searched__items__box__group__info__tax
+                (税込)
     .searchpage__pagination{style: 'text-align: center;'}
       = paginate(@items)
 
