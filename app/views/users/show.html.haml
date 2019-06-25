@@ -7,7 +7,10 @@
       .mypage__user
         .mypage__user__info
           %figure.mypage__user__info__icon
-            = image_tag current_user.image_url.url(:thumb), size: '60x60', class: 'mypage__user__info__icon'
+            - if current_user.image_url.present?
+              = image_tag current_user.image_url.url(:thumb), size: '60x60', class: 'mypage__user__info__icon'
+            - else
+              = image_tag 'usernon.jpg', size: '60x60', class: 'mypage__user__info__icon'
           %h2.mypage__user__info__name
             = current_user.family_name
             = current_user.first_name
@@ -90,5 +93,3 @@
             = image_tag('logo_grey.png', size:'110x110')
           .mypage__item__not__found__body__text
             取引中の商品がありません
-    
- 
