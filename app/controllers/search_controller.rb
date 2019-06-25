@@ -23,7 +23,7 @@ class SearchController < ApplicationController
   end
 
   def detail
-
+    
     @items = @search.result(distinct: true).page(params[:page]).per(16)
     render layout: 'common'
 
