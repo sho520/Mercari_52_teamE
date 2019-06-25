@@ -1,16 +1,20 @@
 class ItemsController < ApplicationController
+  before_action :find_item, only: [:show, :edit, :update, :confirm, :pay, :done, :buy]
 
   def index
     @items = Item.page(params[:page]).per(16).includes(:images)
+    @root_category = Category.roots.all()
     render layout: 'top'
   end
 
   def show
+    
     @item = Item.find(params[:id])
     @images = @item.images
 
-
-    @next_item = Item.find(params[:id].to_i + 1)
+    if Item.find(params[:id]) != Item.last
+      @next_item = Item.find(params[:id].to_i + 1)
+    end
     if params[:id].to_i != 1
       @prev_item = Item.find(params[:id].to_i - 1)
     end
@@ -20,7 +24,7 @@ class ItemsController < ApplicationController
       @owner_items.each do |owner_item|
         @owner_images << owner_item.images.first
       end
-    
+
     @category_items = Item.where(category_id: @item.category_id)
     @category_images = []
     @category_items.each do |category_item|
@@ -65,7 +69,32 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    render layout: 'second_application'
+    if user_signed_in?
+      @images = @item.images
+      render layout: 'second_application'
+    else
+      redirect_to new_user_session_path
+    end
+  end
+
+  def pay #クレジットカード登録
+    # Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+  end
+
+  def buy #クレジットカードで購入
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+
+    Payjp::Charge.create(amount: @item.price,
+      card: params['payjp-token'],
+      currency: 'jpy')
+    # 決済後の処理
+    if @item.update(state_id: 2, buyer_id: current_user.id)
+      flash[:success] = '購入しました'
+      redirect_to action: 'done'
+    else
+      flash[:alert] = '購入に失敗しました'
+      redirect_to action: 'confirm'
+    end
   end
 
   def done
@@ -83,6 +112,12 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def find_item
+    @item = Item.find(params[:id])
+    @images = @item.images
+  end
+
   def item_params
     params.require(:item).permit(:name, :description, :large_class_id, :middle_class_id, :small_class_id, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price, images_attributes:[:id,:image_url])
   end

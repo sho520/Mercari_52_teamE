@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks", registrations: "registrations"}
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'items#index'
 
@@ -17,9 +18,10 @@ Rails.application.routes.draw do
   get "users/identification" => "users#identification"  #idが入る必要あり
   get "users/card" => "users#card"  #idが入る必要あり
   resources :items do
-    member do
-      get 'confirm'
-    end
+    get 'confirm', to: 'items#confirm', on: :member
+    get 'confirm/done', to: 'items#done', on: :member
+    post 'confirm/pay', to: 'items#pay', on: :member
+    post 'confirm/buy', to: 'items#buy', on: :member
   end
   resources :users do
     resources :myitems, only: [:show, :edit, :destroy]
@@ -28,4 +30,3 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
 
 end
-

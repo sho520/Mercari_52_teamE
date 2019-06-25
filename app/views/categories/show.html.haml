@@ -1,0 +1,32 @@
+- breadcrumb :categories, @category
+%main.category__main
+  .category__add
+    .category__add__items
+      %ul.category__add__items__children
+        - if @category.has_children?
+          -@category.children.each do |category_child|
+            %li.category__add__items__children__name
+              = link_to "#{category_child.name}", category_path(category_child.id)
+      .category__add__items__category
+        = @category.name + "の商品一覧"
+      .category__add__items__contents
+        - @images.each do |image|
+          %section.category__add__items__contents__content
+            = link_to item_path(image.item.id), class: "category__add__items__contents__content__a" do
+              .category__add__items__contents__content__a__top
+                = image_tag image.image_url.url(:thumb), size: '189x189'
+              .category__add__items__contents__content__a__bottom
+                .category__add__items__contents__content__a__bottom__name
+                  = image.item.name
+                .category__add__items__contents__content__a__bottom__info
+                  .category__add__items__contents__content__a__bottom__info__price
+                    = image.item.price
+                  .category__add__items__contents__content__a__bottom__info__like
+                    %i.fa.fa-heart
+                    %span.category__add__items__contents__content__a__bottom__info__like__num
+                      8
+                .category__add__items__contents__content__a__bottom__tax
+                  (税込)
+  = link_to items_path, class: "items-index__container__sale-btn" do
+    .items-index__container__sale-btn__text 出品
+    %i.fa.fa-camera-retro.items-index__container__sale-btn__icon
