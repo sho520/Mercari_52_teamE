@@ -32,7 +32,9 @@
 
 label[for='user__title'] {
   display: inline-block;
+  color: rgb(51, 51, 51);
   font-weight: 600;
+  font-size: 14px;
 }
 
 .user__form__require {
@@ -72,6 +74,7 @@ label[for='user__title'] {
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
+  text-indent: 2%;
 }
 
 .field {
@@ -233,3 +236,20 @@ label[for='user__title'] {
   color: white !important;
   text-decoration: none;
 }
+
+.sns_1 {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.sns {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.font__size {
+  font-size: 14px;
+}
+

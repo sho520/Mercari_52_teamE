@@ -7,9 +7,13 @@
       .mypage__user
         .mypage__user__info
           %figure.mypage__user__info__icon
-            = image_tag('member_noimage.png', size:'60x60')
+            - if current_user.image_url.present?
+              = image_tag current_user.image_url.url(:thumb), size: '60x60', class: 'mypage__user__info__icon'
+            - else
+              = image_tag 'usernon.jpg', size: '60x60', class: 'mypage__user__info__icon'
           %h2.mypage__user__info__name
-            メルカリ太郎
+            = current_user.family_name
+            = current_user.first_name
           .mypage__user__info__number
             %div
               評価
@@ -89,5 +93,3 @@
             = image_tag('logo_grey.png', size:'110x110')
           .mypage__item__not__found__body__text
             取引中の商品がありません
-    
- 

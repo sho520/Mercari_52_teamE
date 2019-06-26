@@ -8,12 +8,13 @@ class Item < ApplicationRecord
   belongs_to :middle_class, optional: true
   belongs_to :small_class, optional: true
   belongs_to :delivery_way, optional: true
-  has_many :images
   belongs_to :size, optional: true
   belongs_to :owner, class_name: "User", optional: true
   belongs_to :buyer, class_name: "User", optional: true
-
   belongs_to :category, optional: true
+  has_many :comments
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
 
   def self.ransackable_attributes(auth_object = nil)
     %w(name brand price large_class_id middle_class_id small_class_id ize_id shipping_fee_parer_id condition_id)

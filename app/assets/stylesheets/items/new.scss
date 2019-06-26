@@ -1,16 +1,18 @@
 .s__ExhibitionPage__MainBox{
   width:700px;
+  height: 100%;
   background: rgb(255, 255, 255);
-  height:auto;
 // overflow:hidden;
+
   margin: 0 auto;
   box-sizing:boder-box;
-
+// タイトル
   .s__MainBox__Title {
     width: 668px;
     height: 33px;
      text-align: center;
-     padding: 30px;
+     line-height: 33px;
+     padding: 32px 16px;
      border-bottom: 2px solid rgb(245, 245, 245);
 
 
@@ -23,19 +25,79 @@
 
   }
   .s__MainBoxform__Content {
+    // height:auto;
+  }
 
     .s__ContentImage {
       width: 543px;
-      height: 223px;
+      min-height: 395px;
       padding: 40px;
     border-bottom: 2px solid rgb(245, 245, 245);
   }
-  .s__ContentImage__Image{
-    width: 620px;
-    height: 162px;
-    margin-top: 20px;
-    background: rgb(245, 245, 245);
-  }
+  // .s__ContentImage__Image{
+  //   width: 620px;
+  //   height: 162px;
+  //   margin-top: 20px;
+  //   background: rgb(245, 245, 245);
+  // }
+  .dropzone-area{
+      width: 620px;
+      height: 162px;
+      margin-top: 10px;
+      background: rgb(245, 245, 245);
+    }
+
+  .dropzone-area2{
+      width: 620px;
+      height: 162px;
+      margin-top: 10px;
+      background: rgb(245, 245, 245);
+    }
+
+
+#item_images_attributes_0_image_url{
+  width: 114px;
+  height: 160px;
+}
+#item_images_attributes_1_image_url{
+  width: 114px;
+  height: 160px;
+}
+#item_images_attributes_2_image_url{
+  width: 114px;
+  height: 160px;
+}
+#item_images_attributes_3_image_url{
+  width: 114px;
+  height: 160px;
+}
+#item_images_attributes_4_image_url{
+  width: 114px;
+  height: 160px;
+}
+#item_images_attributes_5_image_url{
+  width: 114px;
+  height: 160px;
+}
+#item_images_attributes_6_image_url{
+  width: 114px;
+  height: 160px;
+}
+#item_images_attributes_7_image_url{
+  width: 114px;
+  height: 160px;
+}
+#item_images_attributes_8_image_url{
+  width: 114px;
+  height: 160px;
+}
+#item_images_attributes_9_image_url{
+  width: 114px;
+  height: 160px;
+}
+
+
+
   .s__ContentImage__Title{
     font-size: 16px;
     font-weight: bold;
@@ -72,7 +134,7 @@ font-weight: bold;
     margin-top: 8px;
     }
 
-    }
+    
 .s__Content__Description{
   width: 620px;
   height: 164px;
@@ -86,7 +148,7 @@ font-weight: bold;
   margin-top: 8px;
   padding: 10px;
 }
-
+// box3
  .s__Exhibition__Details {
   width: 620px;
   height: 512px;
@@ -98,7 +160,6 @@ font-weight: bold;
 .s__Details__Configuration{
   float: right;
   width: 400px;
-  min-height: 512px;
   height: auto;
   background: rgb(255, 255, 255);
   font-weight: bold;
@@ -141,6 +202,28 @@ font-weight: bold;
     display:flex;
     display:none
 }
+#Details__Size{
+  display:block;
+  width: 400px;
+   height: 48px;
+   background: rgb(255, 255, 255);
+   margin-top: 8px;
+   display:flex;
+   display:none
+}
+
+
+#item_size_id{
+  display:block;
+  width: 400px;
+   height: 48px;
+   background: rgb(255, 255, 255);
+   border: 1px solid #ccc;
+   margin-top: 8px;
+   display:flex;
+}
+
+
 #item_condition_id{
   display:block;
    width: 400px;
@@ -150,10 +233,6 @@ font-weight: bold;
     margin-top: 8px;
 }
 
-
-
-
-
 .box3__itemfont1{
   font-weight: bold;
   color: #888;
@@ -161,7 +240,7 @@ font-weight: bold;
   }
     .s__Content__delivery {
       width: 620px;
-      height: auto;
+      height: 290px;
       padding: 40px;
       background: rgb(255, 255, 255);
       border-bottom: 2px solid rgb(245, 245, 245);
@@ -243,7 +322,7 @@ font-weight: bold;
 // <%# 価格　BOX5 %>
     .s__Content__Price {
       width: 620px;
-      height: 287px;
+      height: 300px;
       padding: 40px;
     background: rgb(255, 255, 255);
     border-bottom: 2px solid rgb(245, 245, 245);}

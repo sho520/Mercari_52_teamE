@@ -2,33 +2,40 @@
 .items-index
   %section.items-index__js-slider
     .slider.items-index__js-slider__list
-      %div= image_tag 'slider1.jpg', class: 'items-index__js-slider__list__image'
-      %div= image_tag 'slider2.jpg', class: 'items-index__js-slider__list__image'
-      %div= image_tag 'sl02.png', class: 'items-index__js-slider__list__image'
+      %div= image_tag 's_main.png', class: 'items-index__js-slider__list__image'
+      %div= image_tag 's_main_5.png', class: 'items-index__js-slider__list__image'
+      %div= image_tag 's_main_4.png', class: 'items-index__js-slider__list__image'
   / ここから商品一覧
   %section.items-index__container
-    %h2.items-index__container__header 出品商品一覧
+    %h2.items-index__container__header ピックアップカテゴリー
 
     %section.items-index__container__list
-      - @items.each do |item|
-        %section.items-index__container__list__box
-          = link_to items_path , class: "items-index__container__list__box__group" do
-            = image_tag item.images.first.image_url.url(:thumb) , class: 'items-index__container__list__box__group__img'
-            .items-index__container__list__box__group__info
-              %h3.items-index__container__list__box__group__info__title
-                = item.name
-              .items-index__container__list__box__group__info__block
-                .items-index__container__list__box__group__info__block__price
-                  %span ¥
-                  = item.price
-                .items-index__container__list__box__group__info__block__likes
-                  %i.fa.fa-heart
-                    %span 10
-              %p.items-index__container__list__box__group__info__tax (税込)
+      - @root_category.each do |root|
+        %h2.items-index__container__list__genre
+          = root.name + "新着アイテム"
+        %div.items-index__container__list__all
+          - @items.where(category_id: root.descendant_ids).each_with_index do |item, i|
+            %section.items-index__container__list__all__box
+              = link_to item_path(item.id) , class: "items-index__container__list__all__box__group" do
+                = image_tag item.images.first.image_url.url(:thumb) , class: 'items-index__container__list__all__box__group__img'
+                .items-index__container__list__all__box__group__info
+                  %h3.items-index__container__list__all__box__group__info__title
+                    = item.name
+                  .items-index__container__list__all__box__group__info__block
+                    .items-index__container__list__all__box__group__info__block__price
+                      %span ¥
+                      = item.price
+                    .items-index__container__list__all__box__group__info__block__likes
+                      %i.fa.fa-heart
+                        %span 10
+                  %p.items-index__container__list__all__box__group__info__tax (税込)
+            - break if i== 3
+        %h6.items-index__container__list__totalproduct
+          = link_to "全ての商品を見る", category_path(root.id)
 
 
-    .items-index__container__alllink
-      = paginate(@items)
+    -# .items-index__container__alllink
+    -#   = paginate(@items)
       -# = link_to 'ページネーション', items_path, class: "items-index__container__list__box__group"
     = link_to items_path, class: "items-index__container__sale-btn" do
       .items-index__container__sale-btn__text 出品

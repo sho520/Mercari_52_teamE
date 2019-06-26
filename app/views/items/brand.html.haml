@@ -182,6 +182,7 @@
               .brand__list__brand__name__detail__details__item ロングスカート
               .brand__list__brand__name__detail__details__item ワンピース
               .brand__list__brand__name__detail__details__item その他
-  = link_to new_item_path, class: "sale-btn" do
-    .sale-btn-text 出品
-    %i.fa.fa-camera-retro
+  = link_to items_path, class: "items-index__container__sale-btn" do
+    .items-index__container__sale-btn__text 出品
+    %i.fa.fa-camera-retro.items-index__container__sale-btn__icon
+    

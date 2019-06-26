@@ -62,7 +62,7 @@ Item.create!(name:"気まぐれ値引中❕[SHIPS]半袖ボーダーポロシャ
   large_class_id:1,
   middle_class_id:1,
   small_class_id:2,
-  category_id:10,
+  category_id:11,
   delivery_way_id:1,
 )
 Item.create!(name:"アメリカンイーグル ポロシャツ",
@@ -80,7 +80,7 @@ Item.create!(name:"アメリカンイーグル ポロシャツ",
   large_class_id:1,
   middle_class_id:1,
   small_class_id:2,
-  category_id:10,
+  category_id:11,
   delivery_way_id:1,
 )
 Item.create!(name:"UNIQLO ドライストレッチパンツ スリムフィット",
@@ -98,7 +98,7 @@ Item.create!(name:"UNIQLO ドライストレッチパンツ スリムフィッ�
   large_class_id:1,
   middle_class_id:2,
   small_class_id:3,
-  category_id:10,
+  category_id:12,
   delivery_way_id:1,
 )
 Item.create!(name:"メンズパンツ まとめ売り スラックス イオントップバリュ ユニクロ",
@@ -116,7 +116,7 @@ Item.create!(name:"メンズパンツ まとめ売り スラックス イオン�
   large_class_id:1,
   middle_class_id:2,
   small_class_id:3,
-  category_id:10,
+  category_id:12,
   delivery_way_id:1,
 )
 Item.create!(name:"ZARAのスキニーチノパン",
@@ -134,7 +134,7 @@ Item.create!(name:"ZARAのスキニーチノパン",
   large_class_id:1,
   middle_class_id:2,
   small_class_id:4,
-  category_id:10,
+  category_id:13,
   delivery_way_id:1,
 )
 Item.create!(name:"ザ291 ZARA メンズ スキニーパンツ 光沢 ネイビー 36 XXXL",
@@ -152,7 +152,7 @@ Item.create!(name:"ザ291 ZARA メンズ スキニーパンツ 光沢 ネイビ�
   large_class_id:1,
   middle_class_id:2,
   small_class_id:4,
-  category_id:10,
+  category_id:13,
   delivery_way_id:1,
 )
 Item.create!(name:"Burberry＊ふんわりスカート",
@@ -170,7 +170,7 @@ Item.create!(name:"Burberry＊ふんわりスカート",
   large_class_id:2,
   middle_class_id:3,
   small_class_id:5,
-  category_id:10,
+  category_id:14,
   delivery_way_id:1,
 )
 Item.create!(name:"チェックミニスカート☆",
@@ -188,7 +188,7 @@ Item.create!(name:"チェックミニスカート☆",
   large_class_id:2,
   middle_class_id:3,
   small_class_id:5,
-  category_id:10,
+  category_id:14,
   delivery_way_id:1,
 )
 Item.create!(name:"I.T.'S.international チェックロングスカート",
@@ -206,7 +206,7 @@ Item.create!(name:"I.T.'S.international チェックロングスカート",
   large_class_id:2,
   middle_class_id:3,
   small_class_id:6,
-  category_id:11,
+  category_id:15,
   delivery_way_id:1,
 )
 Item.create!(name:"美品 エフデ ワンピース",
@@ -224,7 +224,7 @@ Item.create!(name:"美品 エフデ ワンピース",
   large_class_id:2,
   middle_class_id:3,
   small_class_id:6,
-  category_id:11,
+  category_id:15,
   delivery_way_id:1,
 )
 Item.create!(name:"リゲッタトーン　パンプス　L",
@@ -242,7 +242,7 @@ Item.create!(name:"リゲッタトーン　パンプス　L",
   large_class_id:2,
   middle_class_id:4,
   small_class_id:7,
-  category_id:11,
+  category_id:16,
   delivery_way_id:1,
 )
 Item.create!(name:"リゲッタ オープントゥ パンプス M 美品",
@@ -260,7 +260,7 @@ Item.create!(name:"リゲッタ オープントゥ パンプス M 美品",
   large_class_id:2,
   middle_class_id:4,
   small_class_id:7,
-  category_id:11,
+  category_id:16,
   delivery_way_id:1,
 )
 Item.create!(name:"フランシュリッペ　ノベルティロングブーツ",
@@ -278,7 +278,7 @@ Item.create!(name:"フランシュリッペ　ノベルティロングブーツ"
   large_class_id:2,
   middle_class_id:4,
   small_class_id:8,
-  category_id:11,
+  category_id:17,
   delivery_way_id:1,
 )
 Item.create!(name:"本日限定！最終値下げ！！フランシュリッペ、ショートブーツ",
@@ -296,7 +296,7 @@ Item.create!(name:"本日限定！最終値下げ！！フランシュリッペ�
   large_class_id:2,
   middle_class_id:4,
   small_class_id:8,
-  category_id:12,
+  category_id:17,
   delivery_way_id:1,
 )
 Item.create!(name:"コンビ 森のすやすやメリー",
@@ -314,7 +314,7 @@ Item.create!(name:"コンビ 森のすやすやメリー",
   large_class_id:3,
   middle_class_id:5,
   small_class_id:9,
-  category_id:13,
+  category_id:18,
   delivery_way_id:1,
 )
 Item.create!(name:"combi コンビ サウンドメリー",
@@ -332,7 +332,7 @@ Item.create!(name:"combi コンビ サウンドメリー",
   large_class_id:3,
   middle_class_id:5,
   small_class_id:9,
-  category_id:14,
+  category_id:18,
   delivery_way_id:1,
 )
 Item.create!(name:"チャレンジ5年生付録 顕微鏡セット",
@@ -350,7 +350,7 @@ Item.create!(name:"チャレンジ5年生付録 顕微鏡セット",
   large_class_id:3,
   middle_class_id:5,
   small_class_id:10,
-  category_id:15,
+  category_id:19,
   delivery_way_id:1,
 )
 Item.create!(name:"オーボール ストラップセット",
@@ -368,7 +368,7 @@ Item.create!(name:"オーボール ストラップセット",
   large_class_id:3,
   middle_class_id:5,
   small_class_id:10,
-  category_id:16,
+  category_id:19,
   delivery_way_id:1,
 )
 Item.create!(name:"ベビー肌着",
@@ -386,7 +386,7 @@ Item.create!(name:"ベビー肌着",
   large_class_id:3,
   middle_class_id:6,
   small_class_id:11,
-  category_id:17,
+  category_id:20,
   delivery_way_id:1,
 )
 Item.create!(name:"肌着 ノースリーブロンパース3枚組 90㎝",
@@ -404,118 +404,76 @@ Item.create!(name:"肌着 ノースリーブロンパース3枚組 90㎝",
   large_class_id:3,
   middle_class_id:6,
   small_class_id:11,
-  category_id:18,
-  delivery_way_id:1,
-)
-Item.create!(name:"肌着 ロンパース 60.70☆",
-  description:"23description",
-  brand:"コーチ",
-  size_id:1,
-  condition_id:1,
-  shipping_fee_payer_id:2,
-  prefecture_id:1,
-  shipping_day_id:3,
-  price:4567,
-  owner_id:4,
-  buyer_id:1,
-  state_id:4,
-  large_class_id:3,
-  middle_class_id:6,
-  small_class_id:12,
-  category_id:19,
-  delivery_way_id:1,
-)
-Item.create!(name:"キャミソール ロンパース 肌着 60",
-  description:"24description",
-  brand:"ユニクロ",
-  size_id:1,
-  condition_id:1,
-  shipping_fee_payer_id:2,
-  prefecture_id:1,
-  shipping_day_id:3,
-  price:4567,
-  owner_id:5,
-  buyer_id:1,
-  state_id:4,
-  large_class_id:3,
-  middle_class_id:6,
-  small_class_id:12,
   category_id:20,
   delivery_way_id:1,
 )
 
-11.upto(2) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_underware#{n}.jpg"),item_id:24)
-end
-1.upto(4) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_underware#{n}.jpg"),item_id:23)
-end
-11.upto(17) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:22)
-end
-1.upto(8) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:21)
-end
-11.upto(14) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:20)
-end
+# 11.upto(17) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:22)
+# end
+# 1.upto(8) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_cloth_pajama#{n}.jpg"),item_id:21)
+# end
+# 11.upto(14) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:20)
+# end
+# 1.upto(6) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:19)
+# end
+# 11.upto(17) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:18)
+# end
+# 1.upto(3) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:17)
+# end
+# 11.upto(16) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:16)
+# end
+# 1.upto(3) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:15)
+# end
+# 11.upto(14) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:14)
+# end
+# 1.upto(4) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:13)
+# end
+# 11.upto(14) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:12)
+# end
+# 1.upto(6) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:11)
+# end
+# 11.upto(14) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:10)
+# end
+# 1.upto(4) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:9)
+# end
+# 11.upto(13) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:8)
+# end
+# 1.upto(7) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:7)
+# end
+# 11.upto(12) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:6)
+# end
+# 1.upto(3) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:5)
+# end
+# 11.upto(16) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:4)
+# end
 1.upto(6) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_pazzle#{n}.jpg"),item_id:19)
-end
-11.upto(17) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:18)
-end
-1.upto(3) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/child_toy_spin#{n}.jpg"),item_id:17)
-end
-11.upto(16) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:16)
-end
-1.upto(3) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_boots#{n}.jpg"),item_id:15)
-end
-11.upto(14) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:14)
-end
-1.upto(4) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_shoes_pan#{n}.jpg"),item_id:13)
-end
-11.upto(14) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:12)
-end
-1.upto(6) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_long#{n}.jpg"),item_id:11)
-end
-11.upto(14) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:10)
-end
-1.upto(4) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/women_skirt_mini#{n}.jpg"),item_id:9)
-end
-11.upto(13) do |n|  
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:8)
-end
-1.upto(7) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_chino#{n}.jpg"),item_id:7)
-end
-11.upto(12) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:6)
-end
-1.upto(3) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_bottom_slacks#{n}.jpg"),item_id:5)
-end
-11.upto(16) do |n|
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:4)
-end
-1.upto(6) do |n| 
   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_polo#{n}.jpg"),item_id:3)
 end
-11.upto(17) do |n|  
+11.upto(17) do |n|
   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:2)
 end
-1.upto(5) do |n|   
-  Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:1)
-end
+# 1.upto(5) do |n|
+#   Image.create!(image_url: open("#{Rails.root}/db/dummy_img/men_tops_T-shrit#{n}.jpg"),item_id:1)
+# end
 
 Condition.create(:condition_rank => "新品、未使用")
 Condition.create(:condition_rank => "未使用に近い")
@@ -606,6 +564,7 @@ User.create!(family_name: "雨傘",
   password: "12341234",
   profile: "元気ですか。",
   credit: "111111111",
+  image_url: open("#{Rails.root}/db/dummy_img/user.jpg"),
 )
 User.create!(family_name: "神吉",
   first_name: "智也",
@@ -624,6 +583,7 @@ User.create!(family_name: "神吉",
   password: "23452345",
   profile: "元気です。",
   credit: "44444444",
+  image_url: open("#{Rails.root}/db/dummy_img/user.jpg"),
 )
 User.create!(family_name: "安倍",
   first_name: "阿倍",
@@ -690,4 +650,3 @@ DeliveryWay.create(:delivery_way => "クロネコヤマト")
 DeliveryWay.create(:delivery_way => "ゆうパック")
 DeliveryWay.create(:delivery_way => "クリックポスト")
 DeliveryWay.create(:delivery_way => "ゆうパケット")
-

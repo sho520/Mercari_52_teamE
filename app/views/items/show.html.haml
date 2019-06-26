@@ -4,7 +4,7 @@
   .product__item
     .product__item-box
       %h1.product__h1
-        = @item.name 
+        = @item.name
       .product__item-box__main
         .product__item-box__main__left
           .product__item-box__main__left__bigpic
@@ -19,43 +19,43 @@
               - @images.each do |image|
                 %li.product__item-box__main__left__below__pics
                   = image_tag image.image_url.url(:thumb), size: '60x60', id: "smallimage"
-                
-  
+
+
         .product__item-box__main__right
           %table.product__item-box__main__right__table
             %tbody.product__tbody
               %tr.product__tr
                 %th.product__th 出品者
                 %td.product__td
-                  %a{href: ""} 
+                  %a.product__td__link{:href => "#"}
                     = @item.owner.nickname
               %tr.product__tr
                 %th.product__th カテゴリー
                 %td.product__td
-                  %a{href: ""}
+                  %a.product__td__link{:href => "#"}
                     = @item.category.parent.parent.name
-                    %i#product__fa-angle-right.fa.fa-angle-right
-                  %a{href: ""} 
+                    %i.product__fa-angle-right.fa.fa-angle-right
+                  %a.product__td__link{:href => "#"}
                     = @item.category.parent.name
-                    %i#product__fa-angle-right.fa.fa-angle-right
-                  %a{href: ""}
+                    %i.product__fa-angle-right.fa.fa-angle-right
+                  %a.product__td__link{:href => "#"}
                     = @item.category.name
               %tr.product__tr
                 %th.product__th ブランド
                 %td.product__td
-                  %a{href: ""} 
+                  %a.product__td__link{:href => "#"}
                     = @item.brand
               %tr.product__tr
                 %th.product__th サイズ
-                %td.product__td 
-                  = @item.size
+                %td.product__td
+                  = @item.size.size
               %tr.product__tr
                 %th.product__th 商品の状態
-                %td.product__td 
+                %td.product__td
                   = @item.condition.condition_rank
               %tr.product__tr
                 %th.product__th 配送料の負担
-                %td.product__td 
+                %td.product__td
                   = @item.shipping_fee_payer.payer
               %tr.product__tr
                 %th.product__th 配送の方法
@@ -64,7 +64,7 @@
               %tr.product__tr
                 %th.product__th 配送元地域
                 %td.product__td
-                  %a{href: ""} ここに入る
+                  %a.product__td__link{:href => "#"} ここに入る
               %tr.product__tr
                 %th.product__th 配送日の目安
                 %td.product__td
@@ -77,8 +77,7 @@
         %span.product__item-box__price__shipcost 送料込み
       - if @item.state_id == 1 || @item.state_id == 2
         .product__item-box__buybox
-          %a
-            購入画面に進む
+          = link_to '購入画面に進む', confirm_item_path(@item), class: 'product__item-box__buybox__link', data: {"turbolinks" => false}
       - else
         .product__item-box__buybox--ng
           %a
@@ -105,20 +104,36 @@
           .product__item-box__button__right__safe
             あんしん・あんぜんへの取り組み
     .product__item-comment
-      %form.product__item-comment__form
-        %p.product__p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        %textarea.product__textarea{name: "body", type: "text"}
-        %button.product__button{type: "submit"} コメントする
+      %section.product__item-comment__comments
+        .product__item-comment__comments__all
+          - @comments.each do |comment|
+            .product__item-comment__comments__all__each
+              .product__item-comment__comments__all__each__left
+              .product__item-comment__comments__all__each__right
+                .product__item-comment__comments__all__each__right__name
+                  =comment.user.nickname
+                .product__item-comment__comments__all__each__right__text
+                  =comment.comment
+                .product__item-comment__comments__all__each__right__time
+                  = comment.created_at
+      .product__item-comment__form
+        = form_for [@item, @comment] do |f|
+          %p.product__p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          = f.text_area :comment, class:"product__textarea"
+          %button.product__button{type: "submit"} コメントする
     %ul.product__item-link
-      %a{href: "/items/#{@prev_item.id}"}
-        %li.product__item-link__pre
-          - if @prev_item 
-            %i#product__fa-angle-right.fa.fa-angle-left
-            = @prev_item.name
-      %a{href: "/items/#{@next_item.id}"}
-        %li.product__item-link__next
-          = @next_item.name
-          %i#product__fa-angle-right.fa.fa-angle-right
+      - if @prev_item
+        %a{href: "/items/#{@prev_item.id}"}
+          %li.product__item-link__pre
+            - if @prev_item
+              %i#product__fa-angle-right.fa.fa-angle-left
+              = @prev_item.name
+      - if @next_item
+        %a{href: "/items/#{@next_item.id}"}
+          - if @next_item
+            %li.product__item-link__next
+              = @next_item.name
+              %i#product__fa-angle-right.fa.fa-angle-right
     .product__item__sns
       .product__item__sns__main
         .product__item__sns__main__box
@@ -178,8 +193,3 @@
                 .product__add__items__contents__content__a__bottom__tax
                   (税込)
           - break if i== 5
-
-
-
-
-       

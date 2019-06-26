@@ -10,8 +10,8 @@
 @import "items/show";
 @import "items/new";
 @import "items/confirm";
+@import "items/done";
 @import "items/brand";
-@import "items/category";
 @import "users/show";
 @import "users/edit";
 @import "users/_mypage_nav";
@@ -28,3 +28,5 @@
 @import "myitems/show";
 @import "myitems/edit";
 @import "search/search";
+@import "category/index";
+@import "category/show";

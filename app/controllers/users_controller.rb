@@ -13,18 +13,13 @@ class UsersController < ApplicationController
     render layout: 'second_application'
   end
 
-  def index
-    @user = User.new
-    render layout: 'third_application'
-  end
-
   def phone
-    render layout: 'third_application'
+    render layout: 'common'
   end
   
   def address
     @user = User.new
-    render layout: 'third_application'
+    render layout: 'common'
   end
     
   def purchase
@@ -35,15 +30,7 @@ class UsersController < ApplicationController
     render layout: 'third_application'
   end
 
-  def login
-    render layout: 'second_application'
-  end
-
   def logout
-    render layout: 'common'
-  end
-
-  def identification
     render layout: 'common'
   end
 
@@ -51,13 +38,15 @@ class UsersController < ApplicationController
     render layout: 'common'
   end
 
-  def sample
+  def mail
+    @user = User.new
+    render layout: 'common'
   end
 
   private
  
     def user_params
-      params.require(:user).permit(:postcode, :prefecture_name, :address_city, :address_street, :address_building)
+      params.require(:user).permit(:account_update, keys: [:name, :family_name, :first_name, :family_name_kana, :first_name_kana, :nickname, :birth_year, :birth_month, :birth_day, :postcode, :prefecture_code, :address_city, :address_building, :phone, :prefecture_id])
     end
 
 end

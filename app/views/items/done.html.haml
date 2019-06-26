@@ -1,58 +1,58 @@
-.confirm
-  .confirm__container
+.done
+  .done__container
     / ここから商品購入完了後のヘッダー
-    .confirm__container__done-attention
-      %h3.confirm__container__done-attention__top
+    .done__container__done-attention
+      %h3.done__container__done-attention__top
         %i.fa.fa-hourglass-start
         %span 発送をお待ちください
-      %p.confirm__container__done-attention__bottom 出品者からの発送通知をお待ちください
+      %p.done__container__done-attention__bottom 出品者からの発送通知をお待ちください
     / ヘッダータイトル
-    %h2.confirm__container__header 購入が完了しました
+    %h2.done__container__header 購入が完了しました
     / ここから商品情報
-    .confirm__container__inner
-      %section.confirm__container__inner__item
-        .confirm__container__inner__item__info
-          = image_tag 'm52161295392_1.jpg', class: 'confirm__container__inner__item__info__img', size: "128x128"
-          %p.confirm__container__inner__item__info__name 伝説のドラマー使用ドラムスティック
-          %form{:action => "confirm__container__inner__item__info__fee", :method => "post"}
-            %p.confirm__container__inner__item__info__fee__price
-              ¥ 150,000,000
-              %span.confirm__container__inner__item__info__fee__shipping-price 送料込み
-            %ul.confirm__container__inner__item__info__fee__point
-              %li.confirm__container__inner__item__info__fee__point__non ポイントはありません
-            %ul.confirm__container__inner__item__info__fee__pay
-              %li.confirm__container__inner__item__info__fee__pay__table
-                .confirm__container__inner__item__info__fee__pay__table__title 支払い金額
-                .confirm__container__inner__item__info__fee__pay__table__price
-                  %span ¥150,000,000
-            %input.confirm__container__inner__item__info__fee__submit{:type => "submit", :value => "購入する"}/
+    .done__container__inner
+      %section.done__container__inner__item
+        .done__container__inner__item__info
+          = image_tag @images.first.image_url.url(:thumb) , alt: '商品画像', class: 'done__container__inner__item__info__img', size: "128x128"
+          %p.done__container__inner__item__info__name
+            = @item.name
+            %p.done__container__inner__item__info__fee__price
+              %span ¥
+              = @item.price
+              - if @item.shipping_fee_payer_id == 1
+                %span.done__container__inner__item__info__fee__shipping-price 送料込み
+              - else @item.shipping_fee_payer_id == 2
+                %span.done__container__inner__item__info__fee__shipping-price 着払い
     / ここから配送先情報
-    %section.confirm__container__inner__user-delivery
-      .confirm__container__inner__user-delivery__inner
-        %h3.confirm__container__inner__user-delivery__inner__title 配送先
-        %address.confirm__container__inner__user-delivery__inner__add
-          〒150-0043
+    %section.done__container__inner__user-delivery
+      .done__container__inner__user-delivery__inner
+        %h3.done__container__inner__user-delivery__inner__title 配送先
+        %address.done__container__inner__user-delivery__inner__add
+          %span 〒
+          = current_user.postcode
           %br/
-          東京都渋谷区道玄坂２丁目２３−１２ フォンティスビル7F
+          = current_user.address_city
           %br/
-          TECH::EXPERT渋谷
-        = link_to '変更する >', items_confirm_path, class: 'confirm__container__inner__user-delivery__inner__link'
+          = current_user.address_building
+          %br/
+          = current_user.family_name
+          = current_user.first_name
     / ここから支払い方法
-    %section.confirm__container__inner__user-payment
-      .confirm__container__inner__user-payment__inner
-        %h3.confirm__container__inner__user-payment__inner__title 支払い方法
-        %p.confirm__container__inner__user-payment__inner__payment-type *******8080
-        = image_tag 'visa_logo.png', class: 'confirm__container__inner__user-payment__inner__img', size: "31x30"
-        = link_to '変更する >', items_confirm_path, class: 'confirm__container__inner__user-delivery__inner__link'
+    %section.done__container__inner__user-payment
+      .done__container__inner__user-payment__inner
+        %h3.done__container__inner__user-payment__inner__title 支払い方法
+        %p.done__container__inner__user-payment__inner__payment-type
+        = current_user.credit
+        %br/
+        = image_tag 'visa_logo.png', class: 'done__container__inner__user-payment__inner__img', size: "31x30"
     / ここから発送通知後の流れ
-    %section.confirm__container__inner__done-guide
-      .confirm__container__inner__done-guide__inner
-        %h3.confirm__container__inner__done-guide__inner__title 発送通知後の流れ
-        .confirm__container__inner__done-guide__inner__icons
-          %i.fa.fa-umbrella.confirm__container__inner__done-guide__inner__icons__icon
-          %i.fa.fa-umbrella.confirm__container__inner__done-guide__inner__icons__icon
-          %i.fa.fa-umbrella.confirm__container__inner__done-guide__inner__icons__icon
-        %p.confirm__container__inner__done-guide__inner__text
+    %section.done__container__inner__done-guide
+      .done__container__inner__done-guide__inner
+        %h3.done__container__inner__done-guide__inner__title 発送通知後の流れ
+        .done__container__inner__done-guide__inner__icons
+          %i.fa.fa-thumbs-up.done__container__inner__done-guide__inner__icons__up
+          %i.fa.fa-exclamation.done__container__inner__done-guide__inner__icons__mi
+          %i.fa.fa-thumbs-down.done__container__inner__done-guide__inner__icons__down
+        %p.done__container__inner__done-guide__inner__text
           商品を受け取ったら
           %br/
           出品者の評価をしましょう
@@ -60,4 +60,4 @@
           購入代金が出品者に振り込まれます。
           %br/
           評価後に取引は完了です。
-        = link_to 'マイページへ戻る', items_confirm_path, class: 'confirm__container__inner__done-guide__inner__link'
+        = link_to 'マイページへ戻る', user_path(current_user), class: 'done__container__inner__done-guide__inner__link'
