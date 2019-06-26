@@ -9,7 +9,12 @@ crumb :item do |item|
 end
 
 crumb :search do
-  link "#{params[:keyword]}", search_path
+  @keyword = params[:keyword]
+  if @keyword.blank?
+    link "検索画面", search_path
+  else
+    link "#{params[:keyword]}", search_path
+  end
 end
 
 crumb :category do

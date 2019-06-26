@@ -106,7 +106,7 @@
     .searched__items
       - @items.each do |item|
         %section.searched__items__box
-          = link_to item_path , class: "searched__items__box__group" do
+          = link_to "/items/#{item.id}" , class: "searched__items__box__group" do
             = image_tag "#{item.images.first.image_url.url(:thumb)}", class: 'searched__items__box__group__img'
             .searched__items__box__group__info
               %h3.searched__items__box__group__info__title 

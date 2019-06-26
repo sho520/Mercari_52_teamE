@@ -13,11 +13,11 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User", optional: true
   belongs_to :category, optional: true
   has_many :comments
-
-
-
-
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w(name brand price large_class_id middle_class_id small_class_id ize_id shipping_fee_parer_id condition_id)
+  end
 
 end

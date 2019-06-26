@@ -8,13 +8,17 @@ Rails.application.routes.draw do
   get "items/confirm/done" => "items#done"  #idが入る必要あり
   get "items/brand" => "items#brand"
   get "search" => "search#search"
+  get "search/detail" => "search#detail"
+  get "users/login" => "users#login"
+  get "users/sample" => "users#sample"
+  get "users/logout" => "users#logout"
   get "users/mail" => "users#mail"
-  get "users/logout" => "users#logout"  #idが入る必要あり
   get "users/phone" => "users#phone"
   get "users/address" => "users#address"
   get "users/purchase" => "users#purchase"
   get "users/complete" => "users#complete"
-  get "users/card" => "users#card"  #idが入る必要あり
+  get "users/identification" => "users#identification"  #idが入る必要あり
+  get "users/card" => "users#card"
   resources :items do
     get 'confirm', to: 'items#confirm', on: :member
     get 'confirm/done', to: 'items#done', on: :member
