@@ -3,7 +3,7 @@
   .s__MainBox__Title
     %h2.Title 商品の情報を入力
   = form_for @item do |f|
-
+    
 
 
     .s__MainBoxform__Content
@@ -14,8 +14,14 @@
         %p.saidai10 最大10枚までアップロードできます
         .s__ContentImage__Image
           = f.fields_for :images do |i|
-            = i.file_field :image_url
-           
+            .dropzone-container.clearfix
+              #preview
+              .dropzone-area
+                = i.file_field :image_url
+              -# #preview2
+              -#   .dropzone-area2
+              -#     = i.file_field :image_url
+
       .s__Content__Name__Description
         / 商品名
         .s__Content__Name

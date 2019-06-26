@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    10.times {@item.images.build}
+    5.times {@item.images.build}
     # @large_classes = LargeClass.all
     # @middle_classes = MiddleClass.all
     # @small_classes = SmallClass.all
