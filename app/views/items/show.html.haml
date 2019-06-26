@@ -104,10 +104,23 @@
           .product__item-box__button__right__safe
             あんしん・あんぜんへの取り組み
     .product__item-comment
-      %form.product__item-comment__form
-        %p.product__p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        %textarea.product__textarea{name: "body", type: "text"}
-        %button.product__button{type: "submit"} コメントする
+      %section.product__item-comment__comments
+        .product__item-comment__comments__all
+          - @comments.each do |comment|
+            .product__item-comment__comments__all__each
+              .product__item-comment__comments__all__each__left
+              .product__item-comment__comments__all__each__right
+                .product__item-comment__comments__all__each__right__name
+                  =comment.user.nickname
+                .product__item-comment__comments__all__each__right__text
+                  =comment.comment
+                .product__item-comment__comments__all__each__right__time
+                  = comment.created_at
+      .product__item-comment__form
+        = form_for [@item, @comment] do |f|
+          %p.product__p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          = f.text_area :comment, class:"product__textarea"
+          %button.product__button{type: "submit"} コメントする
     %ul.product__item-link
       - if @prev_item
         %a{href: "/items/#{@prev_item.id}"}
