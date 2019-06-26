@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "items/confirm/done" => "items#done"  #idが入る必要あり
   get "items/brand" => "items#brand"
   get "search" => "search#search"
+  get "users/mail" => "users#mail"
   get "users/login" => "users#login"
   get "users/sample" => "users#sample"
   get "users/logout" => "users#logout"  #idが入る必要あり

@@ -54,6 +54,11 @@ class UsersController < ApplicationController
   def sample
   end
 
+  def mail
+    @user = User.new
+    render layout: 'common'
+  end
+
   private
  
     def user_params
