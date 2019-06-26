@@ -13,7 +13,7 @@ crumb :search do
 end
 
 crumb :category do
-  link "カテゴリー一覧", items_category_path
+  link "カテゴリー一覧", categories_path
 end
 
 crumb :brand do
@@ -46,3 +46,17 @@ crumb :logout do
   parent :mypage
 end
 
+crumb :categories do |category|
+  if category.has_parent?
+    if category.has_children?
+      link category.parent.name + "  ›  " + category.name, "/categories/1"
+      parent :category
+    else
+      link category.root.name + "  ›  " + category.parent.name + "  ›  " + category.name, "/categories/1"
+      parent :category
+    end
+  else
+    link category.name, "/categories/1"
+    parent :category
+  end
+end

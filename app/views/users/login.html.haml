@@ -7,7 +7,7 @@
       %button#d__facebook-login.d__btn-sns-facebook
         %i.d__i__fb
         %i.icon-facebook
-        Facebookで登録
+        = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, class: 'sns_1'
       %button#d__google-login.d__btn-sns-google
         %i.d__icon-google
         Googleで登録
