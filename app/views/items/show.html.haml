@@ -109,13 +109,25 @@
           - @comments.each do |comment|
             .product__item-comment__comments__all__each
               .product__item-comment__comments__all__each__left
+                -if comment.user.present?
+                  - if comment.user.image_url.present?
+                    = image_tag comment.user.image_url.url(:thumb), size: '40x40'
+                  - else
+                    = image_tag 'usernon.jpg', size: '40x40' 
+                - else
+                  = image_tag 'usernon.jpg', size: '40x40' 
               .product__item-comment__comments__all__each__right
                 .product__item-comment__comments__all__each__right__name
-                  =comment.user.nickname
+                  - if comment.user_id == @item.owner_id
+                    = comment.user.nickname + " (出品者)"
+                  - elsif comment.user_id != 0
+                    = comment.user.nickname
+                  - else
+                    = "匿名さん"
                 .product__item-comment__comments__all__each__right__text
-                  =comment.comment
+                  =simple_format(comment.comment)
                 .product__item-comment__comments__all__each__right__time
-                  = comment.created_at
+                  = comment.created_at.strftime("%Y/%m/%d %H:%M")
       .product__item-comment__form
         = form_for [@item, @comment] do |f|
           %p.product__p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
