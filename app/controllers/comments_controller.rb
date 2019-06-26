@@ -15,7 +15,11 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:comment).merge(user_id: current_user.id, item_id: @item.id)
+    if user_signed_in?
+      params.require(:comment).permit(:comment).merge(user_id: current_user.id, item_id: @item.id)
+    else
+      params.require(:comment).permit(:comment).merge(user_id: "匿名さん", item_id: @item.id)
+    end
   end
 
   def set_item
