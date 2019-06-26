@@ -55,8 +55,11 @@
 .search__result {
   font-size: 22px;
   font-weight: 600;
+  &__header {
+    margin-bottom: 16px;
+  }
   &__not__find {
-    margin: 16px 0 40px;
+    margin-bottom: 40px;
     font-size: 14px;
     font-weight: normal;
     color: #333333
