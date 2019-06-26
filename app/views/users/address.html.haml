@@ -28,7 +28,7 @@
             .user__form__group
               %label{for: "user__title"} 都道府県
               %span.user__form__require 必須
-              = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,:name, :name, {prompt: true}, class: 'user__select__default d__fa__select', id: "user_prefecture_code"
+              = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,:name, :name, {prompt: true}, class: 'user__select__default d__fa__select', id: "user_prefecture_code", value: current_user.prefecture_code
               %i.user__select__default__arrow
             .user__form__group
               %label{for: "user__title"} 市区町村

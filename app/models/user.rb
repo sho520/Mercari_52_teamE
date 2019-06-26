@@ -3,6 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook google_oauth2]       
   has_many :sns_credentials, dependent: :destroy
   has_many :comments
+  has_many :comments
+  belongs_to :place
   attr_accessor :current_password
 
   mount_uploader :image_url, ImageUploader
@@ -36,4 +38,5 @@ class User < ApplicationRecord
     end
     return user
   end
+  
 end

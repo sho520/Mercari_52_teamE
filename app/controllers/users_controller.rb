@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
   
   def address
+    @place = Place.new
     @user = User.new
     render layout: 'common'
   end
