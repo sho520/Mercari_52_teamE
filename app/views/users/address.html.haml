@@ -9,7 +9,7 @@
       %section.registration__main__container
         %h2.registration__main__head 発送元・お届け先住所入力
         .registration__main__form
-        = form_for @user do |f|
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
           .user__form__content
             .user__form__group
               %label{for: "user__title"} お名前
@@ -19,12 +19,12 @@
             .user__form__group
               %label{for: "user__title"} お名前カナ
               %span.user__form__require 必須
-              = f.text_field :family_name_kana, class: 'user__form__input', placeholder: "アベ", type: "text", value: current_user.family_name_kana
-              = f.text_field :first_name_kana, class: 'user__form__input', placeholder: "タナカ", type: "text", value: current_user.first_name_kana
+              = f.text_field :family_name_kana, class: 'user__form__input', placeholder: "氏（カナ）", type: "text", value: current_user.family_name_kana
+              = f.text_field :first_name_kana, class: 'user__form__input', placeholder: "名（カナ）", type: "text", value: current_user.first_name_kana
             .user__form__group
               %label{for: "user__title"} 郵便番号
               %span.user__form__require 必須
-              = f.text_field :postcode, class: 'user__form__input', placeholder: "例) 123-4567", type: "text", value: current_user.postcode, id: "user_postcode"
+              = f.number_field :postcode, class: 'user__form__input', placeholder: "例) 123-4567", type: "text", value: current_user.postcode, id: "user_postcode"
             .user__form__group
               %label{for: "user__title"} 都道府県
               %span.user__form__require 必須
@@ -41,8 +41,8 @@
             .user__form__group
               %label{for: "user__title"} 電話
               %span.user__form__require__b 任意
-              = f.text_field :phone, class: 'user__form__input', placeholder: "0901234567", type: "text", value: current_user.phone
-            = f.button :"次へ進む", class: 'user__form__botton'
+              = f.number_field :phone, class: 'user__form__input', placeholder: "0901234567", type: "text", value: current_user.phone
+            = f.button :"更新する", class: 'user__form__botton'
             %br
             %br
 

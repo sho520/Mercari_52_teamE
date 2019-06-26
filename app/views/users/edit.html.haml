@@ -4,17 +4,17 @@
   .mypage__container
     .nav
       = render "mypage_nav"
-    .mypage__profile
-      .profile__header
-        .profile__header__title
-          プロフィール
-      .profile__name
-        .profile__name__content
-          .profile__name__content__icon
-            = image_tag('member_noimage.png', size:'60x60')
-          %input.profile__name__content__input{name: "name", placeholder:"例) メルカリ太郎", type:"text", value: "メルカリ太郎"}
-      .profile__intro
-        .profile__intro__content
-          %textarea.profile__intro__content__textarea{name: "introduction", placeholder:"例) こんにちは！よろしくお願いします！", value: ""}
-          %button.profile__intro__content__button{type:"submit"}
-            変更する
+    %main.registration__main
+      %section.registration__main__container
+        %h2.registration__main__head__sub プロフィール
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+          .profile__name
+            .profile__name__content
+              .profile__name__content__icon
+                = image_tag('member_noimage.png', size:'60x60')
+              = f.text_field :nickname, class: 'profile__name__content__input', placeholder: "例) メルカリ太郎", type: "text", value: current_user.nickname  
+          .profile__intro
+            .profile__intro__content
+              = f.text_area :profile, class: 'profile__intro__content__textarea', placeholder: "例) こんにちは！よろしくお願いします！", type: "text", value: current_user.profile 
+            = f.button :"変更する", class: 'profile__intro__content__button'
+            
