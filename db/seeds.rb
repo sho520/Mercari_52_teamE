@@ -650,3 +650,7 @@ DeliveryWay.create(:delivery_way => "クロネコヤマト")
 DeliveryWay.create(:delivery_way => "ゆうパック")
 DeliveryWay.create(:delivery_way => "クリックポスト")
 DeliveryWay.create(:delivery_way => "ゆうパケット")
+
+Comment.create(:comment => "テスト1", :item_id => 10, :user_id => 1)
+Comment.create(:comment => "テスト2", :item_id => 10, :user_id => 2)
+Comment.create(:comment => "テスト3", :item_id => 11, :user_id => 1)
