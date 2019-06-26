@@ -63,14 +63,14 @@
             .user__form__group
               %label{for: "user__title"} お名前
               %span.user__form__require 必須
-              = f.text_field :family_name, class: 'user__field', type: "family_name", value: current_user.family_name
-              = f.text_field :first_name, class: 'user__field', type: "first_name", value: current_user.first_name
+              = f.text_field :family_name, class: 'user__field', type: "family_name", value: current_user.family_name, placeholder: "氏"
+              = f.text_field :first_name, class: 'user__field', type: "first_name", value: current_user.first_name, placeholder: "名"
             
             .user__form__group
               %label{for: "user__title"} お名前カナ
               %span.user__form__require 必須
-              = f.text_field :family_name_kana, class: 'user__field', type: "family_name_kana", value: current_user.family_name_kana
-              = f.text_field :first_name_kana, class: 'user__field', type: "first_name_kana", value: current_user.first_name_kana
+              = f.text_field :family_name_kana, class: 'user__field', type: "family_name_kana", value: current_user.family_name_kana, placeholder: "氏（カナ）"
+              = f.text_field :first_name_kana, class: 'user__field', type: "first_name_kana", value: current_user.first_name_kana, placeholder: "名（カナ）"
             .user__form__group
               %label{for: "user__title"} 生年月日
               %span.user__form__require 必須
@@ -95,7 +95,7 @@
             .user__form__group
               %label{for: "user__title"} 郵便番号
               %span.user__form__require__b 任意
-              = f.text_field :postcode, class: 'user__form__input', type: "postcode", value: current_user.postcode, id: "user_postcode"
+              = f.text_field :postcode, class: 'user__form__input', type: "postcode", value: current_user.postcode, id: "user_postcode", placeholder: "150-0001"
             .user__form__group
               %label{for: "user__title"} 都道府県
               %span.user__form__require__b 任意
@@ -104,11 +104,11 @@
             .user__form__group
               %label{for: "user__title"} 市区町村
               %span.user__form__require__b 任意
-              = f.text_field :address_city, class: 'user__form__input', type: "address_city", value: current_user.address_city, id: "user_address_city"
+              = f.text_field :address_city, class: 'user__form__input', type: "address_city", value: current_user.address_city, id: "user_address_city", placeholder: "渋谷区"
             .user__form__group
               %label{for: "user__title"} 建物
               %span.user__form__require__b 任意
-              = f.text_field :address_building, class: 'user__form__input', type: "address_building", value: current_user.address_building
+              = f.text_field :address_building, class: 'user__form__input', type: "address_building", value: current_user.address_building, placeholder: "柳ビル1-1"
             = f.submit :"更新する", class: 'user__form__botton'
             .user__form__group
               %p.user__form__other

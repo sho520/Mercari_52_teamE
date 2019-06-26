@@ -13,11 +13,6 @@ class UsersController < ApplicationController
     render layout: 'second_application'
   end
 
-  def index
-    @user = User.new
-    render layout: 'third_application'
-  end
-
   def phone
     render layout: 'common'
   end
@@ -35,23 +30,12 @@ class UsersController < ApplicationController
     render layout: 'third_application'
   end
 
-  def login
-    render layout: 'second_application'
-  end
-
   def logout
-    render layout: 'common'
-  end
-
-  def identification
     render layout: 'common'
   end
 
   def card
     render layout: 'common'
-  end
-
-  def sample
   end
 
   def mail

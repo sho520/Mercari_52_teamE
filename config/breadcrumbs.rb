@@ -32,7 +32,7 @@ crumb :profile do
 end
 
 crumb :identification do
-  link "本人情報の登録", users_identification_path
+  link "本人情報の登録", edit_user_registration_path
   parent :mypage
 end
 
