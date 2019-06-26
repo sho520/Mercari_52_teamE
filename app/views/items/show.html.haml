@@ -94,7 +94,7 @@
             %a
               売り切れました
         .product__item-box__desc
-          = @item.description
+          = simple_format(@item.description)
         .product__item-box__button
           .product__item-box__button__left
             .product__item-box__button__left__like
