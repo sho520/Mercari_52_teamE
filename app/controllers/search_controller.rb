@@ -15,7 +15,6 @@ class SearchController < ApplicationController
     if @items.empty?
       @items = Item.order('id DESC').page(params[:page]).per(16)
       @not_find = "該当する商品が見つかりません。検索条件を変えて、再度お試しください。"
-      render layout: 'common' and return
     end
 
     render layout: 'common'
@@ -27,7 +26,6 @@ class SearchController < ApplicationController
     if @items.empty?
       @items = Item.order('id DESC').page(params[:page]).per(16)
       @not_find = "該当する商品が見つかりません。検索条件を変えて、再度お試しください。"
-      render layout: 'common' and return
     end
 
     render layout: 'common'
