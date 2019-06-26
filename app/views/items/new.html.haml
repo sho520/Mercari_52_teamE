@@ -3,8 +3,6 @@
   .s__MainBox__Title
     %h2.Title 商品の情報を入力
   = form_for @item do |f|
-    
-
 
     .s__MainBoxform__Content
       .s__ContentImage
@@ -13,14 +11,11 @@
           %span.hissu 必須
         %p.saidai10 最大10枚までアップロードできます
         .s__ContentImage__Image
+          .image__box
+            .image__box__list
           = f.fields_for :images do |i|
-            .dropzone-container.clearfix
-              #preview
-              .dropzone-area
-                = i.file_field :image_url
-              -# #preview2
-              -#   .dropzone-area2
-              -#     = i.file_field :image_url
+            = i.label :image_url, class:'box2__label' do
+              = i.file_field :image_url
 
       .s__Content__Name__Description
         / 商品名
@@ -127,3 +122,6 @@
           %input.s__submit{type:  "submit", value:  "出品する"}
         .btn__back1
           = link_to 'もどる', new_item_path, class: "modoru"
+
+
+          
