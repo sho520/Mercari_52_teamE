@@ -11,6 +11,8 @@ class ItemsController < ApplicationController
     
     @item = Item.find(params[:id])
     @images = @item.images
+    @comments = Comment.where(item_id: @item.id)
+    @comment = Comment.new
 
     if Item.find(params[:id]) != Item.last
       @next_item = Item.find(params[:id].to_i + 1)

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     get 'confirm/done', to: 'items#done', on: :member
     post 'confirm/pay', to: 'items#pay', on: :member
     post 'confirm/buy', to: 'items#buy', on: :member
+    resources :comments
   end
   resources :users do
     resources :myitems, only: [:show, :edit, :destroy]
