@@ -55,10 +55,16 @@
           border-radius: 4px;
           box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
           text-decoration: none;
+          div{
+            text-decoration: none;
+            color:#000000;
+          }
         }
         &__title:hover{
           background-color:#ea352d;
-          color:#ffffff;
+          div{
+            color:#ffffff;
+          }
         }
       }
     }
@@ -77,11 +83,16 @@
     text-align: center;
     border-right: solid 1px black;
     font-size: 0.9rem;
+    div{
+      color:#0099e8;
+    }
   }
   &__word:hover{
-    color: #b3d4fc;
-    text-decoration: underline;
     cursor: pointer;
+    div{
+      color: #b3d4fc;
+      text-decoration: underline;
+    }
   }
 }
 .brand__list{

@@ -1,162 +1,179 @@
 = javascript_include_tag 'item.show.js'
 - breadcrumb :item, @item
 %main.product__main
-  .product__item
-    .product__item-box
-      %h1.product__h1
-        = @item.name
-      .product__item-box__main
-        .product__item-box__main__left
-          .product__item-box__main__left__bigpic
-            %ul
-              - @images.each_with_index do |image, i|
-                %li.product__item-box__main__left__below__pics
-                  = image_tag image.image_url.url(:thumb), width: '300px', id: "bigimage"
-                - break if i== 0
 
-          .product__item-box__main__left__below
-            %ul
-              - @images.each do |image|
-                %li.product__item-box__main__left__below__pics
-                  = image_tag image.image_url.url(:thumb), size: '60x60', id: "smallimage"
+  - if @item.state_id != 5
+    .product__item
+      .product__item-box
+        %h1.product__h1
+          = @item.name
+        .product__item-box__main
+          .product__item-box__main__left
+            .product__item-box__main__left__bigpic
+              %ul
+                - @images.each_with_index do |image, i|
+                  %li.product__item-box__main__left__below__pics
+                    = image_tag image.image_url.url(:thumb), width: '300px', id: "bigimage"
+                  - break if i== 0
+
+            .product__item-box__main__left__below
+              %ul
+                - @images.each do |image|
+                  %li.product__item-box__main__left__below__pics
+                    = image_tag image.image_url.url(:thumb), size: '60x60', id: "smallimage"
 
 
-        .product__item-box__main__right
-          %table.product__item-box__main__right__table
-            %tbody.product__tbody
-              %tr.product__tr
-                %th.product__th 出品者
-                %td.product__td
-                  %a.product__td__link{:href => "#"}
-                    = @item.owner.nickname
-              %tr.product__tr
-                %th.product__th カテゴリー
-                %td.product__td
-                  %a.product__td__link{:href => "#"}
-                    = @item.category.parent.parent.name
-                    %i.product__fa-angle-right.fa.fa-angle-right
-                  %a.product__td__link{:href => "#"}
-                    = @item.category.parent.name
-                    %i.product__fa-angle-right.fa.fa-angle-right
-                  %a.product__td__link{:href => "#"}
-                    = @item.category.name
-              %tr.product__tr
-                %th.product__th ブランド
-                %td.product__td
-                  %a.product__td__link{:href => "#"}
-                    = @item.brand
-              %tr.product__tr
-                %th.product__th サイズ
-                %td.product__td
-                  = @item.size.size
-              %tr.product__tr
-                %th.product__th 商品の状態
-                %td.product__td
-                  = @item.condition.condition_rank
-              %tr.product__tr
-                %th.product__th 配送料の負担
-                %td.product__td
-                  = @item.shipping_fee_payer.payer
-              %tr.product__tr
-                %th.product__th 配送の方法
-                %td.product__td
-                  %a らくらくメルカリ便
-              %tr.product__tr
-                %th.product__th 配送元地域
-                %td.product__td
-                  %a.product__td__link{:href => "#"} ここに入る
-              %tr.product__tr
-                %th.product__th 配送日の目安
-                %td.product__td
-                  %a
-                    = @item.shipping_day.days
-      .product__item-box__price
-        %span.product__item-box__price__amount
-          = "¥" + @item.price.to_s(:delimited).to_s
-        %span.product__item-box__price__withtax (税込)
-        %span.product__item-box__price__shipcost 送料込み
-      - if @item.state_id == 1 || @item.state_id == 2
-        .product__item-box__buybox
-          = link_to '購入画面に進む', confirm_item_path(@item), class: 'product__item-box__buybox__link', data: {"turbolinks" => false}
-      - else
-        .product__item-box__buybox--ng
-          %a
-            売り切れました
-      .product__item-box__desc
-        = @item.description
-      .product__item-box__button
-        .product__item-box__button__left
-          .product__item-box__button__left__like
-            #product__fa-heart
-              %i.fa.fa-heart
-            %span.product__item-box__button__left__like__word
-              いいね！
-            %span.product__item-box__button__left__like__word
-              9
-          .product__item-box__button__left__report
-            #product__fa-flag
-              %i.fa.fa-flag
-            %span.product__item-box__button__left__report__word
-              不適切な商品の報告
-        .product__item-box__button__right
-          #product__fa-lock
-            %i.fa.fa-lock
-          .product__item-box__button__right__safe
-            あんしん・あんぜんへの取り組み
-    .product__item-comment
-      %section.product__item-comment__comments
-        .product__item-comment__comments__all
-          - @comments.each do |comment|
-            .product__item-comment__comments__all__each
-              .product__item-comment__comments__all__each__left
-                -if comment.user.present?
-                  - if comment.user.image_url.present?
-                    = image_tag comment.user.image_url.url(:thumb), size: '40x40'
+          .product__item-box__main__right
+            %table.product__item-box__main__right__table
+              %tbody.product__tbody
+                %tr.product__tr
+                  %th.product__th 出品者
+                  %td.product__td
+                    %a.product__td__link#product__td__owner
+                      = @item.owner.nickname
+                      :javascript
+                        $("#product__td__owner").click(function(){
+                          var position = $(".product__add__items__title").offset().top;
+                            $("html,body").animate({
+                                scrollTop : position
+                            }, {
+                                queue : false
+                            });
+                        });
+                %tr.product__tr
+                  %th.product__th カテゴリー
+                  %td.product__td
+                    %a.product__td__link
+                      = link_to @item.category.parent.parent.name, category_path(@item.category.parent.parent.id)
+                      %i.product__fa-angle-right.fa.fa-angle-right
+                    %a.product__td__link
+                      = link_to @item.category.parent.name, category_path(@item.category.parent.id)
+                      %i.product__fa-angle-right.fa.fa-angle-right
+                    %a.product__td__link
+                      = link_to @item.category.name, category_path(@item.category.id)
+                %tr.product__tr
+                  %th.product__th ブランド
+                  %td.product__td
+                    %a.product__td__link{:href => "#"}
+                      = @item.brand
+                %tr.product__tr
+                  %th.product__th サイズ
+                  %td.product__td
+                    = @item.size.size
+                %tr.product__tr
+                  %th.product__th 商品の状態
+                  %td.product__td
+                    = @item.condition.condition_rank
+                %tr.product__tr
+                  %th.product__th 配送料の負担
+                  %td.product__td
+                    = @item.shipping_fee_payer.payer
+                %tr.product__tr
+                  %th.product__th 配送の方法
+                  %td.product__td
+                    %a らくらくメルカリ便
+                %tr.product__tr
+                  %th.product__th 配送元地域
+                  %td.product__td
+                    %a.product__td__link{:href => "#"} ここに入る
+                %tr.product__tr
+                  %th.product__th 配送日の目安
+                  %td.product__td
+                    %a
+                      = @item.shipping_day.days
+        .product__item-box__price
+          %span.product__item-box__price__amount
+            = "¥" + @item.price.to_s(:delimited).to_s
+          %span.product__item-box__price__withtax (税込)
+          %span.product__item-box__price__shipcost 送料込み
+        - if @item.state_id == 1 || @item.state_id == 2
+          .product__item-box__buybox
+            = link_to '購入画面に進む', confirm_item_path(@item), class: 'product__item-box__buybox__link', data: {"turbolinks" => false}
+        - else
+          .product__item-box__buybox--ng
+            %a
+              売り切れました
+        .product__item-box__desc
+          = @item.description
+        .product__item-box__button
+          .product__item-box__button__left
+            .product__item-box__button__left__like
+              #product__fa-heart
+                %i.fa.fa-heart
+              %span.product__item-box__button__left__like__word
+                いいね！
+              %span.product__item-box__button__left__like__word
+                9
+            .product__item-box__button__left__report
+              #product__fa-flag
+                %i.fa.fa-flag
+              %span.product__item-box__button__left__report__word
+                不適切な商品の報告
+          .product__item-box__button__right
+            #product__fa-lock
+              %i.fa.fa-lock
+            .product__item-box__button__right__safe
+              あんしん・あんぜんへの取り組み
+      .product__item-comment
+        %section.product__item-comment__comments
+          .product__item-comment__comments__all
+            - @comments.each do |comment|
+              .product__item-comment__comments__all__each
+                .product__item-comment__comments__all__each__left
+                  -if comment.user.present?
+                    - if comment.user.image_url.present?
+                      = image_tag comment.user.image_url.url(:thumb), size: '40x40'
+                    - else
+                      = image_tag 'usernon.jpg', size: '40x40' 
                   - else
                     = image_tag 'usernon.jpg', size: '40x40' 
-                - else
-                  = image_tag 'usernon.jpg', size: '40x40' 
-              .product__item-comment__comments__all__each__right
-                .product__item-comment__comments__all__each__right__name
-                  - if comment.user_id == @item.owner_id
-                    = comment.user.nickname + " (出品者)"
-                  - elsif comment.user_id != 0
-                    = comment.user.nickname
-                  - else
-                    = "匿名さん"
-                .product__item-comment__comments__all__each__right__text
-                  =simple_format(comment.comment)
-                .product__item-comment__comments__all__each__right__time
-                  = comment.created_at.strftime("%Y/%m/%d %H:%M")
-      .product__item-comment__form
-        = form_for [@item, @comment] do |f|
-          %p.product__p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          = f.text_area :comment, class:"product__textarea"
-          %button.product__button{type: "submit"} コメントする
-    %ul.product__item-link
-      - if @prev_item
-        %a{href: "/items/#{@prev_item.id}"}
-          %li.product__item-link__pre
-            - if @prev_item
-              %i#product__fa-angle-right.fa.fa-angle-left
-              = @prev_item.name
-      - if @next_item
-        %a{href: "/items/#{@next_item.id}"}
-          - if @next_item
-            %li.product__item-link__next
-              = @next_item.name
-              %i#product__fa-angle-right.fa.fa-angle-right
-    .product__item__sns
-      .product__item__sns__main
-        .product__item__sns__main__box
-          .product__item__sns__main__box__fb
-            %a{href: "http://www.facebook.com", target: "_blank"}
-              #product__fa-facebook-square
-                %i.fa.fa-facebook-square.fa-2x
-          .product__item__sns__main__box__tw
-            %a{href: "http://twitter.com", target: "_blank"}
-              #product__fa-twitter
-                %i.fa.fa-twitter.fa-2x
+                .product__item-comment__comments__all__each__right
+                  .product__item-comment__comments__all__each__right__name
+                    - if comment.user_id == @item.owner_id
+                      = comment.user.nickname + " (出品者)"
+                    - elsif comment.user_id != 0
+                      = comment.user.nickname
+                    - else
+                      = "匿名さん"
+                  .product__item-comment__comments__all__each__right__text
+                    =simple_format(comment.comment)
+                  .product__item-comment__comments__all__each__right__time
+                    = comment.created_at.strftime("%Y/%m/%d %H:%M")
+        .product__item-comment__form
+          = form_for [@item, @comment] do |f|
+            %p.product__p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            = f.text_area :comment, class:"product__textarea"
+            %button.product__button{type: "submit"} コメントする
+      %ul.product__item-link
+        - if @prev_item
+          %a{href: "/items/#{@prev_item.id}"}
+            %li.product__item-link__pre
+              - if @prev_item
+                %i#product__fa-angle-right.fa.fa-angle-left
+                = @prev_item.name
+        - if @next_item
+          %a{href: "/items/#{@next_item.id}"}
+            - if @next_item
+              %li.product__item-link__next
+                = @next_item.name
+                %i#product__fa-angle-right.fa.fa-angle-right
+      .product__item__sns
+        .product__item__sns__main
+          .product__item__sns__main__box
+            .product__item__sns__main__box__fb
+              %a{href: "http://www.facebook.com", target: "_blank"}
+                #product__fa-facebook-square
+                  %i.fa.fa-facebook-square.fa-2x
+            .product__item__sns__main__box__tw
+              %a{href: "http://twitter.com", target: "_blank"}
+                #product__fa-twitter
+                  %i.fa.fa-twitter.fa-2x
+  - else
+    .product__item
+      .product__item-box
+        %h1.product__h1
+          = "この商品は削除されました"
+  
   .product__add
     .product__add__items
       .product__add__items__title
