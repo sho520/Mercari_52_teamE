@@ -95,6 +95,14 @@
           = f.submit "完了", class: "detail__search__button"
 
   .mypage__main
+    .search__result
+      .search__result__header
+        検索結果
+      - if @not_find.present?
+        .search__result__not__find
+          = @not_find
+        .search__result__new__items
+          新着商品
     .searched__items
       - @items.each do |item|
         %section.searched__items__box

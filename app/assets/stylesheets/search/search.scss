@@ -7,7 +7,7 @@
     padding: 16px;
   }
   &__header {
-    font-weight: bold;
+    font-weight: 600;
   }
   .form__group {
     margin-top: 24px;
@@ -52,6 +52,19 @@
   }
 }
 
+.search__result {
+  font-size: 22px;
+  font-weight: 600;
+  &__not__find {
+    margin: 16px 0 40px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333333
+  }
+  &__new__items {
+    margin-bottom: 16px;
+  }
+}
 
 .searched__items {
   display: flex;
