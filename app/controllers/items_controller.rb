@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :confirm, :pay, :done, :buy]
-  before_action :authenticate_user!, only: [:new]
+  # before_action :authenticate_user!, only: [:new]
 
   def index
     @items = Item.page(params[:page]).per(16).includes(:images)
@@ -40,10 +40,10 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     5.times {@item.images.build}
-    # @large_classes = LargeClass.all
-    # @middle_classes = MiddleClass.all
-    # @small_classes = SmallClass.all
-    @categorys = Category.all
+    @large_classes = LargeClass.all
+    @middle_classes = MiddleClass.all
+    @small_classes = SmallClass.all
+    # @categorys = Category.all
     @conditions = Condition.all
     @sizes = Size.all
     @shipping_fee_payers = ShippingFeePayer.all
