@@ -29,6 +29,8 @@
           %span.hissu 必須
           %div
             = f.text_field :name, class:"s__Content__Nametittle" , placeholder:" 商品名（必須 40文字まで)"
+            = f.text_field :state_id, value: "1", type:"hidden"
+
         / 商品の説明
         .s__Content__Description
           %label.box2font{for: ""} 商品の説明
