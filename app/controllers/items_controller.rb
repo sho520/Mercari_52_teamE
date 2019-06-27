@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    
+
     @item = Item.find(params[:id])
     @images = @item.images
     @comments = Comment.where(item_id: @item.id)
