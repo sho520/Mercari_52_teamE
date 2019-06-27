@@ -16,7 +16,7 @@
         %div.items-index__container__list__all
           - @items.where(category_id: root.descendant_ids).each_with_index do |item, i|
             %section.items-index__container__list__all__box
-              = link_to item_path(item.id) , class: "items-index__container__list__all__box__group" do
+              = link_to item_path(item.id) , class: "items-index__container__list__all__box__group" , data: {"turbolinks" => false} do
                 = image_tag item.images.first.image_url.url(:thumb) , class: 'items-index__container__list__all__box__group__img'
                 .items-index__container__list__all__box__group__info
                   %h3.items-index__container__list__all__box__group__info__title
