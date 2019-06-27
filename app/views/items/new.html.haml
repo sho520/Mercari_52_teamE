@@ -11,11 +11,16 @@
           %span.hissu 必須
         %p.saidai10 最大10枚までアップロードできます
         .s__ContentImage__Image
+
           .image__box
             .image__box__list
-          = f.fields_for :images do |i|
-            = i.label :image_url, class:'box2__label' do
-              = i.file_field :image_url
+              = f.fields_for :images do |i|
+                = i.label :image_url, class:'box2__label' do
+                  = i.file_field :image_url
+            .image__box__list2
+              = f.fields_for :images do |i|
+                = i.label :image_url, class:'box2__label' do
+                  = i.file_field :image_url
 
       .s__Content__Name__Description
         / 商品名
@@ -71,13 +76,11 @@
             %span.hissu 必須
             %div
               = f.collection_select(:delivery_way_id, @delivery_ways, :id, :delivery_way,)
-          -# .s__delivery__Configuration
-          -#   %label{for: ""} 発送元の地域
-          -#   %span.hissu 必須
-          -#   %div
-          -#     -# = f.collection_select class: "s__box4"
-          -#     %option{value: ""}
-          -#     %option{value: ""}
+          .s__delivery__Configuration
+            %label{for: ""} 発送元の地域
+            %span.hissu 必須
+            %div
+              =f.collection_select :prefecture_id, JpPrefecture::Prefecture.all, :code, :name
           .s__delivery__Configuration
             %label{for: ""} 発送までの日数
             %span.hissu 必須
