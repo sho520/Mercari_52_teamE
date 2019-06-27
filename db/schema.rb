@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_25_032300) do
+ActiveRecord::Schema.define(version: 2019_06_26_080327) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -81,6 +81,12 @@ ActiveRecord::Schema.define(version: 2019_06_25_032300) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_code"
+    t.integer "user_id"
+    t.integer "item_id"
+  end
+
   create_table "shipping_days", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "days", null: false
     t.datetime "created_at", null: false
@@ -129,21 +135,19 @@ ActiveRecord::Schema.define(version: 2019_06_25_032300) do
     t.integer "birth_year"
     t.integer "birth_month"
     t.integer "birth_day"
-    t.integer "postcode"
+    t.string "postcode"
     t.integer "prefecture_code"
     t.string "address_city"
     t.string "address_building"
     t.string "email", default: ""
     t.string "encrypted_password", default: ""
     t.string "phone"
+    t.integer "prefecture_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "profile"
-    t.text "credit"
-    t.string "image_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
