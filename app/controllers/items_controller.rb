@@ -122,8 +122,11 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :state_id, :size_id, :category_id,:prefecture_id, :description, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price, images_attributes:[:id,:image_url]).merge(owner_id: current_user.id)
+    params.require(:item).permit(:name, :description, :large_class_id, :middle_class_id, :small_class_id, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price, images_attributes:[:id,:image_url]).merge(owner_id: current_user.id)
+  end
 
+  def image_params
+    params.require(:image).permit(:id, :item_id, :created_id, :image_url)
   end
 
 end
