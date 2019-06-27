@@ -40,10 +40,10 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     5.times {@item.images.build}
-    @large_classes = LargeClass.all
-    @middle_classes = MiddleClass.all
-    @small_classes = SmallClass.all
-    # @categorys = Category.all
+    # @large_classes = LargeClass.all
+    # @middle_classes = MiddleClass.all
+    # @small_classes = SmallClass.all
+    @categorys = Category.all
     @conditions = Condition.all
     @sizes = Size.all
     @shipping_fee_payers = ShippingFeePayer.all
@@ -122,7 +122,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :prefecture_id, :description, :large_class_id, :middle_class_id, :small_class_id, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price, images_attributes:[:id,:image_url])
+    params.require(:item).permit(:name, :category_id,:prefecture_id, :description, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price, images_attributes:[:id,:image_url]).merge(owner_id: current_user.id)
   end
 
 end
