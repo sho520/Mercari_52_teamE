@@ -11,10 +11,12 @@
           .profile__name
             .profile__name__content
               .profile__name__content__icon
-                = image_tag('member_noimage.png', size:'60x60')
-              = f.text_field :nickname, class: 'profile__name__content__input', placeholder: "例) メルカリ太郎", type: "text", value: current_user.nickname  
+                - if current_user.image_url.present?
+                  = image_tag current_user.image_url.url(:thumb), size: '60x60', class: 'mypage__user__info__icon'
+                - else
+                  = image_tag 'member_noimage.png', size: '60x60', class: 'mypage__user__info__icon'
+              = f.text_field :nickname, class: 'profile__name__content__input', placeholder: "例) メルカリ太郎", type: "text", value: current_user.nickname
           .profile__intro
             .profile__intro__content
-              = f.text_area :profile, class: 'profile__intro__content__textarea', placeholder: "例) こんにちは！よろしくお願いします！", type: "text", value: current_user.profile 
+              = f.text_area :profile, class: 'profile__intro__content__textarea', placeholder: "例) こんにちは！よろしくお願いします！", type: "text", value: current_user.profile
             = f.button :"変更する", class: 'profile__intro__content__button'
-            

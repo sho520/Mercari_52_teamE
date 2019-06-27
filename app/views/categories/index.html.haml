@@ -73,7 +73,7 @@
                   - a_parent.children.each do |a_child|
                     .category__list__category__name__detail__details__item
                       = link_to "#{a_child.name}", category_path(a_child.id)
-                        
-  = link_to items_path, class: "items-index__container__sale-btn" do
+
+  = link_to new_item_path, class: "items-index__container__sale-btn" do
     .items-index__container__sale-btn__text 出品
     %i.fa.fa-camera-retro.items-index__container__sale-btn__icon

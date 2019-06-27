@@ -49,7 +49,7 @@
                     - if current_user.image_url.present?
                       = image_tag current_user.image_url.url(:thumb), size: '32x32', class: 'product-header__container__under__user__logging-in__list__link__img'
                     - else
-                      = image_tag 'usernon.jpg', size: '32x32', class: 'product-header__container__under__user__logging-in__list__link__img'
+                      = image_tag 'member_noimage.png', size: '32x32', class: 'product-header__container__under__user__logging-in__list__link__img'
                     %span マイページ
             - else
               = link_to "新規会員登録", new_user_path, class: 'product-header__container__under__user__signup'

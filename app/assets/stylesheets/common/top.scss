@@ -134,12 +134,8 @@
             padding: 8px 16px;
             border-radius: 5px;
             font-size: 14px;
-            transition: 0.8s ;
             &:hover {
-              transition: 0.8s ;
-              background-color: #fff;
-              border: 1px solid #ea352d;
-              color: #ea352d;
+              opacity: 0.9;
 	           }
           }
         &__login {
