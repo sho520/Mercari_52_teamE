@@ -55,7 +55,7 @@
               登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
             .user__form__group__c
               %p.user__form__other
-                %a.user__form__other__info{href: "", target: "_blank"}
+                %a.user__form__other__info
                   本人確認書類のアップロードについて
                   %i.fa.fa-angle-right.fa-lg
             -# Edit #{resource_name.to_s.humanize}
@@ -95,7 +95,7 @@
             .user__form__group
               %label{for: "user__title"} 郵便番号
               %span.user__form__require__b 任意
-              = f.text_field :postcode, class: 'user__form__input', type: "postcode", value: current_user.postcode, id: "user_postcode", placeholder: "150-0001"
+              = f.number_field :postcode, class: 'user__form__input', type: "postcode", value: current_user.postcode, id: "user_postcode", placeholder: "150-0001"
             .user__form__group
               %label{for: "user__title"} 都道府県
               %span.user__form__require__b 任意

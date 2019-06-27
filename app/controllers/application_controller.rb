@@ -11,8 +11,9 @@ class ApplicationController < ActionController::Base
   end
 
   def create
-  @places = Place.new(user_id: @user.id, post_number: params[:post_number], prefecture_id: params[:prefecture_id], city: params[:city], address: params[:address], building: params[:building], building_tel: params[:building_tel])
+  @places = Place.new(user_id: @user.id, prefecture_id: params[:prefecture_id])
   end
+
   private
 
   def production?
