@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :confirm, :pay, :done, :buy]
+  before_action :authenticate_user!, only: [:new]
 
   def index
     @items = Item.page(params[:page]).per(16).includes(:images)
@@ -8,7 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    
+
     @item = Item.find(params[:id])
     @images = @item.images
     @comments = Comment.where(item_id: @item.id)
@@ -124,9 +125,8 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :large_class_id, :middle_class_id, :small_class_id, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price, images_attributes:[:id,:image_url]).merge(owner_id: current_user.id)
   end
 
-  # def image_params
-  #   params.require(:image).permit(:id, :item_id, :created_id, :image_url)
-  # end
-
+  def image_params
+    params.require(:image).permit(:id, :item_id, :created_id, :image_url)
+  end
 
 end

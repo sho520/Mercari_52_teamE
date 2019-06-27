@@ -10,7 +10,7 @@
             - if current_user.image_url.present?
               = image_tag current_user.image_url.url(:thumb), size: '60x60', class: 'mypage__user__info__icon'
             - else
-              = image_tag 'usernon.jpg', size: '60x60', class: 'mypage__user__info__icon'
+              = image_tag 'member_noimage.png', size: '60x60', class: 'mypage__user__info__icon'
           %h2.mypage__user__info__name
             = current_user.family_name
             = current_user.first_name
