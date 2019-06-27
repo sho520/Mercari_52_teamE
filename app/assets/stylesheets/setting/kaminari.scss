@@ -1,0 +1,92 @@
+.searchpage__pagination {
+  margin-top: 40px;
+  text-align: center;
+  .pagination {
+    max-width: 440px;
+    margin: 0 auto;
+    .page {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      background: #ea352d;
+      line-height: 44px;
+      color: $white;
+      a {
+        color: $white;
+        text-decoration: none;
+      }
+      &:hover {
+      opacity: 0.8;
+      }
+    }
+    .next {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      background: #ea352d;
+      line-height: 44px;
+      color: $white;
+
+      a {
+        color: $white;
+        text-decoration: none;
+      }
+      &:hover {
+      opacity: 0.8;
+      }
+    }
+
+    .last {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      background: #ea352d;
+      line-height: 44px;
+      color: $white;
+      a {
+        color: $white;
+        text-decoration: none;
+      }
+      &:hover {
+      opacity: 0.8;
+      }
+    }
+
+    .first {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      background: #ea352d;
+      line-height: 44px;
+      color: $white;
+      a {
+        color: $white;
+        text-decoration: none;
+      }
+      &:hover {
+      opacity: 0.8;
+      }
+    }
+
+    .prev {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      background: #ea352d;
+      line-height: 44px;
+      color: $white;
+      a {
+        color: $white;
+        text-decoration: none;
+      }
+      &:hover {
+      opacity: 0.8;
+      }
+    }
+  }
+}

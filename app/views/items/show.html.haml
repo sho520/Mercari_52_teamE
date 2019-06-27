@@ -124,9 +124,9 @@
                     - if comment.user.image_url.present?
                       = image_tag comment.user.image_url.url(:thumb), size: '40x40'
                     - else
-                      = image_tag 'usernon.jpg', size: '40x40' 
+                      = image_tag 'member_noimage.png', size: '40x40'
                   - else
-                    = image_tag 'usernon.jpg', size: '40x40' 
+                    = image_tag 'member_noimage.png', size: '40x40'
                 .product__item-comment__comments__all__each__right
                   .product__item-comment__comments__all__each__right__name
                     - if comment.user_id == @item.owner_id
@@ -173,7 +173,7 @@
       .product__item-box
         %h1.product__h1
           = "この商品は削除されました"
-  
+
   .product__add
     .product__add__items
       .product__add__items__title
