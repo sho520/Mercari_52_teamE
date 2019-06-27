@@ -24,9 +24,13 @@
         .product-header__container__under
           %nav.profuct-header__container__under__nav
             .product-header__container__under__nav__category.drop-down
-              = link_to 'カテゴリーから探す', categories_path, class: 'product-header__container__under__nav__category__link'
+              = link_to categories_path, class: 'product-header__container__under__nav__category__link' do
+                = fa_icon("list lg")
+                %span カテゴリーから探す
             .product-header__container__under__nav__brand.drop-down
-              = link_to 'ブランドから探す', items_brand_path, class: 'product-header__container__under__nav__brand__link'
+              = link_to items_brand_path, class: 'product-header__container__under__nav__brand__link' do
+                = fa_icon("tag lg")
+                %span ブランドから探す
           .product-header__container__under__user
             - if user_signed_in?
               %ul.product-header__container__under__user__logging-in

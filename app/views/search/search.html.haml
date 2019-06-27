@@ -9,14 +9,14 @@
         .form__group
           .form__group__name
             = fa_icon("plus lg")
-            = f.label :name, "キーワードを追加する" 
+            = f.label :name, "キーワードを追加する"
           .form__group__input
             = f.search_field :name_cont, placeholder: "例）値下げ", class: "input__form"
 
         .form__group
           .form__group__name
             = fa_icon("list lg")
-            = f.label :category, "カテゴリーを選択する" 
+            = f.label :category, "カテゴリーを選択する"
           .form__group__input
             .select__wrap{data: {search: "parent"}}
               = f.select :large_class_id_eq, [["すべて", ""], ["men", "1"], ["women", "2"], ["child", "3"] ], {}, {class: 'input__form'}
@@ -31,14 +31,14 @@
         .form__group
           .form__group__name
             = fa_icon("expand lg")
-            = f.label :size, "サイズを指定する" 
+            = f.label :size, "サイズを指定する"
           .form__group__input
             = f.select :size_id_eq, [["すべて", ""], ["Sサイズ", "1"], ["Mサイズ", "2"], ["Lサイズ", "3"] ], {}, {class: 'input__form'}
 
         .form__group
           .form__group__name
             = fa_icon("money lg")
-            = f.label :price, "価格" 
+            = f.label :price, "価格"
           .form__group__input
             = f.search_field :price_gteq, placeholder: "¥ Min", class: "input__form"
             = f.search_field :price_lteq, placeholder: "¥ Max", class: "input__form second__form"
@@ -46,7 +46,7 @@
         .form__group
           .form__group__name
             = fa_icon("star lg")
-            = f.label :conditon, "商品の状態" 
+            = f.label :conditon, "商品の状態"
           .form__group__input
             .form__group__input__checkbox
               = f.check_box :condition_id_in, {multiple: true, checked: true}, 1
@@ -70,7 +70,7 @@
         .form__group
           .form__group__name
             = fa_icon("truck lg")
-            = f.label :shipping_fee_payer, "配送料の負担" 
+            = f.label :shipping_fee_payer, "配送料の負担"
           .form__group__input
             .form__group__input__checkbox
               = f.check_box :shipping_fee_payer_id_in, {multiple: true, checked: true}, 1
@@ -82,7 +82,7 @@
         .form__group
           .form__group__name
             = fa_icon("shopping-cart lg")
-            = f.label :state, "販売状況" 
+            = f.label :state, "販売状況"
           .form__group__input
             .form__group__input__checkbox
               = f.check_box :state_id_in, {multiple: true, checked: true}, 1
@@ -109,7 +109,7 @@
           = link_to "/items/#{item.id}" , class: "searched__items__box__group" do
             = image_tag "#{item.images.first.image_url.url(:thumb)}", class: 'searched__items__box__group__img'
             .searched__items__box__group__info
-              %h3.searched__items__box__group__info__title 
+              %h3.searched__items__box__group__info__title
                 = item.name
               .searched__items__box__group__info__block
                 .searched__items__box__group__info__block__price
@@ -122,4 +122,3 @@
                 (税込)
     .searchpage__pagination{style: 'text-align: center;'}
       = paginate(@items)
-
