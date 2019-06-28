@@ -7,4 +7,9 @@ let countProfitNum = profit__number;
 $("#edit__fee").text(countFeeNum);
 $("#edit__profit").text(countProfitNum);
 })
+$(".img").error(function(){
+  $(this).attr({
+    "src":"/img/usernon.jpg"
+  });
+});
 })
