@@ -1,0 +1,14 @@
+activerecord:
+  models:
+    topic: トピック
+  attributes:
+      topic:
+        body: 本文
+        title: タイトル
+  errors:
+    template:
+      header:
+        one:   "{{model}}にエラーが発生しました。"
+        other: "{{model}}に{{count}}つのエラーが発生しました。"
+
+      body: "次の項目を確認してください。"

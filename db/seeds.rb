@@ -666,3 +666,5 @@ Comment.create(:comment => "3.141592653589793238462643383279...", :item_id => 11
 Comment.create(:comment => "sonic PI", :item_id => 10, :user_id => 4)
 Comment.create(:comment => "いい感じ...！", :item_id => 11, :user_id => 2)
 Comment.create(:comment => "頑張ろう", :item_id => 11, :user_id => 5)
+
+
