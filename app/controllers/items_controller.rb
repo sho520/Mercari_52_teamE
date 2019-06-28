@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
       @category_images << category_item.images.first
     end
     @prefecture = JpPrefecture::Prefecture.find(@item.prefecture_id)
-    @ken = @prefecture.name
+#     @ken = @prefecture.name
 
     render layout: 'common'
   end
