@@ -211,24 +211,22 @@ font-weight: bold;
     display:block;
 }
 #item_middle_class_id{
-  display:block;
    width: 400px;
     height: 48px;
     background: rgb(255, 255, 255);
     border: 1px solid #ccc;
     margin-top: 8px;
     display:flex;
-    // display:none
+    display:none;
 }
-#item_small_class_id{
-  display:block;
+#item_category_id{
    width: 400px;
     height: 48px;
     background: rgb(255, 255, 255);
     border: 1px solid #ccc;
     margin-top: 8px;
     display:flex;
-    // display:none
+    display:none;
 }
 #Details__Size{
   display:block;
@@ -237,7 +235,7 @@ font-weight: bold;
    background: rgb(255, 255, 255);
    margin-top: 8px;
    display:flex;
-  //  display:none
+   display:none
 }
 
 
@@ -336,6 +334,16 @@ font-weight: bold;
       display:flex;
       display:none
     }
+    #item_prefecture_id{
+      display:block;
+      width: 400px;
+       height: 48px;
+       background: rgb(255, 255, 255);
+       border: 1px solid #ccc;
+       margin-top: 8px;
+       display:flex;
+
+    }
   #item_delivery_way_id{
     display:block;
      width: 400px;
@@ -344,15 +352,6 @@ font-weight: bold;
       border: 1px solid #ccc;
       margin-top: 8px;
       display:flex;
-    }
-    #item_category_id{
-      display:block;
-      width: 400px;
-       height: 48px;
-       background: rgb(255, 255, 255);
-       border: 1px solid #ccc;
-       margin-top: 8px;
-
     }
 
 
