@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :confirm, :pay, :done, :buy]
-  before_action :authenticate_user!, only: [:new]
+  # before_action :authenticate_user!, only: [:new]
 
   def index
     @items = Item.page(params[:page]).per(16).includes(:images)
@@ -41,14 +41,28 @@ class ItemsController < ApplicationController
     @item = Item.new
     5.times {@item.images.build}
     # @large_classes = LargeClass.all
-    # @middle_classes = MiddleClass.all
+    @middle_classes = MiddleClass.all
     # @small_classes = SmallClass.all
-    @categorys = Category.all
+    
+    @root = Category.roots
+
+    # @categorys = Category.all
+    # @parents = []
+    # @root.each do |root|
+    #   @parents << root.children
+    # end
+    @children = Category.where("ancestry LIKE(?)", "%/%")
+    # @children = []
+    # @parents.each do |parent|
+    #   @children << parent.children
+    # end
+    
     @conditions = Condition.all
     @sizes = Size.all
     @shipping_fee_payers = ShippingFeePayer.all
     @delivery_ways = DeliveryWay.all
     @shipping_days = ShippingDay.all
+   
     render layout: 'second_application'
   end
 

@@ -1,29 +1,29 @@
 $(function(){
 
 
+
+
+
+
+
+
+  
   $(document).on('change', 'input[type= "file"]',function(event) {
     var file = $(this).prop('files')[0];
     var reader = new FileReader();
     console.log(file)
     console.log(reader)
-    inputs.push($(this));
-    var img = $(`<div class= "img_view"><img></div>`);
-    console.log(img)
+    reader.readAsDataURL(file);
     reader.onload = function(e) {
-      var btn_wrapper = $('<div class="btn_wrapper"><div class="btn edit">編集</div><div class="btn delete">削除</div></div>');
-      img.append(btn_wrapper);
-      img.find('img').attr({
+      console.log("ok")
+      var btn_wrapper = $('<div class= "img_view"><img class= "up__image"><div class="btn_wrapper"><div class="btn_edit">編集</div><div class="btn_delete">削除</div></div></div>');
+      $(".image__box__list").append(btn_wrapper);
+      console.log(e.target.result)
+      $(".image__box__list").find('img').attr({
         src: e.target.result
   })
     }
-    reader.readAsDataURL(file);
-    images.push(img);
   })
-
-
-
-
-
 
 
 
