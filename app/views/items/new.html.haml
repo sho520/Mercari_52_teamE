@@ -16,11 +16,11 @@
             .image__box__list
               = f.fields_for :images do |i|
                 = i.label :image_url, class:'box2__label' do
+                  = i.file_field :image_url, class: "aaa"
+            .image__box__list2
+              = f.fields_for :images do |i|
+                = i.label :image_url, class:'box2__label' do
                   = i.file_field :image_url
-            -# .image__box__list2
-            -#   = f.fields_for :images do |i|
-            -#     = i.label :image_url, class:'box2__label' do
-            -#       = i.file_field :image_url
 
       .s__Content__Name__Description
         / 商品名
@@ -43,15 +43,15 @@
             %label.box3__itemfont2{for:  ""} カテゴリー
             %span.hissu 必須
             %div
-              = f.collection_select(:category_id, @categorys, :id, :name, class: "s__box3")
-          -# .s__Details__Category2
-          -#   %label{for: ""}
-          -#   %div
-          -#     = f.collection_select(:middle_class_id, @categorys, :id, :name, class: "s__box3")
-          -# .s__Details__Category3
-          -#   %label{for: ""}
-          -#   %div
-          -#     = f.collection_select(:small_class_id, @categorys, :id, :name, class: "s__box3")
+              = f.collection_select(:large_class_id, @root, :id, :name, class: "s__box3")
+          .s__Details__Category2
+            %label{for: ""}
+            %div
+              = f.collection_select(:middle_class_id, @middle_classes, :id, :name, class: "s__box3")
+          .s__Details__Category3
+            %label{for: ""}
+            %div
+              = f.collection_select(:category_id, @children, :id, :name, class: "s__box3")
           .s__Details__Size#Details__Size
             %label.box3__itemfont2{for: ""} サイズ
             %span.hissu 必須
