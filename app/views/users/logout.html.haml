@@ -1,3 +1,4 @@
+= javascript_include_tag 'modal.js'
 - breadcrumb :logout
 %body
   %nav.pankuzu
@@ -8,3 +9,14 @@
       .logout__content
         .logout__content__button
           = link_to 'ログアウト', destroy_user_session_path, class: "logout", method: "delete"
+      .destroy__account__space
+        .destroy__account__space__button
+          %button#modal-open-btn アカウントの削除
+          = link_to '', "/users", method: :delete, class: "logout", id: 'item-delete-btn'
+          #overlay
+            #modalWindow
+              .modal-message-box
+                %div.confirm__delete - 確認 -
+                %div.delete__user 本当に削除しますか？
+              %button#modal-close-btn キャンセル
+              %button#delete-comformation-btn 削除する

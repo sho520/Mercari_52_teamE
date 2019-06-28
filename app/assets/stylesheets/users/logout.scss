@@ -1,11 +1,11 @@
 .mypage__logout {
   background-color: white;
   width: 700px;
-  height: 182px;
+  height: 280px;
   margin: 0 auto;
   flex-shrink: 0;
   .logout__content {
-    padding:64px;
+    padding:60px;
     text-align: center;
     &__button {
       background-color: red;
@@ -19,6 +19,101 @@
       outline: none;
     }
   }
+}
+.destroy__account__space {
+  text-align: center;
+  &__button {
+    background-color: grey;
+    height: 50px;
+    width: 320px;
+    margin: 0 auto;
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    outline: none;
+  }
+}
+
+#overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1;
+  }
+  
+  #modalWindow {
+  // モーダルウィンドウの画面を設定(高さ・幅は調整ください)
+    width: 500px;
+    height: 200px;
+    position: absolute;
+  //トップからの場所を指定（topをいじれば高さが調整できます）
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 2;
+  //flexboxで子要素のボタンとメッセージボックスの要素を配置する
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+    .modal-message-box {
+      width: 100%;
+      height: calc(100% - 60px);
+      color: red;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  
+    #modal-close-btn {
+      width: 50%;
+      height: 60px;
+      cursor: pointer;
+    }
+  
+    #delete-comformation-btn {
+      width: 50%;
+      height: 60px;
+      cursor: pointer;
+    }
+  }
+  
+.item-delete-btn {
+//削除ボタンの非表示
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#modal-open-btn {
+  background-color: grey;
+  height: 50px;
+  width: 320px;
+  margin: 0 auto;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.confirm__delete {
+  font-size: 25px;
+}
+
+.cdelete__user {
+  font-size: 14px;
+  color: grey;
 }
 
 
