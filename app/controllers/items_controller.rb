@@ -81,10 +81,8 @@ class ItemsController < ApplicationController
   end
 
   def pay #クレジットカード登録
-    # Payjp.api_key = ENV['PAYJP_SECRET_KEY']
   end
-  # PAYJP_SECRET_KEY='sk_test_3b898646de5f52ce2e50e7ea'
-  # PAYJP_PUBLIC_KEY='pk_test_a648358d9c8147aabccc7947'
+
   def buy #クレジットカードで購入
     Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
 
