@@ -17,10 +17,10 @@
               = f.fields_for :images do |i|
                 = i.label :image_url, class:'box2__label' do
                   = i.file_field :image_url, class: "aaa"
-            .image__box__list2
-              = f.fields_for :images do |i|
-                = i.label :image_url, class:'box2__label' do
-                  = i.file_field :image_url
+            -# .image__box__list2
+            -#   = f.fields_for :images do |i|
+            -#     = i.label :image_url, class:'box2__label' do
+            -#       = i.file_field :image_url
 
       .s__Content__Name__Description
         / 商品名
