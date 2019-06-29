@@ -1,3 +1,4 @@
+= javascript_include_tag "profile.js"
 - breadcrumb :profile
 %body
   %nav.pankuzu
@@ -11,12 +12,12 @@
           .profile__name
             .profile__name__content
               .profile__name__content__icon
-                #img_field{onclick: "$('#file').click()"}
+                #img_field
                   - if current_user.image_url.present?
-                    = image_tag current_user.image_url.url(:thumb), size: '60x60', class: 'mypage__user__info__icon'
+                    = image_tag current_user.image_url.url(:thumb), size: '60x60', class: 'mypage__user__info__icon__content', id: "user__profile"
                   - else
-                    = image_tag 'member_noimage.png', size: '60x60', class: 'mypage__user__info__icon'
-                = f.file_field :image_url, class: "mypage__user__info__icon", style: "display:none;", id: "file", size: '60x60'
+                    = image_tag 'member_noimage.png', size: '60x60', class: 'mypage__user__info__icon__content'
+                    = f.file_field :image_url, class: "mypage__user__info__icon__edit", id: "file"
               = f.text_field :nickname, class: 'profile__name__content__input', placeholder: "例) メルカリ太郎", type: "text", value: current_user.nickname
           .profile__intro
             .profile__intro__content
