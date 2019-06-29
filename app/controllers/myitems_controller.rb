@@ -18,6 +18,11 @@ class MyitemsController < ApplicationController
     render layout: 'second_application'
   end
 
+  def update
+    binding.pry
+    redirect_to item_path(@item)
+  end
+
   def destroy
     if @item.owner == current_user
       @item.destroy
