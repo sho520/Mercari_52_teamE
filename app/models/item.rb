@@ -17,7 +17,7 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
 
   def self.ransackable_attributes(auth_object = nil)
-    %w(name brand price large_class_id middle_class_id small_class_id ize_id shipping_fee_parer_id condition_id)
+    %w(name brand price large_class_id middle_class_id small_class_id size_id shipping_fee_parer_id condition_id)
   end
 
 end
