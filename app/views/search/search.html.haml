@@ -98,8 +98,12 @@
               = f.check_box :state_id_in, {id: "state", multiple: true, checked: true}, 1
               販売中
             .form__group__input__checkbox
-              = f.check_box :state_id_in, {id: "state", multiple: true, checked: true}, 2
+              = f.check_box :state_id_in, {id: "state", class: "not_in_sale", multiple: true, checked: true}, 2
               売り切れ
+            .form__group__input__checkbox.checkbox__hidden
+              = f.check_box :state_id_in, {id: "state", class: "not_in_sale_hidden", multiple: true, checked: true}, 3
+            .form__group__input__checkbox.checkbox__hidden
+              = f.check_box :state_id_in, {id: "state", class: "not_in_sale_hidden", multiple: true, checked: true}, 4
 
         .search__nav__button
           = f.submit "完了", class: "detail__search__button"

@@ -36,6 +36,10 @@
   }
 }
 
+.checkbox__hidden {
+  display: none;
+}
+
 .form__group__input {
   margin-top: 8px;
   .input__form {
@@ -51,6 +55,9 @@
     margin-top: 8px;
   }
 }
+
+
+
 
 .search__result {
   font-size: 22px;

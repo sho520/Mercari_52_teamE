@@ -12,4 +12,8 @@ $(document).on('turbolinks:load', function() {
     $('input[id=state]').prop('checked', this.checked);
   });
 
+  $(".not_in_sale").on("change", function(){
+    $('.not_in_sale_hidden').prop('checked', this.checked);
+  });
+
 });
