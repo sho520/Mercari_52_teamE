@@ -25,7 +25,7 @@
                   %span
                   %span ¥
                   = @item.price
-            %script.payjp-button{"data-key": ENV['PAYJP_PUBLIC_KEY'], src: "https://checkout.pay.jp", type: "text/javascript", "data-text" => "購入する"}
+            %script.payjp-button{"data-key": Rails.application.credentials.payjp[:payjp_public_key], src: "https://checkout.pay.jp", type: "text/javascript", "data-text" => "購入する"}
             -# %script.payjp-button{"data-key" => "pk_test_a648358d9c8147aabccc7947", "data-text" => "購入する", src: "https://checkout.pay.jp", type: "text/javascript"}
 
     / ここから配送先情報

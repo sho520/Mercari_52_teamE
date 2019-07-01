@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 2019_06_25_032300) do
     t.integer "birth_year"
     t.integer "birth_month"
     t.integer "birth_day"
-    t.integer "postcode"
+    t.string "postcode"
     t.integer "prefecture_code"
     t.string "address_city"
     t.string "address_building"

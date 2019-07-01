@@ -11,9 +11,9 @@
     .header__others
       %header.header__others__nav
         %h1.header__others__h1
-          %a.header__others__href{href: "./items"}
+          = link_to root_path, class: "header__others__href", data: {"turbolinks" => false} do
             = image_tag('Exhibition_page_logo.svg',class: 'header__others__logo')
-    
+
     %main.other__block
   %section.other__block__login
     .other__block__login__head
@@ -58,4 +58,3 @@
       = image_tag('Exhibition_page_logo-gray.svg',class: 'd__logo-gray')
     %p.footer__others__rmark
       %small © 2019 Mercari
-      

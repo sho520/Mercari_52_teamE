@@ -124,6 +124,17 @@ font-weight: bold;
     background: rgb(255, 255, 255);
     border: 1px solid #ccc;
     margin-top: 8px;
+    div{
+      select{
+        width: 400px;
+        height: 48px;
+        background: rgb(255, 255, 255);
+        border: 1px solid #ccc;
+        margin-top: 8px;
+        display:flex;
+        // display:none;
+      }
+    }
 }
 #edit__item_small_class_id{
   display:block;

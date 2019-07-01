@@ -6,11 +6,11 @@ class SearchController < ApplicationController
     @keyword = params[:keyword]
     
     if @keyword.empty?
-      @items = Item.order('id DESC').page(params[:page]).per(16)
+      @items = Item.where.not(state_id: 5).order('id DESC').page(params[:page]).per(16)
       render layout: 'common' and return
     end
 
-    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").order('id DESC').page(params[:page]).per(16)
+    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(state_id: 5).order('id DESC').page(params[:page]).per(16)
 
     if @items.empty?
       @items = Item.order('id DESC').page(params[:page]).per(16)
@@ -24,7 +24,7 @@ class SearchController < ApplicationController
     @items = @search.result(distinct: true).page(params[:page]).per(16)
 
     if @items.empty?
-      @items = Item.order('id DESC').page(params[:page]).per(16)
+      @items = Item.order('id DESC').where.not(state_id: 5).page(params[:page]).per(16)
       @not_find = "該当する商品が見つかりません。検索条件を変えて、再度お試しください。"
     end
 

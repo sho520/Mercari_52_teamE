@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :confirm, :pay, :done, :buy]
+  # before_action :authenticate_user!, only: [:new]
 
   def index
     @items = Item.page(params[:page]).per(16).includes(:images)
@@ -8,7 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    
+
     @item = Item.find(params[:id])
     @images = @item.images
     @comments = Comment.where(item_id: @item.id)
@@ -21,17 +22,20 @@ class ItemsController < ApplicationController
       @prev_item = Item.find(params[:id].to_i - 1)
     end
 
-    @owner_items = Item.where(owner_id: @item.owner_id)
+    @owner_items = Item.where(owner_id: @item.owner_id).where.not(state_id: 5).where.not(id: params[:id])
     @owner_images = []
       @owner_items.each do |owner_item|
         @owner_images << owner_item.images.first
       end
 
-    @category_items = Item.where(category_id: @item.category_id)
+    @category_items = Item.where(category_id: @item.category_id).where.not(state_id: 5).where.not(id: params[:id])
     @category_images = []
     @category_items.each do |category_item|
       @category_images << category_item.images.first
     end
+    
+    @prefecture = JpPrefecture::Prefecture.find(@item.prefecture_id)
+    @ken = @prefecture.name
 
     render layout: 'common'
   end
@@ -40,14 +44,28 @@ class ItemsController < ApplicationController
     @item = Item.new
     5.times {@item.images.build}
     # @large_classes = LargeClass.all
-    # @middle_classes = MiddleClass.all
+    @middle_classes = MiddleClass.all
     # @small_classes = SmallClass.all
-    @categorys = Category.all
+    
+    @root = Category.roots
+
+    # @categorys = Category.all
+    # @parents = []
+    # @root.each do |root|
+    #   @parents << root.children
+    # end
+    @children = Category.where("ancestry LIKE(?)", "%/%")
+    # @children = []
+    # @parents.each do |parent|
+    #   @children << parent.children
+    # end
+    
     @conditions = Condition.all
     @sizes = Size.all
     @shipping_fee_payers = ShippingFeePayer.all
     @delivery_ways = DeliveryWay.all
     @shipping_days = ShippingDay.all
+   
     render layout: 'second_application'
   end
 
@@ -68,6 +86,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
+    redirect_to item_path(@item)
   end
 
   def confirm
@@ -80,11 +99,10 @@ class ItemsController < ApplicationController
   end
 
   def pay #クレジットカード登録
-    # Payjp.api_key = ENV['PAYJP_SECRET_KEY']
   end
 
   def buy #クレジットカードで購入
-    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
 
     Payjp::Charge.create(amount: @item.price,
       card: params['payjp-token'],
@@ -110,7 +128,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save
-    redirect_to :action => "new"
+    redirect_to :action => "index"
   end
 
   private
@@ -121,12 +139,11 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :large_class_id, :middle_class_id, :small_class_id, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price, images_attributes:[:id,:image_url])
+    params.require(:item).permit(:name, :state_id, :size_id,:large_class_id,:middle_class_id, :category_id,:prefecture_id, :description, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price, images_attributes:[:id,:image_url]).merge(owner_id: current_user.id)
   end
 
-  # def image_params
-  #   params.require(:image).permit(:id, :item_id, :created_id, :image_url)
-  # end
-
+  def image_params
+    params.require(:image).permit(:id, :item_id, :created_id, :image_url)
+  end
 
 end

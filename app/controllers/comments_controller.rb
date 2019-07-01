@@ -8,7 +8,12 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.save
-    redirect_to item_path(@item)
+    respond_to do |format|
+      format.html do
+        redirect_to item_path(@item)
+      end
+      format.json
+    end
   end
 
 
@@ -18,7 +23,7 @@ class CommentsController < ApplicationController
     if user_signed_in?
       params.require(:comment).permit(:comment).merge(user_id: current_user.id, item_id: @item.id)
     else
-      params.require(:comment).permit(:comment).merge(user_id: "匿名さん", item_id: @item.id)
+      params.require(:comment).permit(:comment).merge(user_id: 0, item_id: @item.id)
     end
   end
 

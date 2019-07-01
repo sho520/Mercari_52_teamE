@@ -75,7 +75,8 @@
                 %tr.product__tr
                   %th.product__th 配送元地域
                   %td.product__td
-                    %a.product__td__link{:href => "#"} ここに入る
+                    %a.product__td__link{:href => "#"} 
+                    = @ken
                 %tr.product__tr
                   %th.product__th 配送日の目安
                   %td.product__td
@@ -94,7 +95,7 @@
             %a
               売り切れました
         .product__item-box__desc
-          = @item.description
+          = simple_format(@item.description)
         .product__item-box__button
           .product__item-box__button__left
             .product__item-box__button__left__like
@@ -124,9 +125,9 @@
                     - if comment.user.image_url.present?
                       = image_tag comment.user.image_url.url(:thumb), size: '40x40'
                     - else
-                      = image_tag 'usernon.jpg', size: '40x40' 
+                      = image_tag 'member_noimage.png', size: '40x40'
                   - else
-                    = image_tag 'usernon.jpg', size: '40x40' 
+                    = image_tag 'member_noimage.png', size: '40x40'
                 .product__item-comment__comments__all__each__right
                   .product__item-comment__comments__all__each__right__name
                     - if comment.user_id == @item.owner_id
@@ -173,7 +174,7 @@
       .product__item-box
         %h1.product__h1
           = "この商品は削除されました"
-  
+
   .product__add
     .product__add__items
       .product__add__items__title
