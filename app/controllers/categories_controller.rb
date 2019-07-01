@@ -11,12 +11,12 @@ class CategoriesController < ApplicationController
 
     if @category.has_children?
       if @category.has_parent?
-        @items = Item.where(category_id: @category.child_ids)
+        @items = Item.where(category_id: @category.child_ids).where.not(state_id: 5)
       else
-        @items = Item.where(category_id: @category.descendant_ids)
+        @items = Item.where(category_id: @category.descendant_ids).where.not(state_id: 5)
       end
     else
-      @items = Item.where(category_id: @category.id)
+      @items = Item.where(category_id: @category.id).where.not(state_id: 5)
     end
 
     @images = []

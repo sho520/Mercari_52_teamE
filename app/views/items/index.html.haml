@@ -14,7 +14,7 @@
         %h2.items-index__container__list__genre
           = root.name + "新着アイテム"
         %div.items-index__container__list__all
-          - @items.where(category_id: root.descendant_ids).each_with_index do |item, i|
+          - @items.where(category_id: root.descendant_ids).where.not(state_id: 5).each_with_index do |item, i|
             %section.items-index__container__list__all__box
               = link_to item_path(item.id) , class: "items-index__container__list__all__box__group" , data: {"turbolinks" => false} do
                 = image_tag item.images.first.image_url.url(:thumb) , class: 'items-index__container__list__all__box__group__img'
