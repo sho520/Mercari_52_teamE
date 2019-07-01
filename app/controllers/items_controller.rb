@@ -22,13 +22,13 @@ class ItemsController < ApplicationController
       @prev_item = Item.find(params[:id].to_i - 1)
     end
 
-    @owner_items = Item.where(owner_id: @item.owner_id).where.not(state_id: 5)
+    @owner_items = Item.where(owner_id: @item.owner_id).where.not(state_id: 5).where.not(id: params[:id])
     @owner_images = []
       @owner_items.each do |owner_item|
         @owner_images << owner_item.images.first
       end
 
-    @category_items = Item.where(category_id: @item.category_id).where.not(state_id: 5)
+    @category_items = Item.where(category_id: @item.category_id).where.not(state_id: 5).where.not(id: params[:id])
     @category_images = []
     @category_items.each do |category_item|
       @category_images << category_item.images.first
