@@ -10,8 +10,8 @@
         %h2.registration__main__head__sub プロフィール
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
           .profile__name
-            .profile__name__content
-              .profile__name__content__icon
+              .profile__name__content
+                .profile__name__content__icon
                 #img_field
                   - if current_user.image_url.present?
                     = image_tag current_user.image_url.url(:thumb), size: '60x60', class: 'mypage__user__info__icon__content', id: "user__profile"

@@ -18,7 +18,7 @@
 .profile__name {
   height: 156px;
   &__content {
-    background-image: url(mypage_background.jpg);
+    background-image: image-url("mypage_background.jpg");
     display: flex;
     justify-content: center;
     height: 60px;
