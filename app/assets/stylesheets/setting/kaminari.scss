@@ -4,6 +4,9 @@
   .pagination {
     max-width: 440px;
     margin: 0 auto;
+    .active {  
+        background: #93c9ff; 
+    }
     .page {
       display: inline-block;
       width: 44px;
@@ -89,4 +92,9 @@
       }
     }
   }
+}
+
+.current {     
+  background: #93c9ff;     /*背景の色を変える*/
+  // border-radius: 15px;     /*角を丸くする*/
 }
