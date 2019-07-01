@@ -33,6 +33,8 @@ class ItemsController < ApplicationController
     @category_items.each do |category_item|
       @category_images << category_item.images.first
     end
+    @prefecture = JpPrefecture::Prefecture.find(@item.prefecture_id)
+    @ken = @prefecture.name
 
     render layout: 'common'
   end
@@ -95,11 +97,10 @@ class ItemsController < ApplicationController
   end
 
   def pay #クレジットカード登録
-    # Payjp.api_key = ENV['PAYJP_SECRET_KEY']
   end
 
   def buy #クレジットカードで購入
-    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
 
     Payjp::Charge.create(amount: @item.price,
       card: params['payjp-token'],
@@ -137,7 +138,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :state_id, :size_id,:large_class_id,:middle_class_id, :category_id,:prefecture_id, :description, :condition_id, :shipping_fee_payer_id, :shipping_day_id, :price, images_attributes:[:id,:image_url]).merge(owner_id: current_user.id)
+  end
 
+  def image_params
+    params.require(:image).permit(:id, :item_id, :created_id, :image_url)
   end
 
 end
