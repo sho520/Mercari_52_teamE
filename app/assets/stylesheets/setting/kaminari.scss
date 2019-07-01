@@ -5,19 +5,20 @@
     max-width: 440px;
     margin: 0 auto;
     .active {  
-        background: #93c9ff; 
+        background: grey; 
     }
     .page {
       display: inline-block;
       width: 44px;
       height: 44px;
       border-radius: 4px;
-      background: #ea352d;
+      background-color: grey;
       line-height: 44px;
       color: $white;
       a {
         color: $white;
         text-decoration: none;
+        display: block;
       }
       &:hover {
       opacity: 0.8;
@@ -28,13 +29,14 @@
       width: 44px;
       height: 44px;
       border-radius: 4px;
-      background: #ea352d;
+      background: grey;
       line-height: 44px;
       color: $white;
 
       a {
         color: $white;
         text-decoration: none;
+        display: block;
       }
       &:hover {
       opacity: 0.8;
@@ -46,12 +48,13 @@
       width: 44px;
       height: 44px;
       border-radius: 4px;
-      background: #ea352d;
+      background: grey;
       line-height: 44px;
       color: $white;
       a {
         color: $white;
         text-decoration: none;
+        display: block;
       }
       &:hover {
       opacity: 0.8;
@@ -63,12 +66,13 @@
       width: 44px;
       height: 44px;
       border-radius: 4px;
-      background: #ea352d;
+      background: grey;
       line-height: 44px;
       color: $white;
       a {
         color: $white;
         text-decoration: none;
+        display: block;
       }
       &:hover {
       opacity: 0.8;
@@ -80,12 +84,13 @@
       width: 44px;
       height: 44px;
       border-radius: 4px;
-      background: #ea352d;
+      background: grey;
       line-height: 44px;
       color: $white;
       a {
         color: $white;
         text-decoration: none;
+        display: block;
       }
       &:hover {
       opacity: 0.8;
@@ -93,8 +98,6 @@
     }
   }
 }
-
-.current {     
-  background: #93c9ff;     /*背景の色を変える*/
-  // border-radius: 15px;     /*角を丸くする*/
+.pagination span.page.current {
+  background-color: red;
 }
