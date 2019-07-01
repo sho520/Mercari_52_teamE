@@ -28,24 +28,27 @@ else{(images.length >= 6 )
   }
   $(document).on('click', '.delete__button', function() {
     console.log('削除ボタンを押しています');
-    var target_image = $(this).parent().parent();
-    $.each(inputs, function(index, input){
-      if ($(this).data('image') == target_image.data('image')){
-        $(this).remove();
-        target_image.remove();
-        var num = $(this).data('image');
-        images.splice(num, 1);
-        inputs.splice(num, 1);
-        if(inputs.length == 0) {
-          $('input[type= "file"].upload-image').attr({
-            'data-image': 0
-          })
-        }
-      }
+    $(this).parent().parent().parent().hide();
+
+
+    // var target_image = $(this).parent().parent();
+    // $.each(inputs, function(index, input){
+    //   if ($(this).data('image') == target_image.data('image')){
+    //     $(this).remove();
+    //     target_image.remove();
+    //     var num = $(this).data('image');
+    //     images.splice(num, 1);
+    //     inputs.splice(num, 1);
+    //     if(inputs.length == 0) {
+    //       $('input[type= "file"].upload-image').attr({
+    //         'data-image': 0
+          // })
+        // }
+      // }
     })
 
   });
-})
+
 
 
 // console.log(e.target.result)
