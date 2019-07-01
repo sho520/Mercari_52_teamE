@@ -13,3 +13,11 @@ $(".img").error(function(){
   });
 });
 })
+
+
+$(document).ready(function(){
+  $('#item_middle_class_id').css('display', "block");
+  $('#item_category_id').css('display', "block");
+  $('#Details__Size').css('display', "block");
+  $('#delivery__Configuration').css('display', "block");
+})
