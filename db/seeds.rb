@@ -493,6 +493,7 @@ State.create(:state => "出品中")
 State.create(:state => "取引中")
 State.create(:state => "売却済")
 State.create(:state => "一旦中止")
+State.create(:state => "情報削除")
 
 LargeClass.create(:name => "men")
 LargeClass.create(:name => "women")
