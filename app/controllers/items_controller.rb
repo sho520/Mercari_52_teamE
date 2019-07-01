@@ -33,6 +33,7 @@ class ItemsController < ApplicationController
     @category_items.each do |category_item|
       @category_images << category_item.images.first
     end
+    
     @prefecture = JpPrefecture::Prefecture.find(@item.prefecture_id)
     @ken = @prefecture.name
 
