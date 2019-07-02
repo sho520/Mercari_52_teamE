@@ -254,3 +254,23 @@ label[for='user__title'] {
   font-size: 14px;
 }
 
+.field_with_errors {
+  width: 300px;
+  height: 60px;
+  padding: 10px;
+  margin: 20px auto;
+  background-color: #ea352d;
+  color: white;
+  border-radius: 10px;
+}
+
+.error_box {
+  width: 300px;
+  height: auto;
+  padding: 10px;
+  margin: 20px auto;
+  background-color: #ea352d;
+  color: white;
+  border-radius: 10px;
+  line-height: 1.2;
+}
