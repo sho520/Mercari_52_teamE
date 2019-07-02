@@ -9,11 +9,11 @@
 // タイトル
   .s__MainBox__Title {
     width: 668px;
-    height: 33px;
+    min-height: 33px;
      text-align: center;
      line-height: 33px;
      padding: 32px 16px;
-     border-bottom: 2px solid rgb(245, 245, 245);
+    //  border-top: 2px solid rgb(245, 245, 245);
 
 
 }
@@ -25,30 +25,36 @@
 
   }
   .s__MainBoxform__Content {
-    // height:auto;
+    height:100%;
   }
 
     .s__ContentImage {
-      width: 543px;
-      min-height: 395px;
+      width: 620px;
+      min-height: 223px;
+      height: auto;
       padding: 40px;
-    border-bottom: 2px solid rgb(245, 245, 245);
+    border-top: 2px solid rgb(245, 245, 245);
   }
   .s__ContentImage__Image{
     width: 620px;
     height: 162px;
-    margin-top: 20px;
+    margin: 20px, 0 20px;
     background: rgb(245, 245, 245);
   //   display: flex;
   // flex-direction: row;
   }
+  .image__box{
+    height: auto;
+  }
   .image__box__list{
     overflow: hidden;
     position: relative;
+    background: rgb(245, 245, 245);
   }
   .image__box__list2{
     overflow: hidden;
     position: relative;
+    margin-top: 10px;
   }
   .img_view{
     margin: 0 0 10px 10px;
@@ -158,7 +164,7 @@ padding: 10px;
       height: 274px;
       padding: 40px;
       background: rgb(255, 255, 255);
-    border-bottom: 2px solid rgb(245, 245, 245);
+    border-top: 2px solid rgb(245, 245, 245);
     }
 // .box2__Name{
 //     border: 1px solid #ccc;
@@ -197,18 +203,30 @@ font-weight: bold;
 // box3
  .s__Exhibition__Details {
   width: 620px;
-  height: 512px;
+  min-height: 261px;
   padding: 40px;
   background: rgb(255, 255, 255);
-  border-bottom: 2px solid rgb(245, 245, 245);
+  border-top: 2px solid rgb(245, 245, 245);
+  display: block;
+ }
+ .box3__itemfont1{
+
  }
 
+.Exhibition__box{
+  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+}
+ 
+
 .s__Details__Configuration{
-  float: right;
-  width: 400px;
   height: auto;
+  width: 400px;
   background: rgb(255, 255, 255);
   font-weight: bold;
+  display: inline-block;
+  padding-left: 50px;
 }
   .s__Details__Size{
     margin: 40px 0 0 0 ;
@@ -226,7 +244,6 @@ font-weight: bold;
     border: 1px solid #ccc;
     margin-top: 8px;
     display:flex;
-    display:block;
 }
 #item_middle_class_id{
    width: 400px;
@@ -284,17 +301,17 @@ font-weight: bold;
   }
     .s__Content__delivery {
       width: 620px;
-      height: 290px;
+      min-height: 290px;
       padding: 40px;
       background: rgb(255, 255, 255);
-      border-bottom: 2px solid rgb(245, 245, 245);
+      border-top: 2px solid rgb(245, 245, 245);
       display: block;
       display: flex;
       justify-content:space-between
     }
 .s__delivery__LeftContent{
   display: inline-block;
-  height: 100%;
+  // height: 100%;
 }
 
       .box4__itemfont{
@@ -308,11 +325,10 @@ font-weight: bold;
         display: inline-block;
         padding-left: 50px;
         width: 400px;
-        min-height: 290px;
+        // min-height: 290px;
         height: auto;
         background: rgb(255, 255, 255);
         font-weight: bold;
-        display: inline-block;
       }
 
       .s__delivery__Description{
@@ -379,7 +395,7 @@ font-weight: bold;
       height: 300px;
       padding: 40px;
     background: rgb(255, 255, 255);
-    border-bottom: 2px solid rgb(245, 245, 245);}
+    border-top: 2px solid rgb(245, 245, 245);}
     .box5__itemfont1{
       font-weight: bold;
       color: #888;
@@ -471,6 +487,7 @@ padding: 10 16 8px ;
   width: 625px;
   height: 248px;
   padding: 40px;
+  border-top: 2px solid rgb(245, 245, 245);}
       // background: red;
 .s__submit{
   width: 620px;
@@ -478,10 +495,12 @@ padding: 10 16 8px ;
    background: #ea352d;
    color: #ffffff;
    margin: 40px, 0, 0;
+   display: block;
+   cursor: pointer; 
 
 }
 
-}
+
 
 .btn__back1{
 width: 279px;
@@ -490,8 +509,15 @@ margin: 25px auto 0;
 text-align: center;
 line-height: 50px;
 background: #aaaaaa;
-color: #ffffff
 }
+
+.modoru {
+  text-decoration: none !important;
+  color: #ffffff;
+  display: block;
+  cursor: pointer; 
+}
+
 
 
 // .btn__back2{
