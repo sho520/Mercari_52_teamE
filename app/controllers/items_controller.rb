@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :confirm, :pay, :done, :buy]
-  # before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new]
 
   def index
     @items = Item.page(params[:page]).per(16).includes(:images)
