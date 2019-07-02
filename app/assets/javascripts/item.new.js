@@ -128,12 +128,26 @@ $("#item_shipping_fee_payer_id").change(function(){
 
 
 $("#price").keyup(function(){
-  var fee__number = $("#price").val() * 0.1;
-  var profit__number = $("#price").val()*0.9;
-let countFeeNum = fee__number;
-let countProfitNum = profit__number;
-$("#fee").text(countFeeNum);
-$("#profit").text(countProfitNum);
+  var price = $("#price").val() * 1;
+  // console.log(pee)
+  var fee__o = $("#price").val() * 0.1;
+  var profit__o = $("#price").val() * 0.9;
+  var fee = Math.trunc(fee__o);
+  var profit = Math.trunc(profit__o);
+  var no = "---"
+// let countFeeNum = fee__number;
+// let countProfitNum = profit__number;
+if (0 <= price && price <= 299 ) {
+  $("#fee").text(no);
+  $("#profit").text(no);
+}
+else{ (300 <= price && price <= 9999999)
+$("#fee").text("¥"+fee.toLocaleString());
+$("#profit").text("¥"+profit.toLocaleString());
+}
+
+// $("#fee").text(countFeeNum);
+// $("#profit").text(countProfitNum);
 })
 
 
