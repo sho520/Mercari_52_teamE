@@ -64,17 +64,14 @@
               .user__form__birthday
                 .user__form__birthday__select
                   = f.select :birth_year, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_year"}
-                  -# %select.user__select__default.d__fa__select{name: "year", id: "id_year"} 
                   %i.user__select__default__arrow
                 %span 年
                 .user__form__birthday__select
                   = f.select :birth_month, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_month"}
-                  -# %select.user__select__default.d__fa__select{name: 'month', id: 'id_month'}
                   %i.user__select__default__arrow
                 %span 月
                 .user__form__birthday__select
                   = f.select :birth_day, ["1993", "1994", "1995"], {prompt: "--"}, {class: "user__select__default d__fa__select", id: "id_day"}
-                  -# %select.user__select__default.d__fa__select{name: "day", id: 'id_day'}
                   %i.icon-arrow-bottom
                 %span 日
               .clearfix
