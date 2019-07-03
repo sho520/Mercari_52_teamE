@@ -1,0 +1,127 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Mercari52Teame
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .product-header
+      .product-header__container
+        / ここから上部
+        .product-header__container__upper
+          = link_to root_path, class: 'product-header__container__upper__logo', data: {"turbolinks" => false} do
+            = image_tag 'logo.png', alt: 'logo', class: 'product-header__container__upper__logo__image', height: '36', width: '134'
+          .product-header__container__upper__search
+            = form_tag("/search", method: :get, class:"header__search") do
+              = text_field_tag :keyword, '', class: 'header__search__text', placeholder: '何かお探しですか？'
+              %label.header__search__button
+                = fa_icon 'search', class: 'search__icon'
+                =submit_tag "", name:nil, class: 'hidden__button'
+        / ここから下部
+        .product-header__container__under
+          %nav.profuct-header__container__under__nav
+            .product-header__container__under__nav__category.drop-down
+              = link_to categories_path, class: 'product-header__container__under__nav__category__link' do
+                = fa_icon("list lg")
+                %span カテゴリーから探す
+            .product-header__container__under__nav__brand.drop-down
+              = link_to items_brand_path, class: 'product-header__container__under__nav__brand__link' do
+                = fa_icon("tag lg")
+                %span ブランドから探す
+          .product-header__container__under__user
+            - if user_signed_in?
+              %ul.product-header__container__under__user__logging-in
+                %li.product-header__container__under__user__logging-in__list
+                  = link_to root_path, class: 'product-header__container__under__user__logging-in__list__link' do
+                    %i.fa.fa-heart
+                    %span いいね！一覧
+                %li.product-header__container__under__user__logging-in__list
+                  = link_to root_path, class: 'product-header__container__under__user__logging-in__list__link' do
+                    %i.fa.fa-bell
+                    %span お知らせ
+                %li.product-header__container__under__user__logging-in__list
+                  = link_to root_path, class: 'product-header__container__under__user__logging-in__list__link' do
+                    %i.fa.fa-check
+                    %span やることリスト
+                %li.product-header__container__under__user__logging-in__list
+                  = link_to user_path(current_user), class: 'product-header__container__under__user__logging-in__list__link' do
+                    - if current_user.image_url.present?
+                      = image_tag current_user.image_url.url(:thumb), size: '32x32', class: 'product-header__container__under__user__logging-in__list__link__img'
+                    - else
+                      = image_tag 'member_noimage.png', size: '32x32', class: 'product-header__container__under__user__logging-in__list__link__img'
+                    %span マイページ
+            - else
+              = link_to "新規会員登録", new_user_path, class: 'product-header__container__under__user__signup'
+              = link_to "ログイン", new_user_session_path, class: 'product-header__container__under__user__login'
+    .header__bread
+      = breadcrumbs separator: " &rsaquo; "
+
+%main.error-container.l-container.clearfix
+  .l-content
+    .error404
+      %img.error-image{:alt => "ページが見つかりません", :src => "//www-mercari-jp.akamaized.net/assets/img/2x/jp/error404.png?1746883257"}/
+
+    .banner
+      .banner__inner
+        .banner__inner__block
+          %section.banner__inner__block__icon
+            %h2 スマホでかんたんフリマアプリ
+            %p 今すぐ無料ダウンロード
+            %section.banner__inner__block__icon__logo
+              = image_tag 'app-logo.jpg', alt: 'logo', class: 'banner__inner__block__icon__logo__main', height: '68', width: '68'
+              %ul.banner__inner__block__icon__logo__link
+                %li= image_tag 'appstore.jpeg', alt: 'logo', class: 'banner__inner__block__icon__logo__link__a', height: '38', width: '133'
+                %li= image_tag 'googleplay.png', alt: 'logo', class: 'banner__inner__block__icon__logo__link__b', height: '38', width: '133'
+          .banner__inner__image
+            = image_tag 'appa.png', alt: 'appimage', class: 'banner__inner__image__app'
+
+    %footer.items-footer
+      .items-footer__nav
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title メルカリについて
+          %ul.items-footer__nav__block__group
+            %li= link_to '会社概要（運営会社）', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to '採用情報', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to 'プレスリリース', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to '公式ブログ', items_path, class: "items-footer__nav__block__group__link"
+            %li= link_to 'メルカリロゴ利用ガイドライン', items_path, class: "items-footer__nav__block__group__link"
+            %li
+              = link_to items_path do
+                %i.fa.fa-twitter.fa-2x.items-footer__nav__block__group__icon
+            %li
+              = link_to items_path do
+                %i.fa.fa-facebook.fa-2x.items-footer__nav__block__group__icon
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title ヘルプ＆ガイド
+          %ul.items-footer__nav__block__group
+            %li.footer__nav__block__group__link= link_to 'メルカリガイド', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'らくらくメルカリ便', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'ゆうゆうメルカリ便', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to '大型メルカリ便', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to '車体取引ガイド', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'メルカリあんしん・あんぜん宣言！', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to '偽ブランド品撲滅への取り組み', items_path, class: "items-footer__nav__block__group__link"
+            %li.footer__nav__block__group__link= link_to 'メルカリボックス', items_path, class: "items-footer__nav__block__group__link"
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title プライバシーと利用規約
+          .items-footer__nav__block__inner
+            %ul.items-footer__nav__block__inner__group
+              %li= link_to 'メルカリ利用規約', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to 'あんしんスマホサポート制度に関する利用特約', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to 'プレスリリース', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to 'コンプライアンスポリシー', items_path, class: "items-footer__nav__block__inner__group__link"
+          .items-footer__nav__block__inner
+            %ul.items-footer__nav__block__inner__group
+              %li= link_to '個人データの安全管理に係る基本方針', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '特定商取引に関する表記', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '資金決済法に基づく表示', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '法令遵守と犯罪抑止のために', items_path, class: "items-footer__nav__block__inner__group__link"
+              %li= link_to '返品・返金ポリシー', items_path, class: "items-footer__nav__block__inner__group__link"
+        %section.items-footer__nav__block
+          %h2.items-footer__nav__block__title 国
+          %ul.items-footer__nav__block__group
+            %li.items-footer__nav__block__group__link 日本
+            %li.items-footer__nav__block__group__link 米国

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "users/complete" => "users#complete"
   get "users/identification" => "users#identification"  #idが入る必要あり
   get "users/card" => "users#card"
+  get '*path', controller: 'application', action: 'render_404'
   resources :items do
     get 'confirm', to: 'items#confirm', on: :member
     get 'confirm/done', to: 'items#done', on: :member
