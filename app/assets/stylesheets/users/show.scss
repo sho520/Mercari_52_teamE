@@ -15,7 +15,7 @@ body {
   flex-shrink: 0;
   margin: 0 auto;
   .mypage__user {
-    background-image: url(mypage_background.jpg);
+    background-image: image-url("mypage_background.jpg");
     .mypage__user__info {
       height: 110px;
       padding: 44.5px 0 44.5px;
@@ -125,8 +125,6 @@ body {
     }
   }
 }
-
-
 
 
 

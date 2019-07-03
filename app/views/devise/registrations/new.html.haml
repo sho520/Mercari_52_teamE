@@ -15,6 +15,11 @@
         %h2.registration__main__head 会員情報入力
         .registration__main__form
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          - if @user.errors.any?
+            %h3.error_box
+              入力した内容にエラーが#{@user.errors.count}件あります
+              - @user.errors.full_messages.each do |message|
+                %li= message
           .user__form__content
             .user__form__group
               %label{for: "user__title"} ニックネーム

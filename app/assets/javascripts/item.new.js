@@ -1,10 +1,12 @@
 $(function(){
 
   var images = [];
+  var inputs = [];
   $(document).on('change', 'input[type= "file"]',function(event) {
     var file = $(this).prop('files')[0];
     var reader = new FileReader();
-    // console.log(file)
+    inputs.push($(this));
+    console.log(inputs)
     // console.log(reader)
     reader.readAsDataURL(file);
     reader.onload = function(e) {
@@ -12,7 +14,7 @@ $(function(){
       var btn_wrapper = $('<div class= "img_view"><img class= "up__image"><div class="btn_wrapper"><div class="btn_edit">編集</div><div class= "btn_delete"><input type= "button" value= "削除" class= "delete__button"></div></div>');
       var img = btn_wrapper.val;
       images.push(img);
-console.log(images.length)
+// console.log(images.length)
       if(images.length <= 5 ) {
       $(".image__box__list").append(btn_wrapper);
       $(".image__box__list").find('img').attr({
@@ -28,7 +30,8 @@ else{(images.length >= 6 )
   }
   $(document).on('click', '.delete__button', function() {
     console.log('削除ボタンを押しています');
-    $(this).parent().parent().parent().hide();
+    $(this).parent().parent().parent().remove();
+
 
 
     // var target_image = $(this).parent().parent();
@@ -125,12 +128,26 @@ $("#item_shipping_fee_payer_id").change(function(){
 
 
 $("#price").keyup(function(){
-  var fee__number = $("#price").val() * 0.1;
-  var profit__number = $("#price").val()*0.9;
-let countFeeNum = fee__number;
-let countProfitNum = profit__number;
-$("#fee").text(countFeeNum);
-$("#profit").text(countProfitNum);
+  var price = $("#price").val() * 1;
+  // console.log(pee)
+  var fee__o = $("#price").val() * 0.1;
+  var profit__o = $("#price").val() * 0.9;
+  var fee = Math.trunc(fee__o);
+  var profit = Math.trunc(profit__o);
+  var no = "---"
+// let countFeeNum = fee__number;
+// let countProfitNum = profit__number;
+if (0 <= price && price <= 299 ) {
+  $("#fee").text(no);
+  $("#profit").text(no);
+}
+else{ (300 <= price && price <= 9999999)
+$("#fee").text("¥"+fee.toLocaleString());
+$("#profit").text("¥"+profit.toLocaleString());
+}
+
+// $("#fee").text(countFeeNum);
+// $("#profit").text(countProfitNum);
 })
 
 
