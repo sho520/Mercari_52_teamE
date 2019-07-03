@@ -119,6 +119,10 @@
       - @items.each do |item|
         %section.searched__items__box
           = link_to "/items/#{item.id}" , class: "searched__items__box__group" do
+            - if item.state_id  == 2 || item.state_id  == 3
+              .sold__out__budge
+              .sold__out__budge__text
+                SOLD
             = image_tag "#{item.images.first.image_url.url(:thumb)}", class: 'searched__items__box__group__img'
             .searched__items__box__group__info
               %h3.searched__items__box__group__info__title 
@@ -132,6 +136,6 @@
                     %span 10
               %p.searched__items__box__group__info__tax
                 (税込)
-    .searchpage__pagination{style: 'text-align: center;'}
+    .searchpage__pagination
       %ul= paginate(@items)
 
