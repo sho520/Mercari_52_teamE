@@ -36,13 +36,28 @@ crumb :profile do
   parent :mypage
 end
 
-crumb :identification do
-  link "本人情報の登録", edit_user_registration_path
+crumb :address do
+  link "発送元・お届け先住所変更", users_address_path
   parent :mypage
 end
 
 crumb :card do
   link "支払い情報", users_card_path
+  parent :mypage
+end
+
+crumb :mail do
+  link "メール/パスワード", users_mail_path
+  parent :mypage
+end
+
+crumb :identification do
+  link "本人情報の登録", edit_user_registration_path
+  parent :mypage
+end
+
+crumb :phone do
+  link "電話番号の確認", users_phone_path
   parent :mypage
 end
 

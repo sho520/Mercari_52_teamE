@@ -13,7 +13,7 @@ class SearchController < ApplicationController
     @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(state_id: 5).order('id DESC').page(params[:page]).per(16)
 
     if @items.empty?
-      @items = Item.order('id DESC').page(params[:page]).per(16)
+      @items = Item.where.not(state_id: 5).order('id DESC').page(params[:page]).per(16)
       @not_find = "該当する商品が見つかりません。検索条件を変えて、再度お試しください。"
     end
 
