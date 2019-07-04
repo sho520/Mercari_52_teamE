@@ -87,7 +87,7 @@
             = "¥" + @item.price.to_s(:delimited).to_s
           %span.product__item-box__price__withtax (税込)
           %span.product__item-box__price__shipcost 送料込み
-        - if @item.state_id == 1 || @item.state_id == 2
+        - if @item.state_id == 1 
           .product__item-box__buybox
             = link_to '購入画面に進む', confirm_item_path(@item), class: 'product__item-box__buybox__link', data: {"turbolinks" => false}
         - else
