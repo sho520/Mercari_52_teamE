@@ -7,13 +7,15 @@ $(function(){
     var reader = new FileReader();
     inputs.push($(this));
     console.log(inputs)
+    var img = $('<div class= "img_view"><img class= "up__image"></div>');
+    images.push(img);
     // console.log(reader)
     reader.readAsDataURL(file);
     reader.onload = function(e) {
       // console.log("ok")
       var btn_wrapper = $('<div class= "img_view"><img class= "up__image"><div class="btn_wrapper"><div class="btn_edit">編集</div><div class= "btn_delete"><input type= "button" value= "削除" class= "delete__button"></div></div>');
-      var img = btn_wrapper.val;
-      images.push(img);
+      // var img = btn_wrapper.val;
+      console.log(e.target.result)
 // console.log(images.length)
       if(images.length <= 5 ) {
       $(".image__box__list").append(btn_wrapper);
