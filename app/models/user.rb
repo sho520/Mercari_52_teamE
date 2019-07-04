@@ -5,6 +5,14 @@ class User < ApplicationRecord
   has_many :comments
   attr_accessor :current_password
 
+  with_options presence: true do
+    validates :nickname
+    validates :family_name
+    validates :first_name
+    validates :family_name_kana
+    validates :first_name_kana
+  end
+
   mount_uploader :image_url, ImageUploader
 
   def self.find_oauth(auth)
