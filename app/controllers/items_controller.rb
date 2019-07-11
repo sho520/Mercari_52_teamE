@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
     @category_items.each do |category_item|
       @category_images << category_item.images.first
     end
-    
+
     @prefecture = JpPrefecture::Prefecture.find(@item.prefecture_id)
     @ken = @prefecture.name
 
@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
     # @large_classes = LargeClass.all
     @middle_classes = MiddleClass.all
     # @small_classes = SmallClass.all
-    
+
     @root = Category.roots
 
     # @categorys = Category.all
@@ -59,13 +59,13 @@ class ItemsController < ApplicationController
     # @parents.each do |parent|
     #   @children << parent.children
     # end
-    
+
     @conditions = Condition.all
     @sizes = Size.all
     @shipping_fee_payers = ShippingFeePayer.all
     @delivery_ways = DeliveryWay.all
     @shipping_days = ShippingDay.all
-   
+
     render layout: 'second_application'
   end
 
